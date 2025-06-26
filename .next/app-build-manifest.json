@@ -1,0 +1,55 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-9682978e3e09731c.js",
+      "static/chunks/4bd1b696-16d61eec428fe094.js",
+      "static/chunks/684-c0b26dbc85cf007a.js",
+      "static/chunks/main-app-ac76ff8bc6fe5415.js",
+      "static/chunks/app/_not-found/page-edef0fcd75f21114.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-9682978e3e09731c.js",
+      "static/chunks/4bd1b696-16d61eec428fe094.js",
+      "static/chunks/684-c0b26dbc85cf007a.js",
+      "static/chunks/main-app-ac76ff8bc6fe5415.js",
+      "static/css/bda2b6d76cf38f83.css",
+      "static/chunks/app/layout-b7b26ab5d76ac96d.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-9682978e3e09731c.js",
+      "static/chunks/4bd1b696-16d61eec428fe094.js",
+      "static/chunks/684-c0b26dbc85cf007a.js",
+      "static/chunks/main-app-ac76ff8bc6fe5415.js",
+      "static/chunks/908-f8ec322b9c4f431c.js",
+      "static/chunks/805-2f463b5f3142a2bc.js",
+      "static/chunks/283-979af3b0e36a503d.js",
+      "static/chunks/app/page-941d5ed373d26e30.js"
+    ],
+    "/testimonials/page": [
+      "static/chunks/webpack-9682978e3e09731c.js",
+      "static/chunks/4bd1b696-16d61eec428fe094.js",
+      "static/chunks/684-c0b26dbc85cf007a.js",
+      "static/chunks/main-app-ac76ff8bc6fe5415.js",
+      "static/chunks/908-f8ec322b9c4f431c.js",
+      "static/chunks/805-2f463b5f3142a2bc.js",
+      "static/chunks/app/testimonials/page-e699db0fa5e07cda.js"
+    ],
+    "/career/page": [
+      "static/chunks/webpack-9682978e3e09731c.js",
+      "static/chunks/4bd1b696-16d61eec428fe094.js",
+      "static/chunks/684-c0b26dbc85cf007a.js",
+      "static/chunks/main-app-ac76ff8bc6fe5415.js",
+      "static/chunks/908-f8ec322b9c4f431c.js",
+      "static/chunks/app/career/page-fc2fe96933eb1f99.js"
+    ],
+    "/shop-migration/page": [
+      "static/chunks/webpack-9682978e3e09731c.js",
+      "static/chunks/4bd1b696-16d61eec428fe094.js",
+      "static/chunks/684-c0b26dbc85cf007a.js",
+      "static/chunks/main-app-ac76ff8bc6fe5415.js",
+      "static/chunks/908-f8ec322b9c4f431c.js",
+      "static/chunks/860-3cfdffbf8f2a1e71.js",
+      "static/chunks/app/shop-migration/page-6847637b176a8923.js"
+    ]
+  }
+}
