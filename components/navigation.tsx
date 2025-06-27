@@ -21,7 +21,7 @@ export function Navigation() {
   const navItems = [
     { name: "Shop migration", href: "/shop-migration" },
     { name: "Customer testimonials", href: "/testimonials" },
-    { name: "career", href: "/career" },
+    { name: "Career", href: "/career" },
   ]
 
   return (
@@ -61,7 +61,7 @@ export function Navigation() {
                   <Link
                     href={item.href}
                     className="
-                      relative text-white/90 hover:text-white
+                      relative text-white/90 hover:text-white text-[14px]
                       text-base font-medium tracking-wide
                       transition-all duration-300 ease-out
                       hover:scale-105
@@ -85,9 +85,9 @@ export function Navigation() {
             >
               <Button
                 className="
-                  bg-[#2c4f97] hover:bg-[#1e3a6f] 
-                  text-white font-medium
-                  px-6 py-2.5 rounded-full
+                  bg-[#2c4f97] hover:bg-[rgb(75, 111, 147)] 
+                  text-white text-[14px]
+                  px-3 py-2.5 rounded-xl
                   shadow-lg hover:shadow-xl
                   transition-all duration-300 ease-out
                   hover:scale-105 hover:-translate-y-0.5
@@ -95,7 +95,7 @@ export function Navigation() {
                 "
               >
                 Contact
-                <span className="ml-2">👉🏻</span>
+                <span className="">👉🏻</span>
               </Button>
             </motion.div>
 
@@ -148,7 +148,7 @@ export function Navigation() {
                 >
                   <Button
                     className="
-                      w-full bg-[#2c4f97] hover:bg-[#1e3a6f] 
+                      w-full bg-[rgb(75, 111, 147)] hover:bg-[#1e3a6f] 
                       text-white font-medium
                       px-6 py-3 rounded-full
                       shadow-lg hover:shadow-xl
