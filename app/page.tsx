@@ -65,9 +65,9 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-6xl lg:text-7xl font-normal mb-8 leading-tight"
           >
-            We are <span className="text-red-500 italic font-normal">the partner</span> when it comes to
+            We are <span className="text-red-500 italic font-normal">Your Partner</span>
             <br />
-            holistic e-commerce growth.
+            for Holistic E-commerce Growth.
           </motion.h1>
 
           <motion.div

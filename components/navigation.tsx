@@ -45,7 +45,7 @@ export function Navigation() {
             {/* Logo */}
             <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }} className="flex-shrink-0">
               <Link href="/" className="block">
-                <span className="text-white text-2xl font-bold tracking-[0.2em] font-mono">MARVYA</span>
+                <span className="text-white text-2xl font-bold tracking-[0.2em] font-mono">SHOWMINE</span>
               </Link>
             </motion.div>
 
