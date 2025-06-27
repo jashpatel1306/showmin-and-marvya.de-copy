@@ -20,10 +20,10 @@ export default function HomePage() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.3])
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white ">
       <Navigation />
 
-      {/* Hero Section */}
+      {/* Hero Section */}  
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
           <Image
@@ -41,7 +41,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-8"
+            className="flex justify-center"
           >
             <div className="flex items-center justify-center gap-2 mb-6">
               <div className="flex -space-x-2">
@@ -50,13 +50,17 @@ export default function HomePage() {
                 <div className="w-10 h-10 rounded-full bg-gray-500 border-2 border-white" />
                 <div className="w-10 h-10 rounded-full bg-gray-600 border-2 border-white" />
               </div>
-              <div className="flex items-center gap-1 ml-4">
+              
+            </div>
+            <div>
+            <div className="flex items-center gap-1 ml-4">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
+              <span className="text-base text-white/90">350+ successful customers</span>
             </div>
-            <span className="text-base text-white/90">350+ successful customers</span>
+            
           </motion.div>
 
           <motion.h1
@@ -65,9 +69,9 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-6xl lg:text-7xl font-normal mb-8 leading-tight"
           >
-            We are <span className="text-red-500 italic font-normal">Your Partner</span>
+            We are <span className="text-red-500 italic font-normal">Your Partner</span> for
             <br />
-            for Holistic E-commerce Growth.
+             Holistic E-commerce Growth.
           </motion.h1>
 
           <motion.div
@@ -77,14 +81,14 @@ export default function HomePage() {
             className="text-lg md:text-xl mb-10 max-w-4xl mx-auto leading-relaxed text-white/90"
           >
             <p className="mb-4">
-              We provide everything you need for your e-commerce success
+            We offer everything you need for e-commerce success
               <br />
-              from a single source.
+              — all from one source.
             </p>
             <p>
-              With us, you'll be faster, more structured, and more profitable
+            With our support, you'll grow faster, work more efficiently,
               <br />
-              than ever before.
+              and become more profitable than ever.
             </p>
           </motion.div>
 

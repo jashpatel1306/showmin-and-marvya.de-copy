@@ -811,6 +811,9 @@ video {
 .min-h-screen {
   min-height: 100vh;
 }
+.min-h-\[175px\] {
+  min-height: 175px;
+}
 .w-10 {
   width: 2.5rem;
 }
@@ -857,7 +860,7 @@ video {
   max-width: 42rem;
 }
 .max-w-3xl {
-  max-width: 50rem;
+  max-width: 48rem;
 }
 .max-w-4xl {
   max-width: 56rem;
@@ -2000,6 +2003,12 @@ html {
   .lg\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
+  }
+}
+@media (min-width: 1536px) {
+
+  .\32xl\:min-h-\[175px\] {
+    min-height: 175px;
   }
 }
 .\[\&_svg\]\:pointer-events-none svg {
