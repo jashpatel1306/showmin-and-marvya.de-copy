@@ -7,7 +7,7 @@ import Footer from "./components/Footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "MARVYA - E-commerce Growth Partner",
+  title: "SHOWMINE - E-commerce Growth Partner",
   description:
     "We are the partner when it comes to holistic e-commerce growth. Expert team, proven processes, measurable results.",
   keywords: "e-commerce, online shop, digital marketing, shop migration, Shopify, growth",
