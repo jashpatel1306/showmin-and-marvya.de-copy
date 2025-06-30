@@ -36,7 +36,7 @@ export default function HomePage() {
           <div className="absolute inset-0" />
         </motion.div>
 
-        <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
+        <div className="relative z-10 text-center max-w-6xl mx-auto px-6 ">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
