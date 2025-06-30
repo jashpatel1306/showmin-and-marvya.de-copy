@@ -45,10 +45,52 @@ export default function HomePage() {
           >
             <div className="flex items-center justify-center gap-2 mb-6">
               <div className="flex -space-x-2">
-                <div className="w-10 h-10 rounded-full bg-gray-300 border-2 border-white" />
-                <div className="w-10 h-10 rounded-full bg-gray-400 border-2 border-white" />
+             
+                <div className="w-10 h-10  " >
+                <img
+                src="/client/client1.png"
+                loading="lazy"
+                className="object-cover md:rounded-r-3xl md:rounded-l-none rounded-b-3xl md:rounded-b-none rounded-lg"
+                style={{ minHeight: '100%', maxHeight: '480px', objectPosition: 'center' }}
+              />
+                </div>
+                <div className="w-10 h-10  " >
+                <img
+                src="/client/client2.png"
+                loading="lazy"
+                className="object-cover md:rounded-r-3xl md:rounded-l-none rounded-b-3xl md:rounded-b-none rounded-lg"
+                style={{ minHeight: '100%', maxHeight: '480px', objectPosition: 'center' }}
+              />
+                </div>
+                <div className="w-10 h-10 rounded-full bg-gray-300 border-2 border-white" >
+                <img
+                src="/client/client3.png"
+                loading="lazy"
+                className="object-cover md:rounded-r-3xl md:rounded-l-none rounded-b-3xl md:rounded-b-none"
+                style={{ minHeight: '100%', maxHeight: '480px', objectPosition: 'center' }}
+              />
+                </div>
+                <div className="w-10 h-10 rounded-full bg-gray-300 border-2 border-white" >
+                <img
+                src="/client/client5.png"
+                loading="lazy"
+                className="object-cover md:rounded-r-3xl md:rounded-l-none rounded-b-3xl md:rounded-b-none"
+                style={{ minHeight: '100%', maxHeight: '480px', objectPosition: 'center' }}
+              />
+                </div>
+                <div className="w-10 h-10 rounded-full bg-gray-300 border-2 border-white" >
+                <img
+                src="/client/client4.png"
+                loading="lazy"
+                className="object-cover md:rounded-r-3xl md:rounded-l-none rounded-b-3xl md:rounded-b-none"
+                style={{ minHeight: '100%', maxHeight: '480px', objectPosition: 'center' }}
+              />
+                </div>
+                
+                
+                {/* <div className="w-10 h-10 rounded-full bg-gray-400 border-2 border-white" />
                 <div className="w-10 h-10 rounded-full bg-gray-500 border-2 border-white" />
-                <div className="w-10 h-10 rounded-full bg-gray-600 border-2 border-white" />
+                <div className="w-10 h-10 rounded-full bg-gray-600 border-2 border-white" /> */}
               </div>
               
             </div>
@@ -67,7 +109,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-normal mb-8 leading-tight"
+            className="text-5xl md:text-6xl lg:text-5xl font-normal mb-8 leading-tight"
           >
             We are <span className="text-red-500 italic font-normal">Your Partner</span> for
             <br />
@@ -80,7 +122,7 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-xl mb-10 max-w-4xl mx-auto leading-relaxed text-white/90"
           >
-            <p className="mb-4">
+            <p className="mb-1">
             We offer everything you need for e-commerce success
               <br />
               — all from one source.
@@ -100,9 +142,9 @@ export default function HomePage() {
           >
             <Button
               className="
-                bg-blue-600 hover:bg-blue-700 
+                bg-[#2c4f97] hover:bg-[rgb(75, 111, 147)]
                 text-white font-medium
-                px-8 py-3 rounded-full
+                px-3 py-2.5 rounded-xl
                 shadow-lg hover:shadow-xl
                 transition-all duration-300 ease-out
                 hover:scale-105 hover:-translate-y-0.5
@@ -116,7 +158,7 @@ export default function HomePage() {
               className="
                 bg-transparent hover:bg-white/10 
                 text-white font-medium
-                px-8 py-3 rounded-full
+                px-3 py-2.5 rounded-xl
                 border-white/30 hover:border-white/50
                 shadow-lg hover:shadow-xl
                 transition-all duration-300 ease-out
