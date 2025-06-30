@@ -23,7 +23,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-black text-white ">
       <Navigation />
 
-      {/* Hero Section */}  
+      {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
           <Image
@@ -43,77 +43,42 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             className="flex justify-center"
           >
-            <div className="flex items-center justify-center gap-2 mb-6">
-              <div className="flex -space-x-2">
-             
-                <div className="w-10 h-10  " >
-                <img
-                src="/client/client1.png"
-                loading="lazy"
-                className="object-cover md:rounded-r-3xl md:rounded-l-none rounded-b-3xl md:rounded-b-none rounded-lg"
-                style={{ minHeight: '100%', maxHeight: '480px', objectPosition: 'center' }}
-              />
+            <div className="flex -space-x-3">
+              {['client1', 'client2', 'client3', 'client5', 'client4'].map((name, index) => (
+                <div
+                  key={index}
+                  className="w-10 h-10 rounded-full border-2 border-white overflow-hidden"
+                >
+                  <img
+                    src={`/client/${name}.png`}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                    alt={`Client ${index + 1}`}
+                  />
                 </div>
-                <div className="w-10 h-10  " >
-                <img
-                src="/client/client2.png"
-                loading="lazy"
-                className="object-cover md:rounded-r-3xl md:rounded-l-none rounded-b-3xl md:rounded-b-none rounded-lg"
-                style={{ minHeight: '100%', maxHeight: '480px', objectPosition: 'center' }}
-              />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-gray-300 border-2 border-white" >
-                <img
-                src="/client/client3.png"
-                loading="lazy"
-                className="object-cover md:rounded-r-3xl md:rounded-l-none rounded-b-3xl md:rounded-b-none"
-                style={{ minHeight: '100%', maxHeight: '480px', objectPosition: 'center' }}
-              />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-gray-300 border-2 border-white" >
-                <img
-                src="/client/client5.png"
-                loading="lazy"
-                className="object-cover md:rounded-r-3xl md:rounded-l-none rounded-b-3xl md:rounded-b-none"
-                style={{ minHeight: '100%', maxHeight: '480px', objectPosition: 'center' }}
-              />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-gray-300 border-2 border-white" >
-                <img
-                src="/client/client4.png"
-                loading="lazy"
-                className="object-cover md:rounded-r-3xl md:rounded-l-none rounded-b-3xl md:rounded-b-none"
-                style={{ minHeight: '100%', maxHeight: '480px', objectPosition: 'center' }}
-              />
-                </div>
-                
-                
-                {/* <div className="w-10 h-10 rounded-full bg-gray-400 border-2 border-white" />
-                <div className="w-10 h-10 rounded-full bg-gray-500 border-2 border-white" />
-                <div className="w-10 h-10 rounded-full bg-gray-600 border-2 border-white" /> */}
-              </div>
-              
+              ))}
             </div>
-            <div>
-            <div className="flex items-center gap-1 ml-4">
+
+            <div className="flex flex-col items-start ml-3">
+              <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <span className="text-base text-white/90">350+ successful customers</span>
+              <span className="text-sm text-white/90 mt-0.5">350+ successful customers</span>
             </div>
-            
+
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-6xl lg:text-5xl font-normal mb-8 leading-tight"
+            className="text-5xl md:text-6xl lg:text-5xl font-normal mb-8 leading-tight mt-3"
           >
             We are <span className="text-red-500 italic font-normal">Your Partner</span> for
             <br />
-             Holistic E-commerce Growth.
+            Holistic E-commerce Growth.
           </motion.h1>
 
           <motion.div
@@ -123,12 +88,12 @@ export default function HomePage() {
             className="text-lg md:text-xl mb-10 max-w-4xl mx-auto leading-relaxed text-white/90"
           >
             <p className="mb-1">
-            We offer everything you need for e-commerce success
+              We offer everything you need for e-commerce success
               <br />
               — all from one source.
             </p>
             <p>
-            With our support, you'll grow faster, work more efficiently,
+              With our support, you'll grow faster, work more efficiently,
               <br />
               and become more profitable than ever.
             </p>
@@ -182,61 +147,80 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <Badge variant="outline" className="mb-8 text-gray-400 border-gray-600">
+            <Badge variant="outline" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[12px]">
               An excerpt from our customers
             </Badge>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className="flex flex-wrap items-center justify-center gap-12 md:gap-16 opacity-60"
-          >
-            {["MARBERT", "Bettina Barty", "ARKTISQUELLE", "ASMC", "QUARANTINI", "CHAMP"].map((brand, index) => (
+          <div className="overflow-x-auto">
+            <div className="w-max px-4">
               <motion.div
-                key={brand}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 0.6, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}
                 viewport={{ once: true }}
-                className="text-xl md:text-2xl font-light tracking-wider hover:opacity-100 transition-opacity duration-300"
+                className="flex flex-wrap items-center justify-center gap-12 md:gap-16 opacity-60"
               >
-                {brand}
+                {["MARBERT", "Bettina Barty", "ARKTISQUELLE", "ASMC", "QUARANTINI", "CHAMP"].map((brand, index) => (
+                  <motion.div
+                    key={brand}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 0.6, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="text-xl md:text-2xl font-light tracking-wider hover:opacity-100 transition-opacity duration-300"
+                  >
+                    {brand}
+                  </motion.div>
+                ))}
               </motion.div>
-            ))}
-          </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-black w-full font-sans">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-6">How we can support you</h2>
-          <p className="text-lg md:text-xl text-gray-400 text-center mb-14 max-w-2xl">
-            Our services are precisely tailored to provide holistic support.<br />
-            Based on our experience with our own e-commerce companies,<br />
-            we have founded an agency that offers exactly what every<br />
+      <section className="py-10 bg-black w-full font-sans">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <Badge variant="outline" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[12px]">
+              Our services
+            </Badge>
+          </motion.div>
+
+          <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-6">How we can support you</h2>
+            <p className="text-lg md:text-xl text-gray-400 text-center mb-14 max-w-2xl">
+              Our services are precisely tailored to provide holistic support.<br />
+              Based on our experience with our own e-commerce companies,<br />
+              we have founded an agency that offers exactly what every<br />
               E-commerce company looking for.
             </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-            {/* Shopify Development Card */}
-            <div className="rounded-2xl border border-blue-400/20 bg-gradient-to-br from-blue-900/80 to-black p-10 flex flex-col justify-between shadow-xl transition-transform duration-300 hover:scale-105 min-h-[380px]">
-              <h3 className="text-3xl font-bold text-white mb-6">Shopify Development</h3>
-              <p className="text-white text-base leading-relaxed">
-                We develop Shopify stores so that they load extremely quickly, create targeted sales stimuli, and stand out from the competition. The stores we develop literally become customer magnets. Store migrations from other store systems to Shopify are part of our daily business, especially at a time when other store systems are making life increasingly difficult for e-commerce companies and Shopify retailers are overtaking them. Thanks to our unique approach, you not only secure a competitive advantage but also define new performance benchmarks.
-              </p>
-            </div>
-            {/* Growth Consulting Card */}
-            <div className="rounded-2xl border border-red-400/20 bg-gradient-to-br from-red-900 via-black-800 to-black-400 p-10 flex flex-col justify-between shadow-xl transition-transform duration-300 hover:scale-105 min-h-[380px]">
-              <h3 className="text-3xl font-bold text-white mb-6">Growth Consulting</h3>
-              <p className="text-white text-base leading-relaxed">
-                In our consulting program, we've made it our mission to scale exciting e-commerce brands at breakneck speed, pushing the boundaries of conventional methods. We work alongside our clients as an active partner, providing comprehensive support throughout their growth. We operate our own shops and have successfully scaled several e-commerce companies to seven- to eight-figure annual sales in recent years. We've distilled these learnings into a strategically sound, step-by-step roadmap.
-              </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+              {/* Shopify Development Card */}
+              <div className="rounded-2xl border border-blue-400/20 bg-gradient-to-br from-blue-900/80 to-black p-10 flex flex-col justify-between shadow-xl transition-transform duration-300 hover:scale-105 min-h-[380px]">
+                <h3 className="text-3xl font-bold text-white mb-6">Shopify Development</h3>
+                <p className="text-white text-base leading-relaxed">
+                  We develop Shopify stores so that they load extremely quickly, create targeted sales stimuli, and stand out from the competition. The stores we develop literally become customer magnets. Store migrations from other store systems to Shopify are part of our daily business, especially at a time when other store systems are making life increasingly difficult for e-commerce companies and Shopify retailers are overtaking them. Thanks to our unique approach, you not only secure a competitive advantage but also define new performance benchmarks.
+                </p>
+              </div>
+              {/* Growth Consulting Card */}
+              <div className="rounded-2xl border border-red-400/20 bg-gradient-to-br from-red-900 via-black-800 to-black-400 p-10 flex flex-col justify-between shadow-xl transition-transform duration-300 hover:scale-105 min-h-[380px]">
+                <h3 className="text-3xl font-bold text-white mb-6">Growth Consulting</h3>
+                <p className="text-white text-base leading-relaxed">
+                  In our consulting program, we've made it our mission to scale exciting e-commerce brands at breakneck speed, pushing the boundaries of conventional methods. We work alongside our clients as an active partner, providing comprehensive support throughout their growth. We operate our own shops and have successfully scaled several e-commerce companies to seven- to eight-figure annual sales in recent years. We've distilled these learnings into a strategically sound, step-by-step roadmap.
+                </p>
+              </div>
             </div>
           </div>
         </div>
+
       </section>
 
       {/* Comparison Section */}
@@ -342,7 +326,7 @@ export default function HomePage() {
         <div className="relative w-full overflow-hidden">
           <div
             className="flex gap-8 items-stretch animate-marvya-horizontal-scroll will-change-transform group"
-            style={{animationDuration: '32s'}}
+            style={{ animationDuration: '32s' }}
           >
             {[
               // ASMC
@@ -375,7 +359,7 @@ export default function HomePage() {
                   { label: '8% CR overall' },
                 ],
               },
-            // Duplicate for seamless loop
+              // Duplicate for seamless loop
             ].concat([
               {
                 bg: '/placeholder.svg?height=300&width=500',
@@ -405,37 +389,37 @@ export default function HomePage() {
                 ],
               },
             ])
-            .map((card, idx) => (
-              <div
-                key={idx}
-                className="relative flex-shrink-0 w-[340px] md:w-[400px] h-[320px] md:h-[360px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group/card transition-transform duration-300 hover:scale-105 mx-2"
-                tabIndex={0}
-                style={{willChange: 'transform'}}
-              >
-                {/* Background Image */}
-                <img
-                  src={card.bg}
-                  alt="Success story background"
-                  className="absolute inset-0 w-full h-full object-cover z-0"
-                    />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10" />
-                {/* Card Content */}
-                <div className="relative z-20 flex flex-col justify-between h-full p-7">
-                  <div>
-                    {card.logo}
-                  </div>
-                  <div className="mt-4 mb-6 text-xl md:text-2xl font-semibold text-white leading-snug">{card.headline}</div>
-                  <div className="flex gap-3 mt-auto">
-                    {card.metrics.map((m, i) => (
-                      <span key={i} className="px-4 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-medium shadow-md backdrop-blur-md">
-                        {m.label}
-                      </span>
-                    ))}
+              .map((card, idx) => (
+                <div
+                  key={idx}
+                  className="relative flex-shrink-0 w-[340px] md:w-[400px] h-[320px] md:h-[360px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group/card transition-transform duration-300 hover:scale-105 mx-2"
+                  tabIndex={0}
+                  style={{ willChange: 'transform' }}
+                >
+                  {/* Background Image */}
+                  <img
+                    src={card.bg}
+                    alt="Success story background"
+                    className="absolute inset-0 w-full h-full object-cover z-0"
+                  />
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10" />
+                  {/* Card Content */}
+                  <div className="relative z-20 flex flex-col justify-between h-full p-7">
+                    <div>
+                      {card.logo}
+                    </div>
+                    <div className="mt-4 mb-6 text-xl md:text-2xl font-semibold text-white leading-snug">{card.headline}</div>
+                    <div className="flex gap-3 mt-auto">
+                      {card.metrics.map((m, i) => (
+                        <span key={i} className="px-4 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-medium shadow-md backdrop-blur-md">
+                          {m.label}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
           {/* Fade Shadows */}
           <div className="pointer-events-none absolute left-0 top-0 h-full w-24 z-20 bg-gradient-to-r from-black via-black/80 to-transparent" />
@@ -544,7 +528,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Column 1: Up to Down */}
             <div className="relative h-[500px] overflow-hidden">
-              <div className="animate-marvya-scroll-down flex flex-col gap-8 will-change-transform" style={{animationDuration: '22s'}}>
+              <div className="animate-marvya-scroll-down flex flex-col gap-8 will-change-transform" style={{ animationDuration: '22s' }}>
                 {[
                   {
                     text: "Absolute Shopify experts who did an outstanding job converting our online stores and introducing a subscription system!",
@@ -565,7 +549,7 @@ export default function HomePage() {
                     avatar: "/placeholder.svg?height=40&width=40",
                   },
                 ].concat([
-              {
+                  {
                     text: "Absolute Shopify experts who did an outstanding job converting our online stores and introducing a subscription system!",
                     author: "Kai Adam",
                     company: "Black Hen Products GmbH",
@@ -584,7 +568,7 @@ export default function HomePage() {
                     avatar: "/placeholder.svg?height=40&width=40",
                   },
                 ]).map((t, i) => (
-                  <div key={i} className="bg-[#18191c] border border-white/10 rounded-2xl shadow-lg p-8 flex flex-col gap-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl group" tabIndex={0} style={{willChange: 'transform'}}>
+                  <div key={i} className="bg-[#18191c] border border-white/10 rounded-2xl shadow-lg p-8 flex flex-col gap-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl group" tabIndex={0} style={{ willChange: 'transform' }}>
                     <p className="text-white text-base leading-relaxed mb-4">"{t.text}"</p>
                     <div className="flex items-center gap-3 mt-auto">
                       <img src={t.avatar} alt={t.author} className="w-10 h-10 rounded-full object-cover border border-white/10" />
@@ -599,7 +583,7 @@ export default function HomePage() {
             </div>
             {/* Column 2: Down to Up */}
             <div className="relative h-[500px] overflow-hidden">
-              <div className="animate-marvya-scroll-up flex flex-col gap-8 will-change-transform" style={{animationDuration: '22s'}}>
+              <div className="animate-marvya-scroll-up flex flex-col gap-8 will-change-transform" style={{ animationDuration: '22s' }}>
                 {[
                   {
                     text: "Thanks to the outstanding network and the great motivation of the entire Showmine team, you can achieve your e-commerce goals quickly and efficiently.",
@@ -611,9 +595,9 @@ export default function HomePage() {
                     text: "We've been working with Marvya for three months. We'd been considering moving our online store to Shopify for a long time, but we're extremely happy and don't regret the decision at all. The Showmine team is very customer-focused, fast, and reliable...",
                     author: "Carolin Ackermann",
                     company: "SEAWATER Cubes GmbH",
-                avatar: "/placeholder.svg?height=40&width=40",
-              },
-              {
+                    avatar: "/placeholder.svg?height=40&width=40",
+                  },
+                  {
                     text: "Absolute Shopify experts who did an outstanding job converting our online stores and introducing a subscription system!",
                     author: "Kai Adam",
                     company: "Black Hen Products GmbH",
@@ -624,14 +608,14 @@ export default function HomePage() {
                     text: "Thanks to the outstanding network and the great motivation of the entire Showmine team, you can achieve your e-commerce goals quickly and efficiently.",
                     author: "Wolfgang Grupp Junior",
                     company: "TRIGEMA W. Grupp KG",
-                avatar: "/placeholder.svg?height=40&width=40",
-              },
-              {
+                    avatar: "/placeholder.svg?height=40&width=40",
+                  },
+                  {
                     text: "We've been working with Marvya for three months. We'd been considering moving our online store to Shopify for a long time, but we're extremely happy and don't regret the decision at all. The Showmine team is very customer-focused, fast, and reliable...",
-                author: "Carolin Ackermann",
-                company: "SEAWATER Cubes GmbH",
-                avatar: "/placeholder.svg?height=40&width=40",
-              },
+                    author: "Carolin Ackermann",
+                    company: "SEAWATER Cubes GmbH",
+                    avatar: "/placeholder.svg?height=40&width=40",
+                  },
                   {
                     text: "Absolute Shopify experts who did an outstanding job converting our online stores and introducing a subscription system!",
                     author: "Kai Adam",
@@ -639,7 +623,7 @@ export default function HomePage() {
                     avatar: "/placeholder.svg?height=40&width=40",
                   },
                 ]).map((t, i) => (
-                  <div key={i} className="bg-[#18191c] border border-white/10 rounded-2xl shadow-lg p-8 flex flex-col gap-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl group" tabIndex={0} style={{willChange: 'transform'}}>
+                  <div key={i} className="bg-[#18191c] border border-white/10 rounded-2xl shadow-lg p-8 flex flex-col gap-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl group" tabIndex={0} style={{ willChange: 'transform' }}>
                     <p className="text-white text-base leading-relaxed mb-4">"{t.text}"</p>
                     <div className="flex items-center gap-3 mt-auto">
                       <img src={t.avatar} alt={t.author} className="w-10 h-10 rounded-full object-cover border border-white/10" />
@@ -654,7 +638,7 @@ export default function HomePage() {
             </div>
             {/* Column 3: Up to Down */}
             <div className="relative h-[500px] overflow-hidden">
-              <div className="animate-marvya-scroll-down flex flex-col gap-8 will-change-transform" style={{animationDuration: '22s'}}>
+              <div className="animate-marvya-scroll-down flex flex-col gap-8 will-change-transform" style={{ animationDuration: '22s' }}>
                 {[
                   {
                     text: "Implemented at a very high speed and are showing extraordinary results. The personal support is customer-oriented, authentic, and sets standards in the industry. I highly recommend SHOWMINE...",
@@ -694,17 +678,17 @@ export default function HomePage() {
                     avatar: "/placeholder.svg?height=40&width=40",
                   },
                 ]).map((t, i) => (
-                  <div key={i} className="bg-[#18191c] border border-white/10 rounded-2xl shadow-lg p-8 flex flex-col gap-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl group" tabIndex={0} style={{willChange: 'transform'}}>
+                  <div key={i} className="bg-[#18191c] border border-white/10 rounded-2xl shadow-lg p-8 flex flex-col gap-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl group" tabIndex={0} style={{ willChange: 'transform' }}>
                     <p className="text-white text-base leading-relaxed mb-4">"{t.text}"</p>
                     <div className="flex items-center gap-3 mt-auto">
                       <img src={t.avatar} alt={t.author} className="w-10 h-10 rounded-full object-cover border border-white/10" />
-                    <div>
+                      <div>
                         <div className="font-semibold text-white text-base">{t.author}</div>
                         {t.company && <div className="text-sm text-gray-400">{t.company}</div>}
                       </div>
                     </div>
                   </div>
-            ))}
+                ))}
               </div>
             </div>
           </div>

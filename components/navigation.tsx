@@ -62,7 +62,7 @@ export function Navigation() {
                     href={item.href}
                     className="
                       relative text-white/90 hover:text-white text-[14px]
-                      text-base font-medium tracking-wide
+                        tracking-wide
                       transition-all duration-300 ease-out
                       hover:scale-105
                       after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px]
