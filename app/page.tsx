@@ -210,7 +210,7 @@ export default function HomePage() {
                   We develop Shopify stores so that they load extremely quickly, create targeted sales stimuli, and stand out from the competition. The stores we develop literally become customer magnets. Store migrations from other store systems to Shopify are part of our daily business, especially at a time when other store systems are making life increasingly difficult for e-commerce companies and Shopify retailers are overtaking them. Thanks to our unique approach, you not only secure a competitive advantage but also define new performance benchmarks.
                 </p>
               </div>
-              {/* Growth Consulting Card */}
+              {/* Growth Consulting  */}
               <div className="rounded-2xl border border-red-400/20 bg-gradient-to-br from-[#4d0e1f] via-[#1a0b0e] to-black p-10 flex flex-col justify-between shadow-xl transition-transform duration-300 hover:scale-105 min-h-[380px]">
                 <h3 className="text-3xl font-bold text-white mb-6">Growth Consulting</h3>
                 <p className="text-white text-base leading-relaxed">
