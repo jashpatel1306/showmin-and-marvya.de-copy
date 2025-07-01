@@ -187,7 +187,7 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-8"
+            className="text-center mb-1"
           >
             <Badge variant="outline" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[12px]">
               Our services
@@ -195,7 +195,7 @@ export default function HomePage() {
           </motion.div>
 
           <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-6">How we can support you</h2>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl  text-white text-center mb-6">How we can support you</h2>
             <p className="text-lg md:text-xl text-gray-400 text-center mb-14 max-w-2xl">
               Our services are precisely tailored to provide holistic support.<br />
               Based on our experience with our own e-commerce companies,<br />
@@ -204,14 +204,14 @@ export default function HomePage() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
               {/* Shopify Development Card */}
-              <div className="rounded-2xl border border-blue-400/20 bg-gradient-to-br from-blue-900/80 to-black p-10 flex flex-col justify-between shadow-xl transition-transform duration-300 hover:scale-105 min-h-[380px]">
+              <div className="rounded-2xl border border-blue-400/20 bg-gradient-to-br from-[#0e1f4d] via-[#0b0e1a] to-black p-10 flex flex-col justify-between shadow-xl transition-transform duration-300 hover:scale-105 min-h-[380px]">
                 <h3 className="text-3xl font-bold text-white mb-6">Shopify Development</h3>
                 <p className="text-white text-base leading-relaxed">
                   We develop Shopify stores so that they load extremely quickly, create targeted sales stimuli, and stand out from the competition. The stores we develop literally become customer magnets. Store migrations from other store systems to Shopify are part of our daily business, especially at a time when other store systems are making life increasingly difficult for e-commerce companies and Shopify retailers are overtaking them. Thanks to our unique approach, you not only secure a competitive advantage but also define new performance benchmarks.
                 </p>
               </div>
               {/* Growth Consulting Card */}
-              <div className="rounded-2xl border border-red-400/20 bg-gradient-to-br from-red-900 via-black-800 to-black-400 p-10 flex flex-col justify-between shadow-xl transition-transform duration-300 hover:scale-105 min-h-[380px]">
+              <div className="rounded-2xl border border-red-400/20 bg-gradient-to-br from-[#4d0e1f] via-[#1a0b0e] to-black p-10 flex flex-col justify-between shadow-xl transition-transform duration-300 hover:scale-105 min-h-[380px]">
                 <h3 className="text-3xl font-bold text-white mb-6">Growth Consulting</h3>
                 <p className="text-white text-base leading-relaxed">
                   In our consulting program, we've made it our mission to scale exciting e-commerce brands at breakneck speed, pushing the boundaries of conventional methods. We work alongside our clients as an active partner, providing comprehensive support throughout their growth. We operate our own shops and have successfully scaled several e-commerce companies to seven- to eight-figure annual sales in recent years. We've distilled these learnings into a strategically sound, step-by-step roadmap.
