@@ -1405,6 +1405,15 @@ video {
   font-size: 0.75rem;
   line-height: 1rem;
 }
+.text-\[10px\] {
+  font-size: 10px;
+}
+.text-\[20px\] {
+  font-size: 20px;
+}
+.text-\[15px\] {
+  font-size: 15px;
+}
 .font-bold {
   font-weight: 700;
 }
@@ -1443,6 +1452,9 @@ video {
 }
 .leading-tight {
   line-height: 1.25;
+}
+.leading-5 {
+  line-height: 1.25rem;
 }
 .tracking-\[0\.2em\] {
   letter-spacing: 0.2em;
