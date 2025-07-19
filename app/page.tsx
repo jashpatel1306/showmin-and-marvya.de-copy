@@ -24,7 +24,7 @@ export default function HomePage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden px-2 sm:px-6">
         <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
           <Image
             src="/images/hero-background.avif"
@@ -43,7 +43,7 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             className="flex justify-center"
           >
-            <div className="flex -space-x-3">
+            <div className="flex -space-x-3 overflow-x-auto max-w-full pb-2 scrollbar-hide">
               {['client1', 'client2', 'client3', 'client5', 'client4'].map((name, index) => (
                 <div
                   key={index}
@@ -74,7 +74,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-6xl lg:text-5xl font-normal mb-8 leading-tight mt-3"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-normal mb-6 md:mb-8 leading-tight mt-3"
           >
             We are <span className="text-red-500 italic font-normal">Your Partner</span> for
             <br />
@@ -103,10 +103,11 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-2xl mx-auto"
           >
             <Button
               className="
+                w-full sm:w-auto
                 bg-[#2c4f97] hover:bg-[rgb(75, 111, 147)]
                 text-white font-medium
                 px-3 py-2.5 rounded-xl

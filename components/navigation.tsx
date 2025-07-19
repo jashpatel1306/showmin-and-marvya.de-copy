@@ -29,18 +29,18 @@ export function Navigation() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="fixed top-4 left-4 right-4 z-50"
+      className="fixed top-2 left-1 right-1 z-50 md:top-4 md:left-4 md:right-4"
     >
       <nav
         className={`
-          relative w-full max-w-3xl mx-auto
+          relative w-full max-w-full md:max-w-3xl mx-auto
           bg-[#1c1c1c80] backdrop-blur-xl
           rounded-2xl shadow-2xl border border-white/10
           transition-all duration-300 ease-in-out
           ${isScrolled ? "bg-[#1c1c1c90] shadow-3xl" : ""}
         `}
       >
-        <div className="px-5 py-4">
+        <div className="px-2 py-2 md:px-5 md:py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }} className="flex-shrink-0">
@@ -86,8 +86,8 @@ export function Navigation() {
               <Button
                 className="
                   bg-[#2c4f97] hover:bg-[rgb(75, 111, 147)] 
-                  text-white text-[14px]
-                  px-3 py-2.5 rounded-xl
+                  text-white text-sm md:text-[14px]
+                  px-3 py-2 md:px-4 md:py-2.5 rounded-xl
                   shadow-lg hover:shadow-xl
                   transition-all duration-300 ease-out
                   hover:scale-105 hover:-translate-y-0.5
@@ -102,6 +102,7 @@ export function Navigation() {
             {/* Mobile Menu Button */}
             <button
               className="lg:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors duration-200"
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
