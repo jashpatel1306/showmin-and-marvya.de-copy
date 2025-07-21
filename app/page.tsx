@@ -148,33 +148,28 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <Badge variant="outline" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[12px]">
+            <h3 className="mb-8 text-white flex-nowrap text-[12px]">
               An excerpt from our customers
-            </Badge>
+            </h3>
           </motion.div>
 
           <div className="overflow-x-auto">
             <div className="w-max px-4">
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-                viewport={{ once: true }}
-                className="flex flex-wrap items-center justify-center gap-12 md:gap-16 opacity-60"
-              >
-                {["MARBERT", "Bettina Barty", "ARKTISQUELLE", "ASMC", "QUARANTINI", "CHAMP"].map((brand, index) => (
-                  <motion.div
-                    key={brand}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 0.6, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="text-xl md:text-2xl font-light tracking-wider hover:opacity-100 transition-opacity duration-300"
-                  >
-                    {brand}
-                  </motion.div>
-                ))}
-              </motion.div>
+              <div className="relative w-full overflow-x-hidden">
+                <div className="flex items-center gap-12 md:gap-16 opacity-60 animate-marquee flex-nowrap">
+                  {["MARBERT", "Bettina Barty", "ARKTISQUELLE", "ASMC", "QUARANTINI", "CHAMP"].map((brand, index) => (
+                    <span key={brand + index} className="text-xl md:text-2xl font-light tracking-wider hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                      {brand}
+                    </span>
+                  ))}
+                  {/* Duplicate for seamless looping */}
+                  {["MARBERT", "Bettina Barty", "ARKTISQUELLE", "ASMC", "QUARANTINI", "CHAMP"].map((brand, index) => (
+                    <span key={brand + 'dup' + index} className="text-xl md:text-2xl font-light tracking-wider hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                      {brand}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -182,52 +177,77 @@ export default function HomePage() {
 
       {/* Services Section */}
       <section className="py-10 bg-black w-full font-sans">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto p-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-1"
           >
             <Badge variant="outline" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[12px]">
               Our services
             </Badge>
           </motion.div>
-
-          <div className="max-w-6xl mx-auto px-6 flex flex-col items-center">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl  text-white text-center mb-6">How we can support you</h2>
-            <p className="text-lg md:text-xl text-gray-400 text-center mb-14 max-w-2xl">
-              Our services are precisely tailored to provide holistic support.<br />
-              Based on our experience with our own e-commerce companies,<br />
-              we have founded an agency that offers exactly what every<br />
-              E-commerce company looking for.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-              {/* Shopify Development Card */}
-              <div className="rounded-2xl border border-blue-400/20 bg-gradient-to-br from-[#0e1f4d] via-[#0b0e1a] to-black p-10 flex flex-col justify-between shadow-xl transition-transform duration-300 hover:scale-105 min-h-[380px]">
-                <h3 className="text-2xl font-[500] text-white mb-6">Shopify Development</h3>
-                <p className="text-gray-400 text-base leading-relaxed">
-                  We develop Shopify stores so that they load extremely quickly, create targeted sales stimuli, and stand out from the competition. The stores we develop literally become customer magnets. Store migrations from other store systems to Shopify are part of our daily business, especially at a time when other store systems are making life increasingly difficult for e-commerce companies and Shopify retailers are overtaking them. Thanks to our unique approach, you not only secure a competitive advantage but also define new performance benchmarks.
-                </p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl  text-white text-center mb-6">How we can support you</h2>
+          <p className="text-lg md:text-xl text-gray-400 text-center mb-14">Our services are precisely tailored to provide holistic support.<br />
+            Based on our experience with our own e-commerce companies,<br />
+            we have founded an agency that offers exactly what every<br />
+            E-commerce company looking for.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Shopify Development Card */}
+            <div className="rounded-2xl border border-blue-400/40 bg-gradient-to-br from-[#162b5c] via-[#0b0e1a] to-black p-10 flex flex-col justify-between shadow-3xl transition-transform duration-300 hover:scale-105 min-h-[380px] group">
+              <div className="flex items-center gap-3 mb-5">
+                <BarChart3 className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />
+                <span className="uppercase tracking-wider text-blue-300 text-xs font-semibold">Shopify Development</span>
               </div>
-              {/* Growth Consulting Card */}
-              <div className="rounded-2xl border border-red-400/20 bg-gradient-to-br from-[#4d0e1f] via-[#1a0b0e] to-black p-10 flex flex-col justify-between shadow-xl transition-transform duration-300 hover:scale-105 min-h-[380px]">
-                <h3 className="text-2xl font-[500] text-white mb-6">Growth Consulting</h3>
-                <p className="text-gray-400 text-base leading-relaxed">
-                  In our consulting program, we've made it our mission to scale exciting e-commerce brands at breakneck speed, pushing the boundaries of conventional methods. We work alongside our clients as an active partner, providing comprehensive support throughout their growth. We operate our own shops and have successfully scaled several e-commerce companies to seven- to eight-figure annual sales in recent years. We've distilled these learnings into a strategically sound, step-by-step roadmap.
-                </p>
+              <h3 className="text-3xl font-semibold text-white mb-4 font-sans">Shopify Development</h3>
+              <p className="text-gray-300 text-lg leading-relaxed font-sans">
+                We develop Shopify stores so that they load extremely quickly, create targeted sales stimuli, and stand out from the competition. The stores we develop literally become customer magnets. Store migrations from other store systems to Shopify are part of our daily business, especially at a time when other store systems are making life increasingly difficult for e-commerce companies and Shopify retailers are overtaking them. Thanks to our unique approach, you not only secure a competitive advantage but also define new performance benchmarks.
+              </p>
+            </div>
+            {/* Growth Consulting Card */}
+            <div className="rounded-2xl border border-red-400/40 bg-gradient-to-br from-[#5c162b] via-[#1a0b0e] to-black p-10 flex flex-col justify-between shadow-3xl transition-transform duration-300 hover:scale-105 min-h-[380px] group">
+              <div className="flex items-center gap-3 mb-5">
+                <Target className="w-8 h-8 text-red-400 group-hover:text-red-300 transition-colors" />
+                <span className="uppercase tracking-wider text-red-300 text-xs font-semibold">Growth Consulting</span>
               </div>
+              <h3 className="text-3xl font-semibold text-white mb-4 font-sans">Growth Consulting</h3>
+              <p className="text-gray-300 text-lg leading-relaxed font-sans">
+                In our consulting program, we've made it our mission to scale exciting e-commerce brands at breakneck speed, pushing the boundaries of conventional methods. We work alongside our clients as an active partner, providing comprehensive support throughout their growth. We operate our own shops and have successfully scaled several e-commerce companies to seven- to eight-figure annual sales in recent years. We've distilled these learnings into a strategically sound, step-by-step roadmap.
+              </p>
             </div>
           </div>
+          <div className="mt-12 text-center">
+            <p className="text-xl md:text-2xl text-gray-200 font-light">
+              If you are looking for a partner who thinks strategically in the interest of your company and brings proven e-commerce expertise with an outstanding track record, you need Showmine.
+            </p>
+          </div>
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Analyse */}
+            <div className="flex flex-col items-center bg-gradient-to-br from-[#23243a] to-black rounded-2xl border border-blue-400/20 p-8 shadow-3xl">
+              <BarChart3 className="w-10 h-10 mb-4 text-blue-400" />
+              <h4 className="text-lg font-semibold text-white mb-2 uppercase tracking-wider">1. Analyse</h4>
+              <p className="text-gray-300 text-base text-center">Through targeted questions, we analyze your current situation and get a clear picture of your company, sales channels, and goals.</p>
+            </div>
+            {/* Potenzial */}
+            <div className="flex flex-col items-center bg-gradient-to-br from-[#2a1e2b] to-black rounded-2xl border border-pink-400/20 p-8 shadow-3xl">
+              <Target className="w-10 h-10 mb-4 text-pink-400" />
+              <h4 className="text-lg font-semibold text-white mb-2 uppercase tracking-wider">2. Potenzial</h4>
+              <p className="text-gray-300 text-base text-center">With our expertise, we reveal growth potentials in the very first conversation—opportunities you may not have seen before.</p>
+            </div>
+            {/* Fahrplan */}
+            <div className="flex flex-col items-center bg-gradient-to-br from-[#223a2a] to-black rounded-2xl border border-green-400/20 p-8 shadow-3xl">
+              <ArrowRight className="w-10 h-10 mb-4 text-green-400" />
+              <h4 className="text-lg font-semibold text-white mb-2 uppercase tracking-wider">3. Fahrplan</h4>
+              <p className="text-gray-300 text-base text-center">Using our Showmine Method®, we show you the next steps for your business and how to implement them efficiently and profitably with us.</p>
+            </div>
+          </div>
+          <div className="mt-12 flex justify-center">
+            <a href="/contact" className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold px-8 py-4 rounded-xl shadow-3xl transition-colors">Book a free consultation</a>
+          </div>
         </div>
-
       </section>
 
-{/* Services Section */}
-<section className="py-10 bg-black w-full font-sans">
-  lala
-  </section>
       {/* Comparison Section */}
       <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-6">
