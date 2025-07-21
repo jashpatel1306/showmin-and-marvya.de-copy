@@ -49,7 +49,7 @@ export function Navigation() {
               </Link>
             </motion.div>
 
-           
+            {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-10">
               {navItems.map((item, index) => (
                 <motion.div
