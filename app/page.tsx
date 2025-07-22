@@ -222,122 +222,29 @@ export default function HomePage() {
               If you are looking for a partner who thinks strategically in the interest of your company and brings proven e-commerce expertise with an outstanding track record, you need Showmine.
             </p>
           </div>
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Analyse */}
+          {/* <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+           
             <div className="flex flex-col items-center bg-gradient-to-br from-[#23243a] to-black rounded-2xl border border-blue-400/20 p-8 shadow-3xl">
               <BarChart3 className="w-10 h-10 mb-4 text-blue-400" />
               <h4 className="text-lg font-semibold text-white mb-2 uppercase tracking-wider">1. Analyse</h4>
               <p className="text-gray-300 text-base text-center">Through targeted questions, we analyze your current situation and get a clear picture of your company, sales channels, and goals.</p>
             </div>
-            {/* Potenzial */}
+           
             <div className="flex flex-col items-center bg-gradient-to-br from-[#2a1e2b] to-black rounded-2xl border border-pink-400/20 p-8 shadow-3xl">
               <Target className="w-10 h-10 mb-4 text-pink-400" />
               <h4 className="text-lg font-semibold text-white mb-2 uppercase tracking-wider">2. Potenzial</h4>
               <p className="text-gray-300 text-base text-center">With our expertise, we reveal growth potentials in the very first conversation—opportunities you may not have seen before.</p>
             </div>
-            {/* Fahrplan */}
+         
             <div className="flex flex-col items-center bg-gradient-to-br from-[#223a2a] to-black rounded-2xl border border-green-400/20 p-8 shadow-3xl">
               <ArrowRight className="w-10 h-10 mb-4 text-green-400" />
               <h4 className="text-lg font-semibold text-white mb-2 uppercase tracking-wider">3. Fahrplan</h4>
               <p className="text-gray-300 text-base text-center">Using our Showmine Method®, we show you the next steps for your business and how to implement them efficiently and profitably with us.</p>
             </div>
-          </div>
-          <div className="mt-12 flex justify-center">
+          </div> */}
+          {/* <div className="mt-12 flex justify-center">
             <a href="/contact" className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold px-8 py-4 rounded-xl shadow-3xl transition-colors">Book a free consultation</a>
-          </div>
-        </div>
-      </section>
-
-      {/* Comparison Section */}
-      <section className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <Badge variant="outline" className="mb-8 text-gray-400 border-gray-600">
-              The direct comparison
-            </Badge>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">
-              Why should you work with
-              <br />
-              <span className="text-blue-400 italic">Showmine</span> ?
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Other Service Providers */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <Card className="bg-gray-900/50 border-gray-800 p-8 h-full">
-                <h3 className="text-2xl md:text-3xl font-light text-gray-400 mb-8">Other service providers</h3>
-                <div className="space-y-6">
-                  {[
-                    "No own shop operated",
-                    "No processes, established structures",
-                    "Working with freelancers",
-                    "No understanding of context",
-                    "Logistics is a foreign word",
-                    "Burn your profit through lack of planning",
-                  ].map((item, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="flex items-center gap-4"
-                    >
-                      <X className="w-6 h-6 text-red-500 flex-shrink-0" />
-                      <span className="text-gray-300">{item}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </Card>
-            </motion.div>
-
-            {/* Showmine */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <Card className="bg-gradient-to-br from-blue-900/80 to-black border-blue-700/50 p-8 h-full relative overflow-hidden">
-                <div className="absolute top-4 right-4 text-4xl font-light text-blue-400/20">SHOWMINE</div>
-                <h3 className="text-2xl md:text-3xl font-light text-white mb-8">SHOWMINE</h3>
-                <div className="space-y-6">
-                  {[
-                    "Own online shops",
-                    "Speed & Agile Processes",
-                    "Expert team of almost 20 employees",
-                    "We understand e-commerce holistically",
-                    "Own logistics hall",
-                    "Trained for profitability & cash flow",
-                  ].map((item, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="flex items-center gap-4"
-                    >
-                      <Check className="w-6 h-6 text-green-500 flex-shrink-0" />
-                      <span className="text-white">{item}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </Card>
-            </motion.div>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -472,6 +379,101 @@ export default function HomePage() {
           }
         `}</style>
       </section>
+
+
+      {/* Comparison Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <Badge variant="outline" className="mb-8 text-gray-400 border-gray-600">
+              The direct comparison
+            </Badge>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">
+              Why should you work with
+              <br />
+              <span className="text-blue-400 italic">Showmine</span> ?
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Other Service Providers */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <Card className="bg-gray-900/50 border-gray-800 p-8 h-full">
+                <h3 className="text-2xl md:text-3xl font-light text-gray-400 mb-8">Other service providers</h3>
+                <div className="space-y-6">
+                  {[
+                    "No own shop operated",
+                    "No processes, established structures",
+                    "Working with freelancers",
+                    "No understanding of context",
+                    "Logistics is a foreign word",
+                    "Burn your profit through lack of planning",
+                  ].map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="flex items-center gap-4"
+                    >
+                      <X className="w-6 h-6 text-red-500 flex-shrink-0" />
+                      <span className="text-gray-300">{item}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </Card>
+            </motion.div>
+
+            {/* Showmine */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <Card className="bg-gradient-to-br from-blue-900/80 to-black border-blue-700/50 p-8 h-full relative overflow-hidden">
+                <div className="absolute top-4 right-4 text-4xl font-light text-blue-400/20">SHOWMINE</div>
+                <h3 className="text-2xl md:text-3xl font-light text-white mb-8">SHOWMINE</h3>
+                <div className="space-y-6">
+                  {[
+                    "Own online shops",
+                    "Speed & Agile Processes",
+                    "Expert team of almost 20 employees",
+                    "We understand e-commerce holistically",
+                    "Own logistics hall",
+                    "Trained for profitability & cash flow",
+                  ].map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="flex items-center gap-4"
+                    >
+                      <Check className="w-6 h-6 text-green-500 flex-shrink-0" />
+                      <span className="text-white">{item}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Process Section */}
       <section className="py-20 bg-black">
@@ -746,50 +748,6 @@ export default function HomePage() {
         `}</style>
       </section>
 
-      {/* Partners Section */}
-      <section className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">Our partners</h2>
-            <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              We work with the best in the industry and
-              <br />
-              have created the best ecosystem to ensure
-              <br />
-              your e-commerce business grows
-              <br />
-              sustainably and stays at the top.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className="flex flex-wrap items-center justify-center gap-12 md:gap-16 opacity-60"
-          >
-            {["pathway", "DESCARTES pixi", "klaviyo", "gorgias", "TrustShop"].map((partner, index) => (
-              <motion.div
-                key={partner}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 0.6, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-xl md:text-2xl font-light tracking-wider hover:opacity-100 transition-opacity duration-300"
-              >
-                {partner}
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
       {/* Team Section */}
       <section className="py-20 bg-black">
@@ -864,6 +822,56 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Partners Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">Our partners</h2>
+            <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              We work with the best in the industry and
+              <br />
+              have created the best ecosystem to ensure
+              <br />
+              your e-commerce business grows
+              <br />
+              sustainably and stays at the top.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="flex flex-wrap items-center justify-center gap-12 md:gap-16 opacity-60"
+          >
+            {["pathway", "DESCARTES pixi", "klaviyo", "gorgias", "TrustShop"].map((partner, index) => (
+              <motion.div
+                key={partner}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 0.6, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-xl md:text-2xl font-light tracking-wider hover:opacity-100 transition-opacity duration-300"
+              >
+                {partner}
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section>
+
       </section>
     </div>
   )
