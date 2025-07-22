@@ -1,13 +1,91 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Star, Check, X, BarChart3, Target, Clock, ArrowRight } from "lucide-react"
+import { Star, Check, X, BarChart3, Target, Clock, ArrowRight, Plus, Minus } from "lucide-react"
 import Image from "next/image"
 import { Navigation } from "@/components/navigation"
+
+// FAQ Accordion Component
+function FAQAccordion() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+  const faqs = [
+    {
+      question: "What requirements must your customers meet?",
+      answer: "We work with ambitious e-commerce businesses that have a clear vision for growth. Ideally, you should have an existing online presence, annual revenue of at least €500K, and be ready to invest in strategic growth initiatives. We look for partners who value long-term relationships and are committed to implementing our recommendations."
+    },
+    {
+      question: "What possibilities for collaboration are there?",
+      answer: "We offer flexible collaboration models including full-service partnerships, strategic consulting, project-based work, and ongoing optimization support. Whether you need complete e-commerce management or specific expertise in areas like logistics, marketing, or international expansion, we can tailor our approach to your needs."
+    },
+    {
+      question: "I'm a dropshipper, am I in the right place with you?",
+      answer: "While we primarily focus on businesses with their own inventory and logistics, we can help dropshippers transition to more sustainable models. Our expertise in logistics and supply chain management can guide you toward building a more robust, scalable business with better margins and control."
+    },
+    {
+      question: "At what size does collaboration make sense?",
+      answer: "Collaboration typically makes sense for businesses generating at least €500K in annual revenue and looking to scale to €2M+ and beyond. However, we also work with smaller businesses that show exceptional growth potential and are ready to invest in professional e-commerce infrastructure."
+    },
+    {
+      question: "Do you only specialize in Shopify stores?",
+      answer: "While we have deep expertise in Shopify and it's our preferred platform for most clients, we also work with other e-commerce platforms including WooCommerce, Magento, and custom solutions. Our focus is on finding the right technology stack for your specific business needs and growth goals."
+    }
+  ]
+
+  const toggleAccordion = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index)
+  }
+
+  return (
+    <div className="space-y-4">
+      {faqs.map((faq, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: index * 0.1 }}
+          viewport={{ once: true }}
+          className="border border-gray-800 rounded-2xl overflow-hidden bg-gray-900/30 hover:border-gray-700 transition-all duration-300"
+        >
+          <button
+            onClick={() => toggleAccordion(index)}
+            className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-800/30 transition-colors duration-200"
+          >
+            <h3 className="text-lg md:text-xl font-medium text-white pr-4">
+              {faq.question}
+            </h3>
+            <motion.div
+              animate={{ rotate: openIndex === index ? 45 : 0 }}
+              transition={{ duration: 0.2 }}
+              className="flex-shrink-0"
+            >
+              <Plus className="w-6 h-6 text-gray-400" />
+            </motion.div>
+          </button>
+          <motion.div
+            initial={false}
+            animate={{
+              height: openIndex === index ? "auto" : 0,
+              opacity: openIndex === index ? 1 : 0
+            }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <div className="px-8 pb-6">
+              <p className="text-gray-400 leading-relaxed">
+                {faq.answer}
+              </p>
+            </div>
+          </motion.div>
+        </motion.div>
+      ))}
+    </div>
+  )
+}
 
 export default function HomePage() {
   const heroRef = useRef(null)
@@ -870,8 +948,65 @@ export default function HomePage() {
       </section>
 
       {/* FAQ Section */}
-      <section>
+      <section className="py-20 bg-black">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <Badge variant="outline" className="mb-8 text-gray-400 border-gray-600">
+              Frequently Asked Questions
+            </Badge>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">
+              Questions & 
+              <span className="text-blue-400 italic">Answers</span>
+            </h2>
+            <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              Everything you need to know about working with Showmine
+            </p>
+          </motion.div>
 
+          <FAQAccordion />
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-900/80 via-blue-800/60 to-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-transparent" />
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-8 leading-tight">
+              Let's discuss your growth
+              <br />
+              potential together.
+            </h2>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <a 
+                href="/contact" 
+                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold px-10 py-5 rounded-xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-blue-500/25"
+              >
+                Contact
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </motion.div>
+          </motion.div>
+        </div>
+        
+        {/* Background decoration */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
       </section>
     </div>
   )
