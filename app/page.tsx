@@ -87,6 +87,18 @@ function FAQAccordion() {
   )
 }
 
+// Our customers
+const brands = [
+  { name: "MARBERT", img: "/images/customers/1.png" },
+  { name: "Bettina Barty", img: "/images/customers/2.png" },
+  { name: "ARKTISQUELLE", img: "/images/customers/3.png" },
+  { name: "ASMC", img: "/images/customers/4.png" },
+  { name: "QUARANTINI", img: "/images/customers/diamondrensu.png" },
+  { name: "CHAMP", img: "/images/customers/gosharpei.png" },
+  { name: "SIMPL", img: "/images/customers/simpl.png" },
+  { name: "PINKTOWN", img: "/images/customers/pinktownusa.png" },
+];
+
 export default function HomePage() {
   const heroRef = useRef(null)
   const { scrollYProgress } = useScroll({
@@ -231,25 +243,35 @@ export default function HomePage() {
             </h3>
           </motion.div>
 
-          <div className="overflow-x-auto">
-            <div className="w-max px-4">
-              <div className="relative w-full overflow-x-hidden">
-                <div className="flex items-center gap-12 md:gap-16 opacity-60 animate-marquee flex-nowrap">
-                  {["MARBERT", "Bettina Barty", "ARKTISQUELLE", "ASMC", "QUARANTINI", "CHAMP"].map((brand, index) => (
-                    <span key={brand + index} className="text-xl md:text-2xl font-light tracking-wider hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                      {brand}
-                    </span>
-                  ))}
-                  {/* Duplicate for seamless looping */}
-                  {["MARBERT", "Bettina Barty", "ARKTISQUELLE", "ASMC", "QUARANTINI", "CHAMP"].map((brand, index) => (
-                    <span key={brand + 'dup' + index} className="text-xl md:text-2xl font-light tracking-wider hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                      {brand}
-                    </span>
-                  ))}
-                </div>
+          <div className="overflow-hidden relative">
+          <div className="flex animate-marquee gap-16">
+            {/* Original List */}
+            {brands.map((brand, index) => (
+              <div key={index} className="flex-shrink-0">
+                <Image
+                  src={brand.img}
+                  alt={brand.name}
+                  width={120}
+                  height={60}
+                  className="object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                />
               </div>
-            </div>
+            ))}
+
+            {/* Duplicate for seamless loop */}
+            {brands.map((brand, index) => (
+              <div key={`dup-${index}`} className="flex-shrink-0">
+                <Image
+                  src={brand.img}
+                  alt={brand.name}
+                  width={120}
+                  height={60}
+                  className="object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+            ))}
           </div>
+        </div>
         </div>
       </section>
 
