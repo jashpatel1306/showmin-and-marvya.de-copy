@@ -357,7 +357,7 @@ export default function HomePage() {
         {/* Horizontal Scrolling Carousel */}
         <div className="relative w-full overflow-hidden">
           <div
-            className="flex gap-8 items-stretch animate-marvya-horizontal-scroll will-change-transform group"
+            className="flex gap-8 items-stretch animate-Showmine-horizontal-scroll will-change-transform group"
             style={{ animationDuration: '32s' }}
           >
             {[
@@ -459,21 +459,21 @@ export default function HomePage() {
         </div>
         {/* Animations and accessibility */}
         <style jsx global>{`
-          @keyframes marvya-horizontal-scroll {
+          @keyframes Showmine-horizontal-scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
           }
-          .animate-marvya-horizontal-scroll {
-            animation-name: marvya-horizontal-scroll;
+          .animate-Showmine-horizontal-scroll {
+            animation-name: Showmine-horizontal-scroll;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
           }
-          .group:hover .animate-marvya-horizontal-scroll,
-          .group:focus-within .animate-marvya-horizontal-scroll {
+          .group:hover .animate-Showmine-horizontal-scroll,
+          .group:focus-within .animate-Showmine-horizontal-scroll {
             animation-play-state: paused;
           }
           @media (prefers-reduced-motion: reduce) {
-            .animate-marvya-horizontal-scroll {
+            .animate-Showmine-horizontal-scroll {
               animation: none !important;
             }
           }
@@ -655,7 +655,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Column 1: Up to Down */}
             <div className="relative h-[500px] overflow-hidden">
-              <div className="animate-marvya-scroll-down flex flex-col gap-8 will-change-transform" style={{ animationDuration: '22s' }}>
+              <div className="animate-Showmine-scroll-down flex flex-col gap-8 will-change-transform" style={{ animationDuration: '22s' }}>
                 {[
                   {
                     text: "Absolute Shopify experts who did an outstanding job converting our online stores and introducing a subscription system!",
@@ -683,7 +683,7 @@ export default function HomePage() {
                     avatar: "/placeholder.svg?height=40&width=40",
                   },
                   {
-                    text: "We've been working with Marvya for three months. We'd been considering moving our online store to Shopify for a long time, but we're extremely happy and don't regret the decision at all. The Showmine team is very customer-focused, fast, and reliable...",
+                    text: "We've been working with Showmine for three months. We'd been considering moving our online store to Shopify for a long time, but we're extremely happy and don't regret the decision at all. The Showmine team is very customer-focused, fast, and reliable...",
                     author: "Carolin Ackermann",
                     company: "SEAWATER Cubes GmbH",
                     avatar: "/placeholder.svg?height=40&width=40",
@@ -710,7 +710,7 @@ export default function HomePage() {
             </div>
             {/* Column 2: Down to Up */}
             <div className="relative h-[500px] overflow-hidden">
-              <div className="animate-marvya-scroll-up flex flex-col gap-8 will-change-transform" style={{ animationDuration: '22s' }}>
+              <div className="animate-Showmine-scroll-up flex flex-col gap-8 will-change-transform" style={{ animationDuration: '22s' }}>
                 {[
                   {
                     text: "Thanks to the outstanding network and the great motivation of the entire Showmine team, you can achieve your e-commerce goals quickly and efficiently.",
@@ -719,7 +719,7 @@ export default function HomePage() {
                     avatar: "/placeholder.svg?height=40&width=40",
                   },
                   {
-                    text: "We've been working with Marvya for three months. We'd been considering moving our online store to Shopify for a long time, but we're extremely happy and don't regret the decision at all. The Showmine team is very customer-focused, fast, and reliable...",
+                    text: "We've been working with Showmine for three months. We'd been considering moving our online store to Shopify for a long time, but we're extremely happy and don't regret the decision at all. The Showmine team is very customer-focused, fast, and reliable...",
                     author: "Carolin Ackermann",
                     company: "SEAWATER Cubes GmbH",
                     avatar: "/placeholder.svg?height=40&width=40",
@@ -738,7 +738,7 @@ export default function HomePage() {
                     avatar: "/placeholder.svg?height=40&width=40",
                   },
                   {
-                    text: "We've been working with Marvya for three months. We'd been considering moving our online store to Shopify for a long time, but we're extremely happy and don't regret the decision at all. The Showmine team is very customer-focused, fast, and reliable...",
+                    text: "We've been working with Showmine for three months. We'd been considering moving our online store to Shopify for a long time, but we're extremely happy and don't regret the decision at all. The Showmine team is very customer-focused, fast, and reliable...",
                     author: "Carolin Ackermann",
                     company: "SEAWATER Cubes GmbH",
                     avatar: "/placeholder.svg?height=40&width=40",
@@ -765,7 +765,7 @@ export default function HomePage() {
             </div>
             {/* Column 3: Up to Down */}
             <div className="relative h-[500px] overflow-hidden">
-              <div className="animate-marvya-scroll-down flex flex-col gap-8 will-change-transform" style={{ animationDuration: '22s' }}>
+              <div className="animate-Showmine-scroll-down flex flex-col gap-8 will-change-transform" style={{ animationDuration: '22s' }}>
                 {[
                   {
                     text: "Implemented at a very high speed and are showing extraordinary results. The personal support is customer-oriented, authentic, and sets standards in the industry. I highly recommend SHOWMINE...",
@@ -787,7 +787,7 @@ export default function HomePage() {
                   },
                 ].concat([
                   {
-                    text: "Implemented at a very high speed and are showing extraordinary results. The personal support is customer-oriented, authentic, and sets standards in the industry. I highly recommend MARVYA...",
+                    text: "Implemented at a very high speed and are showing extraordinary results. The personal support is customer-oriented, authentic, and sets standards in the industry. I highly recommend Showmine...",
                     author: "Roman Wächter",
                     company: "",
                     avatar: "/placeholder.svg?height=40&width=40",
@@ -822,26 +822,26 @@ export default function HomePage() {
         </div>
         {/* Animations and accessibility */}
         <style jsx global>{`
-          @keyframes marvya-scroll-down {
+          @keyframes Showmine-scroll-down {
             0% { transform: translateY(-50%); }
             100% { transform: translateY(0); }
           }
-          @keyframes marvya-scroll-up {
+          @keyframes Showmine-scroll-up {
             0% { transform: translateY(0); }
             100% { transform: translateY(-50%); }
           }
-          .animate-marvya-scroll-down {
-            animation-name: marvya-scroll-down;
+          .animate-Showmine-scroll-down {
+            animation-name: Showmine-scroll-down;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
           }
-          .animate-marvya-scroll-up {
-            animation-name: marvya-scroll-up;
+          .animate-Showmine-scroll-up {
+            animation-name: Showmine-scroll-up;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
           }
           @media (prefers-reduced-motion: reduce) {
-            .animate-marvya-scroll-down, .animate-marvya-scroll-up {
+            .animate-Showmine-scroll-down, .animate-Showmine-scroll-up {
               animation: none !important;
             }
           }
