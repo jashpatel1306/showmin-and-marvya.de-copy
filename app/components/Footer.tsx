@@ -13,7 +13,7 @@ export default function Footer() {
               <h2 className="text-3xl font-light tracking-[0.2em] text-white mb-2">SHOWMINE</h2>
             </div>
             
-            {/* Newsletter Subscription */}
+            
             <div className="max-w-md">
               <h3 className="text-xl font-medium text-white mb-4">Join our newsletter</h3>
               <p className="text-gray-400 mb-6 leading-relaxed text-base">
