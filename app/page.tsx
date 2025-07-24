@@ -244,34 +244,34 @@ export default function HomePage() {
           </motion.div>
 
           <div className="overflow-hidden relative">
-          <div className="flex animate-marquee gap-16">
-            {/* Original List */}
-            {brands.map((brand, index) => (
-              <div key={index} className="flex-shrink-0">
-                <Image
-                  src={brand.img}
-                  alt={brand.name}
-                  width={120}
-                  height={60}
-                  className="object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            ))}
+            <div className="flex animate-marquee gap-16">
+              {/* Original List */}
+              {brands.map((brand, index) => (
+                <div key={index} className="flex-shrink-0">
+                  <Image
+                    src={brand.img}
+                    alt={brand.name}
+                    width={120}
+                    height={60}
+                    className="object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  />
+                </div>
+              ))}
 
-            {/* Duplicate for seamless loop */}
-            {brands.map((brand, index) => (
-              <div key={`dup-${index}`} className="flex-shrink-0">
-                <Image
-                  src={brand.img}
-                  alt={brand.name}
-                  width={120}
-                  height={60}
-                  className="object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            ))}
+              {/* Duplicate for seamless loop */}
+              {brands.map((brand, index) => (
+                <div key={`dup-${index}`} className="flex-shrink-0">
+                  <Image
+                    src={brand.img}
+                    alt={brand.name}
+                    width={120}
+                    height={60}
+                    className="object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
         </div>
       </section>
 
@@ -318,7 +318,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="mt-12 text-center">
-            <p className="text-xl md:text-2xl text-gray-200 font-light">
+            <p className="text-[48px] text-gray-200 font-light">
               If you are looking for a partner who thinks strategically in the interest of your company and brings proven e-commerce expertise with an outstanding track record, you need Showmine.
             </p>
           </div>
@@ -349,116 +349,129 @@ export default function HomePage() {
       </section>
 
       {/* Success Stories Section */}
-      <section className="relative py-24 bg-black font-sans overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-4">Success stories</h2>
-          <p className="text-lg md:text-xl text-gray-400 text-center mb-14">Our work delivers not just promises, but measurable results.</p>
-        </div>
-        {/* Horizontal Scrolling Carousel */}
-        <div className="relative w-full overflow-hidden">
-          <div
-            className="flex gap-8 items-stretch animate-Showmine-horizontal-scroll will-change-transform group"
-            style={{ animationDuration: '32s' }}
+      <section className="py-10 bg-black w-full font-sans">
+        <div className="mx-auto p-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
           >
-            {[
-              // ASMC
-              {
-                bg: '/placeholder.svg?height=300&width=500', // Replace with industrial/warehouse image
-                logo: <div className="text-2xl font-extrabold text-white tracking-wide mb-1">ASMC <span className="block text-xs font-normal tracking-normal text-gray-200">THE ADVENTURE COMPANY</span></div>,
-                headline: 'Digital Transformation',
-                metrics: [
-                  { label: 'Shopify' },
-                  { label: 'Industry dominance' },
-                ],
-              },
-              // Histaminikus
-              {
-                bg: '/placeholder.svg?height=300&width=500', // Replace with couple/kitchen image
-                logo: <div className="text-2xl font-extrabold text-white tracking-wide mb-1">Histaminikus<sup>®</sup></div>,
-                headline: <><span className="block text-xs font-normal text-gray-200 mb-1">Das Original seit 2017</span>From the garage to the million-dollar company</>,
-                metrics: [
-                  { label: 'Market leader' },
-                  { label: '600% CLV increase' },
-                ],
-              },
-              // Peak
-              {
-                bg: '/placeholder.svg?height=300&width=500', // Replace with gym/athlete image
-                logo: <div className="flex items-center gap-2 text-2xl font-extrabold text-white tracking-wide mb-1"><span className="inline-block">PEAK</span><span className="inline-block text-blue-300">&#9650;</span></div>,
-                headline: 'From strong B2B to B2C expansion',
-                metrics: [
-                  { label: 'Migration to Shopify' },
-                  { label: '8% CR overall' },
-                ],
-              },
-              // Duplicate for seamless loop
-            ].concat([
-              {
-                bg: '/placeholder.svg?height=300&width=500',
-                logo: <div className="text-2xl font-extrabold text-white tracking-wide mb-1">ASMC <span className="block text-xs font-normal tracking-normal text-gray-200">THE ADVENTURE COMPANY</span></div>,
-                headline: 'Digital Transformation',
-                metrics: [
-                  { label: 'Shopify' },
-                  { label: 'Industry dominance' },
-                ],
-              },
-              {
-                bg: '/placeholder.svg?height=300&width=500',
-                logo: <div className="text-2xl font-extrabold text-white tracking-wide mb-1">Histaminikus<sup>®</sup></div>,
-                headline: <><span className="block text-xs font-normal text-gray-200 mb-1">Das Original seit 2017</span>From the garage to the million-dollar company</>,
-                metrics: [
-                  { label: 'Market leader' },
-                  { label: '600% CLV increase' },
-                ],
-              },
-              {
-                bg: '/placeholder.svg?height=300&width=500',
-                logo: <div className="flex items-center gap-2 text-2xl font-extrabold text-white tracking-wide mb-1"><span className="inline-block">PEAK</span><span className="inline-block text-blue-300">&#9650;</span></div>,
-                headline: 'From strong B2B to B2C expansion',
-                metrics: [
-                  { label: 'Migration to Shopify' },
-                  { label: '8% CR overall' },
-                ],
-              },
-            ])
-              .map((card, idx) => (
-                <div
-                  key={idx}
-                  className="relative flex-shrink-0 w-[340px] md:w-[400px] h-[320px] md:h-[360px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group/card transition-transform duration-300 hover:scale-105 mx-2"
-                  tabIndex={0}
-                  style={{ willChange: 'transform' }}
-                >
-                  {/* Background Image */}
-                  <img
-                    src={card.bg}
-                    alt="Success story background"
-                    className="absolute inset-0 w-full h-full object-cover z-0"
-                  />
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10" />
-                  {/* Card Content */}
-                  <div className="relative z-20 flex flex-col justify-between h-full p-7">
-                    <div>
-                      {card.logo}
-                    </div>
-                    <div className="mt-4 mb-6 text-xl md:text-2xl font-semibold text-white leading-snug">{card.headline}</div>
-                    <div className="flex gap-3 mt-auto">
-                      {card.metrics.map((m, i) => (
-                        <span key={i} className="px-4 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-medium shadow-md backdrop-blur-md">
-                          {m.label}
-                        </span>
-                      ))}
+            <Badge variant="outline" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[12px]">
+              Results
+            </Badge>
+          </motion.div>
+
+
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-4">Success stories</h2>
+            <p className="text-lg md:text-xl text-gray-400 text-center mb-14">Our work delivers not just promises, but measurable results.</p>
+          </div>
+          {/* Horizontal Scrolling Carousel */}
+          <div className="relative w-full overflow-hidden">
+            <div
+              className="flex gap-8 items-stretch animate-Showmine-horizontal-scroll will-change-transform group"
+              style={{ animationDuration: '32s' }}
+            >
+              {[
+                // ASMC
+                {
+                  bg: '/placeholder.svg?height=300&width=500', // Replace with industrial/warehouse image
+                  logo: <div className="text-2xl font-extrabold text-white tracking-wide mb-1">ASMC <span className="block text-xs font-normal tracking-normal text-gray-200">THE ADVENTURE COMPANY</span></div>,
+                  headline: 'Digital Transformation',
+                  metrics: [
+                    { label: 'Shopify' },
+                    { label: 'Industry dominance' },
+                  ],
+                },
+                // Histaminikus
+                {
+                  bg: '/placeholder.svg?height=300&width=500', // Replace with couple/kitchen image
+                  logo: <div className="text-2xl font-extrabold text-white tracking-wide mb-1">Histaminikus<sup>®</sup></div>,
+                  headline: <><span className="block text-xs font-normal text-gray-200 mb-1">Das Original seit 2017</span>From the garage to the million-dollar company</>,
+                  metrics: [
+                    { label: 'Market leader' },
+                    { label: '600% CLV increase' },
+                  ],
+                },
+                // Peak
+                {
+                  bg: '/placeholder.svg?height=300&width=500', // Replace with gym/athlete image
+                  logo: <div className="flex items-center gap-2 text-2xl font-extrabold text-white tracking-wide mb-1"><span className="inline-block">PEAK</span><span className="inline-block text-blue-300">&#9650;</span></div>,
+                  headline: 'From strong B2B to B2C expansion',
+                  metrics: [
+                    { label: 'Migration to Shopify' },
+                    { label: '8% CR overall' },
+                  ],
+                },
+                // Duplicate for seamless loop
+              ].concat([
+                {
+                  bg: '/placeholder.svg?height=300&width=500',
+                  logo: <div className="text-2xl font-extrabold text-white tracking-wide mb-1">ASMC <span className="block text-xs font-normal tracking-normal text-gray-200">THE ADVENTURE COMPANY</span></div>,
+                  headline: 'Digital Transformation',
+                  metrics: [
+                    { label: 'Shopify' },
+                    { label: 'Industry dominance' },
+                  ],
+                },
+                {
+                  bg: '/placeholder.svg?height=300&width=500',
+                  logo: <div className="text-2xl font-extrabold text-white tracking-wide mb-1">Histaminikus<sup>®</sup></div>,
+                  headline: <><span className="block text-xs font-normal text-gray-200 mb-1">Das Original seit 2017</span>From the garage to the million-dollar company</>,
+                  metrics: [
+                    { label: 'Market leader' },
+                    { label: '600% CLV increase' },
+                  ],
+                },
+                {
+                  bg: '/placeholder.svg?height=300&width=500',
+                  logo: <div className="flex items-center gap-2 text-2xl font-extrabold text-white tracking-wide mb-1"><span className="inline-block">PEAK</span><span className="inline-block text-blue-300">&#9650;</span></div>,
+                  headline: 'From strong B2B to B2C expansion',
+                  metrics: [
+                    { label: 'Migration to Shopify' },
+                    { label: '8% CR overall' },
+                  ],
+                },
+              ])
+                .map((card, idx) => (
+                  <div
+                    key={idx}
+                    className="relative flex-shrink-0 w-[340px] md:w-[400px] h-[320px] md:h-[360px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group/card transition-transform duration-300 hover:scale-105 mx-2"
+                    tabIndex={0}
+                    style={{ willChange: 'transform' }}
+                  >
+                    {/* Background Image */}
+                    <img
+                      src={card.bg}
+                      alt="Success story background"
+                      className="absolute inset-0 w-full h-full object-cover z-0"
+                    />
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10" />
+                    {/* Card Content */}
+                    <div className="relative z-20 flex flex-col justify-between h-full p-7">
+                      <div>
+                        {card.logo}
+                      </div>
+                      <div className="mt-4 mb-6 text-xl md:text-2xl font-semibold text-white leading-snug">{card.headline}</div>
+                      <div className="flex gap-3 mt-auto">
+                        {card.metrics.map((m, i) => (
+                          <span key={i} className="px-4 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-medium shadow-md backdrop-blur-md">
+                            {m.label}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+            </div>
+            {/* Fade Shadows */}
+            <div className="pointer-events-none absolute left-0 top-0 h-full w-24 z-20 bg-gradient-to-r from-black via-black/80 to-transparent" />
+            <div className="pointer-events-none absolute right-0 top-0 h-full w-24 z-20 bg-gradient-to-l from-black via-black/80 to-transparent" />
           </div>
-          {/* Fade Shadows */}
-          <div className="pointer-events-none absolute left-0 top-0 h-full w-24 z-20 bg-gradient-to-r from-black via-black/80 to-transparent" />
-          <div className="pointer-events-none absolute right-0 top-0 h-full w-24 z-20 bg-gradient-to-l from-black via-black/80 to-transparent" />
-        </div>
-        {/* Animations and accessibility */}
-        <style jsx global>{`
+          {/* Animations and accessibility */}
+          <style jsx global>{`
           @keyframes Showmine-horizontal-scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -478,6 +491,7 @@ export default function HomePage() {
             }
           }
         `}</style>
+        </div>
       </section>
 
 
@@ -585,6 +599,9 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
+            <Badge variant="outline" className="mb-8 text-gray-400 border-gray-600">
+              What are you waiting for?
+            </Badge>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight">
               Our customers are already
               <br />
@@ -646,10 +663,51 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-2xl mx-auto mt-10"
+          >
+            <Button
+              className="
+                w-full sm:w-auto
+                bg-[#2c4f97] hover:bg-[rgb(75, 111, 147)]
+                text-white font-medium
+                px-3 py-2.5 rounded-xl
+                shadow-lg hover:shadow-xl
+                transition-all duration-300 ease-out
+                hover:scale-105 hover:-translate-y-0.5
+                text-base
+              "
+            >
+              <a
+                href="https://calendly.com/showmineinfotech/30min"
+                target="_blank"
+              >
+                Contact 👉🏻
+              </a>
+            </Button>
+          </motion.div>
+        </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="relative py-24 bg-black font-sans overflow-hidden">
+      <section className="relative py-25 bg-black font-sans overflow-hidden">
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-7"
+        >
+          <Badge variant="default" className="mb-8 text-white border-gray-600">
+            Customer testimonials
+          </Badge>
+        </motion.div>
+
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-16">What our customers say</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -859,6 +917,11 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
+
+            <Badge variant="default" className="mb-8 text-white border-gray-600">
+              The founding team
+            </Badge>
+
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight">
               The leading minds
               <br />
@@ -983,12 +1046,32 @@ export default function HomePage() {
               Frequently Asked Questions
             </Badge>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">
-              Questions & 
+              Questions &
               <span className="text-blue-400 italic">Answers</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               Everything you need to know about working with Showmine
             </p>
+
+            <Button
+              className="
+                w-full sm:w-auto
+                bg-[#2c4f97] hover:bg-[rgb(75, 111, 147)]
+                text-white font-medium
+                px-3 py-2.5 rounded-xl
+                shadow-lg hover:shadow-xl
+                transition-all duration-300 ease-out
+                hover:scale-105 hover:-translate-y-0.5
+                text-base mt-10
+              "
+            >
+              <a
+                href="https://calendly.com/showmineinfotech/30min"
+                target="_blank"
+              >
+                Contact 👉🏻
+              </a>
+            </Button>
           </motion.div>
 
           <FAQAccordion />
@@ -1005,7 +1088,7 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-8 leading-tight">
+            <h2 className="text-4xl md:text-3xl lg:text-5xl font-light text-white mb-8 leading-tight">
               Let's discuss your growth
               <br />
               potential together.
@@ -1016,17 +1099,29 @@ export default function HomePage() {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <a 
-                href="/contact" 
-                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold px-10 py-5 rounded-xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-blue-500/25"
+              <Button
+                className="
+                w-full sm:w-auto
+                bg-[#2c4f97] hover:bg-[rgb(75, 111, 147)]
+                text-white font-medium
+                px-3 py-2.5 rounded-xl
+                shadow-lg hover:shadow-xl
+                transition-all duration-300 ease-out
+                hover:scale-105 hover:-translate-y-0.5
+                text-base
+              "
               >
-                Contact
-                <ArrowRight className="w-5 h-5" />
-              </a>
+                <a
+                  href="https://calendly.com/showmineinfotech/30min"
+                  target="_blank"
+                >
+                  Contact 👉🏻
+                </a>
+              </Button>
             </motion.div>
           </motion.div>
         </div>
-        
+
         {/* Background decoration */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
       </section>
