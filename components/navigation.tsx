@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -45,7 +46,15 @@ export function Navigation() {
             {/* Logo */}
             <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }} className="flex-shrink-0">
               <Link href="/" className="block">
-                <span className="text-white text-2xl font-bold tracking-[0.2em] font-mono">SHOWMINE</span>
+                {/* <span className="text-white text-2xl font-bold tracking-[0.2em] font-mono">SHOWMINE</span> */}
+
+                <img
+                  src="/images/SHOWMINE-LIGHT.png"
+                  alt="logo"
+                  // fill
+                  className="w-auto h-8 md:h-6 object-contain"
+                // priority
+                />
               </Link>
             </motion.div>
 

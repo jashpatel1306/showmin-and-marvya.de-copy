@@ -22,35 +22,107 @@ export default function ShopMigrationPage() {
             className="text-center"
           >
             {/* Badge with green dot indicator */}
-            <div className="inline-flex items-center mb-8 px-4 py-2 rounded-full bg-[#111] border border-gray-800">
-              <div className="w-2 h-2 bg-[#2ECC71] rounded-full mr-3"></div>
-              <span className="text-white text-sm font-medium">
+            <div 
+              className="inline-flex items-center mb-8 relative overflow-hidden"
+              style={{
+                backdropFilter: 'blur(10px)',
+                backgroundColor: 'rgba(13, 13, 13, 0.4)',
+                borderRadius: '50px',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                padding: '12px 16px',
+                gap: '8px',
+                height: 'auto',
+                width: 'auto',
+                placeContent: 'center',
+                alignItems: 'center',
+                // display: 'flex',
+                flexFlow: 'row',
+                marginTop: '40px'
+              }}
+            >
+              <div className="w-2 h-2 bg-[#2ECC71] rounded-full"></div>
+              <span className="text-white text-sm font-extralight">
                 Shopify's most experienced migration partner
               </span>
             </div>
             
             {/* Main Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight text-white font-sans">
+            <h1 
+              className="mb-8 text-white"
+              style={{
+                fontFamily: '"Inter", "Inter Placeholder", sans-serif',
+                fontSize: '47px',
+                fontWeight: '500',
+                letterSpacing: '-0.05em',
+                lineHeight: '1em',
+                textAlign: 'center',
+                color: 'rgb(255, 255, 255)'
+              }}
+            >
               Does your store need an{' '}
-              <span className="text-[#6DA7FF] italic font-bold">upgrade?</span>
+              <span className="text-rgb(75, 111, 147) italic font-bold">upgrade?</span>
               <br />
               We'll seamlessly migrate your store to Shopify.
             </h1>
             
             {/* Subtext */}
-            <p className="text-base md:text-lg text-[#A3A3A3] max-w-4xl mx-auto mb-12 leading-relaxed font-medium">
-              Whether Shopware, Magento, Oxid, another shop platform or a tailor-made solution –{' '}
-              <br className="hidden md:block" />
-              We support you in switching to the world's most powerful shop platform: Shopify.
-            </p>
+            <div 
+              className="max-w-4xl mx-auto mb-12"
+              style={{
+                outline: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-start',
+                opacity: 1,
+                flexShrink: 0,
+                transform: 'perspective(1200px)',
+                willChange: 'transform'
+              }}
+            >
+              <p 
+                className="text-[#A3A3A3] font-medium leading-relaxed"
+                style={{
+                  flex: '0 0 auto',
+                  height: 'auto',
+                  position: 'relative',
+                  whiteSpace: 'pre-wrap',
+                  width: '100%',
+                  wordBreak: 'break-word',
+                  overflowWrap: 'break-word'
+                }}
+              >
+                Whether Shopware, Magento, Oxid, another shop platform or a tailor-made solution –{' '}
+                <br className="hidden md:block" />
+                We support you in switching to the world's most powerful shop platform: Shopify.
+              </p>
+            </div>
             
             {/* CTA Button */}
-            <Button 
-              size="lg" 
-              className="bg-[#4A77D4] hover:bg-[#5A87E4] text-white px-8 py-4 text-lg rounded-lg transition-colors duration-200 font-medium"
+            <div 
+              style={{
+                opacity: 1,
+                transform: 'none',
+                willChange: 'transform',
+                placeContent: 'center',
+                alignItems: 'center',
+                display: 'flex',
+                flex: '0 0 auto',
+                flexFlow: 'row',
+                gap: '24px',
+                height: 'min-content',
+                overflow: 'visible',
+                padding: '0px',
+                position: 'relative',
+                width: 'min-content'
+              }}
             >
-              Request a project 👉🏻
-            </Button>
+              <Button 
+                size="lg" 
+                className="bg-[#4A77D4] hover:bg-[#5A87E4] text-white px-8 py-4 text-lg rounded-lg transition-colors duration-200 font-medium"
+              >
+                Request a project 👉🏻
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>

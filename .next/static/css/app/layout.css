@@ -602,6 +602,9 @@ video {
 .pointer-events-none {
   pointer-events: none;
 }
+.visible {
+  visibility: visible;
+}
 .fixed {
   position: fixed;
 }
@@ -891,6 +894,9 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.w-auto {
+  width: auto;
 }
 .min-w-max {
   min-width: max-content;
@@ -1528,6 +1534,9 @@ video {
 .font-semibold {
   font-weight: 600;
 }
+.font-extralight {
+  font-weight: 200;
+}
 .uppercase {
   text-transform: uppercase;
 }
@@ -1723,6 +1732,10 @@ video {
 }
 .ring-offset-background {
   --tw-ring-offset-color: hsl(var(--background));
+}
+.blur {
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .backdrop-blur-md {
   --tw-backdrop-blur: blur(12px);
@@ -2167,6 +2180,18 @@ html {
 
   .md\:h-full {
     height: 100%;
+  }
+
+  .md\:h-10 {
+    height: 2.5rem;
+  }
+
+  .md\:h-5 {
+    height: 1.25rem;
+  }
+
+  .md\:h-6 {
+    height: 1.5rem;
   }
 
   .md\:min-h-0 {

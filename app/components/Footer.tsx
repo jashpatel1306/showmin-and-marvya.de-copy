@@ -10,7 +10,14 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-8">
             {/* Logo & Branding */}
             <div>
-              <h2 className="text-3xl font-light tracking-[0.2em] text-white mb-2">SHOWMINE</h2>
+              {/* <h2 className="text-3xl font-light tracking-[0.2em] text-white mb-2">SHOWMINE</h2> */}
+              <img
+                  src="/images/SHOWMINE-LIGHT.png"
+                  alt="logo"
+                  // fill
+                  className="w-auto h-8 md:h-10 object-contain"
+                // priority
+                />
             </div>
             
             {/* Newsletter Subscription */}
