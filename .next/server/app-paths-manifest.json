@@ -1,4 +1,5 @@
 {
-  "/page": "app/page.js",
-  "/shop-migration/page": "app/shop-migration/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/shop-migration/page": "app/shop-migration/page.js",
+  "/page": "app/page.js"
 }

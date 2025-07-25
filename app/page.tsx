@@ -623,21 +623,21 @@ export default function HomePage() {
               {
                 number: "1.",
                 title: "Analysis",
-                icon: BarChart3,
+                icon: "/images/info/Analysis.gif",
                 description:
                   "By asking a few targeted and useful questions, we analyze your current situation and gain a more accurate picture of your company, your sales channels, and your goals.",
               },
               {
                 number: "2.",
                 title: "Potential",
-                icon: Target,
+                icon: "/images/info/Marketing.gif",
                 description:
                   "Thanks to our valuable expertise, we can show you growth potential during the initial consultation that you may not have been aware of before.",
               },
               {
                 number: "3.",
                 title: "Timetable",
-                icon: Clock,
+                icon: "/images/info/Money.gif",
                 description:
                   "Using our Showmine Method®, we will show you the next sensible steps for your company and how you can implement them with us in a time-saving and profitable way.",
               },
@@ -651,8 +651,13 @@ export default function HomePage() {
                 className="text-center"
               >
                 <div className="mb-8">
-                  <div className="w-20 h-20 mx-auto mb-6 bg-blue-600/20 rounded-full flex items-center justify-center">
-                    <step.icon className="w-10 h-10 text-blue-400" />
+                  <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                    {/* <step.icon className="w-10 h-10 text-blue-400" /> */}
+                    <img
+                      src={step.icon}
+                      alt={step.title}
+                      className="w-20 h-20 mb-4 object-contain"
+                    />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-light mb-4">
                     {step.number} {step.title}
