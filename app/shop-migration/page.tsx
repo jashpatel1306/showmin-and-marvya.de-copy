@@ -13,7 +13,7 @@ export default function ShopMigrationPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-black">
+      <section className="pt-32 pb-20 bg-black" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -21,21 +21,35 @@ export default function ShopMigrationPage() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <Badge variant="outline" className="mb-8 text-gray-400 border-gray-600">
-              Shop Migration
-            </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light mb-8 leading-tight">
-              Seamless Shop
+            {/* Badge with green dot indicator */}
+            <div className="inline-flex items-center mb-8 px-4 py-2 rounded-full bg-[#111] border border-gray-800">
+              <div className="w-2 h-2 bg-[#2ECC71] rounded-full mr-3"></div>
+              <span className="text-white text-sm font-medium">
+                Shopify's most experienced migration partner
+              </span>
+            </div>
+            
+            {/* Main Headline */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight text-white font-sans">
+              Does your store need an{' '}
+              <span className="text-[#6DA7FF] italic font-bold">upgrade?</span>
               <br />
-              <span className="text-blue-400 italic">Migration</span> Services
+              We'll seamlessly migrate your store to Shopify.
             </h1>
-            <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto mb-12 leading-relaxed">
-              We help you migrate your e-commerce store to modern platforms
-              <br />
-              without losing data, customers, or revenue.
+            
+            {/* Subtext */}
+            <p className="text-base md:text-lg text-[#A3A3A3] max-w-4xl mx-auto mb-12 leading-relaxed font-medium">
+              Whether Shopware, Magento, Oxid, another shop platform or a tailor-made solution –{' '}
+              <br className="hidden md:block" />
+              We support you in switching to the world's most powerful shop platform: Shopify.
             </p>
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-full">
-              Start Migration <ArrowRight className="ml-2 w-5 h-5" />
+            
+            {/* CTA Button */}
+            <Button 
+              size="lg" 
+              className="bg-[#4A77D4] hover:bg-[#5A87E4] text-white px-8 py-4 text-lg rounded-lg transition-colors duration-200 font-medium"
+            >
+              Request a project 👉🏻
             </Button>
           </motion.div>
         </div>
