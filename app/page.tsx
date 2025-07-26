@@ -198,7 +198,7 @@ export default function HomePage() {
             <Button
               className="
                 w-full sm:w-auto
-                bg-[#2c4f97] hover:bg-[rgb(75, 111, 147)]
+                bg-[#4B6F93] hover:bg-[rgb(75, 111, 147)]
                 text-white font-medium
                 px-3 py-2.5 rounded-xl
                 shadow-lg hover:shadow-xl
@@ -678,7 +678,7 @@ export default function HomePage() {
             <Button
               className="
                 w-full sm:w-auto
-                bg-[#2c4f97] hover:bg-[rgb(75, 111, 147)]
+                bg-[#4B6F93] hover:bg-[rgb(75, 111, 147)]
                 text-white font-medium
                 px-3 py-2.5 rounded-xl
                 shadow-lg hover:shadow-xl
@@ -1061,7 +1061,7 @@ export default function HomePage() {
             <Button
               className="
                 w-full sm:w-auto
-                bg-[#2c4f97] hover:bg-[rgb(75, 111, 147)]
+                bg-[#4B6F93] hover:bg-[rgb(75, 111, 147)]
                 text-white font-medium
                 px-3 py-2.5 rounded-xl
                 shadow-lg hover:shadow-xl
@@ -1107,7 +1107,7 @@ export default function HomePage() {
               <Button
                 className="
                 w-full sm:w-auto
-                bg-[#2c4f97] hover:bg-[rgb(75, 111, 147)]
+                bg-[#4B6F93] hover:bg-[rgb(75, 111, 147)]
                 text-white font-medium
                 px-3 py-2.5 rounded-xl
                 shadow-lg hover:shadow-xl

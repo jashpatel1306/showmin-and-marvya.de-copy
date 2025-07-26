@@ -94,7 +94,7 @@ export function Navigation() {
             >
               <Button
                 className="
-                  bg-[#2c4f97] hover:bg-[rgb(75, 111, 147)] 
+                  bg-[#4B6F93] hover:bg-[rgb(75, 111, 147)] 
                   text-white text-sm md:text-[14px]
                   px-3 py-2 md:px-4 md:py-2.5 rounded-xl
                   shadow-lg hover:shadow-xl
@@ -103,8 +103,7 @@ export function Navigation() {
                   border border-blue-400/20
                 "
               >
-                Contact
-                <span className="">👉🏻</span>
+                Contact 👉🏻
               </Button>
             </motion.div>
 
@@ -158,7 +157,7 @@ export function Navigation() {
                 >
                   <Button
                     className="
-                      w-full bg-[rgb(75, 111, 147)] hover:bg-[#1e3a6f] 
+                      w-full bg-[#4B6F93]] hover:bg-[#1e3a6f] 
                       text-white font-medium
                       px-6 py-3 rounded-full
                       shadow-lg hover:shadow-xl
@@ -167,8 +166,7 @@ export function Navigation() {
                     "
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Contact
-                    <span className="ml-2">👉🏻</span>
+                    Contact 👉🏻
                   </Button>
                 </motion.div>
               </div>

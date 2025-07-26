@@ -583,16 +583,11 @@ export default function ShopMigrationPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group"
+                className="group text-center border-t border-white/20 pt-8"
               >
-                <div className="relative p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105">
-                  <div className="text-4xl mb-6">{service.icon}</div>
-                  <h3 className="text-xl font-semibold text-white mb-4">{service.title}</h3>
-                  <p className="text-[#A3A3A3] leading-relaxed">{service.description}</p>
-                  
-                  {/* Subtle glow effect on hover */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-                </div>
+                <div className="text-4xl mb-6">{service.icon}</div>
+                <h3 className="text-xl font-semibold text-white mb-4">{service.title}</h3>
+                <p className="text-[#A3A3A3] leading-relaxed">{service.description}</p>
               </motion.div>
             ))}
           </div>
@@ -613,6 +608,114 @@ export default function ShopMigrationPage() {
             </Button>
           </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* All solution from a single source Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl md:text-6xl font-light mb-8 text-white">
+              We make it possible.
+            </h2>
+            <p className="text-[#A3A3A3] text-lg leading-relaxed max-w-4xl mx-auto">
+              As one of the leading Shopify (Plus) agencies, we provide our clients with
+              comprehensive support in all aspects of Shopify. We ensure that you receive
+              the best possible support and build a solid foundation for your e-commerce business.
+            </p>
+          </motion.div>
+
+          {/* Services Tags Grid - Animated Rows */}
+          <div className="mb-16 space-y-8">
+            {/* First Row - Right to Left Animation */}
+            <div className="overflow-hidden">
+              <div className="flex gap-8 animate-scroll-row-rtl">
+                {/* Duplicate for seamless loop */}
+                {Array(3).fill(0).flatMap((_, dupIdx) => [
+                  { icon: "🔄", title: "Shopify relaunch" },
+                  { icon: "📊", title: "Data Analytics" },
+                  { icon: "🧪", title: "A/B testing" },
+                  { icon: "🎨", title: "UI / UX Design" }
+                ]).map((item, index) => (
+                  <div
+                    key={`row1-${index}`}
+                    className="flex items-center gap-3 text-white whitespace-nowrap flex-shrink-0 min-w-[200px]"
+                  >
+                    <span className="text-2xl">{item.icon}</span>
+                    <span className="text-sm font-medium">{item.title}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Second Row - Left to Right Animation */}
+            <div className="overflow-hidden">
+              <div className="flex gap-8 animate-scroll-row-ltr">
+                {/* Duplicate for seamless loop */}
+                {Array(3).fill(0).flatMap((_, dupIdx) => [
+                  { icon: "🧠", title: "Sales psychology" },
+                  { icon: "📱", title: "Mobile first" },
+                  { icon: "📧", title: "E-mail marketing" },
+                  { icon: "📈", title: "Performance Marketing" }
+                ]).map((item, index) => (
+                  <div
+                    key={`row2-${index}`}
+                    className="flex items-center gap-3 text-white whitespace-nowrap flex-shrink-0 min-w-[200px]"
+                  >
+                    <span className="text-2xl">{item.icon}</span>
+                    <span className="text-sm font-medium">{item.title}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Shopify Migration Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3">
+              <span className="text-2xl">🔄</span>
+              <span className="text-white font-medium">Shopify Migration</span>
+            </div>
+          </motion.div>
+
+          {/* Bottom Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <h3 className="text-3xl md:text-4xl font-light mb-6 text-white">
+              We are Shopify experts.
+            </h3>
+            <div className="space-y-4 mb-8">
+              <p className="text-[#A3A3A3] text-lg">
+                We have been working exclusively with Shopify since 2018.
+              </p>
+              <p className="text-[#A3A3A3] text-lg">
+                80% of our customers use Shopify Plus.
+              </p>
+            </div>
+            <Button 
+              size="lg" 
+              className="bg-[#4A77D4] hover:bg-[#5A87E4] text-white px-8 py-4 text-lg rounded-lg transition-colors duration-200 font-medium"
+            >
+              Request a project 👉🏻
+            </Button>
+          </motion.div>
         </div>
       </section>
     </div>
