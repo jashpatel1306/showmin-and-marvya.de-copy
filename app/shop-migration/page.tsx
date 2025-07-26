@@ -517,10 +517,10 @@ export default function ShopMigrationPage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <p className="text-[#A3A3A3] text-sm font-medium mb-6 tracking-wider uppercase">
+            <Badge className="text-[#ffffff] text-sm font-extralight mb-6 tracking-wider">
               More than just a migration
-            </p>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-light mb-8 text-white">
+            </Badge>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-light mb-5 text-white">
               Our process is{' '}
               <span className="italic text-blue-400" style={{ fontFamily: 'Dancing Script, cursive' }}>
                 unique
@@ -528,16 +528,16 @@ export default function ShopMigrationPage() {
               .
             </h2>
             <div className="max-w-4xl mx-auto space-y-6">
-              <p className="text-[#A3A3A3] text-lg leading-relaxed">
+              <p className="text-[#ccadad] text-lg ">
                 During our migration projects, we examine all your processes and structures.
               </p>
-              <p className="text-[#A3A3A3] text-lg leading-relaxed">
+              <p className="text-[#A3A3A3] text-lg ">
                 We take the opportunity to
               </p>
-              <p className="text-[#A3A3A3] text-lg leading-relaxed font-medium">
+              <p className="text-[#A3A3A3] text-lg  font-medium">
                 to completely digitize the entire company.
               </p>
-              <p className="text-[#A3A3A3] text-lg leading-relaxed">
+              <p className="text-[#A3A3A3] text-lg ">
                 This makes switching to Shopify the foundation for a complete digital transformation.
               </p>
             </div>
@@ -605,11 +605,8 @@ export default function ShopMigrationPage() {
             viewport={{ once: true }}
             className="text-center w-full"
           >
-            <p className="text-[#A3A3A3] text-lg mb-8">
-              All solutions from one source
-            </p>
             <Button 
-              size="lg" 
+              size="sm" 
               className="bg-[#4A77D4] hover:bg-[#5A87E4] text-white px-8 py-4 text-lg rounded-lg transition-colors duration-200 font-medium"
             >
               Request a project 👉🏻
