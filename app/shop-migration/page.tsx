@@ -13,7 +13,7 @@ export default function ShopMigrationPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-black" style={{ paddingTop: '100px', paddingBottom: '100px' }}>
+      <section className="pt-32 pb-20 bg-black" style={{ paddingTop: '100px', paddingBottom: '30px' }}>
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -98,30 +98,43 @@ export default function ShopMigrationPage() {
             </div>
             
             {/* CTA Button */}
-            <div 
-              style={{
-                opacity: 1,
-                transform: 'none',
-                willChange: 'transform',
-                placeContent: 'center',
-                alignItems: 'center',
-                display: 'flex',
-                flex: '0 0 auto',
-                flexFlow: 'row',
-                gap: '24px',
-                height: 'min-content',
-                overflow: 'visible',
-                padding: '0px',
-                position: 'relative',
-                width: 'min-content'
-              }}
-            >
+            <div className="flex justify-center">
               <Button 
-                size="lg" 
-                className="bg-[#4A77D4] hover:bg-[#5A87E4] text-white px-8 py-4 text-lg rounded-lg transition-colors duration-200 font-medium"
+                size="sm" 
+                className="bg-[#4A77D4] hover:bg-[#5A87E4] text-white px-6 py-2 text-sm rounded-lg transition-colors duration-200 font-medium"
               >
                 Request a project 👉🏻
               </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-10 bg-black">
+        <div className="max-w-7xl mx-auto px-4">
+
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="relative max-w-5xl mx-auto"
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <video
+                className="w-full h-auto"
+                controls
+                poster="/images/video-poster.jpg"
+                preload="metadata"
+              >
+                <source src="/images/video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              
+              {/* Video overlay for better aesthetics */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
             </div>
           </motion.div>
         </div>

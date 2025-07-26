@@ -841,6 +841,9 @@ video {
 .h-full {
   height: 100%;
 }
+.h-auto {
+  height: auto;
+}
 .min-h-\[320px\] {
   min-height: 320px;
 }
@@ -1183,9 +1186,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1));
 }
-.bg-blue-600\/20 {
-  background-color: rgb(37 99 235 / 0.2);
-}
 .bg-card {
   background-color: hsl(var(--card));
 }
@@ -1293,6 +1293,11 @@ video {
 .from-blue-900\/80 {
   --tw-gradient-from: rgb(30 58 138 / 0.8) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(30 58 138 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.from-black\/20 {
+  --tw-gradient-from: rgb(0 0 0 / 0.2) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 .via-\[\#0b0e1a\] {
