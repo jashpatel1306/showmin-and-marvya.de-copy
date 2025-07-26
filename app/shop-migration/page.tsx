@@ -22,7 +22,7 @@ export default function ShopMigrationPage() {
             className="text-center"
           >
             {/* Badge with green dot indicator */}
-            <div 
+            <div
               className="inline-flex items-center mb-8 relative overflow-hidden"
               style={{
                 backdropFilter: 'blur(10px)',
@@ -45,9 +45,9 @@ export default function ShopMigrationPage() {
                 Shopify's most experienced migration partner
               </span>
             </div>
-            
+
             {/* Main Headline */}
-            <h1 
+            <h1
               className="mb-8 text-white"
               style={{
                 fontFamily: '"Inter", "Inter Placeholder", sans-serif',
@@ -64,9 +64,9 @@ export default function ShopMigrationPage() {
               <br />
               We'll seamlessly migrate your store to Shopify.
             </h1>
-            
+
             {/* Subtext */}
-            <div 
+            <div
               className="max-w-4xl mx-auto mb-12"
               style={{
                 outline: 'none',
@@ -79,7 +79,7 @@ export default function ShopMigrationPage() {
                 willChange: 'transform'
               }}
             >
-              <p 
+              <p
                 className="text-[#A3A3A3] font-medium leading-relaxed"
                 style={{
                   flex: '0 0 auto',
@@ -96,11 +96,11 @@ export default function ShopMigrationPage() {
                 We support you in switching to the world's most powerful shop platform: Shopify.
               </p>
             </div>
-            
+
             {/* CTA Button */}
             <div className="flex justify-center">
-              <Button 
-                size="sm" 
+              <Button
+                size="sm"
                 className="bg-[#4A77D4] hover:bg-[#5A87E4] text-white px-6 py-2 text-sm rounded-lg transition-colors duration-200 font-medium"
               >
                 Request a project 👉🏻
@@ -114,7 +114,7 @@ export default function ShopMigrationPage() {
       <section className="py-10 bg-black">
         <div className="max-w-7xl mx-auto px-4">
 
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -132,7 +132,7 @@ export default function ShopMigrationPage() {
                 <source src="/images/video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              
+
               {/* Video overlay for better aesthetics */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
             </div>
@@ -219,16 +219,29 @@ export default function ShopMigrationPage() {
 
       {/* Migration Showcase Section */}
       <section className="w-full bg-black py-20 px-4">
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <Badge variant="outline" className="mb-8 text-gray-400 border-gray-600">
+          Already praised by Shopify
+          </Badge>
+        </motion.div>
+
         <div className="max-w-6xl mx-auto flex flex-col gap-16">
           {/* Header Section */}
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-tight mb-6">
-              Fast, high quality <span className="font-normal">&</span> <span className="italic font-script text-4xl md:text-5xl lg:text-6xl" style={{fontFamily: 'Dancing Script, cursive'}}>without limits.</span>
+              Fast, high quality <span className="font-normal">&</span> <span className="italic font-script text-4xl md:text-5xl lg:text-6xl" style={{ fontFamily: 'Dancing Script, cursive' }}>without limits.</span>
             </h2>
             <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
-              Our store migrations are fast, precise and limitless.<br/>
-              We ensure your transition to Shopify (Plus) is smooth and efficient, without<br/>
-              compromising on quality. Your IT infrastructure will be seamlessly integrated, ready<br/>
+              Our store migrations are fast, precise and limitless.<br />
+              We ensure your transition to Shopify (Plus) is smooth and efficient, without<br />
+              compromising on quality. Your IT infrastructure will be seamlessly integrated, ready<br />
               for new growth.
             </p>
           </div>
@@ -243,7 +256,7 @@ export default function ShopMigrationPage() {
                   {/* Stars */}
                   <div className="flex items-center mb-4">
                     {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-6 h-6 text-yellow-400 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.38-2.454a1 1 0 00-1.175 0l-3.38 2.454c-.784.57-1.838-.196-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69l1.286-3.967z"/></svg>
+                      <svg key={i} className="w-6 h-6 text-yellow-400 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.38-2.454a1 1 0 00-1.175 0l-3.38 2.454c-.784.57-1.838-.196-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69l1.286-3.967z" /></svg>
                     ))}
                   </div>
                   <blockquote className="text-gray-900 text-base leading-relaxed w-full">
@@ -460,6 +473,150 @@ export default function ShopMigrationPage() {
             animation: scroll-row-ltr 40s linear infinite;
           }
         `}</style>
+      </section>
+
+      {/* More than just a migration Section */}
+      <section className="relative py-20 bg-black overflow-hidden">
+        {/* Glowing background effect */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gradient-radial from-blue-500/20 via-purple-500/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-1/3 left-1/3 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-radial from-cyan-400/15 via-blue-400/8 to-transparent rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-1/3 right-1/3 transform translate-x-1/2 translate-y-1/2 w-[500px] h-[300px] bg-gradient-radial from-indigo-400/20 via-purple-400/10 to-transparent rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        </div>
+        
+        {/* Structured Background Box Container */}
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div 
+            className="relative w-full flex flex-col items-center justify-center"
+            style={{
+              alignContent: 'center',
+              alignItems: 'center',
+              backgroundColor: '#0a0a0a',
+              display: 'flex',
+              flex: 'none',
+              flexDirection: 'column',
+              flexWrap: 'nowrap',
+              gap: '24px',
+              height: 'min-content',
+              justifyContent: 'center',
+              overflow: 'visible',
+              padding: '64px 64px 0px',
+              pointerEvents: 'auto',
+              position: 'relative',
+              width: '100%',
+              borderRadius: '24px',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              backdropFilter: 'blur(10px)'
+            }}
+          >
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <p className="text-[#A3A3A3] text-sm font-medium mb-6 tracking-wider uppercase">
+              More than just a migration
+            </p>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-light mb-8 text-white">
+              Our process is{' '}
+              <span className="italic text-blue-400" style={{ fontFamily: 'Dancing Script, cursive' }}>
+                unique
+              </span>
+              .
+            </h2>
+            <div className="max-w-4xl mx-auto space-y-6">
+              <p className="text-[#A3A3A3] text-lg leading-relaxed">
+                During our migration projects, we examine all your processes and structures.
+              </p>
+              <p className="text-[#A3A3A3] text-lg leading-relaxed">
+                We take the opportunity to
+              </p>
+              <p className="text-[#A3A3A3] text-lg leading-relaxed font-medium">
+                to completely digitize the entire company.
+              </p>
+              <p className="text-[#A3A3A3] text-lg leading-relaxed">
+                This makes switching to Shopify the foundation for a complete digital transformation.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Services Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 w-full">
+            {[
+              {
+                icon: "🎨",
+                title: "UI / UX Design",
+                description: "Improve the shopping experience with UX/UI design optimized for high-performance Shopify stores."
+              },
+              {
+                icon: "🛍️",
+                title: "Shopify (Plus) Experts",
+                description: "Use our expertise to unlock the full potential of Shopify (Plus) and take your store to the next level."
+              },
+              {
+                icon: "🔄",
+                title: "Migrating to Shopify",
+                description: "Is your online store currently running on Shopware or WooCommerce and are you struggling with slow customizations?"
+              },
+              {
+                icon: "📊",
+                title: "Data Analytics",
+                description: "Through our expertise in data analytics, we gain valuable insights from your data that help improve your store effectively."
+              },
+              {
+                icon: "🔍",
+                title: "Shop Analysis & Conversion Rate Optimization",
+                description: "We ensure that customers not only discover your store, but also buy your products."
+              },
+              {
+                icon: "⚙️",
+                title: "Custom Apps, Functions and much more",
+                description: "We develop customized apps and software solutions that are perfectly tailored to your business!"
+              }
+            ].map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <div className="relative p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:transform hover:scale-105">
+                  <div className="text-4xl mb-6">{service.icon}</div>
+                  <h3 className="text-xl font-semibold text-white mb-4">{service.title}</h3>
+                  <p className="text-[#A3A3A3] leading-relaxed">{service.description}</p>
+                  
+                  {/* Subtle glow effect on hover */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Bottom CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center w-full"
+          >
+            <p className="text-[#A3A3A3] text-lg mb-8">
+              All solutions from one source
+            </p>
+            <Button 
+              size="lg" 
+              className="bg-[#4A77D4] hover:bg-[#5A87E4] text-white px-8 py-4 text-lg rounded-lg transition-colors duration-200 font-medium"
+            >
+              Request a project 👉🏻
+            </Button>
+          </motion.div>
+          </div>
+        </div>
       </section>
     </div>
   )
