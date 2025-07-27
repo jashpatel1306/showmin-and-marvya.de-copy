@@ -238,7 +238,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h3 className="mb-8 text-white flex-nowrap text-[12px]">
+            <h3 className="mb-8 text-white flex-nowrap text-[16px]">
               An excerpt from our customers
             </h3>
           </motion.div>
@@ -296,21 +296,36 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Shopify Development Card */}
             <div className="rounded-2xl border border-blue-400/40 bg-gradient-to-br from-[#162b5c] via-[#0b0e1a] to-black p-10 flex flex-col justify-between shadow-3xl transition-transform duration-300 hover:scale-105 min-h-[380px] group">
-              <div className="flex items-center gap-3 mb-5">
+              {/* <div className="flex items-center gap-3 mb-5">
                 <BarChart3 className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />
                 <span className="uppercase tracking-wider text-blue-300 text-xs font-semibold">Shopify Development</span>
+              </div> */}
+              <div className="flex items-center mb-5">
+                {/* <div>
+                  <img
+                    src="/images/supportInfo/Development.gif"
+                    alt="Shopify Development"
+                    className="w-15 h-15 object-cover"
+                    loading="lazy"
+                    // style={{ minHeight: '100%', maxHeight: '240px', objectPosition: 'center' }}
+                  />
+                </div> */}
+                <div>
+                  <h3 className="text-3xl font-semibold text-white mb-4 font-sans">Shopify Development
+                  </h3>
+                </div>
               </div>
-              <h3 className="text-3xl font-semibold text-white mb-4 font-sans">Shopify Development</h3>
+
               <p className="text-gray-300 text-lg leading-relaxed font-sans">
                 We develop Shopify stores so that they load extremely quickly, create targeted sales stimuli, and stand out from the competition. The stores we develop literally become customer magnets. Store migrations from other store systems to Shopify are part of our daily business, especially at a time when other store systems are making life increasingly difficult for e-commerce companies and Shopify retailers are overtaking them. Thanks to our unique approach, you not only secure a competitive advantage but also define new performance benchmarks.
               </p>
             </div>
             {/* Growth Consulting Card */}
             <div className="rounded-2xl border border-red-400/40 bg-gradient-to-br from-[#5c162b] via-[#1a0b0e] to-black p-10 flex flex-col justify-between shadow-3xl transition-transform duration-300 hover:scale-105 min-h-[380px] group">
-              <div className="flex items-center gap-3 mb-5">
+              {/* <div className="flex items-center gap-3 mb-5">
                 <Target className="w-8 h-8 text-red-400 group-hover:text-red-300 transition-colors" />
                 <span className="uppercase tracking-wider text-red-300 text-xs font-semibold">Growth Consulting</span>
-              </div>
+              </div> */}
               <h3 className="text-3xl font-semibold text-white mb-4 font-sans">Growth Consulting</h3>
               <p className="text-gray-300 text-lg leading-relaxed font-sans">
                 In our consulting program, we've made it our mission to scale exciting e-commerce brands at breakneck speed, pushing the boundaries of conventional methods. We work alongside our clients as an active partner, providing comprehensive support throughout their growth. We operate our own shops and have successfully scaled several e-commerce companies to seven- to eight-figure annual sales in recent years. We've distilled these learnings into a strategically sound, step-by-step roadmap.
@@ -505,7 +520,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <Badge variant="outline" className="mb-8 text-gray-400 border-gray-600">
+            <Badge variant="outline" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[15px] font-normal">
               The direct comparison
             </Badge>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">
@@ -517,14 +532,16 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Other Service Providers */}
+            
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
+              <h3 className="text-center text-2xl md:text-3xl font-light text-gray-400 mb-6 ">Other service providers</h3>
               <Card className="bg-gray-900/50 border-gray-800 p-8 h-full">
-                <h3 className="text-2xl md:text-3xl font-light text-gray-400 mb-8">Other service providers</h3>
+                
                 <div className="space-y-6">
                   {[
                     "No own shop operated",
@@ -557,9 +574,18 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
+              <div className="mb-10 flex items-center justify-center">
+              <img
+                  src="/images/SHOWMINE-LIGHT.png"
+                  alt="logo"
+                  // fill
+                  className="w-auto h-8 md:h-6 object-contain"
+                // priority
+                />
+              </div>
               <Card className="bg-gradient-to-br from-blue-900/80 to-black border-blue-700/50 p-8 h-full relative overflow-hidden">
                 <div className="absolute top-4 right-4 text-4xl font-light text-blue-400/20">SHOWMINE</div>
-                <h3 className="text-2xl md:text-3xl font-light text-white mb-8">SHOWMINE</h3>
+                
                 <div className="space-y-6">
                   {[
                     "Own online shops",
@@ -599,7 +625,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <Badge variant="outline" className="mb-8 text-gray-400 border-gray-600">
+            <Badge variant="outline" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[12px] font-normal">
               What are you waiting for?
             </Badge>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight">
@@ -708,7 +734,7 @@ export default function HomePage() {
           viewport={{ once: true }}
           className="text-center mb-7"
         >
-          <Badge variant="default" className="mb-8 text-white border-gray-600">
+          <Badge variant="default" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[12px] font-normal">
             Customer testimonials
           </Badge>
         </motion.div>
@@ -1047,7 +1073,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <Badge variant="outline" className="mb-8 text-gray-400 border-gray-600">
+            <Badge variant="outline" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[12px] font-normal">
               Frequently Asked Questions
             </Badge>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">

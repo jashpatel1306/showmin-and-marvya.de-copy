@@ -34,7 +34,7 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 whitespace-nowrap hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
+                  className="px-8 py-3 bg-[#4B6F93] hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 whitespace-nowrap hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
                 >
                   Register
                 </button>
