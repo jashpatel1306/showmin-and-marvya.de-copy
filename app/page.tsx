@@ -301,20 +301,18 @@ export default function HomePage() {
                 <BarChart3 className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />
                 <span className="uppercase tracking-wider text-blue-300 text-xs font-semibold">Shopify Development</span>
               </div> */}
-              <div className="flex items-center mb-5">
-                {/* <div>
+              <div className="flex items-center mb-5 space-x-4">
+                <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center">
                   <img
                     src="/images/supportInfo/Development.gif"
                     alt="Shopify Development"
-                    className="w-15 h-15 object-cover"
+                    className="w-30 h-30 object-contain"
                     loading="lazy"
-                    // style={{ minHeight: '100%', maxHeight: '240px', objectPosition: 'center' }}
                   />
-                </div> */}
-                <div>
-                  <h3 className="text-3xl font-semibold text-white mb-4 font-sans">Shopify Development
-                  </h3>
                 </div>
+                <h3 className="text-3xl font-semibold text-white mb-4 font-sans">
+                  Shopify Development
+                </h3>
               </div>
 
               <p className="text-gray-300 text-lg leading-relaxed font-sans">
@@ -327,7 +325,19 @@ export default function HomePage() {
                 <Target className="w-8 h-8 text-red-400 group-hover:text-red-300 transition-colors" />
                 <span className="uppercase tracking-wider text-red-300 text-xs font-semibold">Growth Consulting</span>
               </div> */}
-              <h3 className="text-3xl font-semibold text-white mb-4 font-sans">Growth Consulting</h3>
+              <div className="flex items-center mb-5 space-x-4">
+                <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center">
+                  <img
+                    src="/images/supportInfo/Consulting.gif"
+                    alt="Growth Consulting"
+                    className="w-6 h-6 object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 className="text-3xl font-semibold text-white mb-4 font-sans">
+                  Growth Consulting
+                </h3>
+              </div>
               <p className="text-gray-300 text-lg leading-relaxed font-sans">
                 In our consulting program, we've made it our mission to scale exciting e-commerce brands at breakneck speed, pushing the boundaries of conventional methods. We work alongside our clients as an active partner, providing comprehensive support throughout their growth. We operate our own shops and have successfully scaled several e-commerce companies to seven- to eight-figure annual sales in recent years. We've distilled these learnings into a strategically sound, step-by-step roadmap.
               </p>
