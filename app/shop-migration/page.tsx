@@ -1002,32 +1002,11 @@ export default function ShopMigrationPage() {
                       Frequently Asked Questions
                     </Badge>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">
-                      Questions &
-                      <span className="text-blue-400 italic">Answers</span>
+                    The most frequently asked questions about migration
                     </h2>
                     <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                      Everything you need to know about working with Showmine
+                    We often receive the same questions in our initial consultations. To help us make the most of your time, here are some answers.
                     </p>
-        
-                    <Button
-                      className="
-                        w-full sm:w-auto
-                        bg-[#4B6F93] hover:bg-[rgb(75, 111, 147)]
-                        text-white font-medium
-                        px-3 py-2.5 rounded-xl
-                        shadow-lg hover:shadow-xl
-                        transition-all duration-300 ease-out
-                        hover:scale-105 hover:-translate-y-0.5
-                        text-base mt-10
-                      "
-                    >
-                      <a
-                        href="https://calendly.com/showmineinfotech/30min"
-                        target="_blank"
-                      >
-                        Contact 👉🏻
-                      </a>
-                    </Button>
                   </motion.div>
         
                   <FAQAccordion />
