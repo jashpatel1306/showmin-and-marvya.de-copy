@@ -194,7 +194,7 @@ export default function ShopMigrationPage() {
             <div className="flex justify-center">
               <Button
                 size="sm"
-                className="bg-[#4A77D4] hover:bg-[#5A87E4] text-white px-6 py-2 text-sm rounded-lg transition-colors duration-200 font-medium"
+                className="bg-[#4B6F93] hover:bg-[#5A87E4] text-white px-6 py-2 text-sm rounded-lg transition-colors duration-200 font-medium"
               >
                 Request a project 👉🏻
               </Button>
@@ -665,7 +665,7 @@ export default function ShopMigrationPage() {
                   description: "We ensure that customers not only discover your store, but also buy your products."
                 },
                 {
-                  icon: "/images/info/CustomApps.gif",
+                  icon: "/images/info/customApps.gif",
                   title: "Custom Apps, Functions and much more",
                   description: "We develop customized apps and software solutions that are perfectly tailored to your business!"
                 }
@@ -701,7 +701,7 @@ export default function ShopMigrationPage() {
             >
               <Button
                 size="sm"
-                className="bg-[#4A77D4] hover:bg-[#5A87E4] text-white px-8 py-4 text-lg rounded-lg transition-colors duration-200 font-medium"
+                className="bg-[#4B6F93] hover:bg-[#5A87E4] text-white px-8 py-4 text-lg rounded-lg transition-colors duration-200 font-medium"
               >
                 Request a project 👉🏻
               </Button>
@@ -835,7 +835,7 @@ export default function ShopMigrationPage() {
             </div>
             <Button
               size="lg"
-              className="bg-[#4A77D4] hover:bg-[#5A87E4] text-white px-8 py-4 text-lg rounded-lg transition-colors duration-200 font-medium"
+              className="bg-[#4B6F93] hover:bg-[#5A87E4] text-white px-8 py-4 text-lg rounded-lg transition-colors duration-200 font-medium"
             >
               Request a project 👉🏻
             </Button>
