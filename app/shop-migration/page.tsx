@@ -1,13 +1,92 @@
 "use client"
 
+import { useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { partners } from "@/data/partners"
-import { ArrowRight, CheckCircle, Clock, Users, TrendingUp } from "lucide-react"
+import { ArrowRight, CheckCircle, Clock, Users, Plus, TrendingUp } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import Image from "next/image"
+
+// FAQ Accordion Component
+function FAQAccordion() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+  const faqs = [
+    {
+      question: "What requirements must your customers meet?",
+      answer: "We work with ambitious e-commerce businesses that have a clear vision for growth. Ideally, you should have an existing online presence, annual revenue of at least €500K, and be ready to invest in strategic growth initiatives. We look for partners who value long-term relationships and are committed to implementing our recommendations."
+    },
+    {
+      question: "What possibilities for collaboration are there?",
+      answer: "We offer flexible collaboration models including full-service partnerships, strategic consulting, project-based work, and ongoing optimization support. Whether you need complete e-commerce management or specific expertise in areas like logistics, marketing, or international expansion, we can tailor our approach to your needs."
+    },
+    {
+      question: "I'm a dropshipper, am I in the right place with you?",
+      answer: "While we primarily focus on businesses with their own inventory and logistics, we can help dropshippers transition to more sustainable models. Our expertise in logistics and supply chain management can guide you toward building a more robust, scalable business with better margins and control."
+    },
+    {
+      question: "At what size does collaboration make sense?",
+      answer: "Collaboration typically makes sense for businesses generating at least €500K in annual revenue and looking to scale to €2M+ and beyond. However, we also work with smaller businesses that show exceptional growth potential and are ready to invest in professional e-commerce infrastructure."
+    },
+    {
+      question: "Do you only specialize in Shopify stores?",
+      answer: "While we have deep expertise in Shopify and it's our preferred platform for most clients, we also work with other e-commerce platforms including WooCommerce, Magento, and custom solutions. Our focus is on finding the right technology stack for your specific business needs and growth goals."
+    }
+  ]
+
+  const toggleAccordion = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index)
+  }
+
+  return (
+    <div className="space-y-4">
+      {faqs.map((faq, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: index * 0.1 }}
+          viewport={{ once: true }}
+          className="border border-gray-800 rounded-2xl overflow-hidden bg-gray-900/30 hover:border-gray-700 transition-all duration-300"
+        >
+          <button
+            onClick={() => toggleAccordion(index)}
+            className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-800/30 transition-colors duration-200"
+          >
+            <h3 className="text-lg md:text-xl font-medium text-white pr-4">
+              {faq.question}
+            </h3>
+            <motion.div
+              animate={{ rotate: openIndex === index ? 45 : 0 }}
+              transition={{ duration: 0.2 }}
+              className="flex-shrink-0"
+            >
+              <Plus className="w-6 h-6 text-gray-400" />
+            </motion.div>
+          </button>
+          <motion.div
+            initial={false}
+            animate={{
+              height: openIndex === index ? "auto" : 0,
+              opacity: openIndex === index ? 1 : 0
+            }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <div className="px-8 pb-6">
+              <p className="text-gray-400 leading-relaxed">
+                {faq.answer}
+              </p>
+            </div>
+          </motion.div>
+        </motion.div>
+      ))}
+    </div>
+  )
+}
 
 // Our customers
 const brands = [
@@ -242,7 +321,7 @@ export default function ShopMigrationPage() {
           className="text-center mb-16"
         >
           <Badge variant="outline" className="mb-8 text-gray-400 border-gray-600">
-          Already praised by Shopify
+            Already praised by Shopify
           </Badge>
         </motion.div>
 
@@ -497,10 +576,10 @@ export default function ShopMigrationPage() {
           <div className="absolute top-1/3 left-1/3 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-radial from-cyan-400/15 via-blue-400/8 to-transparent rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
           <div className="absolute bottom-1/3 right-1/3 transform translate-x-1/2 translate-y-1/2 w-[500px] h-[300px] bg-gradient-radial from-indigo-400/20 via-purple-400/10 to-transparent rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
         </div>
-        
+
         {/* Structured Background Box Container */}
         <div className="relative max-w-7xl mx-auto px-6">
-          <div 
+          <div
             className="relative w-full flex flex-col items-center justify-center"
             style={{
               alignContent: 'center',
@@ -523,104 +602,104 @@ export default function ShopMigrationPage() {
               backdropFilter: 'blur(10px)'
             }}
           >
-          {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-20"
-          >
-            <Badge className="text-[#ffffff] text-sm font-extralight mb-6 tracking-wider">
-              More than just a migration
-            </Badge>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-light mb-5 text-white">
-              Our process is{' '}
-              <span className="italic text-blue-400" style={{ fontFamily: 'Dancing Script, cursive' }}>
-                unique
-              </span>
-              .
-            </h2>
-            <div className="max-w-4xl mx-auto space-y-6">
-              <p className="text-[#ccadad] text-lg ">
-                During our migration projects, we examine all your processes and structures.
-              </p>
-              <p className="text-[#A3A3A3] text-lg ">
-                We take the opportunity to
-              </p>
-              <p className="text-[#A3A3A3] text-lg  font-medium">
-                to completely digitize the entire company.
-              </p>
-              <p className="text-[#A3A3A3] text-lg ">
-                This makes switching to Shopify the foundation for a complete digital transformation.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Services Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 w-full">
-            {[
-              {
-                icon: "🎨",
-                title: "UI / UX Design",
-                description: "Improve the shopping experience with UX/UI design optimized for high-performance Shopify stores."
-              },
-              {
-                icon: "🛍️",
-                title: "Shopify (Plus) Experts",
-                description: "Use our expertise to unlock the full potential of Shopify (Plus) and take your store to the next level."
-              },
-              {
-                icon: "🔄",
-                title: "Migrating to Shopify",
-                description: "Is your online store currently running on Shopware or WooCommerce and are you struggling with slow customizations?"
-              },
-              {
-                icon: "📊",
-                title: "Data Analytics",
-                description: "Through our expertise in data analytics, we gain valuable insights from your data that help improve your store effectively."
-              },
-              {
-                icon: "🔍",
-                title: "Shop Analysis & Conversion Rate Optimization",
-                description: "We ensure that customers not only discover your store, but also buy your products."
-              },
-              {
-                icon: "⚙️",
-                title: "Custom Apps, Functions and much more",
-                description: "We develop customized apps and software solutions that are perfectly tailored to your business!"
-              }
-            ].map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group text-center border-t border-white/20 pt-8"
-              >
-                <div className="text-4xl mb-6">{service.icon}</div>
-                <h3 className="text-xl font-semibold text-white mb-4">{service.title}</h3>
-                <p className="text-[#A3A3A3] leading-relaxed">{service.description}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Bottom CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center w-full"
-          >
-            <Button 
-              size="sm" 
-              className="bg-[#4A77D4] hover:bg-[#5A87E4] text-white px-8 py-4 text-lg rounded-lg transition-colors duration-200 font-medium"
+            {/* Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-20"
             >
-              Request a project 👉🏻
-            </Button>
-          </motion.div>
+              <Badge className="text-[#ffffff] text-sm font-extralight mb-6 tracking-wider">
+                More than just a migration
+              </Badge>
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-light mb-5 text-white">
+                Our process is{' '}
+                <span className="italic text-blue-400" style={{ fontFamily: 'Dancing Script, cursive' }}>
+                  unique
+                </span>
+                .
+              </h2>
+              <div className="max-w-4xl mx-auto space-y-6">
+                <p className="text-[#ccadad] text-lg ">
+                  During our migration projects, we examine all your processes and structures.
+                </p>
+                <p className="text-[#A3A3A3] text-lg ">
+                  We take the opportunity to
+                </p>
+                <p className="text-[#A3A3A3] text-lg  font-medium">
+                  to completely digitize the entire company.
+                </p>
+                <p className="text-[#A3A3A3] text-lg ">
+                  This makes switching to Shopify the foundation for a complete digital transformation.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Services Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 w-full">
+              {[
+                {
+                  icon: "🎨",
+                  title: "UI / UX Design",
+                  description: "Improve the shopping experience with UX/UI design optimized for high-performance Shopify stores."
+                },
+                {
+                  icon: "🛍️",
+                  title: "Shopify (Plus) Experts",
+                  description: "Use our expertise to unlock the full potential of Shopify (Plus) and take your store to the next level."
+                },
+                {
+                  icon: "🔄",
+                  title: "Migrating to Shopify",
+                  description: "Is your online store currently running on Shopware or WooCommerce and are you struggling with slow customizations?"
+                },
+                {
+                  icon: "📊",
+                  title: "Data Analytics",
+                  description: "Through our expertise in data analytics, we gain valuable insights from your data that help improve your store effectively."
+                },
+                {
+                  icon: "🔍",
+                  title: "Shop Analysis & Conversion Rate Optimization",
+                  description: "We ensure that customers not only discover your store, but also buy your products."
+                },
+                {
+                  icon: "⚙️",
+                  title: "Custom Apps, Functions and much more",
+                  description: "We develop customized apps and software solutions that are perfectly tailored to your business!"
+                }
+              ].map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group text-center border-t border-white/20 pt-8"
+                >
+                  <div className="text-4xl mb-6">{service.icon}</div>
+                  <h3 className="text-xl font-semibold text-white mb-4">{service.title}</h3>
+                  <p className="text-[#A3A3A3] leading-relaxed">{service.description}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Bottom CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center w-full"
+            >
+              <Button
+                size="sm"
+                className="bg-[#4A77D4] hover:bg-[#5A87E4] text-white px-8 py-4 text-lg rounded-lg transition-colors duration-200 font-medium"
+              >
+                Request a project 👉🏻
+              </Button>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -748,8 +827,8 @@ export default function ShopMigrationPage() {
                 80% of our customers use Shopify Plus.
               </p>
             </div>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-[#4A77D4] hover:bg-[#5A87E4] text-white px-8 py-4 text-lg rounded-lg transition-colors duration-200 font-medium"
             >
               Request a project 👉🏻
@@ -824,11 +903,9 @@ export default function ShopMigrationPage() {
               success and more profitability.
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              Feel free to contact us. In a non-binding initial consultation, you'll
+              In a non-binding initial consultation, you will learn how we can
               <br />
-              learn how we can set new standards for your e-commerce
-              <br />
-              business.
+              migrate your online store to Shopify.
             </p>
           </motion.div>
 
@@ -905,11 +982,57 @@ export default function ShopMigrationPage() {
                 href="https://calendly.com/showmineinfotech/30min"
                 target="_blank"
               >
-                Contact 👉🏻
+                Request a project 👉🏻
               </a>
             </Button>
           </motion.div>
         </div>
+
+         {/* FAQ Section */}
+              <section className="py-20 bg-black">
+                <div className="max-w-4xl mx-auto px-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-16"
+                  >
+                    <Badge variant="outline" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[12px] font-normal">
+                      Frequently Asked Questions
+                    </Badge>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">
+                      Questions &
+                      <span className="text-blue-400 italic">Answers</span>
+                    </h2>
+                    <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                      Everything you need to know about working with Showmine
+                    </p>
+        
+                    <Button
+                      className="
+                        w-full sm:w-auto
+                        bg-[#4B6F93] hover:bg-[rgb(75, 111, 147)]
+                        text-white font-medium
+                        px-3 py-2.5 rounded-xl
+                        shadow-lg hover:shadow-xl
+                        transition-all duration-300 ease-out
+                        hover:scale-105 hover:-translate-y-0.5
+                        text-base mt-10
+                      "
+                    >
+                      <a
+                        href="https://calendly.com/showmineinfotech/30min"
+                        target="_blank"
+                      >
+                        Contact 👉🏻
+                      </a>
+                    </Button>
+                  </motion.div>
+        
+                  <FAQAccordion />
+                </div>
+              </section>
       </section>
     </div>
   )
