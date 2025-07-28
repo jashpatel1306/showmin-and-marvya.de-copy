@@ -3,9 +3,23 @@
 import { motion } from "framer-motion"
 import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { partners } from "@/data/partners"
 import { ArrowRight, CheckCircle, Clock, Users, TrendingUp } from "lucide-react"
+import { Card } from "@/components/ui/card"
+import Image from "next/image"
+
+// Our customers
+const brands = [
+  { name: "MARBERT", img: "/images/customers/1.png" },
+  { name: "Bettina Barty", img: "/images/customers/2.png" },
+  { name: "ARKTISQUELLE", img: "/images/customers/3.png" },
+  { name: "ASMC", img: "/images/customers/4.png" },
+  { name: "QUARANTINI", img: "/images/customers/diamondrensu.png" },
+  { name: "CHAMP", img: "/images/customers/gosharpei.png" },
+  { name: "SIMPL", img: "/images/customers/simpl.png" },
+  { name: "PINKTOWN", img: "/images/customers/pinktownusa.png" },
+];
 
 export default function ShopMigrationPage() {
   return (
@@ -739,6 +753,160 @@ export default function ShopMigrationPage() {
               className="bg-[#4A77D4] hover:bg-[#5A87E4] text-white px-8 py-4 text-lg rounded-lg transition-colors duration-200 font-medium"
             >
               Request a project 👉🏻
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Partners Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">Our partners</h2>
+            <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              We work with the best in the industry and
+              <br />
+              have created the best ecosystem to ensure
+              <br />
+              your e-commerce business grows
+              <br />
+              sustainably and stays at the top.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="flex flex-wrap items-center justify-center gap-12 md:gap-16 opacity-60"
+          >
+            {partners.map((partner, index) => (
+              <motion.div
+                key={partner}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 0.6, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-xl md:text-2xl font-light tracking-wider hover:opacity-100 transition-opacity duration-300"
+              >
+                {partner}
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <Badge variant="outline" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[12px] font-normal">
+              What are you waiting for?
+            </Badge>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight">
+              Our customers are already
+              <br />
+              achieving more growth, more
+              <br />
+              success and more profitability.
+            </h2>
+            <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Feel free to contact us. In a non-binding initial consultation, you'll
+              <br />
+              learn how we can set new standards for your e-commerce
+              <br />
+              business.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-12 mt-20">
+            {[
+              {
+                number: "1.",
+                title: "Analysis",
+                icon: "/images/info/Analysis.gif",
+                description:
+                  "By asking a few targeted and useful questions, we analyze your current situation and gain a more accurate picture of your company, your sales channels, and your goals.",
+              },
+              {
+                number: "2.",
+                title: "Potential",
+                icon: "/images/info/Marketing.gif",
+                description:
+                  "Thanks to our valuable expertise, we can show you growth potential during the initial consultation that you may not have been aware of before.",
+              },
+              {
+                number: "3.",
+                title: "Timetable",
+                icon: "/images/info/Money.gif",
+                description:
+                  "Using our Showmine Method®, we will show you the next sensible steps for your company and how you can implement them with us in a time-saving and profitable way.",
+              },
+            ].map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="mb-8">
+                  <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                    {/* <step.icon className="w-10 h-10 text-blue-400" /> */}
+                    <img
+                      src={step.icon}
+                      alt={step.title}
+                      className="w-20 h-20 mb-4 object-contain"
+                    />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-light mb-4">
+                    {step.number} {step.title}
+                  </h3>
+                  <p className="text-gray-400 leading-relaxed">{step.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-2xl mx-auto mt-10"
+          >
+            <Button
+              className="
+                w-full sm:w-auto
+                bg-[#4B6F93] hover:bg-[rgb(75, 111, 147)]
+                text-white font-medium
+                px-3 py-2.5 rounded-xl
+                shadow-lg hover:shadow-xl
+                transition-all duration-300 ease-out
+                hover:scale-105 hover:-translate-y-0.5
+                text-base
+              "
+            >
+              <a
+                href="https://calendly.com/showmineinfotech/30min"
+                target="_blank"
+              >
+                Contact 👉🏻
+              </a>
             </Button>
           </motion.div>
         </div>

@@ -3,6 +3,7 @@
 import { useRef, useState } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import { partners } from "@/data/partners"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Star, Check, X, BarChart3, Target, Clock, ArrowRight, Plus, Minus } from "lucide-react"
@@ -1047,7 +1048,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="flex flex-wrap items-center justify-center gap-12 md:gap-16 opacity-60"
           >
-            {["pathway", "DESCARTES pixi", "klaviyo", "gorgias", "TrustShop"].map((partner, index) => (
+            {partners.map((partner, index) => (
               <motion.div
                 key={partner}
                 initial={{ opacity: 0, y: 20 }}
