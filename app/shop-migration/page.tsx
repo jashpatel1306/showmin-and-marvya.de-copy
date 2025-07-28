@@ -620,17 +620,17 @@ export default function ShopMigrationPage() {
                 </span>
                 .
               </h2>
-              <div className="max-w-4xl mx-auto space-y-6">
-                <p className="text-[#ccadad] text-lg ">
+              <div className="max-w-4xl mx-auto space-y-2">
+                <p className="text-[#A3A3A3] text-[18px] ">
                   During our migration projects, we examine all your processes and structures.
                 </p>
-                <p className="text-[#A3A3A3] text-lg ">
+                <p className="text-[#A3A3A3] text-[18px] ">
                   We take the opportunity to
                 </p>
-                <p className="text-[#A3A3A3] text-lg  font-medium">
+                <p className="text-[#A3A3A3] text-[18px]  font-medium">
                   to completely digitize the entire company.
                 </p>
-                <p className="text-[#A3A3A3] text-lg ">
+                <p className="text-[#A3A3A3] text-[18px] ">
                   This makes switching to Shopify the foundation for a complete digital transformation.
                 </p>
               </div>
@@ -640,32 +640,32 @@ export default function ShopMigrationPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 w-full">
               {[
                 {
-                  icon: "🎨",
+                  icon: "/images/info/UIUX.gif",
                   title: "UI / UX Design",
                   description: "Improve the shopping experience with UX/UI design optimized for high-performance Shopify stores."
                 },
                 {
-                  icon: "🛍️",
+                  icon: "/images/info/shopifyexpert.gif",
                   title: "Shopify (Plus) Experts",
                   description: "Use our expertise to unlock the full potential of Shopify (Plus) and take your store to the next level."
                 },
                 {
-                  icon: "🔄",
+                  icon: "/images/info/shopifyMigration.gif",
                   title: "Migrating to Shopify",
                   description: "Is your online store currently running on Shopware or WooCommerce and are you struggling with slow customizations?"
                 },
                 {
-                  icon: "📊",
+                  icon: "/images/info/dataAnalytics.gif",
                   title: "Data Analytics",
                   description: "Through our expertise in data analytics, we gain valuable insights from your data that help improve your store effectively."
                 },
                 {
-                  icon: "🔍",
+                  icon: "/images/info/Salesoptimazation.gif",
                   title: "Shop Analysis & Conversion Rate Optimization",
                   description: "We ensure that customers not only discover your store, but also buy your products."
                 },
                 {
-                  icon: "⚙️",
+                  icon: "/images/info/CustomApps.gif",
                   title: "Custom Apps, Functions and much more",
                   description: "We develop customized apps and software solutions that are perfectly tailored to your business!"
                 }
@@ -676,9 +676,15 @@ export default function ShopMigrationPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="group text-center border-t border-white/20 pt-8"
+                  className="group text-center pt-8"
                 >
-                  <div className="text-4xl mb-6">{service.icon}</div>
+                  <div className="flex justify-center mb-4">
+                    <img
+                      src={service.icon}
+                      alt={service.title}
+                      className="w-24 h-24 object-contain"
+                    />
+                  </div>
                   <h3 className="text-xl font-semibold text-white mb-4">{service.title}</h3>
                   <p className="text-[#A3A3A3] leading-relaxed">{service.description}</p>
                 </motion.div>
