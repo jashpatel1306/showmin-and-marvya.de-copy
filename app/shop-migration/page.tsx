@@ -633,75 +633,100 @@ export default function ShopMigrationPage() {
 
           {/* Services Tags Grid - Animated Rows */}
           <div className="mb-16 space-y-8">
+            <style jsx>{`
+              @keyframes scrollRightToLeft {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-100% - 2rem)); }
+              }
+              @keyframes scrollLeftToRight {
+                0% { transform: translateX(calc(-100% - 2rem)); }
+                100% { transform: translateX(0); }
+              }
+              .animate-scroll-rtl {
+                animation: scrollRightToLeft 30s linear infinite;
+                display: flex;
+                width: max-content;
+              }
+              .animate-scroll-ltr {
+                animation: scrollLeftToRight 30s linear infinite;
+                display: flex;
+                width: max-content;
+              }
+              .service-card {
+                @apply bg-[#111] border border-gray-800 hover:border-[#4A77D4] hover:shadow-[0_0_15px_rgba(74,119,212,0.3)] rounded-2xl px-8 py-4 flex items-center gap-3 transition-all duration-300 hover:scale-105 flex-shrink-0;
+                min-width: 200px;
+              }
+            `}</style>
+
             {/* First Row - Right to Left Animation */}
             <div className="overflow-hidden">
-              <div className="flex gap-8 animate-scroll-row-rtl">
-                {/* Duplicate for seamless loop */}
-                {Array(3).fill(0).flatMap((_, dupIdx) => [
-                  { icon: "🔄", title: "Shopify relaunch" },
-                  { icon: "📊", title: "Data Analytics" },
-                  { icon: "🧪", title: "A/B testing" },
-                  { icon: "🎨", title: "UI / UX Design" }
-                ]).map((item, index) => (
-                  <div
-                    key={`row1-${index}`}
-                    className="flex items-center gap-3 text-white whitespace-nowrap flex-shrink-0 min-w-[200px]"
-                  >
-                    <span className="text-2xl">{item.icon}</span>
-                    <span className="text-sm font-medium">{item.title}</span>
-                  </div>
-                ))}
+              <div className="flex gap-8">
+                <div className="animate-scroll-rtl">
+                  {[...Array(2)].map((_, dupIdx) => (
+                    <div key={`row1-${dupIdx}`} className="flex gap-8">
+                      {[
+                        { icon: "🔄", title: "Shopify Relaunch" },
+                        { icon: "📊", title: "Data Analytics" },
+                        { icon: "🧪", title: "A/B Testing" },
+                        { icon: "🎨", title: "UI/UX Design" },
+                        { icon: "📱", title: "Mobile First" },
+                        { icon: "⚡", title: "Performance" },
+                        { icon: "🔍", title: "SEO" }
+                      ].map((item, index) => (
+                        <div key={`row1-item-${index}`} className="service-card">
+                          <span className="text-2xl">{item.icon}</span>
+                          <span className="text-sm font-medium text-white">{item.title}</span>
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
             {/* Second Row - Left to Right Animation */}
             <div className="overflow-hidden">
-              <div className="flex gap-8 animate-scroll-row-ltr">
-                {/* Duplicate for seamless loop */}
-                {Array(3).fill(0).flatMap((_, dupIdx) => [
-                  { icon: "🧠", title: "Sales psychology" },
-                  { icon: "📱", title: "Mobile first" },
-                  { icon: "📧", title: "E-mail marketing" },
-                  { icon: "📈", title: "Performance Marketing" }
-                ]).map((item, index) => (
-                  <div
-                    key={`row2-${index}`}
-                    className="flex items-center gap-3 text-white whitespace-nowrap flex-shrink-0 min-w-[200px]"
-                  >
-                    <span className="text-2xl">{item.icon}</span>
-                    <span className="text-sm font-medium">{item.title}</span>
-                  </div>
-                ))}
+              <div className="flex gap-8">
+                <div className="animate-scroll-ltr">
+                  {[...Array(2)].map((_, dupIdx) => (
+                    <div key={`row2-${dupIdx}`} className="flex gap-8">
+                      {[
+                        { icon: "🧠", title: "Sales Psychology" },
+                        { icon: "📧", title: "Email Marketing" },
+                        { icon: "📈", title: "Analytics" },
+                        { icon: "💡", title: "Strategy" },
+                        { icon: "🛒", title: "E-commerce" },
+                        { icon: "🌐", title: "Web Development" },
+                        { icon: "📱", title: "App Integration" }
+                      ].map((item, index) => (
+                        <div key={`row2-item-${index}`} className="service-card">
+                          <span className="text-2xl">{item.icon}</span>
+                          <span className="text-sm font-medium text-white">{item.title}</span>
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Shopify Migration Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3">
-              <span className="text-2xl">🔄</span>
-              <span className="text-white font-medium">Shopify Migration</span>
-            </div>
-          </motion.div>
-
-          {/* Bottom Section */}
+      {/* We are Shopify Experts Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center"
+            className="space-y-8"
           >
-            <h3 className="text-3xl md:text-4xl font-light mb-6 text-white">
+            <h3 className="text-3xl md:text-4xl font-light text-white">
               We are Shopify experts.
             </h3>
-            <div className="space-y-4 mb-8">
+            <div className="space-y-4">
               <p className="text-[#A3A3A3] text-lg">
                 We have been working exclusively with Shopify since 2018.
               </p>
