@@ -90,6 +90,10 @@ function FAQAccordion() {
 
 // Our customers
 const brands = [
+  { name: "LEMARAIS", img: "/images/customers/lemaris.png" },
+  { name: "WHEELIOSPIN", img: "/images/customers/WheelioSpin.png" },
+  { name: "INDOERA", img: "/images/customers/indoera.png" },
+
   { name: "MARBERT", img: "/images/customers/1.png" },
   { name: "Bettina Barty", img: "/images/customers/2.png" },
   { name: "ARKTISQUELLE", img: "/images/customers/3.png" },
@@ -98,7 +102,7 @@ const brands = [
   { name: "CHAMP", img: "/images/customers/gosharpei.png" },
   { name: "SIMPL", img: "/images/customers/simpl.png" },
   { name: "PINKTOWN", img: "/images/customers/pinktownusa.png" },
-  { name: "LEMARAIS", img: "/images/customers/lemaris.png" },
+  
 
 ];
 
