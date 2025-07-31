@@ -1,5 +1,4 @@
 {
-  "/management-system/page": "app/management-system/page.js",
-  "/ai-ml/page": "app/ai-ml/page.js",
-  "/page": "app/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/career/page": "app/career/page.js"
 }
