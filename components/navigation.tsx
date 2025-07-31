@@ -21,6 +21,8 @@ export function Navigation() {
 
   const navItems = [
     { name: "Shop migration", href: "/shop-migration" },
+    { name: "AI-ML", href: "/ai-ml" },
+    { name: "Management System", href: "/management-system" },
     { name: "Customer testimonials", href: "/testimonials" },
     { name: "Career", href: "/career" },
   ]
@@ -34,7 +36,7 @@ export function Navigation() {
     >
       <nav
         className={`
-          relative w-full max-w-full md:max-w-3xl mx-auto
+          relative w-full max-w-full md:max-w-5xl mx-auto
           bg-[#1c1c1c80] backdrop-blur-xl
           rounded-2xl shadow-2xl border border-white/10
           transition-all duration-300 ease-in-out
@@ -59,7 +61,7 @@ export function Navigation() {
             </motion.div>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-10">
+            <div className="hidden lg:flex items-center space-x-8">
               {navItems.map((item, index) => (
                 <motion.div
                   key={item.name}
