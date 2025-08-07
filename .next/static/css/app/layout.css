@@ -1285,6 +1285,10 @@ video {
 .border-white\/30 {
   border-color: rgb(255 255 255 / 0.3);
 }
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
+}
 .bg-\[\#111215\] {
   --tw-bg-opacity: 1;
   background-color: rgb(17 18 21 / var(--tw-bg-opacity, 1));
@@ -1381,6 +1385,9 @@ video {
 .bg-yellow-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(250 204 21 / var(--tw-bg-opacity, 1));
+}
+.bg-\[\#00000\] {
+  background-color: #00000;
 }
 .bg-\[url\(\'\/grid\.svg\'\)\] {
   background-image: url('/grid.svg');

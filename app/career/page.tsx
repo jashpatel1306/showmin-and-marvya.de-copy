@@ -220,7 +220,7 @@ export default function CareerPage() {
                 viewport={{ once: true }}
                 className="group"
               >
-                <div className="h-full bg-gray-900/50 rounded-xl overflow-hidden border border-gray-800 hover:border-blue-500/50 transition-all duration-300 flex flex-col">
+                <div className="h-full bg-[#00000] rounded-xl overflow-hidden border border-black flex flex-col">
                   <div className="aspect-video overflow-hidden">
                     <img
                       src={value.image}
