@@ -166,14 +166,6 @@ export default function CareerPage() {
               <p className="text-lg md:text-xl text-gray-300">
                 We believe in the power of collaboration, creativity, and continuous innovation. Our team of passionate experts is dedicated to pushing boundaries and setting new standards in the industry.
               </p>
-              <div className="pt-4">
-                <Button
-                  variant="outline"
-                  className="border-blue-400 text-blue-400 hover:bg-blue-400/10 px-8 py-6 text-base font-medium rounded-lg transition-all duration-300"
-                >
-                  Learn More About Us
-                </Button>
-              </div>
             </motion.div>
           </motion.div>
         </div>
@@ -189,10 +181,7 @@ export default function CareerPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Core Values</h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              The foundation of our company culture and what drives us forward every day
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Core culture</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
