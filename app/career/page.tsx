@@ -5,7 +5,7 @@ import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, MapPin, Clock, Users } from "lucide-react"
+import { ArrowRight, MapPin, Clock, Users, Sparkles, Users2, Brain, Laugh } from "lucide-react"
 
 export default function CareerPage() {
   const openPositions = [
@@ -178,8 +178,78 @@ export default function CareerPage() {
           </motion.div>
         </div>
       </section>
-    
-        
+
+      {/* Core Values Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Core Values</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              The foundation of our company culture and what drives us forward every day
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {[
+              {
+                title: 'Motivation',
+                description: 'At our company, motivation is the key to success. We create an inspiring work environment that ignites our employees\' ambition and motivates them to give their best. Our shared vision and pursuit of expertise are the driving force behind our team, who are passionate about achieving excellence and setting new standards.',
+                image: '/images/hero-bg.jpg',
+                alt: 'Cityscape view under a sunny sky'
+              },
+              {
+                title: 'Team Spirit',
+                description: 'Our collaboration is characterized by a strong team spirit. We treat each other with respect, trust, and fairness. As a young team, we give everyone the opportunity to develop freely. We make our workplace a great place where people enjoy working and feel comfortable. Team spirit is very important to us.',
+                image: '/placeholder.jpg',
+                alt: 'Group of professionals discussing in a bright meeting room'
+              },
+              {
+                title: 'Expertise and Specialist Knowledge',
+                description: 'We rely on extensive know-how and experience in the e-commerce sector. Your future colleagues are experts in their field and use their in-depth knowledge to develop customized solutions for our customers.',
+                image: '/placeholder.jpg',
+                alt: 'Developer focused on multiple monitors'
+              },
+              {
+                title: 'Fun',
+                description: 'We firmly believe that a positive and joyful work atmosphere is crucial for achieving top performance. Having fun at work opens up limitless opportunities for success and personal development. We meet regularly as a team and enjoy spending time together. Team events, such as restaurant visits, company parties, or shared lunch during breaks, are important to us.',
+                image: '/placeholder.jpg',
+                alt: 'Smiling team chatting around a laptop'
+              }
+            ].map((value, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <div className="h-full bg-gray-900/50 rounded-xl overflow-hidden border border-gray-800 hover:border-blue-500/50 transition-all duration-300 flex flex-col">
+                  <div className="aspect-video overflow-hidden">
+                    <img
+                      src={value.image}
+                      alt={value.alt}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-6 flex-1 flex flex-col">
+                    <h3 className="text-2xl font-bold mb-3 text-white">{value.title}</h3>
+                    <p className="text-gray-300 flex-1">{value.description}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Jobs Section */ }
   <section className="py-20 bg-black">
