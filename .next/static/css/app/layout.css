@@ -757,6 +757,9 @@ video {
 .mr-2 {
   margin-right: 0.5rem;
 }
+.mr-4 {
+  margin-right: 1rem;
+}
 .mr-6 {
   margin-right: 1.5rem;
 }
@@ -828,6 +831,9 @@ video {
 }
 .h-12 {
   height: 3rem;
+}
+.h-14 {
+  height: 3.5rem;
 }
 .h-16 {
   height: 4rem;
@@ -909,6 +915,9 @@ video {
 }
 .w-12 {
   width: 3rem;
+}
+.w-14 {
+  width: 3.5rem;
 }
 .w-16 {
   width: 4rem;
@@ -1216,6 +1225,10 @@ video {
 .border-t {
   border-top-width: 1px;
 }
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
+}
 .border-blue-400 {
   --tw-border-opacity: 1;
   border-color: rgb(96 165 250 / var(--tw-border-opacity, 1));
@@ -1285,9 +1298,8 @@ video {
 .border-white\/30 {
   border-color: rgb(255 255 255 / 0.3);
 }
-.border-black {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
+.bg-\[\#00000\] {
+  background-color: #00000;
 }
 .bg-\[\#111215\] {
   --tw-bg-opacity: 1;
@@ -1385,9 +1397,6 @@ video {
 .bg-yellow-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(250 204 21 / var(--tw-bg-opacity, 1));
-}
-.bg-\[\#00000\] {
-  background-color: #00000;
 }
 .bg-\[url\(\'\/grid\.svg\'\)\] {
   background-image: url('/grid.svg');
@@ -1920,6 +1929,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity, 1));
 }
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+}
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity, 1));
@@ -2288,10 +2301,6 @@ html {
   border-color: rgb(255 255 255 / 0.5);
 }
 
-.hover\:border-blue-500\/50:hover {
-  border-color: rgb(59 130 246 / 0.5);
-}
-
 .hover\:bg-\[\#1e3a6f\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 58 111 / var(--tw-bg-opacity, 1));
@@ -2304,10 +2313,6 @@ html {
 
 .hover\:bg-accent:hover {
   background-color: hsl(var(--accent));
-}
-
-.hover\:bg-blue-400\/10:hover {
-  background-color: rgb(96 165 250 / 0.1);
 }
 
 .hover\:bg-blue-700:hover {

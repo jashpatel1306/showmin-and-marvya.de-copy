@@ -5,7 +5,7 @@ import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, MapPin, Clock, Users, Sparkles, Users2, Brain, Laugh } from "lucide-react"
+import { ArrowRight, MapPin, Clock, Users, Sparkles, Users2, Brain, Laugh, Quote } from "lucide-react"
 
 export default function CareerPage() {
   const openPositions = [
@@ -68,11 +68,6 @@ export default function CareerPage() {
                   <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-base font-medium rounded-lg transition-all duration-300">
                     View Open Positions
                     <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </motion.div>
-                <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-                  <Button variant="outline" className="border-white/20 text-white hover:bg-white/5 px-8 py-6 text-base font-medium rounded-lg transition-all duration-300">
-                    Learn About Us
                   </Button>
                 </motion.div>
               </div>
@@ -233,6 +228,75 @@ export default function CareerPage() {
                     <h3 className="text-2xl font-bold mb-3 text-white">{value.title}</h3>
                     <p className="text-gray-300 flex-1">{value.description}</p>
                   </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Testimonials Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">This is what our team says</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Direct feedback from our dedicated employees who contribute to our success every day.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                name: "Shrey",
+                role: "Animator & Video editor",
+                testimonial: "Showmine is more than just a workplace. It's a place where professional work and fun go hand in hand, where you feel not just like an employee, but like part of a big, dynamic family.",
+                avatar: "/placeholder-user.jpg"
+              },
+              {
+                name: "Panthil",
+                role: "Full-stack developer",
+                testimonial: "The shared energy within the team to achieve great things and the fact that everyone gives their best every day is extremely inspiring.",
+                avatar: "/placeholder-user.jpg"
+              },
+              {
+                name: "Rutvik",
+                role: "Shopify Sr Developer",
+                testimonial: "To be able to grow continuously, I rely on a strong team that supports me and provides me with feedback so that I can continue to expand my creative vision. Through effective communication, I have continuously developed since joining Showmine.",
+                avatar: "/placeholder-user.jpg"
+              }
+            ].map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -5, transition: { duration: 0.3 } }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <div className="h-full bg-white rounded-2xl p-8 flex flex-col transition-all duration-300 shadow-lg hover:shadow-xl">
+                  <div className="flex items-center mb-6">
+                    <div className="w-14 h-14 rounded-full overflow-hidden mr-4 border-2 border-gray-200">
+                      <img
+                        src={testimonial.avatar}
+                        alt={`${testimonial.name}'s avatar`}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-lg text-gray-900">{testimonial.name}</h4>
+                      <p className="text-gray-600 text-sm">{testimonial.role}</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 flex-1">"{testimonial.testimonial}"</p>
                 </div>
               </motion.div>
             ))}
