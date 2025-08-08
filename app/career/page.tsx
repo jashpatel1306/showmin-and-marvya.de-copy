@@ -304,186 +304,180 @@ export default function CareerPage() {
         </div>
       </section>
 
-      {/* Jobs Section */ }
-  <section className="py-20 bg-black">
-    <div className="max-w-7xl mx-auto px-6">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="text-center mb-16"
-      >
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-          Current Openings
-        </h2>
-        <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-          Explore our available positions and find where you fit in our growing team.
-        </p>
-      </motion.div>
-    </div>
-  </section>
-
-  {/* Why Join Us Section */ }
-  <section className="py-20 bg-black">
-    <div className="max-w-7xl mx-auto px-6">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="text-center mb-16"
-      >
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose Showmine?</h2>
-        <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-          We're building more than a company – we're building a community of innovators, creators, and problem-solvers.
-        </p>
-      </motion.div>
-
-      <div className="grid md:grid-cols-3 gap-8">
-        {[
-          {
-            icon: Users,
-            title: "Exceptional Team",
-            description: "Collaborate with industry experts who are as passionate about e-commerce as you are. We believe in learning from each other every day.",
-          },
-          {
-            icon: Clock,
-            title: "Work-Life Harmony",
-            description: "Flexible schedules and remote options because we trust you to do your best work, wherever you are.",
-          },
-          {
-            icon: MapPin,
-            title: "Career Growth",
-            description: "We invest in your development with training, mentorship, and opportunities to take on new challenges.",
-          },
-        ].map((benefit, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: index * 0.1 }}
-            viewport={{ once: true }}
-          >
-            <Card className="bg-gray-900/50 border-gray-800 p-8 text-center h-full">
-              <benefit.icon className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-              <p className="text-gray-400">{benefit.description}</p>
-            </Card>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  {/* Team Testimonials */ }
-  <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-    <div className="max-w-7xl mx-auto px-6">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="text-center mb-16"
-      >
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">Hear From Our Team</h2>
-        <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-          Don't just take our word for it – here's what our team members say about working at Showmine.
-        </p>
-      </motion.div>
-
-      <div className="grid md:grid-cols-3 gap-8">
-        {[
-          {
-            quote: "Working at Showmine has been a game-changer for my career. The level of innovation and collaboration here is unmatched.",
-            author: "Alex M.",
-            role: "Senior Developer"
-          },
-          {
-            quote: "What I love most is the trust and autonomy I'm given to make an impact. Every day brings new challenges and learning opportunities.",
-            author: "Sarah K.",
-            role: "Product Manager"
-          },
-          {
-            quote: "The culture here is incredible. We work hard, but we also know how to have fun and support each other's growth.",
-            author: "Jamal R.",
-            role: "UX Designer"
-          }
-        ].map((testimonial, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-            viewport={{ once: true }}
-          >
-            <Card className="bg-gray-900/50 border-gray-800 p-8 h-full flex flex-col">
-              <div className="text-blue-400 text-5xl mb-4">"</div>
-              <p className="text-gray-300 mb-6 flex-grow">{testimonial.quote}</p>
-              <div>
-                <p className="font-semibold">{testimonial.author}</p>
-                <p className="text-gray-400 text-sm">{testimonial.role}</p>
-              </div>
-            </Card>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  {/* Open Positions */ }
-  <section className="py-20 bg-black">
-    <div className="max-w-7xl mx-auto px-6">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="text-center mb-16"
-      >
-        <h2 className="text-4xl md:text-5xl font-light mb-8">Open Positions</h2>
-      </motion.div>
-
-      <div className="space-y-6">
-        {openPositions.map((position, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            viewport={{ once: true }}
-          >
-            <Card className="bg-gray-900/50 border-gray-800 p-8 hover:border-blue-600/50 transition-all duration-300">
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                <div className="flex-1">
-                  <div className="flex flex-wrap items-center gap-3 mb-3">
-                    <h3 className="text-2xl font-semibold">{position.title}</h3>
-                    <Badge variant="outline" className="text-blue-400 border-blue-400">
-                      {position.department}
-                    </Badge>
-                  </div>
-                  <div className="flex flex-wrap items-center gap-4 text-gray-400 mb-4">
-                    <div className="flex items-center gap-1">
-                      <MapPin className="w-4 h-4" />
-                      <span>{position.location}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
-                      <span>{position.type}</span>
-                    </div>
-                  </div>
-                  <p className="text-gray-300">{position.description}</p>
+      {/* Our Office Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row gap-12 items-center">
+            {/* Left Column - Text Content */}
+            <motion.div
+              className="lg:w-1/2"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Our office</h2>
+              <p className="text-lg text-gray-300 mb-8">
+                We're located in the heart of Kitchener. Centrally located with good transportation connections. The highlight is the vibrant tech community and beautiful surroundings.
+              </p>
+              <div className="mb-8 flex flex-col lg:flex-row gap-8">
+                <div>
+                  <p className="font-semibold text-gray-200 mb-2">Canada:</p>
+                  <p className="text-lg text-gray-300 mb-4">16 Seabrook drive,<br />Kitchener, ON N2R 1Y2</p>
                 </div>
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6">
-                  Apply Now <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                <div>
+                  <p className="font-semibold text-gray-200 mb-2">India:</p>
+                  <p className="text-lg text-gray-300">8-9, Mahavir shopping center,<br />near Gajara circle,<br />Katargam, Surat</p>
+                </div>
               </div>
-            </Card>
+              <Button
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-base font-medium rounded-lg transition-all duration-300"
+                onClick={() => {
+                  // Scroll to open positions
+                  const element = document.getElementById('open-positions');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                Apply now <span className="ml-2">👉🏻</span>
+              </Button>
+            </motion.div>
+
+            {/* Right Column - Map */}
+            <motion.div
+              className="lg:w-1/2 w-full aspect-video rounded-xl overflow-hidden shadow-2xl"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2899.0174006210136!2d-80.4838406!3d43.4288547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882bf5e3a0d3fcc9%3A0x8d1d3b9b3b3b3b3b!2s16%20Seabrook%20Dr%2C%20Kitchener%2C%20ON%20N2R%201Y2%2C%20Canada!5e0!3m2!1sen!2sde!4v1620000000000!5m2!1sen!2sde"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Showmine Office Location"
+                className="h-full w-full"
+              ></iframe>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Why Join Us Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose Showmine?</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              We're building more than a company – we're building a community of innovators, creators, and problem-solvers.
+            </p>
           </motion.div>
-        ))}
-      </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Users,
+                title: "Exceptional Team",
+                description: "Collaborate with industry experts who are as passionate about e-commerce as you are. We believe in learning from each other every day.",
+              },
+              {
+                icon: Clock,
+                title: "Work-Life Harmony",
+                description: "Flexible schedules and remote options because we trust you to do your best work, wherever you are.",
+              },
+              {
+                icon: MapPin,
+                title: "Career Growth",
+                description: "We invest in your development with training, mentorship, and opportunities to take on new challenges.",
+              },
+            ].map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="bg-gray-900/50 border-gray-800 p-8 text-center h-full">
+                  <benefit.icon className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
+                  <p className="text-gray-400">{benefit.description}</p>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* Open Positions */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-light mb-8">Open Positions</h2>
+          </motion.div>
+
+          <div className="space-y-6">
+            {openPositions.map((position, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="bg-gray-900/50 border-gray-800 p-8 hover:border-blue-600/50 transition-all duration-300">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div className="flex-1">
+                      <div className="flex flex-wrap items-center gap-3 mb-3">
+                        <h3 className="text-2xl font-semibold">{position.title}</h3>
+                        <Badge variant="outline" className="text-blue-400 border-blue-400">
+                          {position.department}
+                        </Badge>
+                      </div>
+                      <div className="flex flex-wrap items-center gap-4 text-gray-400 mb-4">
+                        <div className="flex items-center gap-1">
+                          <MapPin className="w-4 h-4" />
+                          <span>{position.location}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Clock className="w-4 h-4" />
+                          <span>{position.type}</span>
+                        </div>
+                      </div>
+                      <p className="text-gray-300">{position.description}</p>
+                    </div>
+                    <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6">
+                      Apply Now <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
     </div>
-  </section>
-    </div >
   )
 }
