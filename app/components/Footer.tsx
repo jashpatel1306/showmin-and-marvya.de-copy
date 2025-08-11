@@ -1,5 +1,6 @@
 import React from 'react';
-import { Facebook, Twitter, Linkedin, Instagram, Globe } from 'lucide-react';
+import { Globe } from 'lucide-react';
+import { FaLinkedin } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -43,18 +44,15 @@ export default function Footer() {
 
             {/* Social Media Icons */}
             <div className="flex gap-4">
-              <a href="#" className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-200">
-                <Facebook size={20} />
+              {/* <a href="https://www.fiverr.com/your-profile" target="_blank" rel="noopener noreferrer" className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-200">
+                <FaFiverr size={20} />
+              </a> */}
+              <a href="https://www.linkedin.com/company/showmine-infotech" target="_blank" rel="noopener noreferrer" className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-200">
+                <FaLinkedin size={20} />
               </a>
-              <a href="#" className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-200">
-                <Twitter size={20} />
-              </a>
-              <a href="https://www.linkedin.com/company/showmine-infotech" target='_blank' className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-200">
-                <Linkedin size={20} />
-              </a>
-              <a href="#" className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-200">
-                <Instagram size={20} />
-              </a>
+              {/* <a href="https://www.upwork.com/freelancers/~your-profile" target="_blank" rel="noopener noreferrer" className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-all duration-200">
+                <FaUpwork size={20} />
+              </a> */}
             </div>
           </div>
 
