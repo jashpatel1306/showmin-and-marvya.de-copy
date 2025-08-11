@@ -978,11 +978,9 @@ export default function HomePage() {
               of Showmine
             </h2>
             <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
-              Behind us is a team of almost 20 people
+            We have a team of nearly 20 experts
               <br />
-              who are just waiting to
-              <br />
-              To help e-commerce businesses grow.
+              ready and eager to help e-commerce businesses grow.
             </p>
           </motion.div>
 
