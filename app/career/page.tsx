@@ -11,21 +11,21 @@ export default function CareerPage() {
   const openPositions = [
     {
       title: "Senior E-commerce Developer",
-      location: "Remote / Germany",
+      location: "Remote / Hybrid",
       type: "Full-time",
       department: "Development",
       description: "Join our development team to build cutting-edge e-commerce solutions using modern technologies.",
     },
     {
       title: "Digital Marketing Specialist",
-      location: "Germany",
+      location: "Remote / Hybrid",
       type: "Full-time",
       department: "Marketing",
       description: "Drive growth through innovative digital marketing strategies and campaigns.",
     },
     {
       title: "E-commerce Consultant",
-      location: "Remote",
+      location: "Remote / Hybrid",
       type: "Full-time",
       department: "Consulting",
       description: "Help clients optimize their e-commerce operations and achieve sustainable growth.",
