@@ -90,16 +90,16 @@ function FAQAccordion() {
 
 // Our customers
 const brands = [
-    { name: "PINKTOWN", img: "/images/customers/pinktownusa.png" },
-    { name: "SIMPL", img: "/images/customers/simpl.png" },
-    { name: "DIAMONDRENSU", img: "/images/customers/diamondrensu.png" },
-    { name: "GOSHAPEI", img: "/images/customers/gosharpei.png" },
-    { name: "LEMARAIS", img: "/images/customers/lemaris.png" },
-    { name: "PIRINHILL", img: "/images/customers/pirinhill.png" },
-    { name: "WHEELIOSPIN", img: "/images/customers/WheelioSpin.png" },
-    { name: "SRFACE", img: "/images/customers/srface.png" },
-    { name: "PLUMDIAMONDS", img: "/images/customers/plumdiamonds.png" },
-    { name: "INDOERA", img: "/images/customers/indoera.png" },
+  { name: "PINKTOWN", img: "/images/customers/pinktownusa.png" },
+  { name: "SIMPL", img: "/images/customers/simpl.png" },
+  { name: "DIAMONDRENSU", img: "/images/customers/diamondrensu.png" },
+  { name: "GOSHAPEI", img: "/images/customers/gosharpei.png" },
+  { name: "LEMARAIS", img: "/images/customers/lemaris.png" },
+  { name: "PIRINHILL", img: "/images/customers/pirinhill.png" },
+  { name: "WHEELIOSPIN", img: "/images/customers/WheelioSpin.png" },
+  { name: "SRFACE", img: "/images/customers/srface.png" },
+  { name: "PLUMDIAMONDS", img: "/images/customers/plumdiamonds.png" },
+  { name: "INDOERA", img: "/images/customers/indoera.png" },
 ];
 
 export default function HomePage() {
@@ -210,7 +210,12 @@ export default function HomePage() {
                 text-base
               "
             >
-              Contact 👉🏻
+              <a
+                href="https://calendly.com/showmineinfotech/30min"
+                target="_blank"
+              >
+                Contact 👉🏻
+              </a>
             </Button>
             <Button
               variant="outline"
@@ -241,7 +246,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <Badge variant="outline" className="px-4 py-1.5 text-[16px] font-medium bg-white/10 text-white border-white/20">
+            <Badge variant="outline" className="px-4 py-1.5 text-[14px] font-medium bg-white/10 text-white border-white/20">
               An excerpt from our customers
             </Badge>
           </motion.div>
@@ -256,7 +261,7 @@ export default function HomePage() {
                     alt={brand.name}
                     width={120}
                     height={60}
-                    className="object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                    className="object-contain  duration-300"
                   />
                 </div>
               ))}
@@ -287,7 +292,7 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Badge variant="outline" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[12px]">
+            <Badge variant="outline" className="mb-8 px-4 py-1.5 text-[14px] font-medium bg-white/10 text-white border-white/20">
               Our services
             </Badge>
           </motion.div>
@@ -304,14 +309,14 @@ export default function HomePage() {
                 <span className="uppercase tracking-wider text-blue-300 text-xs font-semibold">Shopify Development</span>
               </div> */}
               <div className="flex items-center mb-5 space-x-4">
-                <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center">
+                {/* <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center">
                   <img
                     src="/images/supportInfo/Development.gif"
                     alt="Shopify Development"
                     className="w-30 h-30 object-contain"
                     loading="lazy"
                   />
-                </div>
+                </div> */}
                 <h3 className="text-3xl font-semibold text-white mb-4 font-sans">
                   Shopify Development
                 </h3>
@@ -328,14 +333,14 @@ export default function HomePage() {
                 <span className="uppercase tracking-wider text-red-300 text-xs font-semibold">Growth Consulting</span>
               </div> */}
               <div className="flex items-center mb-5 space-x-4">
-                <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center">
+                {/* <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center">
                   <img
                     src="/images/supportInfo/Consulting.gif"
                     alt="Growth Consulting"
                     className="w-6 h-6 object-contain"
                     loading="lazy"
                   />
-                </div>
+                </div> */}
                 <h3 className="text-3xl font-semibold text-white mb-4 font-sans">
                   Growth Consulting
                 </h3>
@@ -347,7 +352,7 @@ export default function HomePage() {
           </div>
           <div className="mt-12 text-center">
             <p className="text-[48px] text-gray-200 font-light">
-              If you are looking for a partner who thinks strategically in the interest of your company and brings proven e-commerce expertise with an outstanding track record, you need Showmine.
+            If you’re seeking a partner who thinks strategically, prioritizes your company’s interests, and offers proven e-commerce expertise with an exceptional track record, Showmine is the right choice.
             </p>
           </div>
           {/* <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -385,7 +390,7 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Badge variant="outline" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[12px]">
+            <Badge variant="outline" className="mb-8 px-4 py-1.5 text-[14px] font-medium bg-white/10 text-white border-white/20">
               Results
             </Badge>
           </motion.div>
@@ -533,7 +538,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <Badge variant="outline" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[15px] font-normal">
+            <Badge variant="outline" className="mb-8 px-4 py-1.5 text-[14px] font-medium bg-white/10 text-white border-white/20">
               The direct comparison
             </Badge>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">
@@ -545,16 +550,17 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Other Service Providers */}
-            
+
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
+
               <h3 className="text-center text-2xl md:text-3xl font-light text-gray-400 mb-6 ">Other service providers</h3>
               <Card className="bg-gray-900/50 border-gray-800 p-8 h-full">
-                
+
                 <div className="space-y-6">
                   {[
                     "No own shop operated",
@@ -588,7 +594,7 @@ export default function HomePage() {
               viewport={{ once: true }}
             >
               <div className="mb-10 flex items-center justify-center">
-              <img
+                <img
                   src="/images/SHOWMINE-LIGHT.png"
                   alt="logo"
                   // fill
@@ -598,7 +604,7 @@ export default function HomePage() {
               </div>
               <Card className="bg-gradient-to-br from-blue-900/80 to-black border-blue-700/50 p-8 h-full relative overflow-hidden">
                 <div className="absolute top-4 right-4 text-4xl font-light text-blue-400/20">SHOWMINE</div>
-                
+
                 <div className="space-y-6">
                   {[
                     "Own online shops",
@@ -638,7 +644,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <Badge variant="outline" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[12px] font-normal">
+            <Badge variant="outline" className="mb-8 px-4 py-1.5 text-[14px] font-medium bg-white/10 text-white border-white/20">
               What are you waiting for?
             </Badge>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight">
@@ -747,7 +753,7 @@ export default function HomePage() {
           viewport={{ once: true }}
           className="text-center mb-7"
         >
-          <Badge variant="default" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[12px] font-normal">
+          <Badge variant="outline" className="mb-8 px-4 py-1.5 text-[14px] font-medium bg-white/10 text-white border-white/20">
             Customer testimonials
           </Badge>
         </motion.div>
@@ -962,7 +968,7 @@ export default function HomePage() {
             className="text-center mb-16"
           >
 
-            <Badge variant="default" className="mb-8 text-white border-gray-600">
+            <Badge variant="outline" className="mb-8 px-4 py-1.5 text-[14px] font-medium bg-white/10 text-white border-white/20">
               The founding team
             </Badge>
 
@@ -1086,7 +1092,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <Badge variant="outline" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[12px] font-normal">
+            <Badge variant="outline" className="mb-8 px-4 py-1.5 text-[14px] font-medium bg-white/10 text-white border-white/20">
               Frequently Asked Questions
             </Badge>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">
