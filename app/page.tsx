@@ -241,9 +241,9 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h3 className="mb-8 text-white flex-nowrap text-[16px]">
+            <Badge variant="outline" className="px-4 py-1.5 text-[16px] font-medium bg-white/10 text-white border-white/20">
               An excerpt from our customers
-            </h3>
+            </Badge>
           </motion.div>
 
           <div className="overflow-hidden relative">

@@ -65,7 +65,7 @@ export default function CareerPage() {
 
               <div className="flex flex-wrap gap-4 pt-4">
                 <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-                  <Button className="bg-[#4B6F93] hover:bg-blue-700 text-white px-8 py-6 text-base font-medium rounded-lg transition-all duration-300">
+                  <Button className="bg-[#4B6F93] hover:bg-[#4B6F93] text-white px-8 py-6 text-base font-medium rounded-lg transition-all duration-300">
                     View Open Positions
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -151,16 +151,14 @@ export default function CareerPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+              <h4 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
                 Who We Are
-              </h2>
+              </h4>
               <div className="h-1 w-20 bg-blue-400"></div>
-              <p className="text-lg md:text-xl text-gray-300">
-                At Showmine, we're revolutionizing the e-commerce landscape through innovative solutions and cutting-edge technology. Our mission is to empower businesses to thrive in the digital marketplace by providing seamless, scalable, and intelligent e-commerce experiences.
+              <p className="text-lg md:text-xl text-white">
+              Our mission is to help ambitious e-commerce brands grow rapidly, breaking away from traditional methods. We partner closely with our clients, providing full support to drive their success.
               </p>
-              <p className="text-lg md:text-xl text-gray-300">
-                We believe in the power of collaboration, creativity, and continuous innovation. Our team of passionate experts is dedicated to pushing boundaries and setting new standards in the industry.
-              </p>
+             
             </motion.div>
           </motion.div>
         </div>

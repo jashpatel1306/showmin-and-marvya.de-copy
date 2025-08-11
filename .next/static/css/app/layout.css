@@ -2297,6 +2297,11 @@ html {
   background-color: rgb(30 58 111 / var(--tw-bg-opacity, 1));
 }
 
+.hover\:bg-\[\#4B6F93\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 111 147 / var(--tw-bg-opacity, 1));
+}
+
 .hover\:bg-\[\#5A87E4\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(90 135 228 / var(--tw-bg-opacity, 1));
@@ -2342,11 +2347,6 @@ html {
 
 .hover\:bg-white\/10:hover {
   background-color: rgb(255 255 255 / 0.1);
-}
-
-.hover\:bg-\[\#4B6F93\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(75 111 147 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:text-accent-foreground:hover {
