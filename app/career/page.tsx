@@ -65,7 +65,7 @@ export default function CareerPage() {
 
               <div className="flex flex-wrap gap-4 pt-4">
                 <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-                  <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-base font-medium rounded-lg transition-all duration-300">
+                  <Button className="bg-[#4B6F93] hover:bg-blue-700 text-white px-8 py-6 text-base font-medium rounded-lg transition-all duration-300">
                     View Open Positions
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -331,7 +331,7 @@ export default function CareerPage() {
                 </div>
               </div>
               <Button
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-base font-medium rounded-lg transition-all duration-300"
+                className="bg-[#4B6F93] hover:bg-[#4B6F93] text-white px-8 py-6 text-base font-medium rounded-lg transition-all duration-300"
                 onClick={() => {
                   // Scroll to open positions
                   const element = document.getElementById('open-positions');

@@ -1015,9 +1015,6 @@ video {
 .flex-shrink-0 {
   flex-shrink: 0;
 }
-.flex-grow {
-  flex-grow: 1;
-}
 .grow {
   flex-grow: 1;
 }
@@ -1401,9 +1398,6 @@ video {
 .bg-\[url\(\'\/grid\.svg\'\)\] {
   background-image: url('/grid.svg');
 }
-.bg-gradient-to-b {
-  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-}
 .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
@@ -1589,9 +1583,6 @@ video {
 }
 .to-blue-700 {
   --tw-gradient-to: #1d4ed8 var(--tw-gradient-to-position);
-}
-.to-gray-900 {
-  --tw-gradient-to: #111827 var(--tw-gradient-to-position);
 }
 .to-orange-600 {
   --tw-gradient-to: #ea580c var(--tw-gradient-to-position);
@@ -2351,6 +2342,11 @@ html {
 
 .hover\:bg-white\/10:hover {
   background-color: rgb(255 255 255 / 0.1);
+}
+
+.hover\:bg-\[\#4B6F93\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 111 147 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:text-accent-foreground:hover {
