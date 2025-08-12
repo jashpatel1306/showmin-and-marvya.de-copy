@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 import Footer from "./components/Footer"
+import WhatsAppButton from "@/components/WhatsAppButton"
 // Chatbot functionality temporarily disabled
 // import SupportAgentWrapper from "@/components/SupportAgentWrapper"
 
@@ -40,6 +41,7 @@ export default function RootLayout({
         </Script>
         {children}
         <Footer />
+        <WhatsAppButton />
         {/* Chatbot functionality temporarily disabled
         <SupportAgentWrapper />
         */}

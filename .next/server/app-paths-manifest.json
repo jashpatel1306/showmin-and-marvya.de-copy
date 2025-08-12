@@ -1,3 +1,5 @@
 {
+  "/management-system/page": "app/management-system/page.js",
+  "/ai-ml/page": "app/ai-ml/page.js",
   "/page": "app/page.js"
 }
