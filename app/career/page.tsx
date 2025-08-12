@@ -31,7 +31,7 @@ export default function CareerPage() {
       description: "Help clients optimize their e-commerce operations and achieve sustainable growth.",
     },
   ]
-
+  
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation />
@@ -474,7 +474,6 @@ export default function CareerPage() {
           </div>
         </div>
       </section>
-
 
     </div>
   )
