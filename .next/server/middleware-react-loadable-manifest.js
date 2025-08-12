@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{\"components/SupportAgentWrapper.tsx -> @/components/SupportAgent\":{\"id\":\"components/SupportAgentWrapper.tsx -> @/components/SupportAgent\",\"files\":[\"static/chunks/_app-pages-browser_components_SupportAgent_tsx.js\"]}}"
+self.__REACT_LOADABLE_MANIFEST="{}"

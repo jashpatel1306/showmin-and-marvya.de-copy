@@ -1,3 +1,5 @@
+// Chatbot functionality temporarily disabled
+/*
 'use client';
 
 import { useState, useRef, useEffect, FormEvent } from 'react';
@@ -174,3 +176,4 @@ export default function SupportAgent() {
     </div>
   );
 }
+*/

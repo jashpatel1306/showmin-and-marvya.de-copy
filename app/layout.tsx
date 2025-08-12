@@ -4,7 +4,8 @@ import { Inter } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 import Footer from "./components/Footer"
-import SupportAgentWrapper from "@/components/SupportAgentWrapper"
+// Chatbot functionality temporarily disabled
+// import SupportAgentWrapper from "@/components/SupportAgentWrapper"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -39,7 +40,9 @@ export default function RootLayout({
         </Script>
         {children}
         <Footer />
+        {/* Chatbot functionality temporarily disabled
         <SupportAgentWrapper />
+        */}
       </body>
     </html>
   )

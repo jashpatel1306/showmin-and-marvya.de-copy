@@ -1,6 +1,8 @@
+// Chatbot functionality temporarily disabled
+/*
 import { NextResponse } from 'next/server';
 
-// Your specific agent ID from the provided URL
+// Your agent ID from the URL
 const AGENT_ID = 'agent_5701k119czcae708xs564dcgztxb';
 
 export async function POST(req: Request) {
@@ -11,29 +13,44 @@ export async function POST(req: Request) {
       throw new Error('ELEVENLABS_API_KEY is not set');
     }
 
-    // Call the ElevenLabs API with the specific agent
-    const response = await fetch(
-      `https://api.elevenlabs.io/v1/text-to-speech/${AGENT_ID}/stream`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'xi-api-key': process.env.ELEVENLABS_API_KEY,
-        },
-        body: JSON.stringify({
-          text: message,
-          model_id: 'eleven_monolingual_v2',
-          voice_settings: {
-            stability: 0.5,
-            similarity_boost: 0.8,
-          },
-        }),
-      }
-    );
+    console.log('Sending request to ElevenLabs API...');
+    console.log('Using API Key:', process.env.ELEVENLABS_API_KEY ? '***' + process.env.ELEVENLABS_API_KEY.slice(-4) : 'Not set');
+    
+    // Using the agent-based chat endpoint
+    const apiUrl = 'https://api.elevenlabs.io/v1/chat/completions';
+    const requestBody = {
+      agent_id: AGENT_ID,
+      messages: [   
+        {
+          role: 'user',
+          content: message
+        }
+      ],
+      model: 'eleven_monolingual_v2',
+      stream: false,
+    };
+
+    console.log('Request URL:', apiUrl);
+    console.log('Request Body:', JSON.stringify(requestBody, null, 2));
+
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'xi-api-key': process.env.ELEVENLABS_API_KEY || '',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify(requestBody),
+    });
+
+    console.log('Response Status:', response.status);
+    console.log('Response Headers:', Object.fromEntries(response.headers.entries()));
+    
+    const responseText = await response.text();
+    console.log('Response Body:', responseText);
 
     if (!response.ok) {
-      const error = await response.text();
-      throw new Error(`ElevenLabs API error: ${error}`);
+      throw new Error(`ElevenLabs API error (${response.status}): ${responseText}`);
     }
 
     // Get the audio stream as ArrayBuffer
@@ -55,3 +72,4 @@ export async function POST(req: Request) {
     );
   }
 }
+*/
