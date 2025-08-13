@@ -1,20 +1,130 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, MapPin, Clock, Users, Sparkles, Users2, Brain, Laugh, Quote } from "lucide-react"
+import { ArrowRight, MapPin, Clock, Users, Sparkles, Users2, Brain, Laugh, Quote, ChevronDown } from "lucide-react"
+import { JobApplicationForm } from "@/components/career/job-application-form"
+
+type Position = {
+  title: string;
+  location: string;
+  type: string;
+  department: string;
+  description: string;
+  requirements?: string[];
+};
+
+interface PositionAccordionProps {
+  position: Position;
+  index: number;
+  onApply: () => void;
+}
+
+function PositionAccordion({ position, index, onApply }: PositionAccordionProps) {
+  const [isOpen, setIsOpen] = useState(false)
+  
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      viewport={{ once: true }}
+      className="border border-gray-800 rounded-lg overflow-hidden"
+    >
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full text-left p-6 hover:bg-gray-900/50 transition-colors focus:outline-none"
+        aria-expanded={isOpen}
+        aria-controls={`position-content-${index}`}
+      >
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="flex-1">
+            <div className="flex flex-wrap items-center gap-3 mb-2">
+              <h3 className="text-xl font-semibold text-white">{position.title}</h3>
+              <span className="px-2.5 py-0.5 bg-blue-900/30 text-blue-400 text-xs rounded-full">
+                {position.department}
+              </span>
+            </div>
+            <div className="flex flex-wrap items-center gap-4 text-gray-400 text-sm">
+              <span>{position.location}</span>
+              <span className="text-gray-600">•</span>
+              <span>{position.type}</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-blue-600 text-blue-400 hover:bg-blue-900/20 hover:text-blue-300 transition-colors hidden md:inline-flex"
+              onClick={(e) => {
+                e.stopPropagation()
+                onApply()
+              }}
+            >
+              Apply Now
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+            <ChevronDown 
+              className={`h-5 w-5 text-gray-500 transition-transform duration-200 ${isOpen && "transform rotate-180"}`} 
+              aria-hidden="true"
+            />
+          </div>
+        </div>
+      </button>
+      
+      <motion.div
+        id={`position-content-${index}`}
+        initial={false}
+        animate={{
+          height: isOpen ? 'auto' : 0,
+          opacity: isOpen ? 1 : 0,
+        }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+        className="overflow-hidden"
+      >
+        <div className="px-6 pb-6 pt-2 border-t border-gray-800">
+          <div className="prose prose-invert max-w-none text-gray-300">
+            <p className="mb-4">{position.description}</p>
+            <h4 className="text-white font-medium mb-2">Requirements:</h4>
+            <ul className="list-disc pl-5 space-y-1 mb-6">
+              {position.requirements?.map((req: string, i: number) => (
+                <li key={i}>{req}</li>
+              )) || <li>No specific requirements listed.</li>}
+            </ul>
+            <Button
+              onClick={onApply}
+              className="md:hidden bg-blue-600 hover:bg-blue-700 mt-2"
+            >
+              Apply for this position
+            </Button>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  )
+}
 
 export default function CareerPage() {
-  const openPositions = [
+  const [selectedPosition, setSelectedPosition] = useState<Position | null>(null)
+  
+  const openPositions: Position[] = [
     {
       title: "Senior E-commerce Developer",
       location: "Remote / Hybrid",
       type: "Full-time",
       department: "Development",
-      description: "Join our development team to build cutting-edge e-commerce solutions using modern technologies.",
+      description: "Join our development team to build cutting-edge e-commerce solutions using modern technologies. You'll work on high-impact projects, collaborate with cross-functional teams, and help shape the future of our platform.",
+      requirements: [
+        "5+ years of experience in web development",
+        "Strong proficiency in React/Next.js and Node.js",
+        "Experience with e-commerce platforms and APIs",
+        "Familiarity with modern frontend build pipelines and tools",
+        "Excellent problem-solving and communication skills"
+      ]
     },
     {
       title: "Digital Marketing Specialist",
@@ -33,8 +143,9 @@ export default function CareerPage() {
   ]
   
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Navigation />
+    <>
+      <div className="min-h-screen bg-black text-white">
+        <Navigation />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-black text-white py-24 lg:py-32">
@@ -223,7 +334,7 @@ export default function CareerPage() {
                     />
                   </div>
                   <div className="p-6 flex-1 flex flex-col">
-                    <h3 className="text-2xl font-bold mb-3 text-white">{value.title}</h3>
+                    <h3 className="text-2xl font-bold mb-3">{value.title}</h3>
                     <p className="text-gray-300 flex-1">{value.description}</p>
                   </div>
                 </div>
@@ -422,7 +533,7 @@ export default function CareerPage() {
 
 
       {/* Open Positions */}
-      <section className="py-20 bg-black">
+      <section id="open-positions" className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -434,47 +545,28 @@ export default function CareerPage() {
             <h2 className="text-4xl md:text-5xl font-light mb-8">Open Positions</h2>
           </motion.div>
 
-          <div className="space-y-6">
+          <div className="space-y-4">
             {openPositions.map((position, index) => (
-              <motion.div
+              <PositionAccordion 
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="bg-gray-900/50 border-gray-800 p-8 hover:border-blue-600/50 transition-all duration-300">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                    <div className="flex-1">
-                      <div className="flex flex-wrap items-center gap-3 mb-3">
-                        <h3 className="text-2xl font-semibold text-white">{position.title}</h3>
-                        <Badge variant="outline" className="text-blue-400 border-blue-400">
-                          {position.department}
-                        </Badge>
-                      </div>
-                      <div className="flex flex-wrap items-center gap-4 text-gray-400 mb-4">
-                        <div className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" />
-                          <span>{position.location}</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Clock className="w-4 h-4" />
-                          <span>{position.type}</span>
-                        </div>
-                      </div>
-                      <p className="text-gray-300">{position.description}</p>
-                    </div>
-                    <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-6">
-                      Apply Now <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
-                  </div>
-                </Card>
-              </motion.div>
+                position={position} 
+                index={index}
+                onApply={() => setSelectedPosition(position)}
+              />
             ))}
           </div>
         </div>
       </section>
 
-    </div>
+      </div>
+      
+      {/* Job Application Form Modal */}
+      {selectedPosition && (
+        <JobApplicationForm 
+          position={selectedPosition?.title || ''} 
+          onClose={() => setSelectedPosition(null)} 
+        />
+      )}
+    </>
   )
 }
