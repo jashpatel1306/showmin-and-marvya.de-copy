@@ -6,6 +6,7 @@ import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Carousel } from "@/components/ui/carousel"
 import { ArrowRight, MapPin, Clock, Users, Sparkles, Users2, Brain, Laugh, Quote, ChevronDown } from "lucide-react"
 import { JobApplicationForm } from "@/components/career/job-application-form"
 
@@ -363,55 +364,79 @@ export default function CareerPage() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {[
-                {
-                  name: "Shrey",
-                  role: "Animator & Video editor",
-                  testimonial: "Showmine is more than just a workplace. It's a place where professional work and fun go hand in hand, where you feel not just like an employee, but like part of a big, dynamic family.",
-                  avatar: "/placeholder-user.jpg"
-                },
-                {
-                  name: "Panthil",
-                  role: "Full-stack developer",
-                  testimonial: "The shared energy within the team to achieve great things and the fact that everyone gives their best every day is extremely inspiring.",
-                  avatar: "/placeholder-user.jpg"
-                },
-                {
-                  name: "Rutvik",
-                  role: "Shopify Sr Developer",
-                  testimonial: "To be able to grow continuously, I rely on a strong team that supports me and provides me with feedback so that I can continue to expand my creative vision. Through effective communication, I have continuously developed since joining Showmine.",
-                  avatar: "/placeholder-user.jpg"
-                }
-              ].map((testimonial, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={{ y: -5, transition: { duration: 0.3 } }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group"
-                >
-                  <div className="h-full bg-white rounded-2xl p-8 flex flex-col transition-all duration-300 shadow-lg hover:shadow-xl">
-                    <div className="flex items-center mb-6">
-                      <div className="w-14 h-14 rounded-full overflow-hidden mr-4 border-2 border-gray-200">
-                        <img
-                          src={testimonial.avatar}
-                          alt={`${testimonial.name}'s avatar`}
-                          className="w-full h-full object-cover"
-                          loading="lazy"
-                        />
+            <div className="max-w-6xl mx-auto">
+              <Carousel
+                className="w-full relative"
+                options={{
+                  align: "start",
+                  containScroll: "trimSnaps",
+                  dragFree: true,
+                  loop: false,
+                  slidesToScroll: 1,
+                }}
+              >
+                {[
+                  {
+                    name: "Shrey S",
+                    role: "Animator & Video editor",
+                    testimonial: "Showmine is more than just a workplace. It's a place where professional work and fun go hand in hand, where you feel not just like an employee, but like part of a big, dynamic family.",
+                    avatar: "/placeholder-user.jpg"
+                  },
+                  {
+                    name: "Panthil M",
+                    role: "Full-stack developer",
+                    testimonial: "The shared energy within the team to achieve great things and the fact that everyone gives their best every day is extremely inspiring.",
+                    avatar: "/placeholder-user.jpg"
+                  },
+                  {
+                    name: "Rutvik D",
+                    role: "Shopify Sr Developer",
+                    testimonial: "To be able to grow continuously, I rely on a strong team that supports me and provides me with feedback so that I can continue to expand my creative vision. Through effective communication, I have continuously developed since joining Showmine.",
+                    avatar: "/placeholder-user.jpg"
+                  },
+                  {
+                    name: "Fenal R",
+                    role: "Quality assurance analyst",
+                    testimonial: "The collaborative environment at Showmine has helped me grow both professionally and personally. The team's dedication to creating outstanding user experiences is truly inspiring.",
+                    avatar: "/placeholder-user.jpg"
+                  },
+                  {
+                    name: "Sarah",
+                    role: "Marketing Specialist",
+                    testimonial: "Working at Showmine has been an incredible journey. The company culture encourages creativity and innovation, and I love being part of a team that values each member's contribution.",
+                    avatar: "/placeholder-user.jpg"
+                  }
+                ].map((testimonial, index) => (
+                  <div key={index} className="pl-4 w-full sm:w-1/2 lg:w-1/3">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      whileHover={{ y: -5, transition: { duration: 0.3 } }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="h-full"
+                    >
+                      <div className="h-full bg-white rounded-2xl p-8 flex flex-col transition-all duration-300 shadow-lg hover:shadow-xl">
+                        <div className="flex items-center mb-6">
+                          <div className="w-14 h-14 rounded-full overflow-hidden mr-4 border-2 border-gray-200">
+                            <img
+                              src={testimonial.avatar}
+                              alt={`${testimonial.name}'s avatar`}
+                              className="w-full h-full object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div>
+                            <h4 className="font-bold text-lg text-gray-900">{testimonial.name}</h4>
+                            <p className="text-gray-600 text-sm">{testimonial.role}</p>
+                          </div>
+                        </div>
+                        <p className="text-gray-600 flex-1">"{testimonial.testimonial}"</p>
                       </div>
-                      <div>
-                        <h4 className="font-bold text-lg text-gray-900">{testimonial.name}</h4>
-                        <p className="text-gray-600 text-sm">{testimonial.role}</p>
-                      </div>
-                    </div>
-                    <p className="text-gray-600 flex-1">"{testimonial.testimonial}"</p>
+                    </motion.div>
                   </div>
-                </motion.div>
-              ))}
+                ))}
+              </Carousel>
             </div>
           </div>
         </section>
