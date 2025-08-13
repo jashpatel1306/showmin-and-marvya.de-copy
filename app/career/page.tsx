@@ -447,7 +447,7 @@ export default function CareerPage() {
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                     <div className="flex-1">
                       <div className="flex flex-wrap items-center gap-3 mb-3">
-                        <h3 className="text-2xl font-semibold">{position.title}</h3>
+                        <h3 className="text-2xl font-semibold text-white">{position.title}</h3>
                         <Badge variant="outline" className="text-blue-400 border-blue-400">
                           {position.department}
                         </Badge>
