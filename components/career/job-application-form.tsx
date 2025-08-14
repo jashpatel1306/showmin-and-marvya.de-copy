@@ -60,7 +60,7 @@ export function JobApplicationForm({ position, onClose }: JobApplicationFormProp
         <div className="p-6 border-b border-gray-800">
           <div className="flex justify-between items-start">
             <div>
-              <h3 className="text-2xl font-bold">Apply for {position}</h3>
+              <h3 className="text-2xl text-white font-bold">Apply for {position}</h3>
               <p className="text-gray-400 mt-1">Fill out the form below to submit your application</p>
             </div>
             <button onClick={onClose} className="text-gray-400 hover:text-white">
@@ -73,7 +73,7 @@ export function JobApplicationForm({ position, onClose }: JobApplicationFormProp
           <Accordion type="single" collapsible className="w-full space-y-4">
             <AccordionItem value="personal-info" className="border border-gray-800 rounded-lg overflow-hidden">
               <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                <span className="text-lg font-medium">Personal Information</span>
+                <span className="text-lg text-white font-medium">Personal Information</span>
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6 space-y-4">
                 <div>
@@ -114,7 +114,7 @@ export function JobApplicationForm({ position, onClose }: JobApplicationFormProp
 
             <AccordionItem value="resume" className="border border-gray-800 rounded-lg overflow-hidden">
               <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                <span className="text-lg font-medium">Resume & Cover Letter</span>
+                <span className="text-lg text-white font-medium">Resume & Cover Letter</span>
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6 space-y-4">
                 <div>
@@ -146,7 +146,7 @@ export function JobApplicationForm({ position, onClose }: JobApplicationFormProp
               type="button"
               variant="outline"
               onClick={onClose}
-              className="border-gray-700 text-white hover:bg-gray-800"
+              className="border-red text-white hover:bg-gray-800"
             >
               Cancel
             </Button>

@@ -101,7 +101,7 @@ function PositionAccordion({ position, index, onApply }: PositionAccordionProps)
             </ul>
             <Button
               onClick={onApply}
-              className="md:hidden bg-blue-600 hover:bg-blue-700 mt-2"
+              className="md:hidden bg-[#4B6F93] bg-[#4B6F93] mt-2"
             >
               Apply for this position
             </Button>
