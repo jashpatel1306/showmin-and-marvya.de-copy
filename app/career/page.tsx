@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Carousel } from "@/components/ui/carousel"
-import { ArrowRight, MapPin, Clock, Users, Sparkles, Users2, Brain, Laugh, Quote, ChevronDown } from "lucide-react"
+import { ArrowRight, MapPin, Clock, Users, Sparkles, Users2, Brain, Laugh, Quote, ChevronDown, ArrowLeft } from "lucide-react"
 import { JobApplicationForm } from "@/components/career/job-application-form"
 
 type Position = {
@@ -365,16 +365,18 @@ export default function CareerPage() {
             </motion.div>
 
             <div className="max-w-6xl mx-auto">
-              <Carousel
-                className="w-full relative"
-                options={{
-                  align: "start",
-                  containScroll: "trimSnaps",
-                  dragFree: true,
-                  loop: false,
-                  slidesToScroll: 1,
-                }}
-              >
+              <div className="relative w-full overflow-hidden">
+                <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 -mx-4 px-4">
+                  {/* Hide scrollbar but keep functionality */}
+                  <style jsx>{`
+                    .hide-scrollbar::-webkit-scrollbar {
+                      display: none;
+                    }
+                    .hide-scrollbar {
+                      -ms-overflow-style: none;
+                      scrollbar-width: none;
+                    }
+                  `}</style>
                 {[
                   {
                     name: "Shrey S",
@@ -407,7 +409,7 @@ export default function CareerPage() {
                     avatar: "/placeholder-user.jpg"
                   }
                 ].map((testimonial, index) => (
-                  <div key={index} className="pl-4 w-full sm:w-1/2 lg:w-1/3">
+                  <div key={index} className="flex-none w-[85%] sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.666rem)] snap-center">
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -436,7 +438,36 @@ export default function CareerPage() {
                     </motion.div>
                   </div>
                 ))}
-              </Carousel>
+                </div>
+                
+                {/* Navigation Buttons */}
+                <div className="flex justify-center gap-4 mt-6">
+                  <button 
+                    onClick={() => {
+                      const container = document.querySelector('.overflow-x-auto');
+                      if (container) {
+                        container.scrollBy({ left: -300, behavior: 'smooth' });
+                      }
+                    }}
+                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                    aria-label="Previous slide"
+                  >
+                    <ArrowLeft className="h-5 w-5" />
+                  </button>
+                  <button 
+                    onClick={() => {
+                      const container = document.querySelector('.overflow-x-auto');
+                      if (container) {
+                        container.scrollBy({ left: 300, behavior: 'smooth' });
+                      }
+                    }}
+                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                    aria-label="Next slide"
+                  >
+                    <ArrowRight className="h-5 w-5" />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </section>

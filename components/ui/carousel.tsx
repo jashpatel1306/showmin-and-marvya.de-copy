@@ -52,10 +52,10 @@ const Carousel = React.forwardRef<
 
   return (
     <div ref={ref} className="relative w-full" {...props}>
-      <div className="overflow-hidden" ref={emblaRef}>
+      <div className="overflow-hidden [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]" ref={emblaRef}>
         <div className="flex">
           {React.Children.map(children, (child, i) => (
-            <div className="flex-[0_0_100%] min-w-0 pl-4">
+            <div className="flex-none w-full sm:w-1/2 lg:w-1/3 px-2">
               {child}
             </div>
           ))}
@@ -65,21 +65,21 @@ const Carousel = React.forwardRef<
         <Button
           variant="outline"
           size="icon"
-          className="h-8 w-8 rounded-full"
+          className="h-10 w-10 rounded-full bg-black hover:bg-gray-900 border-gray-700 hover:border-gray-600"
           disabled={!canScrollPrev}
           onClick={scrollPrev}
         >
-          <ArrowLeft className="h-4 w-4" />
+          <ArrowLeft className="h-5 w-5 text-white" />
           <span className="sr-only">Previous slide</span>
         </Button>
         <Button
           variant="outline"
           size="icon"
-          className="h-8 w-8 rounded-full"
+          className="h-10 w-10 rounded-full bg-black hover:bg-gray-900 border-gray-700 hover:border-gray-600"
           disabled={!canScrollNext}
           onClick={scrollNext}
         >
-          <ArrowRight className="h-4 w-4" />
+          <ArrowRight className="h-5 w-5 text-white" />
           <span className="sr-only">Next slide</span>
         </Button>
       </div>
