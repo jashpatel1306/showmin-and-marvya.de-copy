@@ -60,10 +60,11 @@ export default function Footer() {
           <div className="space-y-6">
             <h4 className="text-lg font-medium text-white">Links</h4>
             <nav className="flex flex-col space-y-3">
-              <a href="/logistics" className="text-gray-400 hover:text-white transition-colors duration-200 text-base">Showmine Logistics</a>
-              <a href="/capital" className="text-gray-400 hover:text-white transition-colors duration-200 text-base">Showmine Capital</a>
-              <a href="/reviews" className="text-gray-400 hover:text-white transition-colors duration-200 text-base">Reviews</a>
-              <a href="/careers" className="text-gray-400 hover:text-white transition-colors duration-200 text-base">Career</a>
+              <a href="/shop-migration" className="text-gray-400 hover:text-white transition-colors duration-200 text-base">Shop Migration</a>
+              <a href="/ai-ml" className="text-gray-400 hover:text-white transition-colors duration-200 text-base">AI-ML</a>
+              <a href="/management-system" className="text-gray-400 hover:text-white transition-colors duration-200 text-base">Management System</a>
+              <a href="/testimonials" className="text-gray-400 hover:text-white transition-colors duration-200 text-base">Customer Testimonials</a>
+              <a href="/career" className="text-gray-400 hover:text-white transition-colors duration-200 text-base">Career</a>
             </nav>
           </div>
 
