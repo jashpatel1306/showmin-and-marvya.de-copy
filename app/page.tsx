@@ -218,16 +218,23 @@ export default function HomePage() {
               </a>
             </Button>
             <Button
-              variant="outline"
+              variant="ghost"
+              onClick={() => {
+                const element = document.getElementById('support-section');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
               className="
-                bg-transparent hover:bg-white/10 
+                w-full sm:w-auto
+                bg-grey hover:bg-[rgb(75, 111, 147)]
                 text-white font-medium
                 px-3 py-2.5 rounded-xl
-                border-white/30 hover:border-white/50
                 shadow-lg hover:shadow-xl
                 transition-all duration-300 ease-out
                 hover:scale-105 hover:-translate-y-0.5
                 text-base
+                cursor-pointer
               "
             >
               Learn more
@@ -296,7 +303,7 @@ export default function HomePage() {
               Our services
             </Badge>
           </motion.div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl  text-white text-center mb-6">How we can support you</h2>
+          <h2 id="support-section" className="text-4xl md:text-5xl lg:text-6xl text-white text-center mb-6">How we can support you</h2>
           <p className="text-lg md:text-xl text-gray-400 text-center mb-14">Our services are precisely tailored to provide holistic support.<br />
             Based on our experience with our own e-commerce companies,<br />
             we have founded an agency that offers exactly what every<br />
