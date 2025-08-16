@@ -330,8 +330,7 @@ export default function HomePage() {
               </div>
 
               <p className="text-gray-300 text-lg leading-relaxed font-sans">
-                We develop Shopify stores so that they load extremely quickly, create targeted sales stimuli, and stand out from the competition. The stores we develop literally become customer magnets. Store migrations from other store systems to Shopify are part of our daily business, especially at a time when other store systems are making life increasingly difficult for e-commerce companies and Shopify retailers are overtaking them. Thanks to our unique approach, you not only secure a competitive advantage but also define new performance benchmarks.
-              </p>
+              We build Shopify stores that load at lightning speed, drive targeted sales, and stand out from the competition. Our stores are designed to become true customer magnets. Store migrations from other platforms to Shopify are part of our everyday work—especially now, as many e-commerce businesses face challenges with outdated systems while Shopify retailers surge ahead. With our unique approach, you don’t just gain a competitive edge—you set new standards for performance.              </p>
             </div>
             {/* Growth Consulting Card */}
             <div className="rounded-2xl border border-red-400/40 bg-gradient-to-br from-[#5c162b] via-[#1a0b0e] to-black p-10 flex flex-col justify-between shadow-3xl transition-transform duration-300 hover:scale-105 min-h-[380px] group">
@@ -353,7 +352,7 @@ export default function HomePage() {
                 </h3>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed font-sans">
-                In our consulting program, we've made it our mission to scale exciting e-commerce brands at breakneck speed, pushing the boundaries of conventional methods. We work alongside our clients as an active partner, providing comprehensive support throughout their growth. We operate our own shops and have successfully scaled several e-commerce companies to seven- to eight-figure annual sales in recent years. We've distilled these learnings into a strategically sound, step-by-step roadmap.
+              In our consulting program, our mission is to help ambitious e-commerce brands scale rapidly, breaking past the limits of traditional methods. We partner closely with our clients, offering end-to-end support throughout their growth journey. Having operated our own stores and successfully scaled multiple e-commerce businesses to seven- and eight-figure annual revenues, we bring proven expertise. All of these insights have been distilled into a clear, strategic, step-by-step roadmap.
               </p>
             </div>
           </div>
