@@ -21,7 +21,7 @@ export function Navigation() {
 
   const navItems = [
     { name: "Shop migration", href: "/shop-migration" },
-    { name: "AI-ML", href: "/ai-ml" },
+    { name: "Lead Generation", href: "/lead-generation" },
     { name: "Management System", href: "/management-system" },
     { name: "Customer testimonials", href: "/testimonials" },
     { name: "Career", href: "/career" },

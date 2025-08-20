@@ -796,6 +796,9 @@ video {
 .mt-auto {
   margin-top: auto;
 }
+.mt-5 {
+  margin-top: 1.25rem;
+}
 .block {
   display: block;
 }
@@ -1368,9 +1371,6 @@ video {
 }
 .border-white\/20 {
   border-color: rgb(255 255 255 / 0.2);
-}
-.border-white\/30 {
-  border-color: rgb(255 255 255 / 0.3);
 }
 .bg-\[\#00000\] {
   background-color: #00000;
@@ -2530,10 +2530,6 @@ html {
 .hover\:border-gray-700:hover {
   --tw-border-opacity: 1;
   border-color: rgb(55 65 81 / var(--tw-border-opacity, 1));
-}
-
-.hover\:border-white\/50:hover {
-  border-color: rgb(255 255 255 / 0.5);
 }
 
 .hover\:bg-\[\#1e3a6f\]:hover {
