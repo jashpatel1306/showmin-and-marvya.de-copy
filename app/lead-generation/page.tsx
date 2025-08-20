@@ -193,6 +193,47 @@ export default function LeadGenerationPage() {
                 </div>
               </div>
             </motion.div>
+
+            {/* Service Card 5 */}
+            <motion.div 
+              whileHover={{ y: -5, boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}
+              className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative overflow-hidden group"
+            >
+              <div className="absolute top-6 right-6 w-16 h-16 bg-purple-50 rounded-xl flex items-center justify-center">
+                <Search className="w-8 h-8 text-purple-500" />
+              </div>
+              <h3 className="text-xl font-bold text-black mb-3 pr-16">B2B Lead Generation</h3>
+              <p className="text-gray-600 mb-6">
+              Scrape email addresses, contact information, Social Media handles, website title, meta description from as many as websites you want.              </p>
+              <div className="flex justify-end">
+                <div className="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center group-hover:bg-purple-100 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Service Card 6 */}
+            <motion.div 
+              whileHover={{ y: -5, boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}
+              className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative overflow-hidden group"
+            >
+              <div className="absolute top-6 right-6 w-16 h-16 bg-green-50 rounded-xl flex items-center justify-center">
+                <Mail className="w-8 h-8 text-green-500" />
+              </div>
+              <h3 className="text-xl font-bold text-black mb-3 pr-16">Email Validation</h3>
+              <p className="text-gray-600 mb-6">
+                Scrape Scrape email addresses, contact information, Social Media handles, website title, meta description from as many as websites you want. addresses, contact information, Social Media handles, website title, meta description from as many as websites you want.
+              </p>
+              <div className="flex justify-end">
+                <div className="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
