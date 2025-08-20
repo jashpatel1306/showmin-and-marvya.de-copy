@@ -55,13 +55,12 @@ export default function LeadGenerationPage() {
               </h1>
               
               <p className="text-xl text-gray-300 leading-relaxed">
-                Showmine AI-ML helps you discover, qualify, and convert high-value leads with the power of Artificial Intelligence and Machine Learning. From analyzing customer behavior to predicting intent, our platform delivers the most relevant opportunities to grow your business.
+                Showmine enables you to extract valuable business data from Google Maps and other reliable sources with ease. Our platform is designed to be simple, intuitive, and efficient—allowing you to log in, collect data instantly, and gain accurate insights to help grow your business.
               </p>
               
               <p className="text-lg text-gray-400">
-                Designed to save time and maximize results, our system ensures you spend less time searching and more time closing. With real-time data, predictive analytics, and smart automation, you'll always stay ahead of the competition.
-              </p>
-              
+              We know your time is valuable, which is why we’ve built Livescraper to be as straightforward and user-friendly as possible. Once you sign up, you’ll have full access to all features. After extracting the data, you can quickly download it and analyze it to uncover new opportunities.              </p>
+            
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button className="bg-[#4B6F93] hover:bg-[#5A87E4] text-white px-8 py-6 text-lg rounded-lg transition-all duration-200 transform hover:scale-105">
                   Get Started Free
