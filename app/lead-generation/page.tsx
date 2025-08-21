@@ -40,38 +40,116 @@ export default function LeadGenerationPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Text Content */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-8"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8 relative z-10"
             >
-              {/* <div className="inline-flex items-center px-4 py-2 rounded-full bg-gray-900/50 border border-gray-800 mb-4">
-                <span className="w-2 h-2 bg-[#4B6F93] rounded-full mr-2 animate-pulse"></span>
+              <motion.div 
+                className="inline-flex items-center px-4 py-2 rounded-full bg-gray-900/50 border border-gray-800 mb-4 overflow-hidden"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+              >
+                <motion.span 
+                  className="w-2 h-2 bg-[#4B6F93] rounded-full mr-2"
+                  animate={{ 
+                    boxShadow: ['0 0 0 0 rgba(75, 111, 147, 0.7)', '0 0 0 10px rgba(75, 111, 147, 0)'],
+                  }}
+                  transition={{ 
+                    duration: 1.5,
+                    repeat: Infinity,
+                    ease: 'easeOut'
+                  }}
+                />
                 <span className="text-sm font-medium text-gray-300">AI-Powered Lead Generation</span>
-              </div> */}
+              </motion.div>
               
-              <h1 className="text-5xl md:text-4xl font-bold leading-tight">
-                ✨ Get Public Data Alive
-              </h1>
+              <motion.h1 
+                className="text-5xl md:text-6xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                <motion.span 
+                  className="inline-block"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+                >
+                  ✨ Get Public Data Alive
+                </motion.span>
+              </motion.h1>
               
-              <p className="text-xl text-gray-300 leading-relaxed">
+              <motion.p 
+                className="text-xl text-gray-300 leading-relaxed"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+              >
                 Showmine enables you to extract valuable business data from Google Maps and other reliable sources with ease. Our platform is designed to be simple, intuitive, and efficient—allowing you to log in, collect data instantly, and gain accurate insights to help grow your business.
-              </p>
+              </motion.p>
               
-              <p className="text-lg text-gray-400">
-              We know your time is valuable, which is why we’ve built Livescraper to be as straightforward and user-friendly as possible. Once you sign up, you’ll have full access to all features. After extracting the data, you can quickly download it and analyze it to uncover new opportunities.              </p>
+              <motion.p 
+                className="text-lg text-gray-400"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                We know your time is valuable, which is why we've built Livescraper to be as straightforward and user-friendly as possible. Once you sign up, you'll have full access to all features. After extracting the data, you can quickly download it and analyze it to uncover new opportunities.
+              </motion.p>
             
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button className="bg-[#4B6F93] hover:bg-[#5A87E4] text-white px-8 py-6 text-lg rounded-lg transition-all duration-200 transform hover:scale-105">
-                  Get Started Free
-                </Button>
-              </div>
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4 pt-4"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+              >
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Button className="relative overflow-hidden group bg-gradient-to-r from-[#4B6F93] to-[#5A87E4] text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 transform">
+                    <span className="relative z-10">Get Started Free</span>
+                    <motion.span 
+                      className="absolute inset-0 bg-gradient-to-r from-[#5A87E4] to-[#4B6F93] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      initial={{ x: '-100%' }}
+                      whileHover={{ x: '0%' }}
+                      transition={{ duration: 0.5 }}
+                    />
+                  </Button>
+                </motion.div>
+                
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Button variant="outline" className="border-gray-700 text-gray-300 hover:bg-gray-900/50 hover:text-white px-8 py-6 text-lg rounded-lg transition-colors duration-300">
+                    View Demo
+                  </Button>
+                </motion.div>
+              </motion.div>
+              
+              {/* Animated background elements */}
+              <motion.div 
+                className="absolute -z-10 -top-20 -left-20 w-64 h-64 bg-[#4B6F93]/10 rounded-full filter blur-3xl"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  opacity: [0.1, 0.2, 0.1],
+                }}
+                transition={{ 
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: 'easeInOut'
+                }}
+              />
             </motion.div>
 
             {/* Right Side - Image Grid */}
             <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative w-full h-[500px]"
             >
@@ -131,10 +209,46 @@ export default function LeadGenerationPage() {
                 />
               </motion.div>
               
-              {/* Decorative Elements */}
+              {/* Animated Decorative Elements */}
               <div className="absolute -z-10 w-full h-full">
-                <div className="absolute w-64 h-64 bg-[#4B6F93]/20 rounded-full -top-32 -left-32 filter blur-3xl"></div>
-                <div className="absolute w-96 h-96 bg-[#4B6F93]/10 rounded-full -bottom-48 -right-48 filter blur-3xl"></div>
+                <motion.div 
+                  className="absolute w-64 h-64 bg-[#4B6F93]/20 rounded-full -top-32 -left-32 filter blur-3xl"
+                  animate={{
+                    x: [0, 10, 0],
+                    y: [0, 15, 0],
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                />
+                <motion.div 
+                  className="absolute w-96 h-96 bg-[#4B6F93]/10 rounded-full -bottom-48 -right-48 filter blur-3xl"
+                  animate={{
+                    x: [0, -15, 0],
+                    y: [0, 10, 0],
+                  }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1
+                  }}
+                />
+                <motion.div 
+                  className="absolute w-40 h-40 bg-[#5A87E4]/10 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 filter blur-2xl"
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.1, 0.2, 0.1],
+                  }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0.5
+                  }}
+                />
               </div>
             </motion.div>
           </div>
