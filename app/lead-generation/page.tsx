@@ -68,28 +68,74 @@ export default function LeadGenerationPage() {
               </div>
             </motion.div>
 
-            {/* Right Side - Feature Cards */}
+            {/* Right Side - Image Grid */}
             <motion.div 
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-6"
+              className="relative w-full h-[500px]"
             >
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                  className="h-full"
-                >
-                  <Card className="h-full p-6 bg-gray-900/50 border border-gray-800 rounded-xl hover:border-[#4B6F93]/50 transition-all duration-300">
-                    <div className="w-12 h-12 flex items-center justify-center bg-gray-800 rounded-lg mb-4">
-                      {feature.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                    <p className="text-gray-400">{feature.description}</p>
-                  </Card>
-                </motion.div>
-              ))}
+              {/* Main Featured Image */}
+              <motion.div 
+                className="absolute w-[70%] h-[60%] rounded-2xl overflow-hidden shadow-2xl z-10 right-0 top-0"
+                initial={{ y: -20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <img 
+                  src="/leadgeneration/scraper1.png" 
+                  alt="Lead Generation Dashboard"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+              
+              {/* Top Left Image */}
+              <motion.div 
+                className="absolute w-[45%] h-[40%] rounded-2xl overflow-hidden shadow-2xl left-0 top-0 z-20"
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                <img 
+                  src="/leadgeneration/scraper2.png" 
+                  alt="Data Extraction"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+              
+              {/* Bottom Left Image */}
+              <motion.div 
+                className="absolute w-[40%] h-[45%] rounded-2xl overflow-hidden shadow-2xl left-0 bottom-0 z-10"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+              >
+                <img 
+                  src="/leadgeneration/scraper3.png" 
+                  alt="Lead Management"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+              
+              {/* Bottom Right Image */}
+              <motion.div 
+                className="absolute w-[50%] h-[35%] rounded-2xl overflow-hidden shadow-2xl right-0 bottom-0 z-20"
+                initial={{ y: 20, x: 20, opacity: 0 }}
+                animate={{ y: 0, x: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 1 }}
+              >
+                <img 
+                  src="/leadgeneration/scraper4.png" 
+                  alt="Analytics Dashboard"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+              
+              {/* Decorative Elements */}
+              <div className="absolute -z-10 w-full h-full">
+                <div className="absolute w-64 h-64 bg-[#4B6F93]/20 rounded-full -top-32 -left-32 filter blur-3xl"></div>
+                <div className="absolute w-96 h-96 bg-[#4B6F93]/10 rounded-full -bottom-48 -right-48 filter blur-3xl"></div>
+              </div>
             </motion.div>
           </div>
         </div>

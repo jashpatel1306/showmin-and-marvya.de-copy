@@ -673,6 +673,18 @@ video {
 .top-6 {
   top: 1.5rem;
 }
+.-bottom-48 {
+  bottom: -12rem;
+}
+.-left-32 {
+  left: -8rem;
+}
+.-right-48 {
+  right: -12rem;
+}
+.-top-32 {
+  top: -8rem;
+}
 .z-0 {
   z-index: 0;
 }
@@ -687,6 +699,9 @@ video {
 }
 .z-\[60\] {
   z-index: 60;
+}
+.-z-10 {
+  z-index: -10;
 }
 .-mx-4 {
   margin-left: -1rem;
@@ -907,6 +922,24 @@ video {
 .h-full {
   height: 100%;
 }
+.h-64 {
+  height: 16rem;
+}
+.h-96 {
+  height: 24rem;
+}
+.h-\[35\%\] {
+  height: 35%;
+}
+.h-\[40\%\] {
+  height: 40%;
+}
+.h-\[45\%\] {
+  height: 45%;
+}
+.h-\[60\%\] {
+  height: 60%;
+}
 .max-h-96 {
   max-height: 24rem;
 }
@@ -1002,6 +1035,21 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.w-64 {
+  width: 16rem;
+}
+.w-\[40\%\] {
+  width: 40%;
+}
+.w-\[45\%\] {
+  width: 45%;
+}
+.w-\[50\%\] {
+  width: 50%;
+}
+.w-\[70\%\] {
+  width: 70%;
 }
 .min-w-\[300px\] {
   min-width: 300px;
@@ -1520,6 +1568,12 @@ video {
 .bg-teal-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(240 253 250 / var(--tw-bg-opacity, 1));
+}
+.bg-\[\#4B6F93\]\/10 {
+  background-color: rgb(75 111 147 / 0.1);
+}
+.bg-\[\#4B6F93\]\/20 {
+  background-color: rgb(75 111 147 / 0.2);
 }
 .bg-\[url\(\'\/grid\.svg\'\)\] {
   background-image: url('/grid.svg');
