@@ -1,7 +1,7 @@
 {
-  "/testimonials/page": "app/testimonials/page.js",
+  "/management-system/page": "app/management-system/page.js",
+  "/page": "app/page.js",
   "/lead-generation/page": "app/lead-generation/page.js",
-  "/career/page": "app/career/page.js",
-  "/ai-ml/page": "app/ai-ml/page.js",
-  "/page": "app/page.js"
+  "/testimonials/page": "app/testimonials/page.js",
+  "/ai-ml/page": "app/ai-ml/page.js"
 }

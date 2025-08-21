@@ -1133,7 +1133,7 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900/80 via-blue-800/60 to-black relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-[#4B6F93]/20 via-[#4B6F93]/10 to-black relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-transparent" />
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <motion.div
