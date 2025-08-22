@@ -9,6 +9,7 @@ import { GitHubGlobe } from "@/components/ui/github-globe"
 import { Beams } from "@/components/ui/beams"
 import { FocusCard } from "@/components/ui/focus-card"
 import { BackgroundBeams } from "@/components/ui/background-beams";
+import { GlobeSection } from "@/components/ui/globe-section";
 
 export default function LeadGenerationPage() {
   const features = [
@@ -340,6 +341,8 @@ export default function LeadGenerationPage() {
         </BackgroundBeams>
       </section>
 
+      {/* Global Company Section */}
+      <GlobeSection />
 
     </div>
   )
