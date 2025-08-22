@@ -1,10 +1,289 @@
+// "use client"
+
+// import { useState } from 'react'
+// import { motion } from 'framer-motion'
+// import { Navigation } from "@/components/navigation"
+// import { Button } from "@/components/ui/button"
+// import { 
+//   Target, 
+//   BarChart3, 
+//   Zap, 
+//   Users, 
+//   Search, 
+//   Mail, 
+//   ArrowRight,
+//   ChevronDown,
+//   ChevronUp,
+//   Star,
+//   MapPin
+// } from "lucide-react"
+
+// interface Feature {
+//   icon: React.ReactNode;
+//   title: string;
+//   description: string;
+//   color: string;
+// }
+
+// interface Step {
+//   number: string;
+//   title: string;
+//   description: string;
+//   icon: React.ReactNode;
+// }
+
+// interface FAQ {
+//   question: string;
+//   answer: string;
+// }
+
+// export default function LeadGenerationPage() {
+//   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  
+//   // Features data
+//   const features: Feature[] = [
+//     {
+//       icon: <Target className="w-8 h-8 text-white" />,
+//       title: "Targeted Lead Generation",
+//       description: "Reach your ideal customers with precision targeting based on demographics, behavior, and intent.",
+//       color: "from-blue-500 to-blue-700"
+//     },
+//     {
+//       icon: <BarChart3 className="w-8 h-8 text-white" />,
+//       title: "Data-Driven Insights",
+//       description: "Make informed decisions with real-time analytics and performance metrics.",
+//       color: "from-purple-500 to-purple-700"
+//     },
+//     {
+//       icon: <Zap className="w-8 h-8 text-white" />,
+//       title: "Automated Workflows",
+//       description: "Save time with automated lead nurturing and follow-up sequences.",
+//       color: "from-green-500 to-green-700"
+//     },
+//     {
+//       icon: <Users className="w-8 h-8 text-white" />,
+//       title: "Team Collaboration",
+//       description: "Work seamlessly with your team to manage and convert leads.",
+//       color: "from-yellow-500 to-yellow-700"
+//     }
+//   ];
+  
+//   // How It Works steps
+//   const steps: Step[] = [
+//     {
+//       number: '01',
+//       title: 'Define Your Audience',
+//       description: 'Set your target criteria and let our AI find the best matches',
+//       icon: <Target className="w-6 h-6 text-white" />
+//     },
+//     {
+//       number: '02',
+//       title: 'Generate Leads',
+//       description: 'Our system scans multiple sources to find potential customers',
+//       icon: <Search className="w-6 h-6 text-white" />
+//     },
+//     {
+//       number: '03',
+//       title: 'Engage & Convert',
+//       description: 'Reach out with personalized messages and track responses',
+//       icon: <Mail className="w-6 h-6 text-white" />
+//     }
+//   ];
+  
+//   // FAQ data
+//   const faqs: FAQ[] = [
+//     {
+//       question: "How quickly can I see results?",
+//       answer: "Most clients start seeing qualified leads within the first 2 weeks."
+//     },
+//     {
+//       question: "Do you offer lead nurturing?",
+//       answer: "Yes, we provide comprehensive lead nurturing solutions."
+//     },
+//     {
+//       question: "CRM integration?",
+//       answer: "Integrates with all major CRM systems."
+//     }
+//   ];
+
+//   return (
+//     <div className="min-h-screen bg-black text-white">
+//       <Navigation />
+      
+//       {/* Hero Section */}
+//       <section className="relative pt-32 pb-20 overflow-hidden">
+//         <div className="container mx-auto px-4">
+//           <div className="max-w-4xl mx-auto text-center">
+//             <motion.div
+//               initial={{ opacity: 0, y: 20 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-sm mb-6"
+//             >
+//               <Star className="w-4 h-4 mr-2" />
+//               Trusted by 10,000+ businesses
+//             </motion.div>
+            
+//             <motion.h1 
+//               className="text-5xl md:text-6xl font-bold mb-6"
+//               initial={{ opacity: 0, y: 20 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ delay: 0.1 }}
+//             >
+//               Generate More <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Leads</span>
+//             </motion.h1>
+            
+//             <motion.p 
+//               className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto"
+//               initial={{ opacity: 0, y: 20 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ delay: 0.2 }}
+//             >
+//               Transform your business with our AI-powered lead generation platform.
+//             </motion.p>
+            
+//             <motion.div
+//               initial={{ opacity: 0, y: 20 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ delay: 0.3 }}
+//               className="flex flex-col sm:flex-row gap-4 justify-center"
+//             >
+//               <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-6 text-lg rounded-xl">
+//                 Start Free Trial <ArrowRight className="ml-2 h-5 w-5" />
+//               </Button>
+//               <Button variant="outline" className="border-gray-700 text-white hover:bg-gray-800 px-8 py-6 text-lg rounded-xl">
+//                 Book a Demo
+//               </Button>
+//             </motion.div>
+//           </div>
+//         </div>
+//       </section>
+      
+//       {/* Features Section */}
+//       <section className="py-20 bg-gray-900/50">
+//         <div className="container mx-auto px-4">
+//           <div className="max-w-3xl mx-auto text-center mb-16">
+//             <h2 className="text-4xl font-bold mb-6">Powerful Features</h2>
+//             <p className="text-xl text-gray-400">Everything you need to find and convert leads</p>
+//           </div>
+          
+//           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+//             {features.map((feature, index) => (
+//               <motion.div
+//                 key={index}
+//                 className="bg-gray-800/50 rounded-2xl p-8 border border-gray-800"
+//                 initial={{ opacity: 0, y: 20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 viewport={{ once: true }}
+//                 transition={{ delay: index * 0.1 }}
+//               >
+//                 <div className={`w-16 h-16 rounded-2xl mb-6 flex items-center justify-center bg-gradient-to-br ${feature.color}`}>
+//                   {feature.icon}
+//                 </div>
+//                 <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
+//                 <p className="text-gray-400">{feature.description}</p>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+      
+//       {/* How It Works */}
+//       <section className="py-20 bg-black">
+//         <div className="container mx-auto px-4">
+//           <div className="max-w-3xl mx-auto text-center mb-16">
+//             <h2 className="text-4xl font-bold mb-6">How It Works</h2>
+//             <p className="text-xl text-gray-400">Get started in minutes</p>
+//           </div>
+          
+//           <div className="grid md:grid-cols-3 gap-8">
+//             {steps.map((step, index) => (
+//               <motion.div 
+//                 key={index}
+//                 className="bg-gray-900/50 p-8 rounded-2xl border border-gray-800"
+//                 initial={{ opacity: 0, y: 20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 viewport={{ once: true }}
+//                 transition={{ delay: index * 0.1 }}
+//               >
+//                 <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 text-lg font-bold mb-4">
+//                   {step.number}
+//                 </div>
+//                 <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-4">
+//                   {step.icon}
+//                 </div>
+//                 <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+//                 <p className="text-gray-400">{step.description}</p>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+      
+//       {/* FAQ Section */}
+//       <section className="py-20 bg-gray-900/50">
+//         <div className="container mx-auto px-4">
+//           <div className="max-w-3xl mx-auto">
+//             <h2 className="text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+//             <div className="space-y-4">
+//               {faqs.map((faq, index) => (
+//                 <div key={index} className="border-b border-gray-800 pb-4">
+//                   <button
+//                     className="w-full flex justify-between items-center py-4 text-left"
+//                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
+//                   >
+//                     <span className="text-lg font-medium">{faq.question}</span>
+//                     {openFaq === index ? (
+//                       <ChevronUp className="w-5 h-5 text-gray-400" />
+//                     ) : (
+//                       <ChevronDown className="w-5 h-5 text-gray-400" />
+//                     )}
+//                   </button>
+//                   {openFaq === index && (
+//                     <motion.div
+//                       initial={{ opacity: 0, height: 0 }}
+//                       animate={{ opacity: 1, height: 'auto' }}
+//                       exit={{ opacity: 0, height: 0 }}
+//                       className="overflow-hidden"
+//                     >
+//                       <p className="text-gray-400 pb-4">{faq.answer}</p>
+//                     </motion.div>
+//                   )}
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+      
+//       {/* CTA Section */}
+//       <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+//         <div className="container mx-auto px-4 text-center">
+//           <h2 className="text-4xl font-bold mb-6">Ready to Grow Your Business?</h2>
+//           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+//             Start generating high-quality leads today with our 14-day free trial. No credit card required.
+//           </p>
+//           <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg font-medium rounded-xl">
+//             Get Started Now <ArrowRight className="ml-2 h-5 w-5" />
+//           </Button>
+//         </div>
+//       </section>
+      
+//     </div>
+//   )
+// }
+
+
 "use client"
 
 import { motion } from "framer-motion"
 import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Brain, Target, BarChart3, Zap, MapPin, Star, Search, Mail } from "lucide-react"
+import { Brain, Target, BarChart3, Zap, MapPin, Star, Search, Mail, ArrowRight } from "lucide-react"
+import { GitHubGlobe } from "@/components/ui/github-globe"
+import { Beams } from "@/components/ui/beams"
+import { FocusCard } from "@/components/ui/focus-card"
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export default function LeadGenerationPage() {
   const features = [
@@ -35,8 +314,11 @@ export default function LeadGenerationPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-black ">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-black to-gray-900">
+        <div className="absolute inset-0 z-0 opacity-40">
+          <GitHubGlobe />
+        </div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Text Content */}
             <motion.div
@@ -67,7 +349,7 @@ export default function LeadGenerationPage() {
               </motion.div>
               
               <motion.h1 
-                className="text-5xl md:text-6xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400"
+                className="text-5xl md:text-5xl font-bold leading-tight bg-clip-text text-transparent text-white"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -110,22 +392,13 @@ export default function LeadGenerationPage() {
                   whileTap={{ scale: 0.98 }}
                 >
                   <Button className="relative overflow-hidden group bg-gradient-to-r from-[#4B6F93] to-[#5A87E4] text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 transform">
-                    <span className="relative z-10">Get Started Free</span>
+                    <span className="relative z-10">Get Started</span>
                     <motion.span 
                       className="absolute inset-0 bg-gradient-to-r from-[#5A87E4] to-[#4B6F93] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       initial={{ x: '-100%' }}
                       whileHover={{ x: '0%' }}
                       transition={{ duration: 0.5 }}
                     />
-                  </Button>
-                </motion.div>
-                
-                <motion.div
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Button variant="outline" className="border-gray-700 text-gray-300 hover:bg-gray-900/50 hover:text-white px-8 py-6 text-lg rounded-lg transition-colors duration-300">
-                    View Demo
                   </Button>
                 </motion.div>
               </motion.div>
@@ -256,394 +529,93 @@ export default function LeadGenerationPage() {
       </section>
 
       {/* Best Services We Present Section */}
-      <section className="py-20 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="relative overflow-hidden bg-white">
+        <BackgroundBeams className="bg-gradient-to-b from-white to-gray-50">
           {/* Section Header */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto mb-16"
           >
             <motion.h2 
-              className="text-4xl font-bold text-black mb-6"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              className="text-4xl font-bold text-gray-900 mb-6"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.8 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
             >
-              Best Services <motion.span 
-                className="text-[#0066FF] inline-block"
-                initial={{ scale: 0.8, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3, type: 'spring', stiffness: 100 }}
-              >
-                We Present
-              </motion.span>
+              Best Services We Present For Your Business
             </motion.h2>
             <motion.p 
-              className="text-gray-600 text-lg leading-relaxed"
+              className="text-lg text-gray-600"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              Want to extract data from a public source? With an effortless data scraping process, you can enhance your Lead generation and productivity of your workflow. Check out the services we provide.
+              Want to extract data from a public source? With an effortless data scraping process, you can enhance your Lead generation and productivity of your workflow.
             </motion.p>
           </motion.div>
 
           {/* Services Grid */}
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.15,
-                  delayChildren: 0.2
-                }
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <FocusCard
+              icon={
+                <MapPin className="w-6 h-6 text-blue-500" />
               }
-            }}
-          >
-            {/* Service Card 1 */}
-            <motion.div 
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { 
-                  opacity: 1, 
-                  y: 0,
-                  transition: { type: 'spring', stiffness: 100 }
-                }
-              }}
-              whileHover={{ 
-                y: -8,
-                boxShadow: '0 25px 50px -12px rgba(0, 102, 255, 0.1)',
-                borderColor: 'rgba(0, 102, 255, 0.2)'
-              }}
-              className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative overflow-hidden group"
-            >
-              <motion.div 
-                className="absolute top-6 right-6 w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center"
-                whileHover={{ 
-                  rotate: [0, -10, 10, -5, 5, 0],
-                  transition: { duration: 0.6 }
-                }}
-              >
-                <MapPin className="w-8 h-8 text-blue-500" />
-              </motion.div>
-              <h3 className="text-xl font-bold text-black mb-3 pr-16">Google Maps Data Scraper</h3>
-              <p className="text-gray-600 mb-6">
-                Extracts places/business information from Google Maps, including business name, address, phone number, website URL, Email, Social handles and more.
-              </p>
-              <motion.div 
-                className="flex justify-end"
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-              >
-                <motion.div 
-                  className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors"
-                  whileHover={{ 
-                    backgroundColor: 'rgba(0, 102, 255, 0.1)',
-                    scale: 1.1
-                  }}
-                >
-                  <motion.svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    className="h-4 w-4 text-[#0066FF]" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 3 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </motion.svg>
-                </motion.div>
-              </motion.div>
-            </motion.div>
+              title="B2B Lead Generation"
+              description="Get access to a comprehensive database for B2B lead generation with vital information about potential customers."
+            />
+            
+            <FocusCard
+              icon={
+                <Star className="w-6 h-6 text-yellow-500" />
+              }
+              title="Email Validation"
+              className="md:translate-y-8"
+              description="Validate email addresses in bulk with our advanced verification system. Ensure high deliverability and clean your email lists effectively."
+              />
+            
+            <FocusCard
+              icon={
+                <Search className="w-6 h-6 text-purple-500" />
+              }
+              title="Google Search Scraping"
+              description="Scrape key information from Google SERP including keywords, ranking positions, and backlinks without any coding skills."
+              />
+            
+            <FocusCard
+              icon={
+                <Mail className="w-6 h-6 text-green-500" />
+              }
+              title="Email & Contact Scraper"
+              className="md:translate-y-8"
+              description="Extract email addresses, social media handles, and other contact information from websites at scale."
+              />
 
-            {/* Service Card 2 */}
-            <motion.div 
-              whileHover={{ y: -5, boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}
-              className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative overflow-hidden group"
-            >
-              <motion.div 
-                className="absolute top-6 right-6 w-16 h-16 bg-orange-50 rounded-xl flex items-center justify-center"
-                whileHover={{ 
-                  rotate: [0, -10, 10, -5, 5, 0],
-                  transition: { duration: 0.6 }
-                }}
-              >
-                <Star className="w-8 h-8 text-orange-500" />
-              </motion.div>
-              <h3 className="text-xl font-bold text-black mb-3 pr-16">Google Maps Reviews Scraper</h3>
-              <p className="text-gray-600 mb-6">
-                With Livescraper, you can extract all the reviews for your own business or any business/places available on their Google my business profile.
-              </p>
-              <div className="flex justify-end">
-                <div className="w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center group-hover:bg-orange-100 transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Service Card 3 */}
-            <motion.div 
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { 
-                  opacity: 1, 
-                  y: 0,
-                  transition: { type: 'spring', stiffness: 100 }
-                }
-              }}
-              whileHover={{ 
-                y: -8,
-                boxShadow: '0 25px 50px -12px rgba(168, 85, 247, 0.1)',
-                borderColor: 'rgba(168, 85, 247, 0.2)'
-              }}
-              className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative overflow-hidden group"
-            >
-              <motion.div 
-                className="absolute top-6 right-6 w-16 h-16 bg-purple-50 rounded-xl flex items-center justify-center"
-                whileHover={{ 
-                  rotate: [0, -10, 10, -5, 5, 0],
-                  transition: { duration: 0.6 }
-                }}
-              >
-                <Search className="w-8 h-8 text-purple-500" />
-              </motion.div>
-              <h3 className="text-xl font-bold text-black mb-3 pr-16">Google Search Scraping</h3>
-              <p className="text-gray-600 mb-6">
-                Scrape key information from Google SERP without any coding skills such as keywords, ranking position, Links, and other metrics.
-              </p>
-              <motion.div 
-                className="flex justify-end"
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-              >
-                <motion.div 
-                  className="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center group-hover:bg-purple-100 transition-colors"
-                  whileHover={{ 
-                    backgroundColor: 'rgba(168, 85, 247, 0.1)',
-                    scale: 1.1
-                  }}
-                >
-                  <motion.svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    className="h-4 w-4 text-purple-500" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 3 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </motion.svg>
-                </motion.div>
-              </motion.div>
-            </motion.div>
-
-            {/* Service Card 4 */}
-            <motion.div 
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { 
-                  opacity: 1, 
-                  y: 0,
-                  transition: { type: 'spring', stiffness: 100 }
-                }
-              }}
-              whileHover={{ 
-                y: -8,
-                boxShadow: '0 25px 50px -12px rgba(16, 185, 129, 0.1)',
-                borderColor: 'rgba(16, 185, 129, 0.2)'
-              }}
-              className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative overflow-hidden group"
-            >
-              <motion.div 
-                className="absolute top-6 right-6 w-16 h-16 bg-green-50 rounded-xl flex items-center justify-center"
-                whileHover={{ 
-                  rotate: [0, -10, 10, -5, 5, 0],
-                  transition: { duration: 0.6 }
-                }}
-              >
-                <Mail className="w-8 h-8 text-green-500" />
-              </motion.div>
-              <h3 className="text-xl font-bold text-black mb-3 pr-16">Email & Contact Scraper</h3>
-              <p className="text-gray-600 mb-6">
-                Scrape email addresses, contact information, Social Media handles, website title, meta description from as many as websites you want.
-              </p>
-              <motion.div 
-                className="flex justify-end"
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-              >
-                <motion.div 
-                  className="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors"
-                  whileHover={{ 
-                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                    scale: 1.1
-                  }}
-                >
-                  <motion.svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    className="h-4 w-4 text-green-500" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 3 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </motion.svg>
-                </motion.div>
-              </motion.div>
-            </motion.div>
-
-            {/* Service Card 5 */}
-            <motion.div 
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { 
-                  opacity: 1, 
-                  y: 0,
-                  transition: { type: 'spring', stiffness: 100 }
-                }
-              }}
-              whileHover={{ 
-                y: -8,
-                boxShadow: '0 25px 50px -12px rgba(139, 92, 246, 0.1)',
-                borderColor: 'rgba(139, 92, 246, 0.2)'
-              }}
-              className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative overflow-hidden group"
-            >
-              <motion.div 
-                className="absolute top-6 right-6 w-16 h-16 bg-indigo-50 rounded-xl flex items-center justify-center"
-                whileHover={{ 
-                  rotate: [0, -10, 10, -5, 5, 0],
-                  transition: { duration: 0.6 }
-                }}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </motion.div>
-              <h3 className="text-xl font-bold text-black mb-3 pr-16">B2B Lead Generation</h3>
-              <p className="text-gray-600 mb-6">
-                Get access to a comprehensive database for B2B lead generation with vital information about potential customers.
-              </p>
-              <motion.div 
-                className="flex justify-end"
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-              >
-                <motion.div 
-                  className="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center group-hover:bg-indigo-100 transition-colors"
-                  whileHover={{ 
-                    backgroundColor: 'rgba(99, 102, 241, 0.1)',
-                    scale: 1.1
-                  }}
-                >
-                  <motion.svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    className="h-4 w-4 text-indigo-500" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 3 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </motion.svg>
-                </motion.div>
-              </motion.div>
-            </motion.div>
-
-            {/* Service Card 6 */}
-            <motion.div 
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { 
-                  opacity: 1, 
-                  y: 0,
-                  transition: { type: 'spring', stiffness: 100 }
-                }
-              }}
-              whileHover={{ 
-                y: -8,
-                boxShadow: '0 25px 50px -12px rgba(16, 185, 129, 0.1)',
-                borderColor: 'rgba(16, 185, 129, 0.2)'
-              }}
-              className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative overflow-hidden group"
-            >
-              <motion.div 
-                className="absolute top-6 right-6 w-16 h-16 bg-teal-50 rounded-xl flex items-center justify-center"
-                whileHover={{ 
-                  rotate: [0, -10, 10, -5, 5, 0],
-                  transition: { duration: 0.6 }
-                }}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </motion.div>
-              <h3 className="text-xl font-bold text-black mb-3 pr-16">Email Validation</h3>
-              <p className="text-gray-600 mb-6">
-                Validate email addresses in bulk with our advanced verification system. Ensure high deliverability and clean your email lists effectively.
-              </p>
-              <motion.div 
-                className="flex justify-end"
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-              >
-                <motion.div 
-                  className="w-8 h-8 rounded-full bg-teal-50 flex items-center justify-center group-hover:bg-teal-100 transition-colors"
-                  whileHover={{ 
-                    backgroundColor: 'rgba(20, 184, 166, 0.1)',
-                    scale: 1.1
-                  }}
-                >
-                  <motion.svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    className="h-4 w-4 text-teal-500" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 3 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </motion.svg>
-                </motion.div>
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        </div>
+            <FocusCard
+              icon={
+                <Search className="w-6 h-6 text-purple-500" />
+              }
+              title="Google Maps Data Scraper"
+              description="Extract business information including name, address, phone, website, email, and social media handles from Google Maps."
+              />
+            
+            <FocusCard
+              icon={
+                <Mail className="w-6 h-6 text-green-500" />
+              }
+              title="Google Maps Reviews Scraper"
+              className="md:translate-y-8"
+              description="Extract all reviews for any business listed on Google My Business with detailed analytics and insights."
+              />
+          </div>
+        </BackgroundBeams>
       </section>
+
+
     </div>
   )
 }
