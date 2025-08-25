@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useState } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform, AnimatePresence, useMotionValue, useSpring } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { partners } from "@/data/partners"
 import { Card } from "@/components/ui/card"
@@ -9,6 +9,106 @@ import { Badge } from "@/components/ui/badge"
 import { Star, Check, X, BarChart3, Target, Clock, ArrowRight, Plus, Minus } from "lucide-react"
 import Image from "next/image"
 import { Navigation } from "@/components/navigation"
+
+// Client data for tooltips
+const clients = [
+  { id: 1, name: 'Client 1', designation: 'E-commerce Store', image: '/client/client1.png' },
+  { id: 2, name: 'Client 2', designation: 'Fashion Brand', image: '/client/client2.png' },
+  { id: 3, name: 'Client 3', designation: 'Tech Startup', image: '/client/client3.png' },
+  { id: 4, name: 'Client 4', designation: 'Luxury Goods', image: '/client/client4.png' },
+  { id: 5, name: 'Client 5', designation: 'Beauty Products', image: '/client/client5.png' },
+  
+];
+
+// AnimatedTooltip component
+const AnimatedTooltip = ({
+  items,
+}: {
+  items: {
+    id: number;
+    name: string;
+    designation: string;
+    image: string;
+  }[];
+}) => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const springConfig = { stiffness: 100, damping: 15 };
+  const x = useMotionValue(0);
+  const animationFrameRef = useRef<number | null>(null);
+
+  const rotate = useSpring(
+    useTransform(x, [-100, 100], [-45, 45]),
+    springConfig,
+  );
+  const translateX = useSpring(
+    useTransform(x, [-100, 100], [-50, 50]),
+    springConfig,
+  );
+
+  const handleMouseMove = (event: any) => {
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+    }
+
+    animationFrameRef.current = requestAnimationFrame(() => {
+      const halfWidth = event.target.offsetWidth / 2;
+      x.set(event.nativeEvent.offsetX - halfWidth);
+    });
+  };
+
+  return (
+    <div className="flex items-center justify-center -space-x-4">
+      {items.map((item, idx) => (
+        <div
+          className="group relative -mr-4"
+          key={item.name}
+          onMouseEnter={() => setHoveredIndex(item.id)}
+          onMouseLeave={() => setHoveredIndex(null)}
+        >
+          <AnimatePresence>
+            {hoveredIndex === item.id && (
+              <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.6 }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  transition: {
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 10,
+                  },
+                }}
+                exit={{ opacity: 0, y: 20, scale: 0.6 }}
+                style={{
+                  translateX: translateX,
+                  rotate: rotate,
+                  whiteSpace: "nowrap",
+                }}
+                className="absolute -top-16 left-1/2 z-50 flex -translate-x-1/2 flex-col items-center justify-center rounded-md bg-black px-4 py-2 text-xs shadow-xl"
+              >
+                <div className="absolute inset-x-10 -bottom-px z-30 h-px w-[20%] bg-gradient-to-r from-transparent via-emerald-500 to-transparent" />
+                <div className="absolute -bottom-px left-10 z-30 h-px w-[40%] bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
+                <div className="relative z-30 text-base font-bold text-white">
+                  {item.name}
+                </div>
+                <div className="text-xs text-white">{item.designation}</div>
+              </motion.div> 
+            )}
+          </AnimatePresence>
+          <img
+            onMouseMove={handleMouseMove}
+            height={100}
+            width={100}
+            src={item.image}
+            alt={item.name}
+            className="relative !m-0 h-11 w-11 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105"
+          />
+        </div>
+      ))}
+    </div>
+  );
+};
 
 // FAQ Accordion Component
 function FAQAccordion() {
@@ -136,21 +236,7 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             className="flex justify-center"
           >
-            <div className="flex -space-x-3 overflow-x-auto max-w-full pb-2 scrollbar-hide">
-              {['client1', 'client2', 'client3', 'client5', 'client4'].map((name, index) => (
-                <div
-                  key={index}
-                  className="w-10 h-10 rounded-full border-2 border-white overflow-hidden"
-                >
-                  <img
-                    src={`/client/${name}.png`}
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                    alt={`Client ${index + 1}`}
-                  />
-                </div>
-              ))}
-            </div>
+            <AnimatedTooltip items={clients} />
 
             <div className="flex flex-col items-start ml-3">
               <div className="flex items-center gap-1">
