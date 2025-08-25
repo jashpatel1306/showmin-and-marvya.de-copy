@@ -872,18 +872,23 @@ export default function ShopMigrationPage() {
             viewport={{ once: true }}
             className="flex flex-wrap items-center justify-center gap-12 md:gap-16 opacity-60"
           >
-            {partners.map((partner, index) => (
-              <motion.div
-                key={partner}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 0.6, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-xl md:text-2xl font-light tracking-wider hover:opacity-100 transition-opacity duration-300"
-              >
-                {partner}
-              </motion.div>
-            ))}
+            {partners.map((partner, index) => {
+              const partnerName = typeof partner === 'string' ? partner : partner.name;
+              const partnerKey = typeof partner === 'string' ? partner : partner.id || partner.name || index;
+              
+              return (
+                <motion.div
+                  key={`partner-${index}-${partnerKey}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 0.6, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-xl md:text-2xl font-light tracking-wider hover:opacity-100 transition-opacity duration-300"
+                >
+                  {partnerName}
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
