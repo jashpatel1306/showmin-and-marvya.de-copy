@@ -194,12 +194,17 @@ const brands = [
   { name: "SIMPL", img: "/images/customers/simpl.png" },
   { name: "DIAMONDRENSU", img: "/images/customers/diamondrensu.png" },
   { name: "GOSHAPEI", img: "/images/customers/gosharpei.png" },
+  { name: "KYMEE", img: "/images/customers/kymee.png" },
   { name: "LEMARAIS", img: "/images/customers/lemaris.png" },
   { name: "PIRINHILL", img: "/images/customers/pirinhill.png" },
   { name: "WHEELIOSPIN", img: "/images/customers/WheelioSpin.png" },
   { name: "SRFACE", img: "/images/customers/srface.png" },
+  { name: "BRITISHJEWEL", img: "/images/customers/britishjewel.png" },
   { name: "PLUMDIAMONDS", img: "/images/customers/plumdiamonds.png" },
   { name: "INDOERA", img: "/images/customers/indoera.png" },
+  
+ 
+
 ];
 
 export default function HomePage() {
@@ -367,7 +372,7 @@ export default function HomePage() {
                     alt={brand.name}
                     width={120}
                     height={60}
-                    className="object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                    className="object-contain opacity-70 hover:opacity-100 transition-opacity duration-400"
                   />
                 </div>
               ))}
@@ -442,6 +447,8 @@ export default function HomePage() {
               </p>
             </div>
           </div>
+
+          {/* right choise section */}
           <div className="mt-12 text-center">
             <p className="text-[48px] text-gray-200 font-light">
             If you’re seeking a partner who thinks strategically, prioritizes your company’s interests, and offers proven e-commerce expertise with an exceptional track record, Showmine is the right choice.
