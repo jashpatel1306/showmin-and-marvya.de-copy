@@ -1,16 +1,310 @@
 "use client"
 
-import { useRef, useState, useEffect } from "react"
+import React, { useRef, useState, useEffect, createContext, useContext } from "react"
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValue, useSpring, useAnimate } from "framer-motion"
 import { stagger } from "framer-motion/dom"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { partners } from "@/data/partners"
-import { Card } from "@/components/ui/card"
+import { Card as UICard } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Star, Check, X, BarChart3, Target, Clock, ArrowRight, Plus, Minus } from "lucide-react"
-import Image from "next/image"
+import { Star, Check, X, BarChart3, Target, Clock, ArrowRight, Plus, Minus, ArrowLeft, ArrowRight as ArrowRightIcon } from "lucide-react"
+import Image, { ImageProps } from "next/image"
 import { Navigation } from "@/components/navigation"
+
+// Carousel Context
+const CarouselContext = createContext<{
+  onCardClose: (index: number) => void;
+  currentIndex: number;
+}>({
+  onCardClose: () => {},
+  currentIndex: 0,
+});
+
+// Outside click hook
+const useOutsideClick = (
+  ref: React.RefObject<HTMLDivElement>,
+  callback: Function
+) => {
+  useEffect(() => {
+    const listener = (event: any) => {
+      if (!ref.current || ref.current.contains(event.target)) {
+        return;
+      }
+      callback(event);
+    };
+
+    document.addEventListener("mousedown", listener);
+    document.addEventListener("touchstart", listener);
+
+    return () => {
+      document.removeEventListener("mousedown", listener);
+      document.removeEventListener("touchstart", listener);
+    };
+  }, [ref, callback]);
+};
+
+// Blur Image Component
+const BlurImage = ({
+  height,
+  width,
+  src,
+  className,
+  alt,
+  fill,
+  ...rest
+}: ImageProps & { fill?: boolean }) => {
+  const [isLoading, setLoading] = useState(true);
+  const imgProps = {
+    className: cn(
+      "transition duration-300 object-cover",
+      isLoading ? "blur-sm" : "blur-0",
+      fill ? "h-full w-full absolute inset-0" : "h-full w-full",
+      className,
+    ),
+    onLoad: () => setLoading(false),
+    src: src as string,
+    width: fill ? undefined : width,
+    height: fill ? undefined : height,
+    loading: "lazy",
+    decoding: "async",
+    alt: alt || "Success story image",
+    ...rest,
+  };
+
+  return <img {...imgProps} />;
+};
+
+// Card Component
+const Card = ({
+  card,
+  index,
+  layout = false,
+  // Individual props for backward compatibility
+  src,
+  title,
+  category,
+  content
+}: {
+  card?: {
+    src: string;
+    title: string;
+    category: string;
+    content: React.ReactNode;
+  };
+  index: number;
+  layout?: boolean;
+  // Individual props
+  src?: string;
+  title?: string;
+  category?: string;
+  content?: React.ReactNode;
+}) => {
+  // Use card prop if provided, otherwise use individual props
+  const cardData = card || { src, title, category, content };
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { onCardClose, currentIndex } = useContext(CarouselContext);
+
+  useEffect(() => {
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        handleClose();
+      }
+    }
+
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
+  useOutsideClick(containerRef, () => handleClose());
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    onCardClose(index);
+  };
+
+  return (
+    <>
+      <AnimatePresence>
+        {open && (
+          <div className="fixed inset-0 z-50 h-screen overflow-auto">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 h-full w-full bg-black/80 backdrop-blur-lg"
+            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              ref={containerRef}
+              layoutId={layout && cardData.title ? `card-${cardData.title}` : undefined}
+              className="relative z-[60] mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-white p-4 font-sans md:p-10 dark:bg-neutral-900"
+            >
+              <button
+                className="sticky top-4 right-0 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white"
+                onClick={handleClose}
+              >
+                <X className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
+              </button>
+              <motion.p
+                layoutId={layout && cardData.title ? `category-${cardData.title}` : undefined}
+                className="text-base font-medium text-black dark:text-white"
+              >
+                {cardData.category}
+              </motion.p>
+              <motion.p
+                layoutId={layout && cardData.title ? `title-${cardData.title}` : undefined}
+                className="mt-4 text-2xl font-semibold text-neutral-700 md:text-5xl dark:text-white"
+              >
+                {cardData.title}
+              </motion.p>
+              <div className="py-10">{cardData.content}</div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+      <motion.button
+        layoutId={layout && cardData.title ? `card-${cardData.title}` : undefined}
+        onClick={handleOpen}
+        className="relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-[30rem] md:w-80 dark:bg-neutral-900"
+      >
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
+        <div className="relative z-40 p-6">
+          <motion.p
+            layoutId={layout && cardData.category ? `category-${cardData.category}` : undefined}
+            className="text-left text-sm font-medium text-white md:text-base"
+          >
+            {cardData.category}
+          </motion.p>
+          <motion.p
+            layoutId={layout && cardData.title ? `title-${cardData.title}` : undefined}
+            className="mt-2 max-w-xs text-left text-xl font-semibold [text-wrap:balance] text-white md:text-2xl"
+          >
+            {cardData.title}
+          </motion.p>
+        </div>
+        <BlurImage
+          src={cardData.src}
+          alt={cardData.title || 'Success story'}
+          fill
+          className="absolute inset-0 z-10"
+        />
+      </motion.button>
+    </>
+  );
+};
+
+// Carousel Component
+const Carousel = ({ children, initialScroll = 0 }: { children: React.ReactNode; initialScroll?: number }) => {
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollLeft = initialScroll;
+      checkScrollability();
+    }
+  }, [initialScroll]);
+
+  const checkScrollability = () => {
+    if (carouselRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
+    }
+  };
+
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
+    }
+  };
+
+  const handleCardClose = (index: number) => {
+    if (carouselRef.current) {
+      const cardWidth = window.innerWidth < 768 ? 230 : 320;
+      const gap = window.innerWidth < 768 ? 16 : 24;
+      const scrollPosition = (cardWidth + gap) * index;
+      carouselRef.current.scrollTo({
+        left: scrollPosition,
+        behavior: "smooth",
+      });
+      setCurrentIndex(index);
+    }
+  };
+
+  return (
+    <CarouselContext.Provider
+      value={{ onCardClose: handleCardClose, currentIndex }}
+    >
+      <div className="relative w-full">
+        <div
+          className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth py-10 [scrollbar-width:none]"
+          ref={carouselRef}
+          onScroll={checkScrollability}
+        >
+          <div className="flex flex-row justify-start gap-4 pl-4 pr-12">
+            {React.Children.map(children, (child, index) => (
+              <motion.div
+                key={`card-${index}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.1 * index,
+                  ease: "easeOut"
+                }}
+                className="flex-shrink-0"
+              >
+                {child}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        <div className="mr-4 flex justify-end gap-2">
+          <button
+            className={`flex h-10 w-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all ${!canScrollLeft ? 'opacity-50 cursor-not-allowed' : 'hover:bg-white/20'}`}
+            onClick={scrollLeft}
+            disabled={!canScrollLeft}
+            aria-label="Scroll left"
+          >
+            <ArrowLeft className="h-5 w-5 text-white" />
+          </button>
+          <button
+            className={`flex h-10 w-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all ${!canScrollRight ? 'opacity-50 cursor-not-allowed' : 'hover:bg-white/20'}`}
+            onClick={scrollRight}
+            disabled={!canScrollRight}
+            aria-label="Scroll right"
+          >
+            <ArrowRightIcon className="h-5 w-5 text-white" />
+          </button>
+        </div>
+      </div>
+    </CarouselContext.Provider>
+  );
+};
 
 // TextGenerateEffect component with improved animation
 const TextGenerateEffect = ({
@@ -570,154 +864,96 @@ export default function HomePage() {
       </section>
 
       {/* Success Stories Section */}
-      <section className="py-10 bg-black w-full font-sans">
-        <div className="mx-auto p-10 text-center">
+      <section className="py-20 bg-black w-full font-sans overflow-hidden">
+        <div className="mx-auto text-center max-w-7xl px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="mb-16"
           >
-            <Badge variant="outline" className="mb-8 px-4 py-1.5 text-[14px] font-medium bg-white/10 text-white border-white/20">
+            <Badge variant="outline" className="mb-4 px-4 py-1.5 text-sm font-medium bg-white/10 text-white border-white/20">
               Results
             </Badge>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-4">Success stories</h2>
+            <p className="text-lg md:text-xl text-gray-400 text-center max-w-2xl mx-auto">Our work delivers not just promises, but measurable results.</p>
           </motion.div>
 
-
-          <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-4">Success stories</h2>
-            <p className="text-lg md:text-xl text-gray-400 text-center mb-14">Our work delivers not just promises, but measurable results.</p>
-          </div>
-          {/* Horizontal Scrolling Carousel */}
-          <div className="relative w-full overflow-hidden">
-            <div
-              className="flex gap-8 items-stretch animate-Showmine-horizontal-scroll will-change-transform group"
-              style={{ animationDuration: '32s' }}
-            >
+          <div className="relative">
+            <Carousel>
               {[
-                // ASMC
                 {
-                  bg: '/placeholder.svg?height=300&width=500', // Replace with industrial/warehouse image
-                  logo: <div className="text-2xl font-extrabold text-white tracking-wide mb-1">ASMC <span className="block text-xs font-normal tracking-normal text-gray-200">THE ADVENTURE COMPANY</span></div>,
-                  headline: 'Digital Transformation',
-                  metrics: [
-                    { label: 'Shopify' },
-                    { label: 'Industry dominance' },
-                  ],
-                },
-                // Histaminikus
-                {
-                  bg: '/placeholder.svg?height=300&width=500', // Replace with couple/kitchen image
-                  logo: <div className="text-2xl font-extrabold text-white tracking-wide mb-1">Histaminikus<sup>®</sup></div>,
-                  headline: <><span className="block text-xs font-normal text-gray-200 mb-1">Das Original seit 2017</span>From the garage to the million-dollar company</>,
-                  metrics: [
-                    { label: 'Market leader' },
-                    { label: '600% CLV increase' },
-                  ],
-                },
-                // Peak
-                {
-                  bg: '/placeholder.svg?height=300&width=500', // Replace with gym/athlete image
-                  logo: <div className="flex items-center gap-2 text-2xl font-extrabold text-white tracking-wide mb-1"><span className="inline-block">PEAK</span><span className="inline-block text-blue-300">&#9650;</span></div>,
-                  headline: 'From strong B2B to B2C expansion',
-                  metrics: [
-                    { label: 'Migration to Shopify' },
-                    { label: '8% CR overall' },
-                  ],
-                },
-                // Duplicate for seamless loop
-              ].concat([
-                {
-                  bg: '/placeholder.svg?height=300&width=500',
-                  logo: <div className="text-2xl font-extrabold text-white tracking-wide mb-1">ASMC <span className="block text-xs font-normal tracking-normal text-gray-200">THE ADVENTURE COMPANY</span></div>,
-                  headline: 'Digital Transformation',
-                  metrics: [
-                    { label: 'Shopify' },
-                    { label: 'Industry dominance' },
-                  ],
-                },
-                {
-                  bg: '/placeholder.svg?height=300&width=500',
-                  logo: <div className="text-2xl font-extrabold text-white tracking-wide mb-1">Histaminikus<sup>®</sup></div>,
-                  headline: <><span className="block text-xs font-normal text-gray-200 mb-1">Das Original seit 2017</span>From the garage to the million-dollar company</>,
-                  metrics: [
-                    { label: 'Market leader' },
-                    { label: '600% CLV increase' },
-                  ],
-                },
-                {
-                  bg: '/placeholder.svg?height=300&width=500',
-                  logo: <div className="flex items-center gap-2 text-2xl font-extrabold text-white tracking-wide mb-1"><span className="inline-block">PEAK</span><span className="inline-block text-blue-300">&#9650;</span></div>,
-                  headline: 'From strong B2B to B2C expansion',
-                  metrics: [
-                    { label: 'Migration to Shopify' },
-                    { label: '8% CR overall' },
-                  ],
-                },
-              ])
-                .map((card, idx) => (
-                  <div
-                    key={idx}
-                    className="relative flex-shrink-0 w-[340px] md:w-[400px] h-[320px] md:h-[360px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group/card transition-transform duration-300 hover:scale-105 mx-2"
-                    tabIndex={0}
-                    style={{ willChange: 'transform' }}
-                  >
-                    {/* Background Image */}
-                    <img
-                      src={card.bg}
-                      alt="Success story background"
-                      className="absolute inset-0 w-full h-full object-cover z-0"
-                    />
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10" />
-                    {/* Card Content */}
-                    <div className="relative z-20 flex flex-col justify-between h-full p-7">
-                      <div>
-                        {card.logo}
-                      </div>
-                      <div className="mt-4 mb-6 text-xl md:text-2xl font-semibold text-white leading-snug">{card.headline}</div>
-                      <div className="flex gap-3 mt-auto">
-                        {card.metrics.map((m, i) => (
-                          <span key={i} className="px-4 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-medium shadow-md backdrop-blur-md">
-                            {m.label}
-                          </span>
-                        ))}
-                      </div>
+                  src: "/images/customers/customer1.jpg",
+                  title: "E-commerce Growth",
+                  category: "E-commerce",
+                  content: (
+                    <div className="text-left space-y-4">
+                      <p>Increased monthly revenue by 240% for an online fashion retailer through strategic digital marketing and conversion rate optimization.</p>
+                      <ul className="space-y-2">
+                        <li className="flex items-center"><Check className="w-5 h-5 text-green-500 mr-2" /> 240% increase in monthly revenue</li>
+                        <li className="flex items-center"><Check className="w-5 h-5 text-green-500 mr-2" /> 180% higher conversion rate</li>
+                        <li className="flex items-center"><Check className="w-5 h-5 text-green-500 mr-2" /> 3.5x return on ad spend</li>
+                      </ul>
                     </div>
-                  </div>
-                ))}
-            </div>
-            {/* Fade Shadows */}
-            <div className="pointer-events-none absolute left-0 top-0 h-full w-24 z-20 bg-gradient-to-r from-black via-black/80 to-transparent" />
-            <div className="pointer-events-none absolute right-0 top-0 h-full w-24 z-20 bg-gradient-to-l from-black via-black/80 to-transparent" />
+                  ),
+                },
+                {
+                  src: "/images/customers/customer2.jpg",
+                  title: "SaaS Scaling",
+                  category: "Technology",
+                  content: (
+                    <div className="text-left space-y-4">
+                      <p>Helped a B2B SaaS company scale their user base by 5x in 12 months through targeted growth strategies and automation.</p>
+                      <ul className="space-y-2">
+                        <li className="flex items-center"><Check className="w-5 h-5 text-green-500 mr-2" /> 500% user growth</li>
+                        <li className="flex items-center"><Check className="w-5 h-5 text-green-500 mr-2" /> 65% reduction in customer acquisition cost</li>
+                        <li className="flex items-center"><Check className="w-5 h-5 text-green-500 mr-2" /> 40% increase in monthly recurring revenue</li>
+                      </ul>
+                    </div>
+                  ),
+                },
+                {
+                  src: "/images/customers/customer3.jpg",
+                  title: "Brand Transformation",
+                  category: "Retail",
+                  content: (
+                    <div className="text-left space-y-4">
+                      <p>Revitalized a traditional retail brand's digital presence, resulting in record-breaking online sales and brand engagement.</p>
+                      <ul className="space-y-2">
+                        <li className="flex items-center"><Check className="w-5 h-5 text-green-500 mr-2" /> 3x increase in online sales</li>
+                        <li className="flex items-center"><Check className="w-5 h-5 text-green-500 mr-2" /> 4.8/5 average customer rating</li>
+                        <li className="flex items-center"><Check className="w-5 h-5 text-green-500 mr-2" /> 78% repeat customer rate</li>
+                      </ul>
+                    </div>
+                  ),
+                },
+                {
+                  src: "/images/customers/customer4.jpg",
+                  title: "Mobile App Launch",
+                  category: "Health & Fitness",
+                  content: (
+                    <div className="text-left space-y-4">
+                      <p>Successfully launched a health and fitness app that achieved 500,000+ downloads in the first 6 months.</p>
+                      <ul className="space-y-2">
+                        <li className="flex items-center"><Check className="w-5 h-5 text-green-500 mr-2" /> 500,000+ downloads</li>
+                        <li className="flex items-center"><Check className="w-5 h-5 text-green-500 mr-2" /> 4.9/5 App Store rating</li>
+                        <li className="flex items-center"><Check className="w-5 h-5 text-green-500 mr-2" /> 45% month-over-month growth</li>
+                      </ul>
+                    </div>
+                  ),
+                },
+              ].map((story, index) => (
+                <Card key={index} card={story} index={index} layout={true} />
+              ))}
+            </Carousel>
           </div>
-          {/* Animations and accessibility */}
-          <style jsx global>{`
-          @keyframes Showmine-horizontal-scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-          .animate-Showmine-horizontal-scroll {
-            animation-name: Showmine-horizontal-scroll;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-          }
-          .group:hover .animate-Showmine-horizontal-scroll,
-          .group:focus-within .animate-Showmine-horizontal-scroll {
-            animation-play-state: paused;
-          }
-          @media (prefers-reduced-motion: reduce) {
-            .animate-Showmine-horizontal-scroll {
-              animation: none !important;
-            }
-          }
-        `}</style>
         </div>
       </section>
 
 
-      {/* Comparison Section */}
-      <section className="py-20 bg-black">
+           {/* Comparison Section */}
+           <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -747,7 +983,7 @@ export default function HomePage() {
             >
 
               <h3 className="text-center text-2xl md:text-3xl font-light text-gray-400 mb-6 ">Other service providers</h3>
-              <Card className="bg-gray-900/50 border-gray-800 p-8 h-full">
+              <div className="bg-gray-900/50 border-gray-800 p-8 h-full">
 
                 <div className="space-y-6">
                   {[
@@ -771,7 +1007,7 @@ export default function HomePage() {
                     </motion.div>
                   ))}
                 </div>
-              </Card>
+              </div>
             </motion.div>
 
             {/* Showmine */}
@@ -790,7 +1026,7 @@ export default function HomePage() {
                 // priority
                 />
               </div>
-              <Card className="bg-gradient-to-br from-blue-900/80 to-black border-blue-700/50 p-8 h-full relative overflow-hidden">
+              <div className="bg-gradient-to-br from-blue-900/80 to-black border-blue-700/50 p-8 h-full relative overflow-hidden">
                 <div className="absolute top-4 right-4 text-4xl font-light text-blue-400/20">SHOWMINE</div>
 
                 <div className="space-y-6">
@@ -815,12 +1051,11 @@ export default function HomePage() {
                     </motion.div>
                   ))}
                 </div>
-              </Card>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
-
 
       {/* Process Section */}
       <section className="py-20 bg-black">
@@ -1202,7 +1437,7 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <Card className="bg-gray-900/50 border-gray-800 overflow-hidden group hover:border-blue-600/50 transition-all duration-300">
+                <div className="bg-gray-900/50 border-gray-800 overflow-hidden group hover:border-blue-600/50 transition-all duration-300">
                   <div className="relative h-80 overflow-hidden">
                     <Image
                       src={member.image || "/placeholder.svg"}
@@ -1216,7 +1451,7 @@ export default function HomePage() {
                       <p className="text-sm text-gray-300 leading-relaxed">{member.expertise}</p>
                     </div>
                   </div>
-                </Card>
+                </div>
               </motion.div>
             ))}
           </div>
