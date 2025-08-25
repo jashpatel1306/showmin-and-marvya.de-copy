@@ -1026,7 +1026,7 @@ export default function HomePage() {
                 // priority
                 />
               </div>
-              <div className="bg-gradient-to-br from-blue-900/80 to-black border-blue-700/50 p-8 h-full relative overflow-hidden">
+              <div className="bg-gradient-to-br from-blue-900/80 to-black border-blue-700/50 p-8 h-full relative overflow-hidden rounded-xl">
                 <div className="absolute top-4 right-4 text-4xl font-light text-blue-400/20">SHOWMINE</div>
 
                 <div className="space-y-6">
@@ -1407,7 +1407,7 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto ">
             {[
               {
                 name: "Jash Patel",
@@ -1437,7 +1437,7 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="bg-gray-900/50 border-gray-800 overflow-hidden group hover:border-blue-600/50 transition-all duration-300">
+                <div className="bg-gray-900/50 rounded-xl border-gray-800 overflow-hidden group hover:border-blue-600/50 transition-all duration-300">
                   <div className="relative h-80 overflow-hidden">
                     <Image
                       src={member.image || "/placeholder.svg"}
@@ -1445,7 +1445,7 @@ export default function HomePage() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent " />
                     <div className="absolute bottom-6 left-6 right-6">
                       <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
                       <p className="text-sm text-gray-300 leading-relaxed">{member.expertise}</p>
@@ -1489,14 +1489,14 @@ export default function HomePage() {
           >
             {partners.map((partner, index) => (
               <motion.div
-                key={partner}
+                key={typeof partner === 'string' ? partner : partner.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 0.6, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="text-xl md:text-2xl font-light tracking-wider hover:opacity-100 transition-opacity duration-300"
               >
-                {partner}
+                {typeof partner === 'string' ? partner : partner.name}
               </motion.div>
             ))}
           </motion.div>
