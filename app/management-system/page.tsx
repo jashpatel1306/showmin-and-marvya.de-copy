@@ -588,14 +588,14 @@ export default function ManagementSystemPage() {
           >
             {partners.map((partner, index) => (
               <motion.div
-                key={partner}
+                key={partner.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 0.6, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="text-xl md:text-2xl font-light tracking-wider hover:opacity-100 transition-opacity duration-300"
               >
-                {partner}
+                {partner.name}
               </motion.div>
             ))}
           </motion.div>
