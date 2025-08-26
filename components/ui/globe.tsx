@@ -1,8 +1,7 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 export const Globe = ({
   className,
@@ -11,33 +10,47 @@ export const Globe = ({
   className?: string;
   children?: React.ReactNode;
 }) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-
-  useEffect(() => {
-    const updateDimensions = () => {
-      if (canvasRef.current) {
-        const { width, height } = canvasRef.current.getBoundingClientRect();
-        setDimensions({ width, height });
-      }
-    };
-
-    updateDimensions();
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
-  }, []);
-
   return (
-    <div className={cn("relative w-full h-full", className)}>
-      <canvas
-        ref={canvasRef}
-        className="w-full h-full"
-        width={dimensions.width}
-        height={dimensions.height}
-      />
-      <div className="absolute inset-0 flex items-center justify-center">
-        {children}
-      </div>
+    <div className={cn("relative w-full h-full overflow-hidden", className)}>
+      <motion.div 
+        className="relative w-full h-full rounded-full border-2 border-blue-400/30"
+        animate={{
+          rotateY: 360,
+          rotateX: 15,
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.2) 0%, transparent 40%),
+            radial-gradient(circle at 70% 70%, rgba(124, 58, 237, 0.2) 0%, transparent 40%),
+            conic-gradient(
+              from 0deg,
+              transparent 0deg 60deg,
+              rgba(59, 130, 246, 0.5) 60deg 120deg,
+              transparent 120deg 180deg,
+              rgba(124, 58, 237, 0.5) 180deg 240deg,
+              transparent 240deg 300deg,
+              rgba(59, 130, 246, 0.5) 300deg 360deg
+            )
+          `,
+          transformStyle: 'preserve-3d',
+        }}
+      >
+        <div className="absolute inset-0 rounded-full border border-blue-400/20" />
+        <div className="absolute inset-0 rounded-full border border-blue-400/20 rotate-45" />
+        <div className="absolute inset-0 rounded-full border border-blue-400/20 rotate-90" />
+        <div className="absolute inset-0 rounded-full border border-blue-400/20 rotate-135" />
+        
+        {children && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            {children}
+          </div>
+        )}
+      </motion.div>
     </div>
   );
 };

@@ -9,6 +9,25 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  webpack: (config, { isServer }) => {
+    // Fixes npm packages that depend on `fs` module
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        path: false,
+      };
+    }
+
+    // Important: return the modified config
+    return config;
+  },
+  reactStrictMode: true,
+  swcMinify: true,
+  experimental: {
+    // Required for Three.js
+    esmExternals: 'loose',
+  },
 }
 
 export default nextConfig

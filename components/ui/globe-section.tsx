@@ -1,7 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Globe } from "./globe";
+import dynamic from 'next/dynamic';
+
+// Dynamically import the Globe component with SSR disabled
+const Globe = dynamic(() => import('./globe').then((mod) => mod.Globe), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center w-full h-full">
+      <div className="w-64 h-64 border-4 border-blue-500/20 border-t-blue-500 rounded-full animate-spin"></div>
+    </div>
+  ),
+});
 
 export function GlobeSection() {
   return (
@@ -55,13 +65,15 @@ export function GlobeSection() {
           
           {/* Right side globe */}
           <motion.div 
-            className="relative h-[400px] lg:h-[500px] w-full"
+            className="relative h-[400px] w-full lg:h-[500px]"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            <Globe className="w-full h-full" />
+            <div className="absolute inset-0">
+              <Globe />
+            </div>
           </motion.div>
         </div>
       </div>
