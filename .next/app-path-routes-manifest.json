@@ -1,0 +1,11 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/api/chat/route": "/api/chat",
+  "/career/page": "/career",
+  "/management-system/page": "/management-system",
+  "/shop-migration/page": "/shop-migration",
+  "/testimonials/page": "/testimonials",
+  "/page": "/",
+  "/ai-ml/page": "/ai-ml",
+  "/lead-generation/page": "/lead-generation"
+}

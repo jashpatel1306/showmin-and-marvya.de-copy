@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import dynamic from 'next/dynamic';
 
-// Dynamically import the Globe component with SSR disabled
-const Globe = dynamic(() => import('./globe').then((mod) => mod.Globe), {
+// Dynamically import the GlobeDemo with SSR disabled
+const GlobeDemo = dynamic(() => import('./globe-demo'), {
   ssr: false,
   loading: () => (
     <div className="flex items-center justify-center w-full h-full">
@@ -63,7 +63,8 @@ export function GlobeSection() {
             </button>
           </motion.div>
           
-          {/* Right side globe */}
+          {/* Right side globe */
+          }
           <motion.div 
             className="relative h-[400px] w-full lg:h-[500px]"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -72,7 +73,7 @@ export function GlobeSection() {
             transition={{ delay: 0.2, duration: 0.6 }}
           >
             <div className="absolute inset-0">
-              <Globe />
+              <GlobeDemo />
             </div>
           </motion.div>
         </div>
