@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 import dynamic from 'next/dynamic';
 
 // Dynamically import the GlobeDemo with SSR disabled
-const GlobeDemo = dynamic(() => import('./globe-demo'), {
-  ssr: false,
-  loading: () => (
-    <div className="flex items-center justify-center w-full h-full">
-      <div className="w-64 h-64 border-4 border-blue-500/20 border-t-blue-500 rounded-full animate-spin"></div>
-    </div>
-  ),
-});
+// const GlobeDemo = dynamic(() => import('./globe-demo'), {
+//   ssr: false,
+//   loading: () => (
+//     <div className="flex items-center justify-center w-full h-full">
+//       <div className="w-64 h-64 border-4 border-blue-500/20 border-t-blue-500 rounded-full animate-spin"></div>
+//     </div>
+//   ),
+// });
 
 export function GlobeSection() {
   return (
@@ -65,7 +65,7 @@ export function GlobeSection() {
           
           {/* Right side globe */
           }
-          <motion.div 
+          {/* <motion.div 
             className="relative h-[400px] w-full lg:h-[500px]"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -75,7 +75,7 @@ export function GlobeSection() {
             <div className="absolute inset-0">
               <GlobeDemo />
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>

@@ -1,11 +1,5 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/api/chat/route": "app/api/chat/route.js",
-  "/career/page": "app/career/page.js",
-  "/management-system/page": "app/management-system/page.js",
-  "/shop-migration/page": "app/shop-migration/page.js",
-  "/testimonials/page": "app/testimonials/page.js",
   "/page": "app/page.js",
-  "/ai-ml/page": "app/ai-ml/page.js",
   "/lead-generation/page": "app/lead-generation/page.js"
 }
