@@ -23,11 +23,7 @@ const nextConfig = {
     return config;
   },
   reactStrictMode: true,
-  swcMinify: true,
-  experimental: {
-    // Required for Three.js
-    esmExternals: 'loose',
-  },
+  // Remove deprecated/invalid options for Next 15
 }
 
 export default nextConfig

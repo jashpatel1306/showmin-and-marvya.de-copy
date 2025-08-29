@@ -1,1 +1,1 @@
-export { default as Globe } from './globe-component';
+// No longer exporting anything; legacy globe implementation removed.
