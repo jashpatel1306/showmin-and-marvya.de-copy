@@ -975,6 +975,36 @@ export default function HomePage() {
                     </div>
                   ),
                 },
+                {
+                  src: "/successStory/atticsalt.mp4",
+                  title: "Clothing",
+                  category: "Atticsalt",
+                  content: (
+                    <div className="text-left space-y-4">
+                      <p>Successfully launched a health and fitness app that achieved 500,000+ downloads in the first 6 months.</p>
+                      <ul className="space-y-2">
+                        <li className="flex items-center"><Check className="w-5 h-5 text-green-500 mr-2" /> 500,000+ downloads</li>
+                        <li className="flex items-center"><Check className="w-5 h-5 text-green-500 mr-2" /> 4.9/5 App Store rating</li>
+                        <li className="flex items-center"><Check className="w-5 h-5 text-green-500 mr-2" /> 45% month-over-month growth</li>
+                      </ul>
+                    </div>
+                  ),
+                },
+                {
+                  src: "/successStory/lemarais.mp4",
+                  title: "Women's clothes shop",
+                  category: "Lemarais",
+                  content: (
+                    <div className="text-left space-y-4">
+                      <p>Successfully launched a health and fitness app that achieved 500,000+ downloads in the first 6 months.</p>
+                      <ul className="space-y-2">
+                        <li className="flex items-center"><Check className="w-5 h-5 text-green-500 mr-2" /> 500,000+ downloads</li>
+                        <li className="flex items-center"><Check className="w-5 h-5 text-green-500 mr-2" /> 4.9/5 App Store rating</li>
+                        <li className="flex items-center"><Check className="w-5 h-5 text-green-500 mr-2" /> 45% month-over-month growth</li>
+                      </ul>
+                    </div>
+                  ),
+                },
               ].map((story, index) => (
                 <Card key={index} card={story} index={index} layout={true} />
               ))}
