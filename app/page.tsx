@@ -893,7 +893,7 @@ export default function HomePage() {
               {[
                 {
                   src: "/successStory/kymee.jpg",
-                  title: "E-commerce Growth",
+                  title: "website optimization",
                   category: "Kymee",
                   content: (
                     <div className="text-left space-y-4">
@@ -907,8 +907,8 @@ export default function HomePage() {
                   ),
                 },
                 {
-                  src: "/images/customers/customer2.jpg",
-                  title: "SaaS Scaling",
+                  src: "/successStory/srface.jpg",
+                  title: "E-commerce Growth",
                   category: "Technology",
                   content: (
                     <div className="text-left space-y-4">
@@ -937,8 +937,8 @@ export default function HomePage() {
                   ),
                 },
                 {
-                  src: "/images/customers/customer4.jpg",
-                  title: "Mobile App Launch",
+                  src: "/successStory/diamondrensu.jpg",
+                  title: "Shop migration",
                   category: "Health & Fitness",
                   content: (
                     <div className="text-left space-y-4">

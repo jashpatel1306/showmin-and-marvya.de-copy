@@ -1,30 +1,6 @@
 {
   "version": 4,
   "routes": {
-    "/shop-migration": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/shop-migration",
-      "dataRoute": "/shop-migration.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/lead-generation": {
       "experimentalBypassFor": [
         {
@@ -73,6 +49,30 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/career": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/career",
+      "dataRoute": "/career.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/management-system": {
       "experimentalBypassFor": [
         {
@@ -97,7 +97,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/ai-ml": {
+    "/shop-migration": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -110,8 +110,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/ai-ml",
-      "dataRoute": "/ai-ml.rsc",
+      "srcRoute": "/shop-migration",
+      "dataRoute": "/shop-migration.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -145,7 +145,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/career": {
+    "/ai-ml": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -158,8 +158,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/career",
-      "dataRoute": "/career.rsc",
+      "srcRoute": "/ai-ml",
+      "dataRoute": "/ai-ml.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -173,8 +173,8 @@
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "fbb7649eca4418a0b7cb6937f6441709",
-    "previewModeSigningKey": "0dbea22b5dfc1bdd2991935ace3eb177d1600dcee6485caaabb8e9071b143c7a",
-    "previewModeEncryptionKey": "0eb4838b73ba5d9d3a110b51ed3f11182e269b6025f1005a69b3ccc4ffaa7a9c"
+    "previewModeId": "3980f2bc661ec1d62b79245f26545eaa",
+    "previewModeSigningKey": "c684760698ef357f64640e9c3fae5a160568bea3082706191adfc9f2d1acf6f7",
+    "previewModeEncryptionKey": "debd63453a232956ebd8cf5c0a7259b7432b24b7e96bb611d555864cb19126ee"
   }
 }
