@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Carousel } from "@/components/ui/carousel"
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards"
 import { ArrowRight, MapPin, Clock, Users, Sparkles, Users2, Brain, Laugh, Quote, ChevronDown, ArrowLeft } from "lucide-react"
 import { JobApplicationForm } from "@/components/career/job-application-form"
 
@@ -365,109 +366,38 @@ export default function CareerPage() {
             </motion.div>
 
             <div className="max-w-6xl mx-auto">
-              <div className="relative w-full overflow-hidden">
-                <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 -mx-4 px-4">
-                  {/* Hide scrollbar but keep functionality */}
-                  <style jsx>{`
-                    .hide-scrollbar::-webkit-scrollbar {
-                      display: none;
-                    }
-                    .hide-scrollbar {
-                      -ms-overflow-style: none;
-                      scrollbar-width: none;
-                    }
-                  `}</style>
-                {[
+              <InfiniteMovingCards
+                className="mt-4"
+                speed="normal"
+                pauseOnHover
+                items={[
                   {
                     name: "Shrey S",
-                    role: "Animator & Video editor",
-                    testimonial: "Showmine is more than just a workplace. It's a place where professional work and fun go hand in hand, where you feel not just like an employee, but like part of a big, dynamic family.",
-                    avatar: "/placeholder-user.jpg"
+                    title: "Animator & Video editor",
+                    quote: "Showmine is more than just a workplace. It's a place where professional work and fun go hand in hand, where you feel not just like an employee, but like part of a big, dynamic family.",
                   },
                   {
                     name: "Panthil M",
-                    role: "Full-stack developer",
-                    testimonial: "The shared energy within the team to achieve great things and the fact that everyone gives their best every day is extremely inspiring.",
-                    avatar: "/placeholder-user.jpg"
+                    title: "Full-stack developer",
+                    quote: "The shared energy within the team to achieve great things and the fact that everyone gives their best every day is extremely inspiring.",
                   },
                   {
                     name: "Rutvik D",
-                    role: "Shopify Sr Developer",
-                    testimonial: "To be able to grow continuously, I rely on a strong team that supports me and provides me with feedback so that I can continue to expand my creative vision. Through effective communication, I have continuously developed since joining Showmine.",
-                    avatar: "/placeholder-user.jpg"
+                    title: "Shopify Sr Developer",
+                    quote: "To be able to grow continuously, I rely on a strong team that supports me and provides me with feedback so that I can continue to expand my creative vision. Through effective communication, I have continuously developed since joining Showmine.",
                   },
                   {
                     name: "Fenal R",
-                    role: "Quality assurance analyst",
-                    testimonial: "The collaborative environment at Showmine has helped me grow both professionally and personally. The team's dedication to creating outstanding user experiences is truly inspiring.",
-                    avatar: "/placeholder-user.jpg"
+                    title: "Quality assurance analyst",
+                    quote: "The collaborative environment at Showmine has helped me grow both professionally and personally. The team's dedication to creating outstanding user experiences is truly inspiring.",
                   },
                   {
                     name: "Sarah",
-                    role: "Marketing Specialist",
-                    testimonial: "Working at Showmine has been an incredible journey. The company culture encourages creativity and innovation, and I love being part of a team that values each member's contribution.",
-                    avatar: "/placeholder-user.jpg"
-                  }
-                ].map((testimonial, index) => (
-                  <div key={index} className="flex-none w-[85%] sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.666rem)] snap-center">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      whileHover={{ y: -5, transition: { duration: 0.3 } }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="h-full"
-                    >
-                      <div className="h-full bg-white rounded-2xl p-8 flex flex-col transition-all duration-300 shadow-lg hover:shadow-xl">
-                        <div className="flex items-center mb-6">
-                          <div className="w-14 h-14 rounded-full overflow-hidden mr-4 border-2 border-gray-200">
-                            <img
-                              src={testimonial.avatar}
-                              alt={`${testimonial.name}'s avatar`}
-                              className="w-full h-full object-cover"
-                              loading="lazy"
-                            />
-                          </div>
-                          <div>
-                            <h4 className="font-bold text-lg text-gray-900">{testimonial.name}</h4>
-                            <p className="text-gray-600 text-sm">{testimonial.role}</p>
-                          </div>
-                        </div>
-                        <p className="text-gray-600 flex-1">"{testimonial.testimonial}"</p>
-                      </div>
-                    </motion.div>
-                  </div>
-                ))}
-                </div>
-                
-                {/* Navigation Buttons */}
-                <div className="flex justify-center gap-4 mt-6">
-                  <button 
-                    onClick={() => {
-                      const container = document.querySelector('.overflow-x-auto');
-                      if (container) {
-                        container.scrollBy({ left: -300, behavior: 'smooth' });
-                      }
-                    }}
-                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                    aria-label="Previous slide"
-                  >
-                    <ArrowLeft className="h-5 w-5" />
-                  </button>
-                  <button 
-                    onClick={() => {
-                      const container = document.querySelector('.overflow-x-auto');
-                      if (container) {
-                        container.scrollBy({ left: 300, behavior: 'smooth' });
-                      }
-                    }}
-                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                    aria-label="Next slide"
-                  >
-                    <ArrowRight className="h-5 w-5" />
-                  </button>
-                </div>
-              </div>
+                    title: "Marketing Specialist",
+                    quote: "Working at Showmine has been an incredible journey. The company culture encourages creativity and innovation, and I love being part of a team that values each member's contribution.",
+                  },
+                ]}
+              />
             </div>
           </div>
         </section>
