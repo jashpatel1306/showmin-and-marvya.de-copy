@@ -151,8 +151,16 @@ const Card = ({
               exit={{ opacity: 0 }}
               ref={containerRef}
               layoutId={layout && cardData.title ? `card-${cardData.title}` : undefined}
-              className="relative z-[60] mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-white p-4 font-sans md:p-10 dark:bg-neutral-900"
+              className="relative z-[60] mx-auto my-10 h-fit max-w-5xl rounded-3xl overflow-hidden p-4 font-sans md:p-10 bg-black/60 backdrop-blur-xl border border-white/10"
             >
+              {/* Background image for the modal */}
+              <BlurImage
+                src={cardData.src || ""}
+                alt={cardData.title || "Background"}
+                fill
+                className="absolute inset-0 object-cover opacity-25 -z-10"
+              />
+              <div className="absolute inset-0 bg-black/30 -z-10" />
               <button
                 className="sticky top-4 right-0 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white"
                 onClick={handleClose}
@@ -884,9 +892,9 @@ export default function HomePage() {
             <Carousel>
               {[
                 {
-                  src: "/images/customers/customer1.jpg",
+                  src: "/successStory/kymee.jpg",
                   title: "E-commerce Growth",
-                  category: "E-commerce",
+                  category: "Kymee",
                   content: (
                     <div className="text-left space-y-4">
                       <p>Increased monthly revenue by 240% for an online fashion retailer through strategic digital marketing and conversion rate optimization.</p>
