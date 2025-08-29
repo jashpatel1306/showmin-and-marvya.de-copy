@@ -153,13 +153,25 @@ const Card = ({
               layoutId={layout && cardData.title ? `card-${cardData.title}` : undefined}
               className="relative z-[60] mx-auto my-10 h-fit max-w-5xl rounded-3xl overflow-hidden p-4 font-sans md:p-10 bg-black/60 backdrop-blur-xl border border-white/10"
             >
-              {/* Background image for the modal */}
-              <BlurImage
-                src={cardData.src || ""}
-                alt={cardData.title || "Background"}
-                fill
-                className="absolute inset-0 object-cover opacity-25 -z-10"
-              />
+              {/* Background media for the modal */}
+              {typeof cardData.src === 'string' && cardData.src.includes('.mp4') ? (
+                <video
+                  className="absolute inset-0 w-full h-full object-cover opacity-40 -z-10"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                >
+                  <source src={cardData.src} type="video/mp4" />
+                </video>
+              ) : (
+                <BlurImage
+                  src={cardData.src || ""}
+                  alt={cardData.title || "Background"}
+                  fill
+                  className="absolute inset-0 object-cover opacity-25 -z-10"
+                />
+              )}
               <div className="absolute inset-0 bg-black/30 -z-10" />
               <button
                 className="sticky top-4 right-0 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white"
@@ -204,12 +216,24 @@ const Card = ({
             {cardData.title}
           </motion.p>
         </div>
-        <BlurImage
-          src={cardData.src}
-          alt={cardData.title || 'Success story'}
-          fill
-          className="absolute inset-0 z-10"
-        />
+        {typeof cardData.src === 'string' && cardData.src.includes('.mp4') ? (
+          <video
+            className="absolute inset-0 z-10 w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src={cardData.src} type="video/mp4" />
+          </video>
+        ) : (
+          <BlurImage
+            src={cardData.src}
+            alt={cardData.title || 'Success story'}
+            fill
+            className="absolute inset-0 z-10"
+          />
+        )}
       </motion.button>
     </>
   );
@@ -907,9 +931,9 @@ export default function HomePage() {
                   ),
                 },
                 {
-                  src: "/successStory/srface.jpg",
-                  title: "E-commerce Growth",
-                  category: "Technology",
+                  src: "/successStory/srface1.jpg",
+                  title: "wetsuit for every surfer",
+                  category: "Srface",
                   content: (
                     <div className="text-left space-y-4">
                       <p>Helped a B2B SaaS company scale their user base by 5x in 12 months through targeted growth strategies and automation.</p>
@@ -922,9 +946,9 @@ export default function HomePage() {
                   ),
                 },
                 {
-                  src: "/images/customers/customer3.jpg",
-                  title: "Brand Transformation",
-                  category: "Retail",
+                  src: "/successStory/manucurist.mp4",
+                  title: "Beauty, cosmetic & personal care",
+                  category: "Manucurist",
                   content: (
                     <div className="text-left space-y-4">
                       <p>Revitalized a traditional retail brand's digital presence, resulting in record-breaking online sales and brand engagement.</p>
@@ -938,8 +962,8 @@ export default function HomePage() {
                 },
                 {
                   src: "/successStory/diamondrensu.jpg",
-                  title: "Shop migration",
-                  category: "Health & Fitness",
+                  title: "Engagement Rings & Wedding",
+                  category: "Diamondrensu",
                   content: (
                     <div className="text-left space-y-4">
                       <p>Successfully launched a health and fitness app that achieved 500,000+ downloads in the first 6 months.</p>
