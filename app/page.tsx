@@ -890,9 +890,11 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Badge variant="outline" className="mb-8 px-4 py-1.5 text-[14px] font-medium bg-white/10 text-white border-white/20">
-              Our services
-            </Badge>
+            <TextGenerateEffectinTitleAndSubtitle 
+              words="Our services"
+              className="px-1 py-0.5 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+              duration={0.5}
+            />
           </motion.div>
           <h2 id="support-section" className="text-4xl md:text-5xl lg:text-6xl text-white text-center mb-6">How we can support you</h2>
           <p className="text-lg md:text-xl text-gray-400 text-center mb-14">Our services are precisely tailored to provide holistic support.<br />
@@ -992,9 +994,11 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <Badge variant="outline" className="mb-4 px-4 py-1.5 text-sm font-medium bg-white/10 text-white border-white/20">
-              Results
-            </Badge>
+            <TextGenerateEffectinTitleAndSubtitle 
+              words="Results"
+              className="px-1 py-0.5 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+              duration={0.5}
+            />
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-4">Success stories</h2>
             <p className="text-lg md:text-xl text-gray-400 text-center max-w-2xl mx-auto">Our work delivers not just promises, but measurable results.</p>
           </motion.div>
