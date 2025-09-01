@@ -892,7 +892,7 @@ export default function HomePage() {
           >
             <TextGenerateEffectinTitleAndSubtitle 
               words="Our services"
-              className="px-1 py-0.5 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+              className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
               duration={0.5}
             />
           </motion.div>
@@ -996,7 +996,7 @@ export default function HomePage() {
           >
             <TextGenerateEffectinTitleAndSubtitle 
               words="Results"
-              className="px-1 py-0.5 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+              className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
               duration={0.5}
             />
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-4">Success stories</h2>
@@ -1117,7 +1117,7 @@ export default function HomePage() {
           >
             <TextGenerateEffectinTitleAndSubtitle 
               words="The direct comparison"
-              className="px-1 py-0.5 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+              className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
               duration={0.5}
             />
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">
@@ -1224,7 +1224,7 @@ export default function HomePage() {
           >
             <TextGenerateEffectinTitleAndSubtitle 
               words="What are you waiting for?"
-              className="px-1 py-0.5 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+              className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
               duration={0.5}
             />
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight">
@@ -1332,10 +1332,12 @@ export default function HomePage() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center mb-7"
-        >
-          <Badge variant="outline" className="mb-8 px-4 py-1.5 text-[14px] font-medium bg-white/10 text-white border-white/20">
-            Customer testimonials
-          </Badge>
+        > 
+          <TextGenerateEffectinTitleAndSubtitle 
+              words="Customer testimonials"
+              className="px-1 py-0.5 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+              duration={0.5}
+            />
         </motion.div>
 
         <div className="max-w-7xl mx-auto px-6">
@@ -1547,10 +1549,11 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-
-            <Badge variant="outline" className="mb-8 px-4 py-1.5 text-[14px] font-medium bg-white/10 text-white border-white/20">
-              The founding team
-            </Badge>
+            <TextGenerateEffectinTitleAndSubtitle 
+              words="The founding team"
+              className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+              duration={0.5}
+            />
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight">
               The leading minds
@@ -1675,9 +1678,11 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <Badge variant="outline" className="mb-8 px-4 py-1.5 text-[14px] font-medium bg-white/10 text-white border-white/20">
-              Frequently Asked Questions
-            </Badge>
+            <TextGenerateEffectinTitleAndSubtitle 
+              words="An excerpt from our customers"
+              className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+              duration={0.5}
+            />
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">
               Questions &
               <span className="text-blue-400 italic">Answers</span>
