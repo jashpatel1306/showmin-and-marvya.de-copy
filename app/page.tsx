@@ -1115,9 +1115,11 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <Badge variant="outline" className="mb-8 px-4 py-1.5 text-[14px] font-medium bg-white/10 text-white border-white/20">
-              The direct comparison
-            </Badge>
+            <TextGenerateEffectinTitleAndSubtitle 
+              words="The direct comparison"
+              className="px-1 py-0.5 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+              duration={0.5}
+            />
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">
               Why should you work with
               <br />
@@ -1220,9 +1222,11 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <Badge variant="outline" className="mb-8 px-4 py-1.5 text-[14px] font-medium bg-white/10 text-white border-white/20">
-              What are you waiting for?
-            </Badge>
+            <TextGenerateEffectinTitleAndSubtitle 
+              words="What are you waiting for?"
+              className="px-1 py-0.5 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+              duration={0.5}
+            />
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight">
               Our customers are already
               <br />
