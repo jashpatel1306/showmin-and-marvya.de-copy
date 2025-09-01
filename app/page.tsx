@@ -423,6 +423,91 @@ const TextGenerateEffect = ({
   );
 };
 
+// this funcation use in title and subtitle
+const TextGenerateEffectinTitle = ({
+  words,
+  className,
+  filter = true,
+  duration = 0.5,
+}: {
+  words: string;
+  className?: string;
+  filter?: boolean;
+  duration?: number;
+}) => {
+  const [scope, animate] = useAnimate();
+  const wordsArray = words.split(" ");
+  const [isVisible, setIsVisible] = useState(false);
+  
+  // Intersection Observer to trigger animation when in view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 } // Trigger when 10% of the element is visible
+    );
+
+    if (scope.current) {
+      observer.observe(scope.current);
+    }
+
+    return () => observer.disconnect();
+  }, [scope]);
+
+  // Animation effect
+  useEffect(() => {
+    if (isVisible && scope.current) {
+      const spans = scope.current.querySelectorAll('span');
+      
+      // Reset all spans to initial state
+      spans.forEach((span: any) => {
+        span.style.opacity = '0';
+        if (filter) span.style.filter = 'blur(8px)';
+      });
+
+      // Animate each word
+      spans.forEach((span: any, i: any) => {
+        setTimeout(() => {
+          span.animate(
+            [
+              { opacity: 0, filter: filter ? 'blur(8px)' : 'none' },
+              { opacity: 1, filter: 'blur(0px)' }
+            ],
+            {
+              duration: duration * 1000, // Convert to milliseconds
+              fill: 'forwards',
+              easing: 'ease-out'
+            }
+          );
+        }, i * 80); // Stagger delay between words (80ms)
+      });
+    }
+  }, [isVisible, duration, filter]);
+
+  return (
+    <div ref={scope} className={cn("font-light", className)}>
+      <div className="text-[48px] leading-tight">
+        {wordsArray.map((word, idx) => (
+          <span 
+            key={`${word}-${idx}`}
+            className="inline-block opacity-0 mr-2"
+            style={{
+              filter: filter ? 'blur(8px)' : 'none',
+              transition: `opacity 0.5s ease-out, filter 0.5s ease-out`
+            }}
+          >
+            {word}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 // Client data for tooltips
 const clients = [
   { id: 1, name: 'Client 1', designation: 'E-commerce Store', image: '/client/client1.png' },
@@ -757,9 +842,11 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <Badge variant="outline" className="px-4 py-1.5 text-[14px] font-medium bg-white/10 text-white border-white/20">
-              An excerpt from our customers
-            </Badge>
+            <TextGenerateEffect 
+              words="An excerpt from our customers"
+              className="px-1 py-0.5 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+              duration={0.5}
+            />
           </motion.div>
 
           <div className="overflow-hidden relative">
