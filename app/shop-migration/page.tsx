@@ -1,7 +1,7 @@
 "use client"
 
-import { useRef, useState } from "react"
-import { motion } from "framer-motion"
+import { useRef, useState, useEffect } from "react"
+import { motion, useScroll, useTransform, AnimatePresence, useMotionValue, useSpring, useAnimate } from "framer-motion"
 import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -9,6 +9,94 @@ import { partners } from "@/data/partners"
 import { ArrowRight, CheckCircle, Clock, Users, Plus, TrendingUp } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import Image from "next/image"
+import { cn } from "@/lib/utils"
+
+
+// this funcation use in title and subtitle
+const TextGenerateEffectinTitleAndSubtitle = ({
+  words,
+  className,
+  filter = true,
+  duration = 0.5,
+}: {
+  words: string;
+  className?: string;
+  filter?: boolean;
+  duration?: number;
+}) => {
+  const [scope, animate] = useAnimate();
+  const wordsArray = words.split(" ");
+  const [isVisible, setIsVisible] = useState(false);
+  
+  // Intersection Observer to trigger animation when in view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 } // Trigger when 10% of the element is visible
+    );
+
+    if (scope.current) {
+      observer.observe(scope.current);
+    }
+
+    return () => observer.disconnect();
+  }, [scope]);
+
+  // Animation effect
+  useEffect(() => {
+    if (isVisible && scope.current) {
+      const spans = scope.current.querySelectorAll('span');
+      
+      // Reset all spans to initial state
+      spans.forEach((span: any) => {
+        span.style.opacity = '0';
+        if (filter) span.style.filter = 'blur(8px)';
+      });
+
+      // Animate each word
+      spans.forEach((span: any, i: any) => {
+        setTimeout(() => {
+          span.animate(
+            [
+              { opacity: 0, filter: filter ? 'blur(8px)' : 'none' },
+              { opacity: 1, filter: 'blur(0px)' }
+            ],
+            {
+              duration: duration * 1000, // Convert to milliseconds
+              fill: 'forwards',
+              easing: 'ease-out'
+            }
+          );
+        }, i * 80); // Stagger delay between words (80ms)
+      });
+    }
+  }, [isVisible, duration, filter]);
+
+  return (
+    <div ref={scope} className={cn("font-light", className)}>
+      <div className="text-[14px] leading-tight px-3 py-1.5">
+        {wordsArray.map((word, idx) => (
+          <span 
+            key={`${word}-${idx}`}
+            className="inline-block opacity-0 mr-2"
+            style={{
+              filter: filter ? 'blur(8px)' : 'none',
+              transition: `opacity 0.5s ease-out, filter 0.5s ease-out`
+            }}
+          >
+            {word}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 
 // FAQ Accordion Component
 function FAQAccordion() {
@@ -134,9 +222,14 @@ export default function ShopMigrationPage() {
               }}
             >
               <div className="w-2 h-2 bg-[#2ECC71] rounded-full"></div>
-              <span className="text-white text-sm font-extralight">
+              <TextGenerateEffectinTitleAndSubtitle 
+              words="Shopify's most experienced migration partner"
+              className="text-sm font-extralight text-white  inline-block"
+              duration={0.5}
+            />
+              {/* <span className="text-white text-sm font-extralight">
                 Shopify's most experienced migration partner
-              </span>
+              </span> */}
             </div>
 
             {/* Main Headline */}
