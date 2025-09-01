@@ -424,7 +424,7 @@ const TextGenerateEffect = ({
 };
 
 // this funcation use in title and subtitle
-const TextGenerateEffectinTitle = ({
+const TextGenerateEffectinTitleAndSubtitle = ({
   words,
   className,
   filter = true,
@@ -490,7 +490,7 @@ const TextGenerateEffectinTitle = ({
 
   return (
     <div ref={scope} className={cn("font-light", className)}>
-      <div className="text-[48px] leading-tight">
+      <div className="text-[14px] leading-tight px-3 py-1.5">
         {wordsArray.map((word, idx) => (
           <span 
             key={`${word}-${idx}`}
@@ -842,7 +842,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <TextGenerateEffect 
+            <TextGenerateEffectinTitleAndSubtitle 
               words="An excerpt from our customers"
               className="px-1 py-0.5 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
               duration={0.5}
