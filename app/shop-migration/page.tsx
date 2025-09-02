@@ -27,7 +27,7 @@ const TextGenerateEffectinTitleAndSubtitle = ({
   const [scope, animate] = useAnimate();
   const wordsArray = words.split(" ");
   const [isVisible, setIsVisible] = useState(false);
-  
+
   // Intersection Observer to trigger animation when in view
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -51,7 +51,7 @@ const TextGenerateEffectinTitleAndSubtitle = ({
   useEffect(() => {
     if (isVisible && scope.current) {
       const spans = scope.current.querySelectorAll('span');
-      
+
       // Reset all spans to initial state
       spans.forEach((span: any) => {
         span.style.opacity = '0';
@@ -81,7 +81,7 @@ const TextGenerateEffectinTitleAndSubtitle = ({
     <div ref={scope} className={cn("font-light", className)}>
       <div className="text-[14px] leading-tight px-3 py-1.5">
         {wordsArray.map((word, idx) => (
-          <span 
+          <span
             key={`${word}-${idx}`}
             className="inline-block opacity-0 mr-2"
             style={{
@@ -211,7 +211,7 @@ export default function ShopMigrationPage() {
                 borderRadius: '50px',
                 border: '1px solid rgba(255, 255, 255, 0.1)',
                 padding: '12px 16px',
-                gap: '8px',
+                // gap: '8px',
                 height: 'auto',
                 width: 'auto',
                 placeContent: 'center',
@@ -221,15 +221,14 @@ export default function ShopMigrationPage() {
                 marginTop: '40px'
               }}
             >
-              <div className="w-2 h-2 bg-[#2ECC71] rounded-full"></div>
-              <TextGenerateEffectinTitleAndSubtitle 
-              words="Shopify's most experienced migration partner"
-              className="text-sm font-extralight text-white  inline-block"
-              duration={0.5}
-            />
-              {/* <span className="text-white text-sm font-extralight">
-                Shopify's most experienced migration partner
-              </span> */}
+              <div className="">
+                <Image src="/shopify.jpg" alt="Shopify" width={20} height={20} />
+              </div>
+              <TextGenerateEffectinTitleAndSubtitle
+                words="Shopify's most experienced migration partner"
+                className="text-sm font-extralight text-white  inline-block"
+                duration={0.5}
+              />
             </div>
 
             {/* Main Headline */}
@@ -411,11 +410,14 @@ export default function ShopMigrationPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
-          <Badge variant="outline" className="mb-8 text-gray-400 border-gray-600">
-            Already praised by Shopify
-          </Badge>
+
+          <TextGenerateEffectinTitleAndSubtitle
+            words="Already praised by Shopify"
+            className="px-1 py-0.5 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+            duration={0.5}
+          />
         </motion.div>
 
         <div className="max-w-6xl mx-auto flex flex-col gap-16">
@@ -968,7 +970,7 @@ export default function ShopMigrationPage() {
             {partners.map((partner, index) => {
               const partnerName = typeof partner === 'string' ? partner : partner.name;
               const partnerKey = typeof partner === 'string' ? partner : partner.id || partner.name || index;
-              
+
               return (
                 <motion.div
                   key={`partner-${index}-${partnerKey}`}
@@ -1092,30 +1094,30 @@ export default function ShopMigrationPage() {
           </motion.div>
         </div>
 
-         {/* FAQ Section */}
-              <section className="py-20 bg-black">
-                <div className="max-w-4xl mx-auto px-6">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                  >
-                    <Badge variant="outline" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[12px] font-normal">
-                      Frequently Asked Questions
-                    </Badge>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">
-                    The most frequently asked questions about migration
-                    </h2>
-                    <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                    We often receive the same questions in our initial consultations. To help us make the most of your time, here are some answers.
-                    </p>
-                  </motion.div>
-        
-                  <FAQAccordion />
-                </div>
-              </section>
+        {/* FAQ Section */}
+        <section className="py-20 bg-black">
+          <div className="max-w-4xl mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <Badge variant="outline" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[12px] font-normal">
+                Frequently Asked Questions
+              </Badge>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">
+                The most frequently asked questions about migration
+              </h2>
+              <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                We often receive the same questions in our initial consultations. To help us make the most of your time, here are some answers.
+              </p>
+            </motion.div>
+
+            <FAQAccordion />
+          </div>
+        </section>
       </section>
     </div>
   )
