@@ -418,7 +418,7 @@ export default function ShopMigrationPage() {
             className="px-1 py-0.5 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
             duration={0.5}
           />
-        </motion.div>
+        </motion.div> 
 
         <div className="max-w-6xl mx-auto flex flex-col gap-16">
           {/* Header Section */}

@@ -91,7 +91,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-sm text-center md:text-left">
-              ©2023 Showmine – All Rights Reserved
+              ©2022 Showmine – All Rights Reserved
             </p>
             <div className="flex gap-6 text-sm">
               <a href="/privacy" className="text-gray-500 hover:text-gray-300 transition-colors duration-200">Privacy</a>
