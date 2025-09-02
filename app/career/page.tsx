@@ -17,7 +17,9 @@ type Position = {
   type: string;
   department: string;
   description: string;
+  responsibilities?: string[];
   requirements?: string[];
+  info?: string;
 };
 
 interface PositionAccordionProps {
@@ -53,7 +55,7 @@ function PositionAccordion({ position, index, onApply }: PositionAccordionProps)
             </div>
             <div className="flex flex-wrap items-center gap-4 text-gray-400 text-sm">
               <span>{position.location}</span>
-              <span className="text-gray-600">•</span>
+              <span className="text-green-500">•</span>
               <span>{position.type}</span>
             </div>
           </div>
@@ -94,15 +96,32 @@ function PositionAccordion({ position, index, onApply }: PositionAccordionProps)
         <div className="px-6 pb-6 pt-2 border-t border-gray-800">
           <div className="prose prose-invert max-w-none text-gray-300">
             <p className="mb-4">{position.description}</p>
-            <h4 className="text-white font-medium mb-2">Requirements:</h4>
-            <ul className="list-disc pl-5 space-y-1 mb-6">
-              {position.requirements?.map((req: string, i: number) => (
-                <li key={i}>{req}</li>
-              )) || <li>No specific requirements listed.</li>}
-            </ul>
+            {position.responsibilities && position.responsibilities.length > 0 && (
+              <>
+                <h4 className="text-white font-medium mb-2">Responsibilities:</h4>
+                <ul className="list-disc pl-5 space-y-1 mb-6">
+                  {position.responsibilities.map((item: string, i: number) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+            {position.requirements && position.requirements.length > 0 && (
+              <>
+                <h4 className="text-white font-medium mb-2">Requirements:</h4>
+                <ul className="list-disc pl-5 space-y-1 mb-6">
+                  {position.requirements.map((req: string, i: number) => (
+                    <li key={i}>{req}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+            {position.info && (
+              <p className="text-gray-400 mb-4">{position.info}</p>
+            )}
             <Button
               onClick={onApply}
-              className="md:hidden bg-[#4B6F93] bg-[#4B6F93] mt-2"
+              className="md:hidden bg-[#4B6F93] mt-2"
             >
               Apply for this position
             </Button>
@@ -118,25 +137,58 @@ export default function CareerPage() {
 
   const openPositions: Position[] = [
     {
-      title: "Senior E-commerce Developer",
+      title: "FRONT-END DEVELOPER",
       location: "Remote / Hybrid",
       type: "Full-time",
       department: "Development",
-      description: "Join our development team to build cutting-edge e-commerce solutions using modern technologies. You'll work on high-impact projects, collaborate with cross-functional teams, and help shape the future of our platform.",
+      description: "We are seeking a skilled and detail-oriented Front-End Shopify Developer to join our team. As a Front-End Shopify Developer, you will be responsible for creating visually appealing and highly functional Shopify-based websites. Your expertise in front-end development, particularly with Shopify, will play a crucial role in delivering exceptional user experiences. If you are passionate about e-commerce development and have a strong proficiency in Shopify, we would love to hear from you.",
+      responsibilities: [
+        "Collaborate with the design team to implement and translate UI/UX designs into pixel-perfect Shopify themes.",
+        "Customize and optimize Shopify themes using HTML, CSS, Tailwind CSS, Alpine.js, and JavaScript to enhance functionality and user experience.",
+        "Ensure cross-browser and cross-device compatibility.",
+        "Ensure cross-browser and cross-device compatibility of Shopify websites.",
+        "Conduct thorough testing and debugging to identify and resolve any front-end issues or bugs.",
+        "Integrate third-party applications and plugins to extend Shopify's functionality.",
+        "Collaborate with the back-end development team to ensure seamless integration of front-end and back-end components.",
+        "Stay up to date with the latest trends and best practices in front-end development and e-commerce."
+      ],
       requirements: [
-        "5+ years of experience in web development",
-        "Strong proficiency in React/Next.js and Node.js",
-        "Experience with e-commerce platforms and APIs",
-        "Familiarity with modern frontend build pipelines and tools",
-        "Excellent problem-solving and communication skills"
-      ]
+        "Strong proficiency in front-end development, including HTML, CSS, Alpine.js, Tailwind CSS, JavaScript, and responsive design.",
+        "Proven experience in developing Shopify-based websites.",
+        "Solid understanding of Shopify liquid templating language.",
+        "Familiarity with Shopify's theme customization options and best practices.",
+        "Experience with version control systems, such as Git.",
+        "Knowledge of front-end frameworks and libraries (e.g., React, Vue.js, Tailwind CSS, Alpine.js) is a plus.",
+        "Attention to detail and ability to deliver high-quality work within deadlines.",
+        "Excellent problem-solving and debugging skills.",
+        "Strong communication and collaboration skills."
+      ],
+      info: "If you are a passionate Front-End Shopify Developer with a keen eye for design and a desire to create exceptional e-commerce experiences, we would love to have you on our team. Please submit your resume, portfolio, and any relevant work samples for consideration."
     },
     {
-      title: "Digital Marketing Specialist",
+      title: "JUNIOR UI/UX DESIGNER",
       location: "Remote / Hybrid",
       type: "Full-time",
-      department: "Marketing",
-      description: "Drive growth through innovative digital marketing strategies and campaigns.",
+      department: "Design",
+      description: "We are seeking a motivated and creative Junior UX/UI Designer to join our team. As a Junior UX/UI Designer, you will collaborate with our design and development teams to create intuitive and visually appealing user experiences for our Shopify-based projects. Proficiency in Shopify and Figma design tools is essential for this role. This is an excellent opportunity for a passionate designer to grow their skills and contribute to meaningful projects.",
+      responsibilities: [
+        "Collaborate with the design and development teams to create user-centric designs for Shopify-based websites and applications.",
+        "Assist in creating wireframes, prototypes, and user flows to support the design process.",
+        "Design visually appealing interfaces that align with brand guidelines and best UX/UI practices.",
+        "Conduct user research and incorporate feedback to iterate on designs.",
+        "Collaborate with developers to ensure designs are implemented accurately and effectively.",
+        "Stay up to date with industry trends and emerging UX/UI design practices."
+      ],
+      requirements: [
+        "Solid understanding of UX/UI design principles and best practices.",
+        "Proficiency in Shopify and Figma design tools.",
+        "Strong portfolio demonstrating previous design work and projects.",
+        "Knowledge of HTML, CSS, and JavaScript is a plus.",
+        "Excellent communication and collaboration skills.",
+        "Ability to work in a fast-paced, deadline-driven environment.",
+        "Attention to detail and ability to multitask."
+      ],
+      info: "If you are passionate about UX/UI design, have a strong foundation in Shopify and Figma, and are excited about joining a dynamic team, we would love to hear from you. Please submit your resume, portfolio, and any relevant design samples for consideration."
     },
     {
       title: "E-commerce Consultant",
