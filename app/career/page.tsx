@@ -191,12 +191,50 @@ export default function CareerPage() {
       info: "If you are passionate about UX/UI design, have a strong foundation in Shopify and Figma, and are excited about joining a dynamic team, we would love to hear from you. Please submit your resume, portfolio, and any relevant design samples for consideration."
     },
     {
-      title: "E-commerce Consultant",
+      title: "CONVERSION RATE OPTIMIZATION EXPERT",
       location: "Remote / Hybrid",
       type: "Full-time",
-      department: "Consulting",
-      description: "Help clients optimize their e-commerce operations and achieve sustainable growth.",
+      department: "CRO",
+      description: "We are seeking a results-driven and analytical Shopify Conversion Rate Optimization (CRO) Expert to join our team. As a CRO Expert, you will be responsible for optimizing our Shopify-based e-commerce websites to improve conversion rates and drive revenue growth. Your expertise in data analysis, user behavior, and A/B testing will be instrumental in identifying and implementing strategies to maximize conversions. If you are passionate about optimizing user experiences and have a proven track record of improving conversion rates on Shopify platforms, we would love to hear from you.",
+      responsibilities: [
+        "Conduct in-depth analysis of user behavior, conversion funnels, and website metrics to identify areas for improvement.",
+        "Develop and execute data-driven CRO strategies to increase conversion rates and improve key performance indicators (KPIs).",
+        "Collaborate with the design and development teams to implement A/B tests, landing page optimizations, and other CRO initiatives.",
+        "Perform user research, usability testing, and heat mapping to gain insights into user behavior and pain points.",
+        "Optimize website elements, including copy, CTAs, forms, checkout process, and overall user experience.",
+        "Continuously monitor and analyze website performance and conversion metrics to measure the impact of optimization efforts.",
+        "Stay up to date with industry trends, emerging CRO techniques, and best practices for Shopify platforms."
+      ],
+      requirements: [
+        "Proven experience in CRO, particularly with Shopify e-commerce websites.",
+        "Strong analytical skills and proficiency in Google Analytics or similar analytics platforms.",
+        "Knowledge of A/B testing tools, such as Optimizely, VWO, or Google Optimize.",
+        "Familiarity with Shopify's conversion tracking and reporting capabilities.",
+        "Understanding of user experience (UX) principles and best practices.",
+        "Excellent problem-solving and critical-thinking skills.",
+        "Ability to interpret data, draw insights, and make data-driven recommendations.",
+        "Strong communication and collaboration skills.",
+        "Results-oriented mindset with a focus on achieving measurable improvements in conversion rates."
+      ],
+      info: "If you are a driven and analytical Shopify Conversion Rate Optimization Expert with a passion for driving revenue growth through optimization, we would love to have you on our team. Please submit your resume, portfolio, and any relevant case studies or success stories for consideration."
     },
+    {
+      title: "SALES MANAGER",
+      location: "Remote / Hybrid",
+      type: "Full-time",
+      department: "Sales",
+      description: "We are seeking a dynamic and experienced Sales Manager to lead our sales team and drive revenue growth. As a Sales Manager, you will be responsible for developing and executing sales strategies, managing client relationships, and achieving sales targets. Your leadership skills, industry knowledge, and ability to motivate a team will be instrumental in driving our company's sales success. If you are a results-oriented sales professional with a proven track record and exceptional leadership abilities, we would love to hear from you.",
+      responsibilities: [
+        "Develop and implement effective sales strategies to drive revenue growth and meet or exceed sales targets.",
+        "Lead and manage a team of sales representatives, providing guidance, training, and performance evaluations.",
+        "Establish and nurture relationships with key clients, understanding their needs and providing exceptional customer service.",
+        "Identify new business opportunities, target markets, and potential partnerships to expand the company's sales reach.",
+        "Monitor market trends, competitor activities, and industry developments to stay informed and adjust sales strategies accordingly.",
+        "Prepare and analyze sales reports, forecasts, and budgets to track progress and make informed decisions.",
+        "Collaborate with marketing and product teams to align sales efforts with promotional activities and product launches.",
+        "Stay up to date with industry best practices, sales techniques, and emerging trends."
+      ]
+    }
   ]
 
   return (
