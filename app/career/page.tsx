@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { Carousel } from "@/components/ui/carousel"
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards"
 import { ArrowRight, MapPin, Clock, Users, Sparkles, Users2, Brain, Laugh, Quote, ChevronDown, ArrowLeft } from "lucide-react"
-import { JobApplicationForm } from "@/components/career/job-application-form"
+// JobApplicationForm removed; using email compose instead
 
 type Position = {
   title: string;
@@ -133,7 +133,28 @@ function PositionAccordion({ position, index, onApply }: PositionAccordionProps)
 }
 
 export default function CareerPage() {
-  const [selectedPosition, setSelectedPosition] = useState<Position | null>(null)
+  const applicationEmail = "showmineinfotech@gmail.com"
+
+  const openGmailCompose = (position: Position) => {
+    const subject = `Application: ${position.title}`
+    const bodyLines = [
+      "Hello Showmine Team,",
+      "",
+      `I'd like to apply for the ${position.title} position.`,
+      "",
+      "- Name:",
+      "- Portfolio/LinkedIn:",
+      "- Availability:",
+      "- Location:",
+      "",
+      "Additional notes:",
+    ]
+    const body = encodeURIComponent(bodyLines.join("\n"))
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(applicationEmail)}&su=${encodeURIComponent(subject)}&body=${body}`
+    if (typeof window !== 'undefined') {
+      window.open(gmailUrl, '_blank', 'noopener')
+    }
+  }
 
   const openPositions: Position[] = [
     {
@@ -630,7 +651,7 @@ export default function CareerPage() {
                   key={index}
                   position={position}
                   index={index}
-                  onApply={() => setSelectedPosition(position)}
+                  onApply={() => openGmailCompose(position)}
                 />
               ))}
             </div>
@@ -639,13 +660,7 @@ export default function CareerPage() {
 
       </div>
 
-      {/* Job Application Form Modal */}
-      {selectedPosition && (
-        <JobApplicationForm
-          position={selectedPosition?.title || ''}
-          onClose={() => setSelectedPosition(null)}
-        />
-      )}
+      {/* Email compose is opened directly; modal removed */}
     </>
   )
 }
