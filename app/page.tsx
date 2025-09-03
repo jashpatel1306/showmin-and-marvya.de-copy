@@ -44,6 +44,122 @@ const useOutsideClick = (
   }, [ref, callback]);
 };
 
+// Video intersection observer hook
+const useVideoIntersection = (videoRef: React.RefObject<HTMLVideoElement>) => {
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+            video.play().catch(() => {
+              // Handle autoplay policy restrictions
+            });
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(video);
+
+    return () => {
+      observer.unobserve(video);
+    };
+  }, [videoRef]);
+};
+
+// Video Card Component
+const VideoCard = ({
+  title,
+  description,
+  points,
+  href,
+  ariaLabel,
+  posterAlt,
+  color = "blue",
+  delay = 0.1
+}: {
+  title: string;
+  description: string;
+  points: string[];
+  href: string;
+  ariaLabel: string;
+  posterAlt: string;
+  color?: "blue" | "purple" | "green";
+  delay?: number;
+}) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useVideoIntersection(videoRef);
+
+  const colorClasses = {
+    blue: "focus-within:ring-blue-400/50 text-blue-400 hover:text-blue-300 focus:ring-blue-400/50",
+    purple: "focus-within:ring-purple-400/50 text-purple-400 hover:text-purple-300 focus:ring-purple-400/50",
+    green: "focus-within:ring-green-400/50 text-green-400 hover:text-green-300 focus:ring-green-400/50"
+  };
+
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay }}
+      viewport={{ once: true }}
+      className="group relative overflow-hidden rounded-2xl border border-white/10 bg-black hover:shadow-2xl transition-all duration-300 focus-within:ring-2"
+      aria-labelledby={`${title.toLowerCase().replace(/\s+/g, '-')}-title`}
+    >
+      {/* Video Container */}
+      <div className="relative aspect-[4/3] overflow-hidden">
+        <video
+          ref={videoRef}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/placeholder.jpg"
+          aria-label={posterAlt}
+        >
+          <source src="/placeholder.mp4" type="video/mp4" />
+          <source src="/placeholder.webm" type="video/webm" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      </div>
+      
+      {/* Content */}
+      <div className="p-6">
+        <h3 id={`${title.toLowerCase().replace(/\s+/g, '-')}-title`} className="text-xl font-semibold text-white mb-3">
+          {title}
+        </h3>
+        <p className="text-gray-300 text-sm leading-relaxed mb-4 max-w-[60ch]">
+          {description}
+        </p>
+        
+        {/* Key Points */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {points.map((point, index) => (
+            <span key={index} className="text-xs px-2 py-1 bg-white/10 text-white/80 rounded-full">
+              {point}
+            </span>
+          ))}
+        </div>
+        
+        <a 
+          href={href}
+          className={`text-sm font-medium underline-offset-4 hover:underline transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black rounded ${colorClasses[color]}`}
+          aria-label={ariaLabel}
+        >
+          Read more →
+        </a>
+      </div>
+    </motion.article>
+  );
+};
+
 // Blur Image Component
 const BlurImage = ({
   height,
@@ -1209,6 +1325,90 @@ export default function HomePage() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 md:py-28 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <TextGenerateEffectinTitleAndSubtitle 
+              words="Our services"
+              className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+              duration={0.5}
+            />
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-8 leading-tight">
+              Services
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-12 lg:gap-16 max-w-6xl mx-auto mb-12">
+            <VideoCard
+              title="eCommerce"
+              description="We build high-performing Shopify stores and headless commerce experiences that scale. From checkout to integrations, every detail is optimized for conversion."
+              points={["Shopify/Plus", "Headless (Hydrogen, Next.js)", "Custom apps & integrations", "Performance & SEO", "CRO & analytics"]}
+              href="/services/ecommerce"
+              ariaLabel="Read more about eCommerce services"
+              posterAlt="Abstract metallic honeycomb pattern, premium texture"
+              color="blue"
+              delay={0.1}
+            />
+            
+            <VideoCard
+              title="Design & Websites"
+              description="Beautiful, fast, and accessible websites that express your brand and convert. We craft systems: from design foundations to motion and micro-interactions."
+              points={["Brand & UI systems", "UX research", "Accessible (WCAG 2.2)", "Design tokens", "Motion & Web Vitals"]}
+              href="/services/design"
+              ariaLabel="Read more about Design & Websites"
+              posterAlt="Minimal studio scene with glass panels and soft blue highlight"
+              color="purple"
+              delay={0.2}
+            />
+            
+            <VideoCard
+              title="Marketing"
+              description="Full-funnel growth powered by data. We plan, launch, and optimize campaigns across SEO, paid, email, and SMS to turn attention into revenue."
+              points={["SEO & content", "Paid social/search", "Email/SMS (Klaviyo)", "CRM & attribution", "Landing pages & tests"]}
+              href="/services/marketing"
+              ariaLabel="Read more about Marketing services"
+              posterAlt="Fragrance bottles with roses on a soft backdrop"
+              color="green"
+              delay={0.3}
+            />
+          </div>
+
+          {/* All Services CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Button
+              className="
+                inline-flex items-center
+                bg-white/10 hover:bg-white/20
+                text-white font-medium
+                px-6 py-3 rounded-full
+                shadow-lg hover:shadow-xl
+                transition-all duration-300 ease-out
+                hover:scale-105 hover:-translate-y-0.5
+                focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-black
+                text-sm
+              "
+            >
+              <a href="/services" className="focus:outline-none">
+                All Services
+              </a>
+            </Button>
+          </motion.div>
         </div>
       </section>
 
