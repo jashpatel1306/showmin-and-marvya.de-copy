@@ -245,7 +245,7 @@ export default function ShopMigrationPage() {
               }}
             >
               Does your store need an{' '}
-              <span className="text-rgb(75, 111, 147) italic font-bold">upgrade?</span>
+              <span className="text-[#4B6F93] italic font-bold">upgrade?</span>
               <br />
               We'll seamlessly migrate your store to Shopify.
             </h1>
@@ -418,7 +418,7 @@ export default function ShopMigrationPage() {
             className="px-1 py-0.5 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
             duration={0.5}
           />
-        </motion.div> 
+        </motion.div>
 
         <div className="max-w-6xl mx-auto flex flex-col gap-16">
           {/* Header Section */}
@@ -688,7 +688,7 @@ export default function ShopMigrationPage() {
               height: 'min-content',
               justifyContent: 'center',
               overflow: 'visible',
-              padding: '64px 64px 0px',
+              padding: '64px 64px',
               pointerEvents: 'auto',
               position: 'relative',
               width: '100%',
@@ -705,9 +705,12 @@ export default function ShopMigrationPage() {
               viewport={{ once: true }}
               className="text-center mb-20"
             >
-              <Badge className="text-[#ffffff] text-sm font-extralight mb-6 tracking-wider">
-                More than just a migration
-              </Badge>
+
+              <TextGenerateEffectinTitleAndSubtitle
+                words="More than just a migration"
+                className="px-1 py-0.5 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+                duration={0.5}
+              />
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-light mb-5 text-white">
                 Our process is{' '}
                 <span className="italic text-blue-400" style={{ fontFamily: 'Dancing Script, cursive' }}>
@@ -815,6 +818,12 @@ export default function ShopMigrationPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
+             <TextGenerateEffectinTitleAndSubtitle
+            words="All solution from a single source"
+            className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+            duration={0.5}
+          />
+
             <h2 className="text-5xl md:text-6xl font-light mb-8 text-white">
               We make it possible.
             </h2>
@@ -998,9 +1007,12 @@ export default function ShopMigrationPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <Badge variant="outline" className="mb-8 text-white border-gray-600 py-3 px-4 flex-nowrap rounded-[12px] text-[12px] font-normal">
-              What are you waiting for?
-            </Badge>
+            <TextGenerateEffectinTitleAndSubtitle
+            words="What are you waiting for?"
+            className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+            duration={0.5}
+          />
+
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight">
               Our customers are already
               <br />
