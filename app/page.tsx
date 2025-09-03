@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { partners } from "@/data/partners"
 import { Card as UICard } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Star, Check, X, BarChart3, Target, Clock, ArrowRight, Plus, Minus, ArrowLeft, ArrowRight as ArrowRightIcon } from "lucide-react"
+import { Star, Check, X, BarChart3, Target, Clock, ArrowRight, Plus, Minus, ArrowLeft, ArrowRight as ArrowRightIcon, ChevronLeft, ChevronRight } from "lucide-react"
 import Image, { ImageProps } from "next/image"
 import { Navigation } from "@/components/navigation"
 
@@ -82,7 +82,8 @@ const VideoCard = ({
   ariaLabel,
   posterAlt,
   color = "blue",
-  delay = 0.1
+  delay = 0.1,
+  isMobile = false
 }: {
   title: string;
   description: string;
@@ -92,6 +93,7 @@ const VideoCard = ({
   posterAlt: string;
   color?: "blue" | "purple" | "green";
   delay?: number;
+  isMobile?: boolean;
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   useVideoIntersection(videoRef);
@@ -108,7 +110,7 @@ const VideoCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay }}
       viewport={{ once: true }}
-      className="group relative overflow-hidden rounded-2xl border border-white/10 bg-black hover:shadow-2xl transition-all duration-300 focus-within:ring-2"
+      className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-black hover:shadow-2xl transition-all duration-300 focus-within:ring-2 ${isMobile ? 'w-full flex-shrink-0' : ''}`}
       aria-labelledby={`${title.toLowerCase().replace(/\s+/g, '-')}-title`}
     >
       {/* Video Container */}
@@ -157,6 +159,111 @@ const VideoCard = ({
         </a>
       </div>
     </motion.article>
+  );
+};
+
+// Mobile Swiper Component
+const MobileSwiper = ({ children }: { children: React.ReactNode }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const childrenArray = React.Children.toArray(children);
+  const totalSlides = childrenArray.length;
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe && currentIndex < totalSlides - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+    if (isRightSwipe && currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+  };
+
+  const goToPrevious = () => {
+    setCurrentIndex(currentIndex === 0 ? totalSlides - 1 : currentIndex - 1);
+  };
+
+  const goToNext = () => {
+    setCurrentIndex(currentIndex === totalSlides - 1 ? 0 : currentIndex + 1);
+  };
+
+  return (
+    <div className="relative w-full">
+      {/* Swiper Container */}
+      <div
+        ref={containerRef}
+        className="flex overflow-hidden rounded-2xl"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+        style={{
+          transform: `translateX(-${currentIndex * 100}%)`,
+          transition: 'transform 0.3s ease-in-out'
+        }}
+      >
+        {childrenArray.map((child, index) => (
+          <div key={index} className="w-full flex-shrink-0 px-4">
+            {child}
+          </div>
+        ))}
+      </div>
+
+      {/* Navigation Arrows */}
+      <button
+        onClick={goToPrevious}
+        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all duration-200"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft className="w-5 h-5 text-white" />
+      </button>
+      
+      <button
+        onClick={goToNext}
+        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all duration-200"
+        aria-label="Next slide"
+      >
+        <ChevronRight className="w-5 h-5 text-white" />
+      </button>
+
+      {/* Dots Indicator */}
+      <div className="flex justify-center mt-6 space-x-2">
+        {childrenArray.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`w-2 h-2 rounded-full transition-all duration-200 ${
+              index === currentIndex 
+                ? 'bg-white w-8' 
+                : 'bg-white/30 hover:bg-white/50'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
   );
 };
 
@@ -1348,7 +1455,8 @@ export default function HomePage() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-12 lg:gap-16 max-w-6xl mx-auto mb-12">
+          {/* Desktop Grid Layout */}
+          <div className="hidden lg:grid grid-cols-3 gap-12 lg:gap-16 max-w-6xl mx-auto mb-12">
             <VideoCard
               title="eCommerce"
               description="We build high-performing Shopify stores and headless commerce experiences that scale. From checkout to integrations, every detail is optimized for conversion."
@@ -1381,6 +1489,47 @@ export default function HomePage() {
               color="green"
               delay={0.3}
             />
+          </div>
+
+          {/* Mobile Swiper Layout */}
+          <div className="lg:hidden max-w-sm mx-auto mb-12">
+            <MobileSwiper>
+              <VideoCard
+                title="eCommerce"
+                description="We build high-performing Shopify stores and headless commerce experiences that scale. From checkout to integrations, every detail is optimized for conversion."
+                points={["Shopify/Plus", "Headless (Hydrogen, Next.js)", "Custom apps & integrations", "Performance & SEO", "CRO & analytics"]}
+                href="/services/ecommerce"
+                ariaLabel="Read more about eCommerce services"
+                posterAlt="Abstract metallic honeycomb pattern, premium texture"
+                color="blue"
+                delay={0.1}
+                isMobile={true}
+              />
+              
+              <VideoCard
+                title="Design & Websites"
+                description="Beautiful, fast, and accessible websites that express your brand and convert. We craft systems: from design foundations to motion and micro-interactions."
+                points={["Brand & UI systems", "UX research", "Accessible (WCAG 2.2)", "Design tokens", "Motion & Web Vitals"]}
+                href="/services/design"
+                ariaLabel="Read more about Design & Websites"
+                posterAlt="Minimal studio scene with glass panels and soft blue highlight"
+                color="purple"
+                delay={0.2}
+                isMobile={true}
+              />
+              
+              <VideoCard
+                title="Marketing"
+                description="Full-funnel growth powered by data. We plan, launch, and optimize campaigns across SEO, paid, email, and SMS to turn attention into revenue."
+                points={["SEO & content", "Paid social/search", "Email/SMS (Klaviyo)", "CRM & attribution", "Landing pages & tests"]}
+                href="/services/marketing"
+                ariaLabel="Read more about Marketing services"
+                posterAlt="Fragrance bottles with roses on a soft backdrop"
+                color="green"
+                delay={0.3}
+                isMobile={true}
+              />
+            </MobileSwiper>
           </div>
 
           {/* All Services CTA */}
