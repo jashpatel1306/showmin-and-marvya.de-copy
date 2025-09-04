@@ -83,7 +83,9 @@ const VideoCard = ({
   posterAlt,
   color = "blue",
   delay = 0.1,
-  isMobile = false
+  isMobile = false,
+  videoSrc,
+  posterSrc,
 }: {
   title: string;
   description: string;
@@ -94,6 +96,8 @@ const VideoCard = ({
   color?: "blue" | "purple" | "green";
   delay?: number;
   isMobile?: boolean;
+  videoSrc?: string;
+  posterSrc?: string;
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   useVideoIntersection(videoRef);
@@ -113,22 +117,30 @@ const VideoCard = ({
       className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-black hover:shadow-2xl transition-all duration-300 focus-within:ring-2 ${isMobile ? 'w-full flex-shrink-0' : ''}`}
       aria-labelledby={`${title.toLowerCase().replace(/\s+/g, '-')}-title`}
     >
-      {/* Video Container */}
-      <div className="relative aspect-[4/3] overflow-hidden">
-        <video
-          ref={videoRef}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster="/placeholder.jpg"
-          aria-label={posterAlt}
-        >
-          <source src="/placeholder.mp4" type="video/mp4" />
-          <source src="/placeholder.webm" type="video/webm" />
-        </video>
+      {/* Media Container */}
+      <div className="relative aspect-[2/3] md:aspect-[3/4] overflow-hidden">
+        {videoSrc ? (
+          <video
+            ref={videoRef}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={posterSrc || "/placeholder.jpg"}
+            aria-label={posterAlt}
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        ) : (
+          <img
+            src={posterSrc || "/placeholder.jpg"}
+            alt={posterAlt}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            loading="lazy"
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
       
@@ -1459,35 +1471,41 @@ export default function HomePage() {
           <div className="hidden lg:grid grid-cols-3 gap-12 lg:gap-16 max-w-6xl mx-auto mb-12">
             <VideoCard
               title="eCommerce"
-              description="We build high-performing Shopify stores and headless commerce experiences that scale. From checkout to integrations, every detail is optimized for conversion."
+              description="We are proud Shopify partners and trusted end-to-end production experts for leading brands in the eCommerce industry. Beyond building webshops, we design and implement complete digital architectures tailored for growth."
               points={["Shopify/Plus", "Headless (Hydrogen, Next.js)", "Custom apps & integrations", "Performance & SEO", "CRO & analytics"]}
               href="/services/ecommerce"
               ariaLabel="Read more about eCommerce services"
               posterAlt="Abstract metallic honeycomb pattern, premium texture"
               color="blue"
               delay={0.1}
+              videoSrc="/services/Ecomm-1.mp4"
+              posterSrc="/services/markting.webp"
             />
-            
+              
             <VideoCard
               title="Design & Websites"
-              description="Beautiful, fast, and accessible websites that express your brand and convert. We craft systems: from design foundations to motion and micro-interactions."
+              description="We create best-in-class, automated corporate websites and platforms—built to scale effortlessly and designed to go far beyond the ordinary."
               points={["Brand & UI systems", "UX research", "Accessible (WCAG 2.2)", "Design tokens", "Motion & Web Vitals"]}
               href="/services/design"
               ariaLabel="Read more about Design & Websites"
               posterAlt="Minimal studio scene with glass panels and soft blue highlight"
               color="purple"
               delay={0.2}
+              videoSrc="/services/design.mp4"
+              posterSrc="/services/markting.webp"
             />
             
             <VideoCard
               title="Marketing"
-              description="Full-funnel growth powered by data. We plan, launch, and optimize campaigns across SEO, paid, email, and SMS to turn attention into revenue."
+              description="Ignite your brand and stand out in the digital landscape with our marketing expertise. From SEO to social media, we deliver impactful results that drive growth. As a Klaviyo elite partner, we design data-driven email and SMS campaigns that convert customer interactions into revenue. As a certified HubSpot solutions provider, we optimize automation, CRM, and inbound strategies to fuel sustainable success. Ready to elevate your online presence and outpace the competition?"
               points={["SEO & content", "Paid social/search", "Email/SMS (Klaviyo)", "CRM & attribution", "Landing pages & tests"]}
               href="/services/marketing"
               ariaLabel="Read more about Marketing services"
               posterAlt="Fragrance bottles with roses on a soft backdrop"
               color="green"
               delay={0.3}
+              videoSrc="/services/markting.webp"
+              posterSrc="/services/markting.webp"
             />
           </div>
 
@@ -1504,6 +1522,8 @@ export default function HomePage() {
                 color="blue"
                 delay={0.1}
                 isMobile={true}
+                videoSrc="/services/Ecomm-1.mp4"
+                posterSrc="/services/markting.webp"
               />
               
               <VideoCard
@@ -1516,6 +1536,8 @@ export default function HomePage() {
                 color="purple"
                 delay={0.2}
                 isMobile={true}
+                videoSrc="/services/design.mp4"
+                posterSrc="/services/markting.webp"
               />
               
               <VideoCard
@@ -1528,6 +1550,8 @@ export default function HomePage() {
                 color="green"
                 delay={0.3}
                 isMobile={true}
+                videoSrc="/services/Ecomm-1.mp4"
+                posterSrc="/services/markting.webp"
               />
             </MobileSwiper>
           </div>

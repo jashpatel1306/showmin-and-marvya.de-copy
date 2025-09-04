@@ -863,6 +863,9 @@ video {
 .aspect-video {
   aspect-ratio: 16 / 9;
 }
+.aspect-\[2\/3\] {
+  aspect-ratio: 2/3;
+}
 .h-1 {
   height: 0.25rem;
 }
@@ -3400,6 +3403,10 @@ html {
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:aspect-\[3\/4\] {
+    aspect-ratio: 3/4;
   }
 
   .md\:h-10 {
