@@ -56,7 +56,7 @@ const ServiceBlock: React.FC<ServiceBlockProps> = ({ id, title, description, tag
     { current: videoRefs.current[1] as HTMLVideoElement | null },
   ]);
   return (
-    <section id={id} className="bg-white text-black py-16 md:py-24 border-b border-gray-200 relative">
+    <section id={id} className="bg-white text-black py-16 md:py-24 border-y border-neutral-200 relative">
       {/* baseline behind */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-neutral-200/90 z-0" />
       <div className="max-w-7xl mx-auto px-6 md:px-8 grid grid-cols-12 gap-8 items-center relative z-10">
@@ -120,13 +120,13 @@ const ServiceBlock: React.FC<ServiceBlockProps> = ({ id, title, description, tag
 
 export default function ServicesPage() {
   return (
-    <main className="bg-white text-black">
+    <main className="bg-black">
       <Navigation />
       {/* Hero */}
       <section className="pt-16 md:pt-24 pb-10">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">Services</h1>
-          <p className="mt-4 max-w-2xl text-base md:text-lg text-neutral-600">
+          <h1 className="text-5xl md:text-6xl font-semibold tracking-tight text-white">Services</h1>
+          <p className="mt-4 max-w-2xl text-base md:text-lg text-neutral-400">
             We design, build, and scale world-class commerce, websites, and growth engines.
           </p>
         </div>
