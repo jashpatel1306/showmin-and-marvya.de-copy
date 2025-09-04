@@ -17,7 +17,7 @@ const CarouselContext = createContext<{
   onCardClose: (index: number) => void;
   currentIndex: number;
 }>({
-  onCardClose: () => {},
+  onCardClose: () => { },
   currentIndex: 0,
 });
 
@@ -143,7 +143,7 @@ const VideoCard = ({
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
-      
+
       {/* Content */}
       <div className="p-6">
         <h3 id={`${title.toLowerCase().replace(/\s+/g, '-')}-title`} className="text-xl font-semibold text-white mb-3">
@@ -152,7 +152,7 @@ const VideoCard = ({
         <p className="text-gray-300 text-sm leading-relaxed mb-4 max-w-[60ch]">
           {description}
         </p>
-        
+
         {/* Key Points */}
         <div className="flex flex-wrap gap-2 mb-4">
           {points.map((point, index) => (
@@ -161,8 +161,8 @@ const VideoCard = ({
             </span>
           ))}
         </div>
-        
-        <a 
+
+        <a
           href={href}
           className={`text-sm font-medium underline-offset-4 hover:underline transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black rounded ${colorClasses[color]}`}
           aria-label={ariaLabel}
@@ -197,7 +197,7 @@ const MobileSwiper = ({ children }: { children: React.ReactNode }) => {
 
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
@@ -251,7 +251,7 @@ const MobileSwiper = ({ children }: { children: React.ReactNode }) => {
       >
         <ChevronLeft className="w-5 h-5 text-white" />
       </button>
-      
+
       <button
         onClick={goToNext}
         className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all duration-200"
@@ -266,11 +266,10 @@ const MobileSwiper = ({ children }: { children: React.ReactNode }) => {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-200 ${
-              index === currentIndex 
-                ? 'bg-white w-8' 
+            className={`w-2 h-2 rounded-full transition-all duration-200 ${index === currentIndex
+                ? 'bg-white w-8'
                 : 'bg-white/30 hover:bg-white/50'
-            }`}
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
@@ -588,7 +587,7 @@ const TextGenerateEffect = ({
   const [scope, animate] = useAnimate();
   const wordsArray = words.split(" ");
   const [isVisible, setIsVisible] = useState(false);
-  
+
   // Intersection Observer to trigger animation when in view
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -612,7 +611,7 @@ const TextGenerateEffect = ({
   useEffect(() => {
     if (isVisible && scope.current) {
       const spans = scope.current.querySelectorAll('span');
-      
+
       // Reset all spans to initial state
       spans.forEach((span: any) => {
         span.style.opacity = '0';
@@ -642,7 +641,7 @@ const TextGenerateEffect = ({
     <div ref={scope} className={cn("font-light", className)}>
       <div className="text-[48px] leading-tight">
         {wordsArray.map((word, idx) => (
-          <span 
+          <span
             key={`${word}-${idx}`}
             className="inline-block opacity-0 mr-2"
             style={{
@@ -673,7 +672,7 @@ const TextGenerateEffectinTitleAndSubtitle = ({
   const [scope, animate] = useAnimate();
   const wordsArray = words.split(" ");
   const [isVisible, setIsVisible] = useState(false);
-  
+
   // Intersection Observer to trigger animation when in view
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -697,7 +696,7 @@ const TextGenerateEffectinTitleAndSubtitle = ({
   useEffect(() => {
     if (isVisible && scope.current) {
       const spans = scope.current.querySelectorAll('span');
-      
+
       // Reset all spans to initial state
       spans.forEach((span: any) => {
         span.style.opacity = '0';
@@ -727,7 +726,7 @@ const TextGenerateEffectinTitleAndSubtitle = ({
     <div ref={scope} className={cn("font-light", className)}>
       <div className="text-[14px] leading-tight px-3 py-1.5">
         {wordsArray.map((word, idx) => (
-          <span 
+          <span
             key={`${word}-${idx}`}
             className="inline-block opacity-0 mr-2"
             style={{
@@ -750,7 +749,7 @@ const clients = [
   { id: 3, name: 'Client 3', designation: 'Tech Startup', image: '/client/client3.png' },
   { id: 4, name: 'Client 4', designation: 'Luxury Goods', image: '/client/client4.png' },
   { id: 5, name: 'Client 5', designation: 'Beauty Products', image: '/client/client5.png' },
-  
+
 ];
 
 // AnimatedTooltip component
@@ -826,7 +825,7 @@ const AnimatedTooltip = ({
                   {item.name}
                 </div>
                 <div className="text-xs text-white">{item.designation}</div>
-              </motion.div> 
+              </motion.div>
             )}
           </AnimatePresence>
           <img
@@ -935,8 +934,8 @@ const brands = [
   { name: "BRITISHJEWEL", img: "/images/customers/britishjewel.png" },
   { name: "PLUMDIAMONDS", img: "/images/customers/plumdiamonds.png" },
   { name: "INDOERA", img: "/images/customers/indoera.png" },
-  
- 
+
+
 
 ];
 
@@ -1077,7 +1076,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <TextGenerateEffectinTitleAndSubtitle 
+            <TextGenerateEffectinTitleAndSubtitle
               words="An excerpt from our customers"
               className="px-1 py-0.5 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
               duration={0.5}
@@ -1125,7 +1124,7 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <TextGenerateEffectinTitleAndSubtitle 
+            <TextGenerateEffectinTitleAndSubtitle
               words="Our services"
               className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
               duration={0.5}
@@ -1158,7 +1157,7 @@ export default function HomePage() {
               </div>
 
               <p className="text-gray-300 text-lg leading-relaxed font-sans">
-              We build Shopify stores that load at lightning speed, drive targeted sales, and stand out from the competition. Our stores are designed to become true customer magnets. Store migrations from other platforms to Shopify are part of our everyday work—especially now, as many e-commerce businesses face challenges with outdated systems while Shopify retailers surge ahead. With our unique approach, you don’t just gain a competitive edge—you set new standards for performance.              </p>
+                We build Shopify stores that load at lightning speed, drive targeted sales, and stand out from the competition. Our stores are designed to become true customer magnets. Store migrations from other platforms to Shopify are part of our everyday work—especially now, as many e-commerce businesses face challenges with outdated systems while Shopify retailers surge ahead. With our unique approach, you don’t just gain a competitive edge—you set new standards for performance.              </p>
             </div>
             {/* Growth Consulting Card */}
             <div className="rounded-2xl border border-red-400/40 bg-gradient-to-br from-[#5c162b] via-[#1a0b0e] to-black p-10 flex flex-col justify-between shadow-3xl transition-transform duration-300 hover:scale-105 min-h-[380px] group">
@@ -1180,14 +1179,14 @@ export default function HomePage() {
                 </h3>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed font-sans">
-              In our consulting program, our mission is to help ambitious e-commerce brands scale rapidly, breaking past the limits of traditional methods. We partner closely with our clients, offering end-to-end support throughout their growth journey. Having operated our own stores and successfully scaled multiple e-commerce businesses to seven- and eight-figure annual revenues, we bring proven expertise. All of these insights have been distilled into a clear, strategic, step-by-step roadmap.
+                In our consulting program, our mission is to help ambitious e-commerce brands scale rapidly, breaking past the limits of traditional methods. We partner closely with our clients, offering end-to-end support throughout their growth journey. Having operated our own stores and successfully scaled multiple e-commerce businesses to seven- and eight-figure annual revenues, we bring proven expertise. All of these insights have been distilled into a clear, strategic, step-by-step roadmap.
               </p>
             </div>
           </div>
 
           {/* right choice section */}
           <div className="mt-12 text-center py-12">
-            <TextGenerateEffect 
+            <TextGenerateEffect
               words="If you're seeking a partner who thinks strategically, prioritizes your company's interests, and offers proven e-commerce expertise with an exceptional track record, Showmine is the right choice."
               className="text-center"
               duration={0.5}
@@ -1229,7 +1228,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <TextGenerateEffectinTitleAndSubtitle 
+            <TextGenerateEffectinTitleAndSubtitle
               words="Results"
               className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
               duration={0.5}
@@ -1340,8 +1339,8 @@ export default function HomePage() {
       </section>
 
 
-           {/* Comparison Section */}
-           <section className="py-20 bg-black">
+      {/* Comparison Section */}
+      <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1350,7 +1349,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <TextGenerateEffectinTitleAndSubtitle 
+            <TextGenerateEffectinTitleAndSubtitle
               words="The direct comparison"
               className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
               duration={0.5}
@@ -1457,7 +1456,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <TextGenerateEffectinTitleAndSubtitle 
+            <TextGenerateEffectinTitleAndSubtitle
               words="Our services"
               className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
               duration={0.5}
@@ -1478,7 +1477,7 @@ export default function HomePage() {
               videoSrc="/services/Ecomm-1.mp4"
               posterSrc="/services/markting.webp"
             />
-              
+
             <VideoCard
               title="Design & Websites"
               description="We create best-in-class, automated corporate websites and platforms—built to scale effortlessly and designed to go far beyond the ordinary."
@@ -1491,7 +1490,7 @@ export default function HomePage() {
               videoSrc="/services/design.mp4"
               posterSrc="/services/markting.webp"
             />
-            
+
             <VideoCard
               title="Marketing"
               description="Ignite your brand and stand out in the digital landscape with our marketing expertise. From SEO to social media, we deliver impactful results that drive growth. As a Klaviyo elite partner, we design data-driven email and SMS campaigns that convert customer interactions into revenue. As a certified HubSpot solutions provider, we optimize automation, CRM, and inbound strategies to fuel sustainable success. Ready to elevate your online presence and outpace the competition?"
@@ -1522,7 +1521,7 @@ export default function HomePage() {
                 videoSrc="/services/Ecomm-1.mp4"
                 posterSrc="/services/markting.webp"
               />
-              
+
               <VideoCard
                 title="Design & Websites"
                 description="Beautiful, fast, and accessible websites that express your brand and convert. We craft systems: from design foundations to motion and micro-interactions."
@@ -1536,7 +1535,7 @@ export default function HomePage() {
                 videoSrc="/services/design.mp4"
                 posterSrc="/services/markting.webp"
               />
-              
+
               <VideoCard
                 title="Marketing"
                 description="Full-funnel growth powered by data. We plan, launch, and optimize campaigns across SEO, paid, email, and SMS to turn attention into revenue."
@@ -1592,7 +1591,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <TextGenerateEffectinTitleAndSubtitle 
+            <TextGenerateEffectinTitleAndSubtitle
               words="What are you waiting for?"
               className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
               duration={0.5}
@@ -1702,12 +1701,12 @@ export default function HomePage() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center mb-7"
-        > 
-          <TextGenerateEffectinTitleAndSubtitle 
-              words="Customer testimonials"
-              className="px-1 py-0.5 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
-              duration={0.5}
-            />
+        >
+          <TextGenerateEffectinTitleAndSubtitle
+            words="Customer testimonials"
+            className="px-1 py-0.5 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+            duration={0.5}
+          />
         </motion.div>
 
         <div className="max-w-7xl mx-auto px-6">
@@ -1919,7 +1918,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <TextGenerateEffectinTitleAndSubtitle 
+            <TextGenerateEffectinTitleAndSubtitle
               words="The founding team"
               className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
               duration={0.5}
@@ -1931,7 +1930,7 @@ export default function HomePage() {
               of Showmine
             </h2>
             <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
-            We have a team of nearly 20 experts
+              We have a team of nearly 20 experts
               <br />
               ready and eager to help e-commerce businesses grow.
             </p>
@@ -1989,7 +1988,7 @@ export default function HomePage() {
       </section>
 
       {/* Partners Section */}
-      <section className="py-20 bg-black">
+      {/* <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -2020,7 +2019,7 @@ export default function HomePage() {
             {partners.map((partner, index) => {
               const partnerName = typeof partner === 'string' ? partner : partner.name;
               const partnerKey = typeof partner === 'string' ? partner : partner.id || partner.name;
-              
+
               return (
                 <motion.div
                   key={`partner-${index}-${partnerKey}`}
@@ -2036,6 +2035,60 @@ export default function HomePage() {
             })}
           </motion.div>
         </div>
+      </section> */}
+
+      {/* Partners Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">Our partners</h2>
+            <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              We work with the best in the industry and
+              <br />
+              have created the best ecosystem to ensure
+              <br />
+              your e-commerce business grows
+              <br />
+              sustainably and stays at the top.
+            </p>
+          </motion.div>
+
+          <div className="overflow-hidden relative">
+            <div className="flex animate-marquee gap-16">
+              {/* Original List */}
+              {brands.map((brand, index) => (
+                <div key={index} className="flex-shrink-0">
+                  <Image
+                    src={brand.img}
+                    alt={brand.name}
+                    width={120}
+                    height={60}
+                    className="object-contain  duration-300"
+                  />
+                </div>
+              ))}
+
+              {/* Duplicate for seamless loop */}
+              {brands.map((brand, index) => (
+                <div key={`dup-${index}`} className="flex-shrink-0">
+                  <Image
+                    src={brand.img}
+                    alt={brand.name}
+                    width={120}
+                    height={60}
+                    className="object-contain opacity-70 hover:opacity-100 transition-opacity duration-400"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* FAQ Section */}
@@ -2048,7 +2101,55 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <TextGenerateEffectinTitleAndSubtitle 
+            <TextGenerateEffectinTitleAndSubtitle
+              words="An excerpt from our customers"
+              className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+              duration={0.5}
+            />
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">
+              Questions &
+              <span className="text-blue-400 italic">Answers</span>
+            </h2>
+            <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              Everything you need to know about working with Showmine
+            </p>
+
+            <Button
+              className="
+                w-full sm:w-auto
+                bg-[#4B6F93] hover:bg-[rgb(75, 111, 147)]
+                text-white font-medium
+                px-3 py-2.5 rounded-xl
+                shadow-lg hover:shadow-xl
+                transition-all duration-300 ease-out
+                hover:scale-105 hover:-translate-y-0.5
+                text-base mt-10
+              "
+            >
+              <a
+                href="https://calendly.com/showmineinfotech/30min"
+                target="_blank"
+              >
+                Contact 👉🏻
+              </a>
+            </Button>
+          </motion.div>
+
+          <FAQAccordion />
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <TextGenerateEffectinTitleAndSubtitle
               words="An excerpt from our customers"
               className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
               duration={0.5}
