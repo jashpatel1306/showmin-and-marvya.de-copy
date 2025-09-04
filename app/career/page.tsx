@@ -409,25 +409,25 @@ export default function CareerPage() {
                 {
                   title: 'Motivation',
                   description: 'At our company, motivation is the key to success. We create an inspiring work environment that ignites our employees\' ambition and motivates them to give their best. Our shared vision and pursuit of expertise are the driving force behind our team, who are passionate about achieving excellence and setting new standards.',
-                  image: '/images/hero-bg.jpg',
+                  image: '/culture/motivation.jpg',
                   alt: 'Cityscape view under a sunny sky'
                 },
                 {
                   title: 'Team Spirit',
                   description: 'Our collaboration is characterized by a strong team spirit. We treat each other with respect, trust, and fairness. As a young team, we give everyone the opportunity to develop freely. We make our workplace a great place where people enjoy working and feel comfortable. Team spirit is very important to us.',
-                  image: '/placeholder.jpg',
+                  image: '/culture/teamspirit.jpg',
                   alt: 'Group of professionals discussing in a bright meeting room'
                 },
                 {
                   title: 'Expertise and Specialist Knowledge',
                   description: 'We rely on extensive know-how and experience in the e-commerce sector. Your future colleagues are experts in their field and use their in-depth knowledge to develop customized solutions for our customers.',
-                  image: '/placeholder.jpg',
+                  image: '/culture/Expertise.jpg',
                   alt: 'Developer focused on multiple monitors'
                 },
                 {
                   title: 'Fun',
                   description: 'We firmly believe that a positive and joyful work atmosphere is crucial for achieving top performance. Having fun at work opens up limitless opportunities for success and personal development. We meet regularly as a team and enjoy spending time together. Team events, such as restaurant visits, company parties, or shared lunch during breaks, are important to us.',
-                  image: '/placeholder.jpg',
+                  image: '/culture/fun.jpg',
                   alt: 'Smiling team chatting around a laptop'
                 }
               ].map((value, index) => (
