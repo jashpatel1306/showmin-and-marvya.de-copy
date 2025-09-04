@@ -1462,9 +1462,6 @@ export default function HomePage() {
               className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
               duration={0.5}
             />
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-8 leading-tight">
-              Services
-            </h2>
           </motion.div>
 
           {/* Desktop Grid Layout */}
