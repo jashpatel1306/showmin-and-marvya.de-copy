@@ -100,15 +100,15 @@ const ServiceBlock: React.FC<ServiceBlockProps> = ({ id, title, description, tag
           {media.map((m, idx) => (
             <div
               key={idx}
-              className="group relative"
+              className="group"
               onMouseEnter={() => handleMouseEnter(idx)}
               onMouseLeave={() => handleMouseLeave(idx)}
             >
-              <div className="relative overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
+              <figure className="each-servicelist relative w-full h-[389px] mb-3 overflow-hidden transition-[border-radius] duration-300 ease-in-out rounded-2xl border border-neutral-200 bg-white shadow-sm">
                 {m.type === "video" ? (
                   <video
                     ref={(el: any) => (videoRefs.current[idx] = el)}
-                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500 will-change-transform aspect-[16/9] md:aspect-[21/9]"
+                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500 will-change-transform"
                     muted
                     playsInline
                     preload="metadata"
@@ -122,11 +122,11 @@ const ServiceBlock: React.FC<ServiceBlockProps> = ({ id, title, description, tag
                   <img
                     src={m.src}
                     alt={m.alt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500 will-change-transform aspect-[16/9] md:aspect-[21/9]"
+                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500 will-change-transform"
                     loading="lazy"
                   />
                 )}
-              </div>
+              </figure>
               {/* Tags below media appear on hover */}
               <div className="mt-2 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <Tag label={m.alt} />

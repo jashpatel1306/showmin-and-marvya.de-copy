@@ -980,6 +980,9 @@ video {
 .h-screen {
   height: 100vh;
 }
+.h-\[389px\] {
+  height: 389px;
+}
 .max-h-96 {
   max-height: 24rem;
 }
@@ -2649,6 +2652,11 @@ video {
 }
 .transition-transform {
   transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-\[border-radius\] {
+  transition-property: border-radius;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
