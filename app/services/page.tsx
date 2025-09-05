@@ -21,7 +21,7 @@ type ServiceBlockProps = {
 };
 
 const Tag: React.FC<{ label: string }> = ({ label }) => (
-  <span className="mt-4 inline-flex items-center rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs font-medium text-neutral-700 transition-colors duration-200 hover:bg-neutral-100">
+  <span className="mt-1 inline-flex items-center rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs font-medium text-neutral-700 transition-colors duration-200 hover:bg-neutral-100">
     {label}
   </span>
 );
@@ -78,10 +78,10 @@ const ServiceBlock: React.FC<ServiceBlockProps> = ({ id, title, description, tag
         {/* Left column: text */}
         <div className="serviceexcerpt col-span-12 md:col-span-5 lg:col-span-4 w-[346px] min-w-[346px]">
           <h3 className="text-black text-[30px] leading-normal font-light mb-3">{title}</h3>
-          <p className="mt-3 text-neutral-600 leading-relaxed max-w-prose">
+          <p className=" text-[14px] leading-[25px] font-light text-[#999]" style={{ fontFamily: 'TWK Lausanne' }}>
             {description}
           </p>
-          <div className="flex flex-wrap gap-2 mb-2">
+          <div className="flex flex-wrap gap-2">
             {tags.map((t) => (
               <Tag key={t} label={t} />
             ))}
@@ -89,7 +89,7 @@ const ServiceBlock: React.FC<ServiceBlockProps> = ({ id, title, description, tag
           <Link
             href={ctaHref}
             aria-label={ariaLabel}
-            className="mt-6 inline-flex items-center rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white hover:text-black hover:border hover:border-neutral-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40"
+            className="mt-4 inline-flex items-center rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white hover:text-black hover:border hover:border-neutral-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/40"
           >
             {ctaLabel}
           </Link>
