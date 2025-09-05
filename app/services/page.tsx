@@ -17,6 +17,7 @@ type ServiceBlockProps = {
     src: string;
     alt: string;
     poster?: string;
+    tags?: string[];
   }>;
 };
 
@@ -129,7 +130,9 @@ const ServiceBlock: React.FC<ServiceBlockProps> = ({ id, title, description, tag
               </figure>
               {/* Tags below media appear on hover */}
               <div className="mt-2 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <Tag label={m.alt} />
+                {m.tags?.map((tag, tagIdx) => (
+                  <Tag key={tagIdx} label={tag} />
+                ))}
               </div>
             </div>
           ))}
@@ -170,8 +173,8 @@ export default function ServicesPage() {
         ctaLabel="Learn More"
         ariaLabel="Learn more about eCommerce services"
         media={[
-          { type: "video", src: "/services/Ecomm-1.mp4", poster: "/services/markting.webp", alt: "Modern retail showcase" },
-          { type: "video", src: "/services/design.mp4", poster: "/services/markting.webp", alt: "Fashion brand runway" },
+          { type: "video", src: "/services/Ecomm-1.mp4", poster: "/services/markting.webp", alt: "Modern retail showcase", tags: ["Shopify App development", "B2C", "PWA"] },
+          { type: "video", src: "/services/design.mp4", poster: "/services/markting.webp", alt: "Fashion brand runway", tags: ["Headless Commerce", "Shopify Plus", "Custom Design"] },
         ]}
       />
 
@@ -185,8 +188,8 @@ export default function ServicesPage() {
         ctaLabel="Learn More"
         ariaLabel="Learn more about Design services"
         media={[
-          { type: "video", src: "/services/design.mp4", poster: "/services/markting.webp", alt: "Design motion demo" },
-          { type: "image", src: "/images/hero-bg.jpg", alt: "Design detail still" },
+          { type: "video", src: "/services/design.mp4", poster: "/services/markting.webp", alt: "Design motion demo", tags: ["Brand Systems", "UX Design", "Motion Graphics"] },
+          { type: "image", src: "/images/hero-bg.jpg", alt: "Design detail still", tags: ["Accessibility", "Design Tokens", "Responsive"] },
         ]}
       />
 
@@ -194,14 +197,14 @@ export default function ServicesPage() {
       <ServiceBlock
         id="marketing"
         title="Marketing"
-        description="Fuel your brand’s growth and stand out in the digital landscape with our full-suite marketing services. From SEO to social media, we create strategies that drive measurable impact. As a Klaviyo Elite Partner, we design data-driven email and SMS campaigns that convert customer interactions into revenue. As a certified HubSpot Solutions Provider, we optimize marketing automation, CRM, and inbound strategies to power sustainable growth. Ready to elevate your online presence and outshine the competition?"
+        description="Fuel your brand's growth and stand out in the digital landscape with our full-suite marketing services. From SEO to social media, we create strategies that drive measurable impact. As a Klaviyo Elite Partner, we design data-driven email and SMS campaigns that convert customer interactions into revenue. As a certified HubSpot Solutions Provider, we optimize marketing automation, CRM, and inbound strategies to power sustainable growth. Ready to elevate your online presence and outshine the competition?"
         tags={["SEO", "Paid", "Email/SMS", "Automation", "CRM"]}
         ctaHref="/services/marketing"
         ctaLabel="Learn More"
         ariaLabel="Learn more about Marketing services"
         media={[
-          { type: "video", src: "/services/Ecomm-1.mp4", poster: "/services/markting.webp", alt: "Campaign highlight" },
-          { type: "image", src: "/images/placeholder.jpg", alt: "Performance dashboards" },
+          { type: "video", src: "/services/Ecomm-1.mp4", poster: "/services/markting.webp", alt: "Campaign highlight", tags: ["SEO", "Paid Ads", "Email Marketing"] },
+          { type: "image", src: "/images/placeholder.jpg", alt: "Performance dashboards", tags: ["SMS Campaigns", "Automation", "CRM"] },
         ]}
       />
 
@@ -209,14 +212,14 @@ export default function ServicesPage() {
       <ServiceBlock
         id="custom"
         title="Custom Development"
-        description="Starting from scratch is only the first step. The real journey begins when you scale, grow, and push beyond your comfort zone — and we’re here to help you reach those goals."
+        description="Starting from scratch is only the first step. The real journey begins when you scale, grow, and push beyond your comfort zone — and we're here to help you reach those goals."
         tags={["PWA", "DIGITAL MIGRATION", "REPLATFORMING"]}
         ctaHref="/services/marketing"
         ctaLabel="Learn More"
         ariaLabel="Learn more about Marketing services"
         media={[
-          { type: "video", src: "/services/Ecomm-1.mp4", poster: "/services/markting.webp", alt: "Campaign highlight" },
-          { type: "image", src: "/images/placeholder.jpg", alt: "Performance dashboards" },
+          { type: "video", src: "/services/Ecomm-1.mp4", poster: "/services/markting.webp", alt: "Campaign highlight", tags: ["PWA Development", "Custom Apps", "API Integration"] },
+          { type: "image", src: "/images/placeholder.jpg", alt: "Performance dashboards", tags: ["Digital Migration", "Replatforming", "Legacy Systems"] },
         ]}
       />
 
@@ -224,14 +227,14 @@ export default function ServicesPage() {
       <ServiceBlock
         id="ai"
         title="AI Consultancy"
-        description="As a recognized leader in applied AI strategy, we guide businesses through every stage of their AI journey — from ideation to execution. Whether it’s automation, predictive analytics, or custom AI solutions, we simplify complexity and deliver clarity."
+        description="As a recognized leader in applied AI strategy, we guide businesses through every stage of their AI journey — from ideation to execution. Whether it's automation, predictive analytics, or custom AI solutions, we simplify complexity and deliver clarity."
         tags={["WRITING MODELS", "KEYNOTES", "PREDICTIVE ANALYSIS", "TRAINING"]}
         ctaHref="/services/marketing"
         ctaLabel="Learn More"
         ariaLabel="Learn more about Marketing services"
         media={[
-          { type: "video", src: "/services/Ecomm-1.mp4", poster: "/services/markting.webp", alt: "Campaign highlight" },
-          { type: "image", src: "/images/placeholder.jpg", alt: "Performance dashboards" },
+          { type: "video", src: "/services/Ecomm-1.mp4", poster: "/services/markting.webp", alt: "Campaign highlight", tags: ["Writing Models", "Keynotes", "AI Strategy"] },
+          { type: "image", src: "/images/placeholder.jpg", alt: "Performance dashboards", tags: ["Predictive Analysis", "Training", "Automation"] },
         ]}
       />
     </main>
