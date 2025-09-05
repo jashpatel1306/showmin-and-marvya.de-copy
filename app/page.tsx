@@ -934,10 +934,23 @@ const brands = [
   { name: "BRITISHJEWEL", img: "/images/customers/britishjewel.png" },
   { name: "PLUMDIAMONDS", img: "/images/customers/plumdiamonds.png" },
   { name: "INDOERA", img: "/images/customers/indoera.png" },
-
-
-
 ];
+
+const Partners = [
+  { name: "algolia", img: "/Partners/algolia.webp" },
+  { name: "gorgias", img: "/Partners/gorgias.png" },
+  { name: "kimonix", img: "/Partners/kimonix.webp" },
+  { name: "shopifyplus", img: "/Partners/shopifyplus.png" },
+  { name: "klaviyo", img: "/Partners/klaviyo.webp" },
+  { name: "recharge", img: "/Partners/recharge.webp" },
+  { name: "returnista", img: "/Partners/returnista.png" },
+  { name: "segment", img: "/Partners/segment.webp" },
+  { name: "sendcloud", img: "/Partners/sendcloud.webp" },
+  { name: "shopify", img: "/Partners/shopify.png" },
+  { name: "woo", img: "/Partners/woo.png" },
+  { name: "yotpo", img: "/Partners/yotpo.webp" },
+]
+
 
 export default function HomePage() {
   const heroRef = useRef(null)
@@ -2060,9 +2073,9 @@ export default function HomePage() {
           </motion.div>
 
           <div className="overflow-hidden relative">
-            <div className="flex animate-marquee gap-16">
+            <div className="flex animate-marquee gap-12">
               {/* Original List */}
-              {brands.map((brand, index) => (
+              {Partners.map((brand, index) => (
                 <div key={index} className="flex-shrink-0">
                   <Image
                     src={brand.img}
@@ -2075,14 +2088,14 @@ export default function HomePage() {
               ))}
 
               {/* Duplicate for seamless loop */}
-              {brands.map((brand, index) => (
+              {Partners.map((brand, index) => (
                 <div key={`dup-${index}`} className="flex-shrink-0">
                   <Image
                     src={brand.img}
                     alt={brand.name}
                     width={120}
                     height={60}
-                    className="object-contain opacity-70 hover:opacity-100 transition-opacity duration-400"
+                    className="object-contain opacity-70 transition-opacity duration-600"
                   />
                 </div>
               ))}

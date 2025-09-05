@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { Navigation } from "@/components/navigation"
+import { MobileSwiper } from "@/components/ui/mobile-swiper"
 
 type ServiceBlockProps = {
   id: string;
@@ -53,31 +54,30 @@ const useAutoplayOnView = (refs: React.RefObject<HTMLVideoElement>[]) => {
 const ServiceBlock: React.FC<ServiceBlockProps> = ({ id, title, description, tags, ctaHref, ctaLabel, ariaLabel, media }) => {
   const videoRefs = useRef<Array<HTMLVideoElement | null>>([]);
 
-  const handleMouseEnter = (index: number) => {
-    const video = videoRefs.current[index];
-    if (video) {
-      video.muted = true;
-      video.play().catch(() => { });
-    }
+  const getMimeFromSrc = (src?: string) => {
+    if (!src) return "video/mp4";
+    const lower = src.toLowerCase();
+    if (lower.endsWith(".webm")) return "video/webm";
+    if (lower.endsWith(".mp4")) return "video/mp4";
+    if (lower.endsWith(".ogg") || lower.endsWith(".ogv")) return "video/ogg";
+    return "video/mp4";
   };
 
-  const handleMouseLeave = (index: number) => {
-    const video = videoRefs.current[index];
-    if (video) {
-      video.pause();
-      try {
-        video.currentTime = 0;
-        video.load();
-      } catch { }
-    }
+  const isImageUrl = (src?: string) => {
+    if (!src) return false;
+    return /\.(png|jpe?g|gif|webp|avif|svg)$/i.test(src);
   };
+
+  // Autoplay is handled via video attributes (muted, autoPlay, loop, playsInline)
   return (
-    <section id={id} className="bg-white text-black py-16 md:py-24 border-y border-neutral-200 relative">
+    <section id={id} className="bg-white text-black py-16 md:py-18 relative">
       {/* baseline behind */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-neutral-200/90 z-0" />
       <div className="max-w-7xl mx-auto px-6 md:px-8 grid grid-cols-12 gap-8 items-center relative z-10">
+        {/* Limited width border */}
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-px bg-gray-300 z-10" />
         {/* Left column: text */}
-        <div className="serviceexcerpt col-span-12 md:col-span-5 lg:col-span-4 w-[346px] min-w-[346px]">
+        <div className="serviceexcerpt col-span-12 md:col-span-5 lg:col-span-4 w-full md:w-[346px] md:min-w-[346px]">
           <h3 className="text-black text-[30px] leading-normal font-light mb-3">{title}</h3>
           <p className=" text-[14px] leading-[25px] font-light text-[#999]" style={{ fontFamily: 'TWK Lausanne' }}>
             {description}
@@ -97,45 +97,92 @@ const ServiceBlock: React.FC<ServiceBlockProps> = ({ id, title, description, tag
         </div>
 
         {/* Right column: media grid */}
-        <div className="col-span-12 md:col-span-7 lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10">
-          {media.map((m, idx) => (
-            <div
-              key={idx}
-              className="group"
-              onMouseEnter={() => handleMouseEnter(idx)}
-              onMouseLeave={() => handleMouseLeave(idx)}
-            >
-              <figure className="each-servicelist relative w-full h-[389px] mb-3 overflow-hidden transition-[border-radius] duration-300 ease-in-out rounded-2xl border border-neutral-200 bg-white shadow-sm">
-                {m.type === "video" ? (
-                  <video
-                    ref={(el: any) => (videoRefs.current[idx] = el)}
-                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500 will-change-transform"
-                    muted
-                    playsInline
-                    preload="metadata"
-                    poster={m.poster}
-                    aria-label={m.alt}
-                  >
-                    <source src={m.src} type="video/mp4" />
-                  </video>
-                ) : (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={m.src}
-                    alt={m.alt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500 will-change-transform"
-                    loading="lazy"
-                  />
-                )}
-              </figure>
-              {/* Tags below media appear on hover */}
-              <div className="mt-2 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {m.tags?.map((tag, tagIdx) => (
-                  <Tag key={tagIdx} label={tag} />
-                ))}
+        <div className="col-span-12 md:col-span-7 lg:col-span-8 relative z-10">
+          {/* Mobile: Swiper */}
+          <div className="block md:hidden">
+            <MobileSwiper>
+              {media.map((m, idx) => (
+                <div
+                  key={idx}
+                  className="group"
+                >
+                  <figure className="each-servicelist relative w-full h-[320px] md:h-[389px] lg:h-[420px] mb-3 overflow-hidden transition-[border-radius] duration-300 ease-in-out rounded-2xl border border-neutral-200 bg-white shadow-sm">
+                    {m.type === "video" && !isImageUrl(m.src) ? (
+                      <video
+                        ref={(el: any) => (videoRefs.current[idx] = el)}
+                        className="w-full h-full object-cover group-hover:scale-105 transition duration-500 will-change-transform"
+                        muted
+                        playsInline
+                        loop
+                        autoPlay
+                        preload="metadata"
+                        poster={isImageUrl(m.poster) ? m.poster : undefined}
+                        aria-label={m.alt}
+                      >
+                        <source src={m.src} type={getMimeFromSrc(m.src)} />
+                      </video>
+                    ) : (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={m.src}
+                        alt={m.alt}
+                        className="w-full h-full object-cover group-hover:scale-105 transition duration-500 will-change-transform"
+                        loading="lazy"
+                      />
+                    )}
+                  </figure>
+                  {/* Tags below media shown on mobile always */}
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {m.tags?.map((tag, tagIdx) => (
+                      <Tag key={tagIdx} label={tag} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </MobileSwiper>
+          </div>
+
+          {/* Desktop: Grid */}
+          <div className="hidden md:grid grid-cols-2 gap-6">
+            {media.map((m, idx) => (
+              <div
+                key={idx}
+                className="group"
+              >
+                <figure className="each-servicelist relative w-full h-[320px] md:h-[389px] lg:h-[420px] mb-3 overflow-hidden transition-[border-radius] duration-300 ease-in-out rounded-2xl border border-neutral-200 bg-white shadow-sm">
+                  {m.type === "video" && !isImageUrl(m.src) ? (
+                    <video
+                      ref={(el: any) => (videoRefs.current[idx] = el)}
+                      className="w-full h-full object-cover group-hover:scale-105 transition duration-500 will-change-transform"
+                      muted
+                      playsInline
+                      loop
+                      autoPlay
+                      preload="metadata"
+                      poster={isImageUrl(m.poster) ? m.poster : undefined}
+                      aria-label={m.alt}
+                    >
+                      <source src={m.src} type={getMimeFromSrc(m.src)} />
+                    </video>
+                  ) : (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={m.src}
+                      alt={m.alt}
+                      className="w-full h-full object-cover group-hover:scale-105 transition duration-500 will-change-transform"
+                      loading="lazy"
+                    />
+                  )}
+                </figure>
+                {/* Tags below media appear on hover */}
+                <div className="mt-2 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {m.tags?.map((tag, tagIdx) => (
+                    <Tag key={tagIdx} label={tag} />
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -147,9 +194,9 @@ export default function ServicesPage() {
     <main className="bg-black">
       <Navigation />
       {/* Hero */}
-      <section className="pt-16 md:pt-48 pb-10">
+      <section className="pt-12 md:pt-48 pb-8 md:pb-10">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <h1 className="font-serif font-thin text-[54px] leading-[58px] tracking-[-2.4px] text-white">Services</h1>
+          <h1 className="font-serif font-thin text-[36px] leading-[40px] md:text-[54px] md:leading-[58px] tracking-[-2.4px] text-white">Services</h1>
           <p className="mt-4 max-w-2xl text-base md:text-lg text-neutral-400">
             Showmine Agency specializes in creating tailored digital solutions that directly boost your bottom line.
             We don’t just build—we show you measurable improvements in business performance and customer impact.
@@ -173,8 +220,8 @@ export default function ServicesPage() {
         ctaLabel="Learn More"
         ariaLabel="Learn more about eCommerce services"
         media={[
-          { type: "video", src: "/services/Ecomm-1.mp4", poster: "/services/markting.webp", alt: "Modern retail showcase", tags: ["Shopify App development", "B2C", "PWA"] },
-          { type: "video", src: "/services/design.mp4", poster: "/services/markting.webp", alt: "Fashion brand runway", tags: ["Headless Commerce", "Shopify Plus", "Custom Design"] },
+          { type: "video", src: "/services/eCommerce/ecommerce.webp", poster: "/services/eCommerce/ecommerce.webp", alt: "Modern retail showcase", tags: ["Shopify App development", "B2C", "Shopify Plus", "ERP & pim connectors"] },
+          { type: "video", src: "/services/eCommerce/ecommerce2.mp4", poster: "/services/eCommerce/ecommerce2.mp4", alt: "Fashion brand runway", tags: ["Design", "Shopify Plus", "Development"] },
         ]}
       />
 
