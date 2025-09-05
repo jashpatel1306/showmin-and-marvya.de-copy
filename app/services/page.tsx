@@ -56,7 +56,7 @@ const ServiceBlock: React.FC<ServiceBlockProps> = ({ id, title, description, tag
     const video = videoRefs.current[index];
     if (video) {
       video.muted = true;
-      video.play().catch(() => {});
+      video.play().catch(() => { });
     }
   };
 
@@ -67,7 +67,7 @@ const ServiceBlock: React.FC<ServiceBlockProps> = ({ id, title, description, tag
       try {
         video.currentTime = 0;
         video.load();
-      } catch {}
+      } catch { }
     }
   };
   return (
@@ -148,9 +148,9 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <h1 className="font-serif font-thin text-[54px] leading-[58px] tracking-[-2.4px] text-white">Services</h1>
           <p className="mt-4 max-w-2xl text-base md:text-lg text-neutral-400">
-          Showmine Agency specializes in creating tailored digital solutions that directly boost your bottom line. 
-          We don’t just build—we show you measurable improvements in business performance and customer impact.
-          Our focus is on delivering results you can see, experience, and scale.
+            Showmine Agency specializes in creating tailored digital solutions that directly boost your bottom line.
+            We don’t just build—we show you measurable improvements in business performance and customer impact.
+            Our focus is on delivering results you can see, experience, and scale.
           </p>
         </div>
       </section>
@@ -164,7 +164,7 @@ export default function ServicesPage() {
       <ServiceBlock
         id="ecommerce"
         title="eCommerce"
-        description="Proud Shopify partner and end-to-end production expert for leading brands. Beyond webshops, we architect complete, scalable commerce systems."
+        description="We are proud to partner with Shopify and serve as a full-scale production partner for leading brands in the eCommerce industry. Beyond building your webshop, we design and implement your complete digital architecture."
         tags={["Design", "Headless", "B2C", "Shopify Plus"]}
         ctaHref="/services/ecommerce"
         ctaLabel="Learn More"
@@ -179,7 +179,7 @@ export default function ServicesPage() {
       <ServiceBlock
         id="design"
         title="Design & Websites"
-        description="Best-in-class, automated corporate websites and platforms—built to scale and designed to go beyond the ordinary."
+        description="World-class automated corporate websites and platforms — built to scale from day one and designed to go far beyond the ordinary."
         tags={["Brand Systems", "UX", "Accessibility", "Design Tokens", "Motion"]}
         ctaHref="/services/design"
         ctaLabel="Learn More"
@@ -194,7 +194,38 @@ export default function ServicesPage() {
       <ServiceBlock
         id="marketing"
         title="Marketing"
-        description="Full-funnel growth with SEO, paid, email, and SMS. As a Klaviyo elite + HubSpot certified partner, we turn touchpoints into revenue."
+        description="Fuel your brand’s growth and stand out in the digital landscape with our full-suite marketing services. From SEO to social media, we create strategies that drive measurable impact. As a Klaviyo Elite Partner, we design data-driven email and SMS campaigns that convert customer interactions into revenue. As a certified HubSpot Solutions Provider, we optimize marketing automation, CRM, and inbound strategies to power sustainable growth. Ready to elevate your online presence and outshine the competition?"
+        tags={["SEO", "Paid", "Email/SMS", "Automation", "CRM"]}
+        ctaHref="/services/marketing"
+        ctaLabel="Learn More"
+        ariaLabel="Learn more about Marketing services"
+        media={[
+          { type: "video", src: "/services/Ecomm-1.mp4", poster: "/services/markting.webp", alt: "Campaign highlight" },
+          { type: "image", src: "/images/placeholder.jpg", alt: "Performance dashboards" },
+        ]}
+      />
+
+      {/* Custom development */}
+
+      <ServiceBlock
+        id="marketing"
+        title="Marketing"
+        description="Fuel your brand’s growth and stand out in the digital landscape with our full-suite marketing services. From SEO to social media, we create strategies that drive measurable impact. As a Klaviyo Elite Partner, we design data-driven email and SMS campaigns that convert customer interactions into revenue. As a certified HubSpot Solutions Provider, we optimize marketing automation, CRM, and inbound strategies to power sustainable growth. Ready to elevate your online presence and outshine the competition?"
+        tags={["SEO", "Paid", "Email/SMS", "Automation", "CRM"]}
+        ctaHref="/services/marketing"
+        ctaLabel="Learn More"
+        ariaLabel="Learn more about Marketing services"
+        media={[
+          { type: "video", src: "/services/Ecomm-1.mp4", poster: "/services/markting.webp", alt: "Campaign highlight" },
+          { type: "image", src: "/images/placeholder.jpg", alt: "Performance dashboards" },
+        ]}
+      />
+
+      {/* AI development */}
+      <ServiceBlock
+        id="marketing"
+        title="Marketing"
+        description="Fuel your brand’s growth and stand out in the digital landscape with our full-suite marketing services. From SEO to social media, we create strategies that drive measurable impact. As a Klaviyo Elite Partner, we design data-driven email and SMS campaigns that convert customer interactions into revenue. As a certified HubSpot Solutions Provider, we optimize marketing automation, CRM, and inbound strategies to power sustainable growth. Ready to elevate your online presence and outshine the competition?"
         tags={["SEO", "Paid", "Email/SMS", "Automation", "CRM"]}
         ctaHref="/services/marketing"
         ctaLabel="Learn More"
