@@ -222,10 +222,10 @@ export default function ServicesPage() {
 
       {/* AI development */}
       <ServiceBlock
-        id="marketing"
-        title="Marketing"
-        description="Fuel your brand’s growth and stand out in the digital landscape with our full-suite marketing services. From SEO to social media, we create strategies that drive measurable impact. As a Klaviyo Elite Partner, we design data-driven email and SMS campaigns that convert customer interactions into revenue. As a certified HubSpot Solutions Provider, we optimize marketing automation, CRM, and inbound strategies to power sustainable growth. Ready to elevate your online presence and outshine the competition?"
-        tags={["SEO", "Paid", "Email/SMS", "Automation", "CRM"]}
+        id="ai"
+        title="AI Consultancy"
+        description="As a recognized leader in applied AI strategy, we guide businesses through every stage of their AI journey — from ideation to execution. Whether it’s automation, predictive analytics, or custom AI solutions, we simplify complexity and deliver clarity."
+        tags={["WRITING MODELS", "KEYNOTES", "PREDICTIVE ANALYSIS", "TRAINING"]}
         ctaHref="/services/marketing"
         ctaLabel="Learn More"
         ariaLabel="Learn more about Marketing services"
