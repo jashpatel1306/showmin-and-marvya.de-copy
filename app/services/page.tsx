@@ -206,12 +206,11 @@ export default function ServicesPage() {
       />
 
       {/* Custom development */}
-
       <ServiceBlock
-        id="marketing"
-        title="Marketing"
-        description="Fuel your brand’s growth and stand out in the digital landscape with our full-suite marketing services. From SEO to social media, we create strategies that drive measurable impact. As a Klaviyo Elite Partner, we design data-driven email and SMS campaigns that convert customer interactions into revenue. As a certified HubSpot Solutions Provider, we optimize marketing automation, CRM, and inbound strategies to power sustainable growth. Ready to elevate your online presence and outshine the competition?"
-        tags={["SEO", "Paid", "Email/SMS", "Automation", "CRM"]}
+        id="custom"
+        title="Custom Development"
+        description="Starting from scratch is only the first step. The real journey begins when you scale, grow, and push beyond your comfort zone — and we’re here to help you reach those goals."
+        tags={["PWA", "DIGITAL MIGRATION", "REPLATFORMING"]}
         ctaHref="/services/marketing"
         ctaLabel="Learn More"
         ariaLabel="Learn more about Marketing services"
