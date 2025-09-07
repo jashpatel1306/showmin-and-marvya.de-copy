@@ -250,8 +250,8 @@ export default function ServicesPage() {
         ctaLabel="Learn More"
         ariaLabel="Learn more about Marketing services"
         media={[
-          { type: "video", src: "/services/Ecomm-1.mp4", poster: "/services/markting.webp", alt: "Campaign highlight", tags: ["SEO", "Paid Ads", "Email Marketing"] },
-          { type: "image", src: "/images/placeholder.jpg", alt: "Performance dashboards", tags: ["SMS Campaigns", "Automation", "CRM"] },
+          { type: "video", src: "/services/Marketing/srface.mp4", poster: "/services/Marketing/srface.mp4", alt: "Campaign highlight", tags: ["Email Marketing", "Klaviyo", "Design"] },
+          { type: "video", src: "/services/Marketing/lemarais.mp4", poster: "/services/Marketing/lemarais.mp4", alt: "Campaign highlight", tags: ["Klaviyo", "Email campaign", "UX"] },
         ]}
       />
 
@@ -280,8 +280,8 @@ export default function ServicesPage() {
         ctaLabel="Learn More"
         ariaLabel="Learn more about Marketing services"
         media={[
-          { type: "video", src: "/services/Ecomm-1.mp4", poster: "/services/markting.webp", alt: "Campaign highlight", tags: ["Writing Models", "Keynotes", "AI Strategy"] },
-          { type: "image", src: "/images/placeholder.jpg", alt: "Performance dashboards", tags: ["Predictive Analysis", "Training", "Automation"] },
+          { type: "image", src: "/services/AI/Deloitte.jpg", alt: "Performance dashboards", tags: ["Development", "AI Roadmap", "AI consultancy"] },
+          { type: "video", src: "/services/AI/Aureus.mp4", poster: "/services/AI/Aureus.mp4", alt: "Campaign highlight", tags: ["Automation", "Custom AI", "AI Strategy"] },
         ]}
       />
     </main>
