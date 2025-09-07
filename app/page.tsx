@@ -145,16 +145,16 @@ const VideoCard = ({
       </div>
 
       {/* Content */}
-      <div className="p-6">
-        <h3 id={`${title.toLowerCase().replace(/\s+/g, '-')}-title`} className="text-xl font-semibold text-white mb-3">
+      <div className="p-4 sm:p-5 md:p-6">
+        <h3 id={`${title.toLowerCase().replace(/\s+/g, '-')}-title`} className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3">
           {title}
         </h3>
-        <p className="text-gray-300 text-sm leading-relaxed mb-4 max-w-[60ch]">
+        <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 max-w-[60ch]">
           {description}
         </p>
 
         {/* Key Points */}
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
           {points.map((point, index) => (
             <span key={index} className="text-xs px-2 py-1 bg-white/10 text-white/80 rounded-full">
               {point}
@@ -164,7 +164,7 @@ const VideoCard = ({
 
         <a
           href={href}
-          className={`text-sm font-medium underline-offset-4 hover:underline transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black rounded ${colorClasses[color]}`}
+          className={`text-xs sm:text-sm font-medium underline-offset-4 hover:underline transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black rounded ${colorClasses[color]}`}
           aria-label={ariaLabel}
         >
           Read more →
@@ -300,8 +300,8 @@ const BlurImage = ({
     src: src as string,
     width: fill ? undefined : width,
     height: fill ? undefined : height,
-    loading: "lazy",
-    decoding: "async",
+    loading: "lazy" as const,
+    decoding: "async" as const,
     alt: alt || "Success story image",
     ...rest,
   };
@@ -462,7 +462,7 @@ const Card = ({
           </video>
         ) : (
           <BlurImage
-            src={cardData.src}
+            src={cardData.src || "/placeholder.jpg"}
             alt={cardData.title || 'Success story'}
             fill
             className="absolute inset-0 z-10"
@@ -639,7 +639,7 @@ const TextGenerateEffect = ({
 
   return (
     <div ref={scope} className={cn("font-light", className)}>
-      <div className="text-[48px] leading-tight">
+      <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[48px] leading-tight">
         {wordsArray.map((word, idx) => (
           <span
             key={`${word}-${idx}`}
@@ -886,9 +886,9 @@ function FAQAccordion() {
         >
           <button
             onClick={() => toggleAccordion(index)}
-            className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-800/30 transition-colors duration-200"
+            className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 text-left flex items-center justify-between hover:bg-gray-800/30 transition-colors duration-200"
           >
-            <h3 className="text-lg md:text-xl font-medium text-white pr-4">
+            <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-white pr-2 sm:pr-4">
               {faq.question}
             </h3>
             <motion.div
@@ -908,8 +908,8 @@ function FAQAccordion() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="px-8 pb-6">
-              <p className="text-gray-400 leading-relaxed">
+            <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6">
+              <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
                 {faq.answer}
               </p>
             </div>
@@ -1003,7 +1003,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-normal mb-6 md:mb-8 leading-tight mt-3"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal mb-4 md:mb-6 lg:mb-8 leading-tight mt-2 md:mt-3 px-2"
           >
             We are <span className="text-red-500 italic font-normal">Your Partner</span> for
             <br />
@@ -1014,7 +1014,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl mb-10 max-w-4xl mx-auto leading-relaxed text-white/90"
+            className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 md:mb-8 lg:mb-10 max-w-4xl mx-auto leading-relaxed text-white/90 px-4"
           >
             <p className="mb-1">
               We offer everything you need for e-commerce success
@@ -1039,11 +1039,11 @@ export default function HomePage() {
                 w-full sm:w-auto
                 bg-[#4B6F93] hover:bg-[rgb(75, 111, 147)]
                 text-white font-medium
-                px-3 py-2.5 rounded-xl
+                px-4 py-3 sm:px-6 sm:py-3 rounded-xl
                 shadow-lg hover:shadow-xl
                 transition-all duration-300 ease-out
                 hover:scale-105 hover:-translate-y-0.5
-                text-base
+                text-sm sm:text-base
               "
             >
               <a
@@ -1065,11 +1065,11 @@ export default function HomePage() {
                 w-full sm:w-auto
                 bg-grey hover:bg-[rgb(75, 111, 147)]
                 text-white font-medium
-                px-3 py-2.5 rounded-xl
+                px-4 py-3 sm:px-6 sm:py-3 rounded-xl
                 shadow-lg hover:shadow-xl
                 transition-all duration-300 ease-out
                 hover:scale-105 hover:-translate-y-0.5
-                text-base
+                text-sm sm:text-base
                 cursor-pointer
               "
             >
@@ -1143,14 +1143,14 @@ export default function HomePage() {
               duration={0.5}
             />
           </motion.div>
-          <h2 id="support-section" className="text-4xl md:text-5xl lg:text-6xl text-white text-center mb-6">How we can support you</h2>
-          <p className="text-lg md:text-xl text-gray-400 text-center mb-14">Our services are precisely tailored to provide holistic support.<br />
-            Based on our experience with our own e-commerce companies,<br />
-            we have founded an agency that offers exactly what every<br />
+          <h2 id="support-section" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white text-center mb-4 md:mb-6 px-4">How we can support you</h2>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 text-center mb-8 md:mb-12 lg:mb-14 px-4 leading-relaxed">Our services are precisely tailored to provide holistic support.<br className="hidden sm:block" />
+            Based on our experience with our own e-commerce companies,<br className="hidden sm:block" />
+            we have founded an agency that offers exactly what every<br className="hidden sm:block" />
             E-commerce company looking for.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Shopify Development Card */}
-            <div className="rounded-2xl border border-blue-400/40 bg-gradient-to-br from-[#162b5c] via-[#0b0e1a] to-black p-10 flex flex-col justify-between shadow-3xl transition-transform duration-300 hover:scale-105 min-h-[380px] group">
+            <div className="rounded-2xl border border-blue-400/40 bg-gradient-to-br from-[#162b5c] via-[#0b0e1a] to-black p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col justify-between shadow-3xl transition-transform duration-300 hover:scale-105 min-h-[320px] sm:min-h-[360px] md:min-h-[380px] group">
               {/* <div className="flex items-center gap-3 mb-5">
                 <BarChart3 className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />
                 <span className="uppercase tracking-wider text-blue-300 text-xs font-semibold">Shopify Development</span>
@@ -1164,16 +1164,16 @@ export default function HomePage() {
                     loading="lazy"
                   />
                 </div> */}
-                <h3 className="text-3xl font-semibold text-white mb-4 font-sans">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-3 md:mb-4 font-sans">
                   Shopify Development
                 </h3>
               </div>
 
-              <p className="text-gray-300 text-lg leading-relaxed font-sans">
-                We build Shopify stores that load at lightning speed, drive targeted sales, and stand out from the competition. Our stores are designed to become true customer magnets. Store migrations from other platforms to Shopify are part of our everyday work—especially now, as many e-commerce businesses face challenges with outdated systems while Shopify retailers surge ahead. With our unique approach, you don’t just gain a competitive edge—you set new standards for performance.              </p>
+              <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed font-sans">
+                We build Shopify stores that load at lightning speed, drive targeted sales, and stand out from the competition. Our stores are designed to become true customer magnets. Store migrations from other platforms to Shopify are part of our everyday work—especially now, as many e-commerce businesses face challenges with outdated systems while Shopify retailers surge ahead. With our unique approach, you don't just gain a competitive edge—you set new standards for performance.              </p>
             </div>
             {/* Growth Consulting Card */}
-            <div className="rounded-2xl border border-red-400/40 bg-gradient-to-br from-[#5c162b] via-[#1a0b0e] to-black p-10 flex flex-col justify-between shadow-3xl transition-transform duration-300 hover:scale-105 min-h-[380px] group">
+            <div className="rounded-2xl border border-red-400/40 bg-gradient-to-br from-[#5c162b] via-[#1a0b0e] to-black p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col justify-between shadow-3xl transition-transform duration-300 hover:scale-105 min-h-[320px] sm:min-h-[360px] md:min-h-[380px] group">
               {/* <div className="flex items-center gap-3 mb-5">
                 <Target className="w-8 h-8 text-red-400 group-hover:text-red-300 transition-colors" />
                 <span className="uppercase tracking-wider text-red-300 text-xs font-semibold">Growth Consulting</span>
@@ -1187,11 +1187,11 @@ export default function HomePage() {
                     loading="lazy"
                   />
                 </div> */}
-                <h3 className="text-3xl font-semibold text-white mb-4 font-sans">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-3 md:mb-4 font-sans">
                   Growth Consulting
                 </h3>
               </div>
-              <p className="text-gray-300 text-lg leading-relaxed font-sans">
+              <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed font-sans">
                 In our consulting program, our mission is to help ambitious e-commerce brands scale rapidly, breaking past the limits of traditional methods. We partner closely with our clients, offering end-to-end support throughout their growth journey. Having operated our own stores and successfully scaled multiple e-commerce businesses to seven- and eight-figure annual revenues, we bring proven expertise. All of these insights have been distilled into a clear, strategic, step-by-step roadmap.
               </p>
             </div>
@@ -1246,8 +1246,8 @@ export default function HomePage() {
               className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
               duration={0.5}
             />
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-4">Success stories</h2>
-            <p className="text-lg md:text-xl text-gray-400 text-center max-w-2xl mx-auto">Our work delivers not just promises, but measurable results.</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white text-center mb-4 px-4">Success stories</h2>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 text-center max-w-2xl mx-auto px-4">Our work delivers not just promises, but measurable results.</p>
           </motion.div>
 
           <div className="relative">
@@ -1367,7 +1367,7 @@ export default function HomePage() {
               className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
               duration={0.5}
             />
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 md:mb-8 px-4">
               Why should you work with
               <br />
               <span className="text-blue-400 italic">Showmine</span> ?
@@ -1384,8 +1384,8 @@ export default function HomePage() {
               viewport={{ once: true }}
             >
 
-              <h3 className="text-center text-2xl md:text-3xl font-light text-gray-400 mb-6 ">Other service providers</h3>
-              <div className="bg-gray-900/50 border-gray-800 p-8 h-full">
+              <h3 className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-gray-400 mb-4 md:mb-6 px-4">Other service providers</h3>
+              <div className="bg-gray-900/50 border-gray-800 p-4 sm:p-6 md:p-8 h-full">
 
                 <div className="space-y-6">
                   {[
@@ -1405,7 +1405,7 @@ export default function HomePage() {
                       className="flex items-center gap-4"
                     >
                       <X className="w-6 h-6 text-red-500 flex-shrink-0" />
-                      <span className="text-gray-300">{item}</span>
+                      <span className="text-gray-300 text-sm sm:text-base">{item}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -1428,7 +1428,7 @@ export default function HomePage() {
                 // priority
                 />
               </div>
-              <div className="bg-gradient-to-br from-blue-900/80 to-black border-blue-700/50 p-8 h-full relative overflow-hidden rounded-xl">
+              <div className="bg-gradient-to-br from-blue-900/80 to-black border-blue-700/50 p-4 sm:p-6 md:p-8 h-full relative overflow-hidden rounded-xl">
                 <div className="absolute top-4 right-4 text-4xl font-light text-blue-400/20">SHOWMINE</div>
 
                 <div className="space-y-6">
@@ -1449,7 +1449,7 @@ export default function HomePage() {
                       className="flex items-center gap-4"
                     >
                       <Check className="w-6 h-6 text-green-500 flex-shrink-0" />
-                      <span className="text-white">{item}</span>
+                      <span className="text-white text-sm sm:text-base">{item}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -1578,12 +1578,12 @@ export default function HomePage() {
                 inline-flex items-center
                 bg-white/10 hover:bg-white/20
                 text-white font-medium
-                px-6 py-3 rounded-full
+                px-4 py-2.5 sm:px-6 sm:py-3 rounded-full
                 shadow-lg hover:shadow-xl
                 transition-all duration-300 ease-out
                 hover:scale-105 hover:-translate-y-0.5
                 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-black
-                text-sm
+                text-xs sm:text-sm
               "
             >
               <a href="/services" className="focus:outline-none">
@@ -1609,23 +1609,23 @@ export default function HomePage() {
               className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
               duration={0.5}
             />
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 md:mb-8 leading-tight px-4">
               Our customers are already
               <br />
               achieving more growth, more
               <br />
               success and more profitability.
             </h2>
-            <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed px-4">
               Feel free to contact us. In a non-binding initial consultation, you'll
-              <br />
+              <br className="hidden sm:block" />
               learn how we can set new standards for your e-commerce
-              <br />
+              <br className="hidden sm:block" />
               business.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-12 mt-20">
+          <div className="grid md:grid-cols-3 gap-8 md:gap-12 mt-12 md:mt-20">
             {[
               {
                 number: "1.",
@@ -1666,10 +1666,10 @@ export default function HomePage() {
                       className="w-20 h-20 mb-4 object-contain"
                     />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-light mb-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mb-3 md:mb-4">
                     {step.number} {step.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed">{step.description}</p>
+                  <p className="text-gray-400 leading-relaxed text-sm sm:text-base">{step.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -1687,11 +1687,11 @@ export default function HomePage() {
                 w-full sm:w-auto
                 bg-[#4B6F93] hover:bg-[rgb(75, 111, 147)]
                 text-white font-medium
-                px-3 py-2.5 rounded-xl
+                px-4 py-3 sm:px-6 sm:py-3 rounded-xl
                 shadow-lg hover:shadow-xl
                 transition-all duration-300 ease-out
                 hover:scale-105 hover:-translate-y-0.5
-                text-base
+                text-sm sm:text-base
               "
             >
               <a
@@ -1723,7 +1723,7 @@ export default function HomePage() {
         </motion.div>
 
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-16">What our customers say</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white text-center mb-12 md:mb-16 px-4">What our customers say</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Column 1: Up to Down */}
             <div className="relative h-[500px] overflow-hidden">
@@ -1767,13 +1767,13 @@ export default function HomePage() {
                     avatar: "/placeholder.svg?height=40&width=40",
                   },
                 ]).map((t, i) => (
-                  <div key={i} className="bg-[#18191c] border border-white/10 rounded-2xl shadow-lg p-8 flex flex-col gap-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl group" tabIndex={0} style={{ willChange: 'transform' }}>
-                    <p className="text-white text-base leading-relaxed mb-4">"{t.text}"</p>
+                  <div key={i} className="bg-[#18191c] border border-white/10 rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 flex flex-col gap-4 md:gap-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl group" tabIndex={0} style={{ willChange: 'transform' }}>
+                    <p className="text-white text-sm sm:text-base leading-relaxed mb-3 md:mb-4">"{t.text}"</p>
                     <div className="flex items-center gap-3 mt-auto">
-                      <img src={t.avatar} alt={t.author} className="w-10 h-10 rounded-full object-cover border border-white/10" />
+                      <img src={t.avatar} alt={t.author} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10" />
                       <div>
-                        <div className="font-semibold text-white text-base">{t.author}</div>
-                        {t.company && <div className="text-sm text-gray-400">{t.company}</div>}
+                        <div className="font-semibold text-white text-sm sm:text-base">{t.author}</div>
+                        {t.company && <div className="text-xs sm:text-sm text-gray-400">{t.company}</div>}
                       </div>
                     </div>
                   </div>
@@ -1822,13 +1822,13 @@ export default function HomePage() {
                     avatar: "/placeholder.svg?height=40&width=40",
                   },
                 ]).map((t, i) => (
-                  <div key={i} className="bg-[#18191c] border border-white/10 rounded-2xl shadow-lg p-8 flex flex-col gap-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl group" tabIndex={0} style={{ willChange: 'transform' }}>
-                    <p className="text-white text-base leading-relaxed mb-4">"{t.text}"</p>
+                  <div key={i} className="bg-[#18191c] border border-white/10 rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 flex flex-col gap-4 md:gap-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl group" tabIndex={0} style={{ willChange: 'transform' }}>
+                    <p className="text-white text-sm sm:text-base leading-relaxed mb-3 md:mb-4">"{t.text}"</p>
                     <div className="flex items-center gap-3 mt-auto">
-                      <img src={t.avatar} alt={t.author} className="w-10 h-10 rounded-full object-cover border border-white/10" />
+                      <img src={t.avatar} alt={t.author} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10" />
                       <div>
-                        <div className="font-semibold text-white text-base">{t.author}</div>
-                        {t.company && <div className="text-sm text-gray-400">{t.company}</div>}
+                        <div className="font-semibold text-white text-sm sm:text-base">{t.author}</div>
+                        {t.company && <div className="text-xs sm:text-sm text-gray-400">{t.company}</div>}
                       </div>
                     </div>
                   </div>
@@ -1877,13 +1877,13 @@ export default function HomePage() {
                     avatar: "/placeholder.svg?height=40&width=40",
                   },
                 ]).map((t, i) => (
-                  <div key={i} className="bg-[#18191c] border border-white/10 rounded-2xl shadow-lg p-8 flex flex-col gap-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl group" tabIndex={0} style={{ willChange: 'transform' }}>
-                    <p className="text-white text-base leading-relaxed mb-4">"{t.text}"</p>
+                  <div key={i} className="bg-[#18191c] border border-white/10 rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 flex flex-col gap-4 md:gap-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl group" tabIndex={0} style={{ willChange: 'transform' }}>
+                    <p className="text-white text-sm sm:text-base leading-relaxed mb-3 md:mb-4">"{t.text}"</p>
                     <div className="flex items-center gap-3 mt-auto">
-                      <img src={t.avatar} alt={t.author} className="w-10 h-10 rounded-full object-cover border border-white/10" />
+                      <img src={t.avatar} alt={t.author} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10" />
                       <div>
-                        <div className="font-semibold text-white text-base">{t.author}</div>
-                        {t.company && <div className="text-sm text-gray-400">{t.company}</div>}
+                        <div className="font-semibold text-white text-sm sm:text-base">{t.author}</div>
+                        {t.company && <div className="text-xs sm:text-sm text-gray-400">{t.company}</div>}
                       </div>
                     </div>
                   </div>
@@ -1937,19 +1937,19 @@ export default function HomePage() {
               duration={0.5}
             />
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 md:mb-8 leading-tight px-4">
               The leading minds
               <br />
               of Showmine
             </h2>
-            <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 leading-relaxed px-4">
               We have a team of nearly 20 experts
               <br />
               ready and eager to help e-commerce businesses grow.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto ">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto px-4">
             {[
               {
                 name: "Jash Patel",
@@ -1980,7 +1980,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
               >
                 <div className="bg-gray-900/50 rounded-xl border-gray-800 overflow-hidden group hover:border-blue-600/50 transition-all duration-300">
-                  <div className="relative h-80 overflow-hidden">
+                  <div className="relative h-64 sm:h-72 md:h-80 overflow-hidden">
                     <Image
                       src={member.image || "/placeholder.svg"}
                       alt={member.name}
@@ -1988,9 +1988,9 @@ export default function HomePage() {
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent " />
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
-                      <p className="text-sm text-gray-300 leading-relaxed">{member.expertise}</p>
+                    <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1 sm:mb-2">{member.name}</h3>
+                      <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">{member.expertise}</p>
                     </div>
                   </div>
                 </div>
@@ -2060,8 +2060,8 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">Our partners</h2>
-            <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 md:mb-8 px-4">Our partners</h2>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed px-4">
               We work with the best in the industry and
               <br />
               have created the best ecosystem to ensure
@@ -2119,11 +2119,11 @@ export default function HomePage() {
               className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
               duration={0.5}
             />
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 md:mb-8 px-4">
               Questions &
               <span className="text-blue-400 italic">Answers</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
               Everything you need to know about working with Showmine
             </p>
 
@@ -2167,11 +2167,11 @@ export default function HomePage() {
               className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
               duration={0.5}
             />
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 md:mb-8 px-4">
               Questions &
               <span className="text-blue-400 italic">Answers</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
               Everything you need to know about working with Showmine
             </p>
 
@@ -2210,7 +2210,7 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-3xl lg:text-5xl font-light text-white mb-8 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white mb-6 md:mb-8 leading-tight px-4">
               Let's discuss your growth
               <br />
               potential together.
