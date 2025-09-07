@@ -265,8 +265,8 @@ export default function ServicesPage() {
         ctaLabel="Learn More"
         ariaLabel="Learn more about Marketing services"
         media={[
-          { type: "video", src: "/services/Ecomm-1.mp4", poster: "/services/markting.webp", alt: "Campaign highlight", tags: ["PWA Development", "Custom Apps", "API Integration"] },
-          { type: "image", src: "/images/placeholder.jpg", alt: "Performance dashboards", tags: ["Digital Migration", "Replatforming", "Legacy Systems"] },
+          { type: "image", src: "/services/customDev/Urban-Arrow-custom-dev.png", alt: "Performance dashboards", tags: ["Digital Migration", "Replatforming", "Legacy Systems"] },
+          { type: "video", src: "/services/customDev/custom-dev.mp4", poster: "/services/customDev/custom-dev.mp4", alt: "Campaign highlight", tags: ["PWA Development", "Custom Apps", "API Integration"] },
         ]}
       />
 
