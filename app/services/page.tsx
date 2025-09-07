@@ -235,8 +235,8 @@ export default function ServicesPage() {
         ctaLabel="Learn More"
         ariaLabel="Learn more about Design services"
         media={[
-          { type: "video", src: "/services/design.mp4", poster: "/services/markting.webp", alt: "Design motion demo", tags: ["Brand Systems", "UX Design", "Motion Graphics"] },
-          { type: "image", src: "/images/hero-bg.jpg", alt: "Design detail still", tags: ["Accessibility", "Design Tokens", "Responsive"] },
+          { type: "image", src: "/services/design-website/kymee.jpg", alt: "Design detail still", tags: ["Development", "CRO", "SEO", "Management"] },
+          { type: "video", src: "/services/design-website/britishjewel.mp4", poster: "/services/markting.webp", alt: "Design motion demo", tags: ["B2B", "UX Design", "Lead Generation"] },
         ]}
       />
 
