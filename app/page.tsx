@@ -2152,54 +2152,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-black">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <TextGenerateEffectinTitleAndSubtitle
-              words="An excerpt from our customers"
-              className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
-              duration={0.5}
-            />
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 md:mb-8 px-4">
-              Questions &
-              <span className="text-blue-400 italic">Answers</span>
-            </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
-              Everything you need to know about working with Showmine
-            </p>
-
-            <Button
-              className="
-                w-full sm:w-auto
-                bg-[#4B6F93] hover:bg-[rgb(75, 111, 147)]
-                text-white font-medium
-                px-3 py-2.5 rounded-xl
-                shadow-lg hover:shadow-xl
-                transition-all duration-300 ease-out
-                hover:scale-105 hover:-translate-y-0.5
-                text-base mt-10
-              "
-            >
-              <a
-                href="https://calendly.com/showmineinfotech/30min"
-                target="_blank"
-              >
-                Contact 👉🏻
-              </a>
-            </Button>
-          </motion.div>
-
-          <FAQAccordion />
-        </div>
-      </section>
-
       {/* Final CTA Section */}
       <section className="py-20 bg-gradient-to-br from-[#4B6F93]/20 via-[#4B6F93]/10 to-black relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-transparent" />
