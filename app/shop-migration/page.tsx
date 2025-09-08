@@ -398,7 +398,7 @@ export default function ShopMigrationPage() {
                 <span className="text-5xl md:text-6xl text-blue-400 font-serif absolute -right-6 -bottom-8 select-none">”</span>
               </blockquote>
               <div className="mt-2">
-                <div className="text-white text-lg font-bold">Marvin Wu</div>
+                <div className="text-white text-lg font-bold">Jash Patel</div>
                 <div className="text-gray-400 text-base">Managing Director of Showmine</div>
               </div>
             </div>
