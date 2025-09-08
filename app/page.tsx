@@ -162,13 +162,13 @@ const VideoCard = ({
           ))}
         </div>
 
-        <a
+        {/* <a
           href={href}
           className={`text-xs sm:text-sm font-medium underline-offset-4 hover:underline transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black rounded ${colorClasses[color]}`}
           aria-label={ariaLabel}
         >
           Read more →
-        </a>
+        </a> */}
       </div>
     </motion.article>
   );
