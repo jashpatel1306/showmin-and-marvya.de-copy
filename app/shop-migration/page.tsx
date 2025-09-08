@@ -188,6 +188,20 @@ const brands = [
   { name: "PINKTOWN", img: "/images/customers/pinktownusa.png" },
 ];
 
+const Partners = [
+  { name: "algolia", img: "/Partners/algolia.webp" },
+  { name: "gorgias", img: "/Partners/gorgias.png" },
+  { name: "kimonix", img: "/Partners/kimonix.webp" },
+  { name: "shopifyplus", img: "/Partners/shopifyplus.png" },
+  { name: "klaviyo", img: "/Partners/klaviyo.webp" },
+  { name: "recharge", img: "/Partners/recharge.webp" },
+  { name: "returnista", img: "/Partners/returnista.png" },
+  { name: "segment", img: "/Partners/segment.webp" },
+  { name: "sendcloud", img: "/Partners/sendcloud.webp" },
+  { name: "shopify", img: "/Partners/shopify.png" },
+  { name: "woo", img: "/Partners/woo.png" },
+  { name: "yotpo", img: "/Partners/yotpo.webp" },
+]
 export default function ShopMigrationPage() {
   return (
     <div className="min-h-screen bg-black text-white">
@@ -947,8 +961,8 @@ export default function ShopMigrationPage() {
         </div>
       </section>
 
-      {/* Partners Section */}
-      <section className="py-20 bg-black">
+    {/* Partners Section */}
+    <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -957,8 +971,8 @@ export default function ShopMigrationPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">Our partners</h2>
-            <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 md:mb-8 px-4">Our partners</h2>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed px-4">
               We work with the best in the industry and
               <br />
               have created the best ecosystem to ensure
@@ -969,34 +983,37 @@ export default function ShopMigrationPage() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className="flex flex-wrap items-center justify-center gap-12 md:gap-16 opacity-60"
-          >
-            {partners.map((partner, index) => {
-              const partnerName = typeof partner === 'string' ? partner : partner.name;
-              const partnerKey = typeof partner === 'string' ? partner : partner.id || partner.name || index;
+          <div className="overflow-hidden relative">
+            <div className="flex animate-marquee gap-12">
+              {/* Original List */}
+              {Partners.map((brand, index) => (
+                <div key={index} className="flex-shrink-0">
+                  <Image
+                    src={brand.img}
+                    alt={brand.name}
+                    width={120}
+                    height={60}
+                    className="object-contain  duration-300"
+                  />
+                </div>
+              ))}
 
-              return (
-                <motion.div
-                  key={`partner-${index}-${partnerKey}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 0.6, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-xl md:text-2xl font-light tracking-wider hover:opacity-100 transition-opacity duration-300"
-                >
-                  {partnerName}
-                </motion.div>
-              );
-            })}
-          </motion.div>
+              {/* Duplicate for seamless loop */}
+              {Partners.map((brand, index) => (
+                <div key={`dup-${index}`} className="flex-shrink-0">
+                  <Image
+                    src={brand.img}
+                    alt={brand.name}
+                    width={120}
+                    height={60}
+                    className="object-contain opacity-70 transition-opacity duration-600"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
-
       {/* Process Section */}
       <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-6">
