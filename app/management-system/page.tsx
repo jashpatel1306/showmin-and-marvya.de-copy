@@ -102,6 +102,21 @@ const brands = [
   { name: "INDOERA", img: "/images/customers/indoera.png" },
 ];
 
+const Partners = [
+  { name: "algolia", img: "/Partners/algolia.webp" },
+  { name: "gorgias", img: "/Partners/gorgias.png" },
+  { name: "kimonix", img: "/Partners/kimonix.webp" },
+  { name: "shopifyplus", img: "/Partners/shopifyplus.png" },
+  { name: "klaviyo", img: "/Partners/klaviyo.webp" },
+  { name: "recharge", img: "/Partners/recharge.webp" },
+  { name: "returnista", img: "/Partners/returnista.png" },
+  { name: "segment", img: "/Partners/segment.webp" },
+  { name: "sendcloud", img: "/Partners/sendcloud.webp" },
+  { name: "shopify", img: "/Partners/shopify.png" },
+  { name: "woo", img: "/Partners/woo.png" },
+  { name: "yotpo", img: "/Partners/yotpo.webp" },
+]
+
 export default function ManagementSystemPage() {
   return (
     <div className="min-h-screen bg-black text-white">
@@ -571,34 +586,43 @@ export default function ManagementSystemPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">Our Technology Partners</h2>
-            <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 md:mb-8 px-4">Our Technology Partners</h2>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed px-4">
               We work with leading technology providers to deliver{' '}
               <br />
               robust and scalable management solutions.
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className="flex flex-wrap items-center justify-center gap-12 md:gap-16 opacity-60"
-          >
-            {partners.map((partner, index) => (
-              <motion.div
-                key={partner.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 0.6, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-xl md:text-2xl font-light tracking-wider hover:opacity-100 transition-opacity duration-300"
-              >
-                {partner.name}
-              </motion.div>
-            ))}
-          </motion.div>
+          <div className="overflow-hidden relative">
+            <div className="flex animate-marquee gap-12">
+              {/* Original List */}
+              {Partners.map((brand, index) => (
+                <div key={index} className="flex-shrink-0">
+                  <Image
+                    src={brand.img}
+                    alt={brand.name}
+                    width={120}
+                    height={60}
+                    className="object-contain  duration-300"
+                  />
+                </div>
+              ))}
+
+              {/* Duplicate for seamless loop */}
+              {Partners.map((brand, index) => (
+                <div key={`dup-${index}`} className="flex-shrink-0">
+                  <Image
+                    src={brand.img}
+                    alt={brand.name}
+                    width={120}
+                    height={60}
+                    className="object-contain opacity-70 transition-opacity duration-600"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

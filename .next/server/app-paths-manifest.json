@@ -1,4 +1,6 @@
 {
   "/page": "app/page.js",
-  "/shop-migration/page": "app/shop-migration/page.js"
+  "/management-system/page": "app/management-system/page.js",
+  "/shop-migration/page": "app/shop-migration/page.js",
+  "/lead-generation/page": "app/lead-generation/page.js"
 }
