@@ -961,7 +961,7 @@ export default function ShopMigrationPage() {
         </div>
       </section>
 
-    {/* Partners Section */}
+    
     <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
