@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect,  } from "react"
+import React, { useState, useEffect, } from "react"
 import { motion, useAnimate } from "framer-motion"
 import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
@@ -40,7 +40,7 @@ function FAQAccordion() {
       answer: "A B2B database provides a centralized and structured repository of company and contact information, which is essential for sales and marketing. It helps businesses identify, segment, and target potential customers more effectively based on criteria like industry, company size, and location."
     }
   ]
-  
+
 
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
@@ -516,22 +516,22 @@ export default function LeadGenerationPage() {
       <UseCasesSection />
 
 
-{/* FAQ Section */}
-<section className="py-20 bg-black">
-        <div className="max-w-4xl mx-auto px-6">
+      {/* FAQ Section */}
+      <section className="py-24 md:py-28 bg-black">
+        <div className="max-w-5xl mx-auto px-6 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 md:mb-16"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 md:mb-8 px-4">
-              
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight mb-6 md:mb-8 px-4">
+
               <span className="text-blue-400 italic">FAQ</span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
-            Discover the FAQs our users ask and the solutions we provide.
+              Discover the FAQs our users ask and the solutions we provide.
             </p>
           </motion.div>
 
