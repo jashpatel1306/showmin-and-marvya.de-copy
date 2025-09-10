@@ -1,16 +1,182 @@
 "use client"
 
-import { motion } from "framer-motion"
+import React, { useState, useEffect,  } from "react"
+import { motion, useAnimate } from "framer-motion"
 import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Brain, Target, BarChart3, Zap, MapPin, Star, Search, Mail, ArrowRight } from "lucide-react"
+import { Brain, Target, BarChart3, Zap, MapPin, Star, Search, Mail, Plus, ArrowRight } from "lucide-react"
 import { GitHubGlobe } from "@/components/ui/github-globe"
 import { Beams } from "@/components/ui/beams"
 import { FocusCard } from "@/components/ui/focus-card"
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { GlobeSection } from "@/components/ui/globe-section";
 import { UseCasesSection } from "@/components/ui/use-cases-section";
+import { cn } from "@/lib/utils"
+
+// FAQ Accordion Component
+function FAQAccordion() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+  const faqs = [
+    {
+      question: "What is a lead?",
+      answer: "A lead refers to an individual or business that has shown interest in a product or service and shared their contact details. In other words, it’s someone who has the potential to become a paying customer."
+    },
+    {
+      question: "What is a lead database?",
+      answer: "A lead database is a collection of contact information for potential customers, such as names, email addresses, phone numbers, and company details. Businesses use this database to support marketing and lead generation activities."
+    },
+    {
+      question: "Where can I find a company’s database?",
+      answer: "You can access company databases through Showmine's lead generation platform. Simply choose your industry and location, then download the database. Our records are updated regularly. For example, if you need details of all restaurants in New York, you can easily get the complete information from our B2B lead generation database."
+    },
+    {
+      question: "How do I create a B2B database?",
+      answer: "B2B databases are usually built through web scraping, lead generation campaigns, or by purchasing verified contact lists of business prospects. With Livescraper, you can download ready-made data tailored to your requirements and organize it as needed."
+    },
+    {
+      question: "Why is a B2B database important?",
+      answer: "A B2B database provides a centralized and structured repository of company and contact information, which is essential for sales and marketing. It helps businesses identify, segment, and target potential customers more effectively based on criteria like industry, company size, and location."
+    }
+  ]
+  
+
+  const toggleAccordion = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index)
+  }
+
+  return (
+    <div className="space-y-4">
+      {faqs.map((faq, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: index * 0.1 }}
+          viewport={{ once: true }}
+          className="border border-gray-800 rounded-2xl overflow-hidden bg-gray-900/30 hover:border-gray-700 transition-all duration-300"
+        >
+          <button
+            onClick={() => toggleAccordion(index)}
+            className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 text-left flex items-center justify-between hover:bg-gray-800/30 transition-colors duration-200"
+          >
+            <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-white pr-2 sm:pr-4">
+              {faq.question}
+            </h3>
+            <motion.div
+              animate={{ rotate: openIndex === index ? 45 : 0 }}
+              transition={{ duration: 0.2 }}
+              className="flex-shrink-0"
+            >
+              <Plus className="w-6 h-6 text-gray-400" />
+            </motion.div>
+          </button>
+          <motion.div
+            initial={false}
+            animate={{
+              height: openIndex === index ? "auto" : 0,
+              opacity: openIndex === index ? 1 : 0
+            }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6">
+              <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
+                {faq.answer}
+              </p>
+            </div>
+          </motion.div>
+        </motion.div>
+      ))}
+    </div>
+  )
+}
+
+// this funcation use in title and subtitle
+const TextGenerateEffectinTitleAndSubtitle = ({
+  words,
+  className,
+  filter = true,
+  duration = 0.5,
+}: {
+  words: string;
+  className?: string;
+  filter?: boolean;
+  duration?: number;
+}) => {
+  const [scope, animate] = useAnimate();
+  const wordsArray = words.split(" ");
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Intersection Observer to trigger animation when in view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 } // Trigger when 10% of the element is visible
+    );
+
+    if (scope.current) {
+      observer.observe(scope.current);
+    }
+
+    return () => observer.disconnect();
+  }, [scope]);
+
+  // Animation effect
+  useEffect(() => {
+    if (isVisible && scope.current) {
+      const spans = scope.current.querySelectorAll('span');
+
+      // Reset all spans to initial state
+      spans.forEach((span: any) => {
+        span.style.opacity = '0';
+        if (filter) span.style.filter = 'blur(8px)';
+      });
+
+      // Animate each word
+      spans.forEach((span: any, i: any) => {
+        setTimeout(() => {
+          span.animate(
+            [
+              { opacity: 0, filter: filter ? 'blur(8px)' : 'none' },
+              { opacity: 1, filter: 'blur(0px)' }
+            ],
+            {
+              duration: duration * 1000, // Convert to milliseconds
+              fill: 'forwards',
+              easing: 'ease-out'
+            }
+          );
+        }, i * 80); // Stagger delay between words (80ms)
+      });
+    }
+  }, [isVisible, duration, filter]);
+
+  return (
+    <div ref={scope} className={cn("font-light", className)}>
+      <div className="text-[14px] leading-tight px-3 py-1.5">
+        {wordsArray.map((word, idx) => (
+          <span
+            key={`${word}-${idx}`}
+            className="inline-block opacity-0 mr-2"
+            style={{
+              filter: filter ? 'blur(8px)' : 'none',
+              transition: `opacity 0.5s ease-out, filter 0.5s ease-out`
+            }}
+          >
+            {word}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default function LeadGenerationPage() {
   const features = [
@@ -348,6 +514,30 @@ export default function LeadGenerationPage() {
 
       {/* Use Cases & Pricing Section */}
       <UseCasesSection />
+
+
+{/* FAQ Section */}
+<section className="py-20 bg-black">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 md:mb-8 px-4">
+              
+              <span className="text-blue-400 italic">FAQ</span>
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
+            Discover the FAQs our users ask and the solutions we provide.
+            </p>
+          </motion.div>
+
+          <FAQAccordion />
+        </div>
+      </section>
 
       {/* Final CTA Section */}
       <section className="py-20 bg-gradient-to-br from-[#4B6F93]/20 via-[#4B6F93]/10 to-black relative overflow-hidden">
