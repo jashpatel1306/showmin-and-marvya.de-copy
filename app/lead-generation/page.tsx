@@ -59,7 +59,7 @@ function FAQAccordion() {
         >
           <button
             onClick={() => toggleAccordion(index)}
-            className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 text-left flex items-center justify-between bg-[#213FAA] hover:bg-[#183395] transition-colors duration-200"
+            className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 text-left flex items-center justify-between bg-[#000000] hover:bg-[#3b3b3c] transition-colors duration-200"
           >
             <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-white pr-2 sm:pr-4">
               {faq.question}
