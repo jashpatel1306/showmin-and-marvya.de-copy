@@ -55,11 +55,11 @@ function FAQAccordion() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: index * 0.1 }}
           viewport={{ once: true }}
-          className="border border-gray-800 rounded-2xl overflow-hidden bg-gray-900/30 hover:border-gray-700 transition-all duration-300"
+          className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all duration-300"
         >
           <button
             onClick={() => toggleAccordion(index)}
-            className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 text-left flex items-center justify-between hover:bg-gray-800/30 transition-colors duration-200"
+            className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 text-left flex items-center justify-between bg-[#213FAA] hover:bg-[#183395] transition-colors duration-200"
           >
             <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-white pr-2 sm:pr-4">
               {faq.question}
@@ -69,7 +69,7 @@ function FAQAccordion() {
               transition={{ duration: 0.2 }}
               className="flex-shrink-0"
             >
-              <Plus className="w-6 h-6 text-gray-400" />
+              <Plus className="w-6 h-6 text-white" />
             </motion.div>
           </button>
           <motion.div
@@ -79,10 +79,10 @@ function FAQAccordion() {
               opacity: openIndex === index ? 1 : 0
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden"
+            className="overflow-hidden bg-white"
           >
-            <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6">
-              <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
+            <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6 border-t border-gray-100">
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
                 {faq.answer}
               </p>
             </div>
@@ -517,7 +517,7 @@ export default function LeadGenerationPage() {
 
 
       {/* FAQ Section */}
-      <section className="py-24 md:py-28 bg-black">
+      <section className="py-24 md:py-28 bg-white">
         <div className="max-w-5xl mx-auto px-6 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -528,9 +528,9 @@ export default function LeadGenerationPage() {
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight mb-6 md:mb-8 px-4">
 
-              <span className="text-blue-400 italic">FAQ</span>
+              <span className="text-black italic">FAQ</span>
             </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
               Discover the FAQs our users ask and the solutions we provide.
             </p>
           </motion.div>
