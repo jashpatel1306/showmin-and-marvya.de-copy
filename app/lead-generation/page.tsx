@@ -81,7 +81,7 @@ function FAQAccordion() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden bg-white"
           >
-            <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6 border-t border-gray-100">
+            <div className="px-4 sm:px-6 md:px-8 py-4 sm:pb-5 md:pb-6 border-t border-gray-100">
               <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
                 {faq.answer}
               </p>
