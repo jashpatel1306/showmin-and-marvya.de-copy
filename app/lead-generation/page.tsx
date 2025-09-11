@@ -536,7 +536,7 @@ export default function LeadGenerationPage() {
             {/* Text content (left side) */}
             <div className="order-1 md:order-1 relative z-10">
               <h3 className="text-3xl md:text-[38px] font-bold text-black leading-tight">
-                Trusted source of B2B lead generation database
+              Is Google map scraping legal?
               </h3>
 
               {/* Divider with icon */}
@@ -549,7 +549,7 @@ export default function LeadGenerationPage() {
               </div>
 
               <p className="mt-5 text-[15px] md:text-[16px] leading-relaxed text-[#444444] max-w-xl">
-              Businesses require accurate and up-to-date data to make informed business decisions. That's why we have a team of highly skilled data scientists who constantly update and maintain our database to ensure that it's always reliable and relevant. Our dedication to providing quality data is aimed at helping businesses like yours achieve their goals. The database caters to various industries and can be customized to fit your needs.
+              Yes, Google map scraping can be legal under certain circumstances. While Google's terms of service prohibit automated data scraping from their platforms, including Google Maps, there are situations where it may be legal to scrape data. Our Google map scraper tool only collects publicly available and does not violate any data privacy laws or regulations; then, it may be legal to scrape data from Google Maps.
               </p>
 
               <div className="mt-7">
