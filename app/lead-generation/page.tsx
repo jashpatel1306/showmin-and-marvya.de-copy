@@ -516,6 +516,57 @@ export default function LeadGenerationPage() {
       <UseCasesSection />
 
 
+      {/* Split Background Lead Database Section */}
+      <section className="py-20 md:py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            {/* Background image container (right side on desktop) */}
+            <div className="order-2 md:order-2 relative w-full h-[320px] sm:h-[380px] md:h-[420px] rounded-2xl overflow-hidden">
+              <img
+                src="/lg.png"
+                alt="Lead generation dashboard"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              {/* White to transparent overlay for desktop to blend with text area */}
+              <div className="hidden md:block absolute inset-0 pointer-events-none" aria-hidden>
+                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
+              </div>
+            </div>
+
+            {/* Text content (left side) */}
+            <div className="order-1 md:order-1 relative z-10">
+              <h3 className="text-3xl md:text-[38px] font-bold text-black leading-tight">
+                Trusted source of B2B lead generation database
+              </h3>
+
+              {/* Divider with icon */}
+              <div className="mt-5 flex items-center gap-3 select-none" aria-hidden>
+                <span className="h-px flex-1 bg-[#E0E0E0]" />
+                <span className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#E0E0E0] bg-white">
+                  <span className="inline-block w-3.5 h-3.5 bg-gray-400 rounded-sm" />
+                </span>
+                <span className="h-px flex-1 bg-[#E0E0E0]" />
+              </div>
+
+              <p className="mt-5 text-[15px] md:text-[16px] leading-relaxed text-[#444444] max-w-xl">
+                Access an accurate, human-verified B2B database to power your outbound, enrich your CRM, and accelerate pipeline. Clean, structured company and contact data that scales with your team.
+              </p>
+
+              <div className="mt-7">
+                <Button
+                  className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-medium px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
+                >
+                  <a href="https://calendly.com/showmineinfotech/30min" target="_blank" className="inline-flex items-center gap-2">
+                    <span>Sign Up Now</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-24 md:py-28 bg-white">
         <div className="max-w-5xl mx-auto px-6 md:px-8">
