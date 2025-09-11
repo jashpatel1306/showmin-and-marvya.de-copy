@@ -549,7 +549,7 @@ export default function LeadGenerationPage() {
               </div>
 
               <p className="mt-5 text-[15px] md:text-[16px] leading-relaxed text-[#444444] max-w-xl">
-                Access an accurate, human-verified B2B database to power your outbound, enrich your CRM, and accelerate pipeline. Clean, structured company and contact data that scales with your team.
+              Businesses require accurate and up-to-date data to make informed business decisions. That's why we have a team of highly skilled data scientists who constantly update and maintain our database to ensure that it's always reliable and relevant. Our dedication to providing quality data is aimed at helping businesses like yours achieve their goals. The database caters to various industries and can be customized to fit your needs.
               </p>
 
               <div className="mt-7">
