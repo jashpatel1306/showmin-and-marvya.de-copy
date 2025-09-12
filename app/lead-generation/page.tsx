@@ -48,7 +48,7 @@ function FAQAccordion() {
       answer: "Yes, we only collect publicly available information—similar to manually browsing the web and gathering data yourself."
     }
   ]
-  
+
 
 
   const toggleAccordion = (index: number) => {
@@ -450,7 +450,18 @@ export default function LeadGenerationPage() {
               transition={{ delay: 0.2, duration: 0.6 }}
             >
               Best Services We Present For Your Business
+              {/* Divider with icon */}
+              <div className="mt-3 flex items-center gap-3 select-none" aria-hidden>
+                <span className="h-px flex-1 bg-[#E0E0E0]" />
+                <span className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#E0E0E0] bg-white">
+                  <span className="inline-block w-3.5 h-3.5 bg-gray-400 rounded-sm" />
+                </span>
+                <span className="h-px flex-1 bg-[#E0E0E0]" />
+              </div>
+
             </motion.h2>
+
+
             <motion.p
               className="text-lg text-gray-600"
               initial={{ opacity: 0, y: 10 }}
@@ -545,11 +556,11 @@ export default function LeadGenerationPage() {
             {/* Text content (left side) */}
             <div className="order-1 md:order-1 relative z-10">
               <h3 className="text-3xl md:text-[38px] font-bold text-black leading-tight">
-              Is Google map scraping legal?
+                Is Google map scraping legal?
               </h3>
 
               {/* Divider with icon */}
-              <div className="mt-5 flex items-center gap-3 select-none" aria-hidden>
+              <div className=" flex items-center gap-3 select-none" aria-hidden>
                 <span className="h-px flex-1 bg-[#E0E0E0]" />
                 <span className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#E0E0E0] bg-white">
                   <span className="inline-block w-3.5 h-3.5 bg-gray-400 rounded-sm" />
@@ -557,8 +568,8 @@ export default function LeadGenerationPage() {
                 <span className="h-px flex-1 bg-[#E0E0E0]" />
               </div>
 
-              <p className="mt-5 text-[15px] md:text-[16px] leading-relaxed text-[#444444] max-w-xl">
-              Yes, Google map scraping can be legal under certain circumstances. While Google's terms of service prohibit automated data scraping from their platforms, including Google Maps, there are situations where it may be legal to scrape data. Our Google map scraper tool only collects publicly available and does not violate any data privacy laws or regulations; then, it may be legal to scrape data from Google Maps.
+              <p className="mt-2 text-[15px] md:text-[16px] leading-relaxed text-[#444444] max-w-xl">
+                Yes, Google map scraping can be legal under certain circumstances. While Google's terms of service prohibit automated data scraping from their platforms, including Google Maps, there are situations where it may be legal to scrape data. Our Google map scraper tool only collects publicly available and does not violate any data privacy laws or regulations; then, it may be legal to scrape data from Google Maps.
               </p>
 
               <div className="mt-7">
