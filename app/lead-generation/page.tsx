@@ -537,7 +537,7 @@ export default function LeadGenerationPage() {
 
 
 {/* More than just a migration Section */}
-<section className="relative py-20 bg-black overflow-hidden">
+<section className="relative py-20 bg-white overflow-hidden">
         {/* Glowing background effect */}
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gradient-radial from-blue-500/20 via-purple-500/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
