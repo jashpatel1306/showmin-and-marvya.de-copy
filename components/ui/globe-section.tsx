@@ -28,8 +28,16 @@ export function GlobeSection() {
           >
             <h2 className="text-4xl font-bold text-gray-900">
             AI-Driven Tools for Data Scraping and Lead Generation: No Coding Required
-
             </h2>
+
+            {/* Divider with icon */}
+            <div className="flex items-center gap-3 select-none" aria-hidden>
+                <span className="h-px flex-1 bg-[#E0E0E0]" />
+                <span className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#E0E0E0] bg-white">
+                  <span className="inline-block w-3.5 h-3.5 bg-gray-400 rounded-sm" />
+                </span>
+                <span className="h-px flex-1 bg-[#E0E0E0]" />
+              </div>
             
             <p className="text-lg text-gray-600">
             Our mission is to ensure everyone has access to public data, regardless of their technical expertise. We have developed a platform that doesn't require coding knowledge and has a user-friendly interface to guide you through the process. Simply log in, choose the information you want to scrape, and specify the details you want to extract, and you're done.
