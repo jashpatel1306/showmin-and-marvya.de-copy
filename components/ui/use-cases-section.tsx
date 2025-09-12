@@ -60,11 +60,20 @@ export function UseCasesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Section 2: Pricing Highlight */}
           <div className="bg-gray-50 p-8 rounded-2xl">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <h3 className="text-2xl font-bold text-gray-900">
               Pay only for what you need, when you need it
             </h3>
             
-            <div className="h-1 w-16 bg-blue-600 mb-6"></div>
+            {/* Divider with icon */}
+            <div className="mb-3 flex items-center gap-3 select-none" aria-hidden>
+                <span className="h-px flex-1 bg-[#E0E0E0]" />
+                <span className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#E0E0E0] bg-white">
+                  <span className="inline-block w-3.5 h-3.5 bg-gray-400 rounded-sm" />
+                </span>
+                <span className="h-px flex-1 bg-[#E0E0E0]" />
+              </div>
+
+            {/* <div className="h-1 w-16 bg-blue-600 mb-6"></div> */}
             
             <p className="text-gray-600 mb-6">
               We believe in transparent and flexible pricing that puts you in control. With Livescraper, you won't have to worry about monthly subscription fees or recurring billing. Instead, you'll only pay for the individual services that you use, as much or as little as you need.
