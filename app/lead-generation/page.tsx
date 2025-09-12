@@ -600,7 +600,7 @@ export default function LeadGenerationPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 w-full">
               {[
                 {
-                  icon: "/images/info/UIUX.gif",
+                  icon: "/leadgeneration/leadgeneration.gif",
                   title: "Lead Generation",
                   description: "Google Maps scraping is an effective tool for prospecting for new customers. Use Google Map scraping to gather contact information for potential customers in a specific area."
                 },
