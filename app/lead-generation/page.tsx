@@ -20,26 +20,35 @@ function FAQAccordion() {
 
   const faqs = [
     {
-      question: "What is a lead?",
-      answer: "A lead refers to an individual or business that has shown interest in a product or service and shared their contact details. In other words, it’s someone who has the potential to become a paying customer."
+      question: "What is Google Maps scraping and how does it work?",
+      answer: "Google Maps scraping is an automated process that collects publicly available data from Google Maps, such as business names, addresses, geo-coordinates, ratings, reviews, phone numbers, websites, and emails. <br /> Our Google Maps data scraper is user-friendly and requires no coding experience. You can extract data based on specific parameters like location or business category. Simply follow these steps: -> Log in to our platform -> Go to Google Maps Scraper -> Select the categories you want to scrape -> Choose the locations -> Set your output format and other parameters -> Click 'Get Data'."
     },
     {
-      question: "What is a lead database?",
-      answer: "A lead database is a collection of contact information for potential customers, such as names, email addresses, phone numbers, and company details. Businesses use this database to support marketing and lead generation activities."
+      question: "Can I extract emails or phone numbers from Google Maps?",
+      answer: "Yes. With our Google Maps scraping tool, you can collect phone numbers and websites for businesses. Additionally, our email scraper tool extracts emails and social media handles directly from those business websites."
     },
     {
-      question: "Where can I find a company’s database?",
-      answer: "You can access company databases through Showmine's lead generation platform. Simply choose your industry and location, then download the database. Our records are updated regularly. For example, if you need details of all restaurants in New York, you can easily get the complete information from our B2B lead generation database."
+      question: "Is it possible to scrape data from Google Maps in real time?",
+      answer: "Yes, our automated tool and API allow you to continuously scrape and update data from Google Maps in real time."
     },
     {
-      question: "How do I create a B2B database?",
-      answer: "B2B databases are usually built through web scraping, lead generation campaigns, or by purchasing verified contact lists of business prospects. With Livescraper, you can download ready-made data tailored to your requirements and organize it as needed."
+      question: "How many records can I scrape using your Google Maps scraping service?",
+      answer: "You can extract unlimited records based on your needs. Our pricing model is simple—pay only for the number of records you scrape."
     },
     {
-      question: "Why is a B2B database important?",
-      answer: "A B2B database provides a centralized and structured repository of company and contact information, which is essential for sales and marketing. It helps businesses identify, segment, and target potential customers more effectively based on criteria like industry, company size, and location."
+      question: "How accurate is the data obtained through Google Maps scraping?",
+      answer: "Our Google Maps scraper ensures that the data you collect is highly accurate, reliable, and timely, tailored to the parameters you set."
+    },
+    {
+      question: "How often should Google Maps scraping be performed to keep the data up to date?",
+      answer: "The scraping frequency depends on your business needs. However, we generally recommend performing scraping regularly to maintain up-to-date information."
+    },
+    {
+      question: "Is the data free of personally identifiable information (PII)?",
+      answer: "Yes, we only collect publicly available information—similar to manually browsing the web and gathering data yourself."
     }
   ]
+  
 
 
   const toggleAccordion = (index: number) => {
