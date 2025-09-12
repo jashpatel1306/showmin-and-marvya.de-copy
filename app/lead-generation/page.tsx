@@ -56,7 +56,7 @@ function FAQAccordion() {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       {faqs.map((faq, index) => (
         <motion.div
           key={index}
@@ -68,9 +68,9 @@ function FAQAccordion() {
         >
           <button
             onClick={() => toggleAccordion(index)}
-            className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 text-left flex items-center justify-between bg-[#000000] hover:bg-[#3b3b3c] transition-colors duration-200"
+            className="w-full px-4 sm:px-5 md:px-6 py-3.5 sm:py-4 md:py-5 text-left flex items-center justify-between bg-[#000000] hover:bg-[#3b3b3c] transition-colors duration-200"
           >
-            <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-white pr-2 sm:pr-4">
+            <h3 className="text-sm sm:text-base md:text-lg font-medium text-white pr-2 sm:pr-4">
               {faq.question}
             </h3>
             <motion.div
@@ -78,7 +78,7 @@ function FAQAccordion() {
               transition={{ duration: 0.2 }}
               className="flex-shrink-0"
             >
-              <Plus className="w-6 h-6 text-white" />
+              <Plus className="w-5 h-5 text-white" />
             </motion.div>
           </button>
           <motion.div
@@ -90,8 +90,8 @@ function FAQAccordion() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden bg-white"
           >
-            <div className="px-4 sm:px-6 md:px-8 py-4 sm:pb-5 md:pb-6 border-t border-gray-100">
-              <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+            <div className="px-4 sm:px-5 md:px-6 py-3.5 sm:py-4 md:py-4 border-t border-gray-100">
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-[15px]">
                 {faq.answer}
               </p>
             </div>
@@ -216,7 +216,7 @@ export default function LeadGenerationPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-black to-gray-900">
+      <section className="relative pt-24 md:pt-28 pb-14 md:pb-16 overflow-hidden bg-gradient-to-b from-black to-gray-900">
         <div className="absolute inset-0 z-0 opacity-40">
           <GitHubGlobe />
         </div>
@@ -228,10 +228,10 @@ export default function LeadGenerationPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6 }}
-              className="space-y-8 relative z-10"
+              className="space-y-6 md:space-y-7 relative z-10"
             >
               <motion.div
-                className="inline-flex items-center px-4 py-2 rounded-full bg-gray-900/50 border border-gray-800 mb-4 overflow-hidden"
+                className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-900/50 border border-gray-800 mb-3 overflow-hidden"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
@@ -247,11 +247,11 @@ export default function LeadGenerationPage() {
                     ease: 'easeOut'
                   }}
                 />
-                <span className="text-sm font-medium text-gray-300">AI-Powered Lead Generation</span>
+                <span className="text-xs md:text-sm font-medium text-gray-300">AI-Powered Lead Generation</span>
               </motion.div>
 
               <motion.h1
-                className="text-5xl md:text-5xl font-bold leading-tight bg-clip-text text-transparent text-white"
+                className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight bg-clip-text text-transparent text-white"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -266,7 +266,7 @@ export default function LeadGenerationPage() {
               </motion.h1>
 
               <motion.p
-                className="text-xl text-gray-300 leading-relaxed"
+                className="text-base sm:text-lg text-gray-300 leading-relaxed"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
@@ -275,7 +275,7 @@ export default function LeadGenerationPage() {
               </motion.p>
 
               <motion.p
-                className="text-lg text-gray-400"
+                className="text-sm sm:text-base text-gray-400"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
@@ -284,7 +284,7 @@ export default function LeadGenerationPage() {
               </motion.p>
 
               <motion.div
-                className="flex flex-col sm:flex-row gap-4 pt-4"
+                className="flex flex-col sm:flex-row gap-3 pt-2"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
@@ -293,7 +293,7 @@ export default function LeadGenerationPage() {
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <Button className="relative overflow-hidden group bg-gradient-to-r from-[#4B6F93] to-[#5A87E4] text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 transform">
+                  <Button className="relative overflow-hidden group bg-gradient-to-r from-[#4B6F93] to-[#5A87E4] text-white px-6 py-4 text-base rounded-lg transition-all duration-300 transform">
                     <span className="relative z-10">Get Started</span>
                     <motion.span
                       className="absolute inset-0 bg-gradient-to-r from-[#5A87E4] to-[#4B6F93] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -326,11 +326,11 @@ export default function LeadGenerationPage() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative w-full h-[500px]"
+              className="relative w-full h-[380px] sm:h-[440px] md:h-[500px]"
             >
               {/* Main Featured Image */}
               <motion.div
-                className="absolute w-[70%] h-[60%] rounded-2xl overflow-hidden shadow-2xl z-10 right-0 top-0"
+                className="absolute w-[68%] sm:w-[70%] h-[58%] sm:h-[60%] rounded-2xl overflow-hidden shadow-2xl z-10 right-0 top-0"
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -344,7 +344,7 @@ export default function LeadGenerationPage() {
 
               {/* Top Left Image */}
               <motion.div
-                className="absolute w-[45%] h-[40%] rounded-2xl overflow-hidden shadow-2xl left-0 top-0 z-20"
+                className="absolute w-[42%] sm:w-[45%] h-[36%] sm:h-[40%] rounded-2xl overflow-hidden shadow-2xl left-0 top-0 z-20"
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
@@ -358,7 +358,7 @@ export default function LeadGenerationPage() {
 
               {/* Bottom Left Image */}
               <motion.div
-                className="absolute w-[40%] h-[45%] rounded-2xl overflow-hidden shadow-2xl left-0 bottom-0 z-10"
+                className="absolute w-[38%] sm:w-[40%] h-[40%] sm:h-[45%] rounded-2xl overflow-hidden shadow-2xl left-0 bottom-0 z-10"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
@@ -372,7 +372,7 @@ export default function LeadGenerationPage() {
 
               {/* Bottom Right Image */}
               <motion.div
-                className="absolute w-[50%] h-[35%] rounded-2xl overflow-hidden shadow-2xl right-0 bottom-0 z-20"
+                className="absolute w-[46%] sm:w-[50%] h-[32%] sm:h-[35%] rounded-2xl overflow-hidden shadow-2xl right-0 bottom-0 z-20"
                 initial={{ y: 20, x: 20, opacity: 0 }}
                 animate={{ y: 0, x: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 1 }}
@@ -440,10 +440,10 @@ export default function LeadGenerationPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto mb-16"
+            className="text-center max-w-4xl mx-auto mb-10 md:mb-12"
           >
             <motion.h2
-              className="text-4xl font-bold text-gray-900 mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -463,7 +463,7 @@ export default function LeadGenerationPage() {
 
 
             <motion.p
-              className="text-lg text-gray-600"
+              className="text-sm sm:text-base md:text-lg text-gray-600"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -474,7 +474,7 @@ export default function LeadGenerationPage() {
           </motion.div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto">
             <FocusCard
               icon={
                 <MapPin className="w-6 h-6 text-blue-500" />
@@ -605,12 +605,12 @@ export default function LeadGenerationPage() {
                   description: "Google Maps scraping is an effective tool for prospecting for new customers. Use Google Map scraping to gather contact information for potential customers in a specific area."
                 },
                 {
-                  icon: "/images/info/shopifyexpert.gif",
+                  icon: "/leadgeneration/research.gif",
                   title: "Market Research",
                   description: "Identify trends in the local market, such as popular products or services. Create targeted marketing campaigns using this information to inform your marketing and business strategies."
                 },
                 {
-                  icon: "/images/info/shopifyMigration.gif",
+                  icon: "/leadgeneration/datascience.gif",
                   title: "Data Science",
                   description: "With our high-quality data scraping service, you can gather the information you need to build cutting-edge technologies. Power your AI and machine learning models with relevant data to gain valuable insights and drive your business forward."
                 },
@@ -656,9 +656,9 @@ export default function LeadGenerationPage() {
       </section>
 
       {/* Split Background Lead Database Section */}
-      <section className="py-20 md:py-24 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
             {/* Background image container (right side on desktop) */}
             <div className="order-2 md:order-2 relative w-full h-[320px] sm:h-[380px] md:h-[420px] rounded-2xl overflow-hidden">
               <img
@@ -674,7 +674,7 @@ export default function LeadGenerationPage() {
 
             {/* Text content (left side) */}
             <div className="order-1 md:order-1 relative z-10">
-              <h3 className="text-3xl md:text-[38px] font-bold text-black leading-tight">
+              <h3 className="text-2xl sm:text-3xl md:text-[36px] font-bold text-black leading-tight">
                 Is Google map scraping legal?
               </h3>
 
@@ -687,11 +687,11 @@ export default function LeadGenerationPage() {
                 <span className="h-px flex-1 bg-[#E0E0E0]" />
               </div>
 
-              <p className="mt-2 text-[15px] md:text-[16px] leading-relaxed text-[#444444] max-w-xl">
+              <p className="mt-2 text-[14px] md:text-[16px] leading-relaxed text-[#444444] max-w-xl">
                 Yes, Google map scraping can be legal under certain circumstances. While Google's terms of service prohibit automated data scraping from their platforms, including Google Maps, there are situations where it may be legal to scrape data. Our Google map scraper tool only collects publicly available and does not violate any data privacy laws or regulations; then, it may be legal to scrape data from Google Maps.
               </p>
 
-              <div className="mt-7">
+              <div className="mt-6">
                 <Button
                   className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-medium px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
                 >
@@ -707,20 +707,20 @@ export default function LeadGenerationPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 md:py-28 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-12 md:mb-16"
+            className="text-center mb-8 md:mb-12"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light tracking-tight mb-6 md:mb-8 px-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light tracking-tight mb-4 md:mb-6 px-4">
 
               <span className="text-black italic">FAQ</span>
             </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
               Discover the FAQs our users ask and the solutions we provide.
             </p>
           </motion.div>
@@ -730,7 +730,7 @@ export default function LeadGenerationPage() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-[#4B6F93]/20 via-[#4B6F93]/10 to-black relative overflow-hidden">
+      <section className="py-16 md:py-18 bg-gradient-to-br from-[#4B6F93]/20 via-[#4B6F93]/10 to-black relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#4B6F93]/10 to-transparent" />
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <motion.div
@@ -739,7 +739,7 @@ export default function LeadGenerationPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-3xl lg:text-5xl font-light text-white mb-8 leading-tight">
+            <h2 className="text-3xl md:text-3xl lg:text-4xl font-light text-white mb-6 leading-tight">
               Ready to streamline your
               <br />
               business operations?
@@ -774,7 +774,7 @@ export default function LeadGenerationPage() {
         </div>
 
         {/* Background decoration */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-24 md:h-28 bg-gradient-to-t from-black to-transparent" />
       </section>
     </div>
   )
