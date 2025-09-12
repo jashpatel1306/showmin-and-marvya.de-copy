@@ -53,7 +53,7 @@ export function GlobeSection() {
                 <p className="text-gray-600">Countries Served</p>
               </div>
               <div className="space-y-2">
-                <h3 className="text-3xl font-bold text-blue-600">1000+</h3>
+                <h3 className="text-3xl font-bold text-blue-600">100+</h3>
                 <p className="text-gray-600">Happy Clients</p>
               </div>
               <div className="space-y-2">
