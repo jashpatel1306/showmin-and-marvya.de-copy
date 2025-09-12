@@ -555,24 +555,15 @@ export default function LeadGenerationPage() {
         >
 
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-light mb-5 text-black">
-            Our process is{' '}
+            Why choose{' '}
             <span className="italic text-blue-400" style={{ fontFamily: 'Dancing Script, cursive' }}>
-              unique
+              Us
             </span>
             .
           </h2>
           <div className="max-w-4xl mx-auto space-y-2">
             <p className="text-[#A3A3A3] text-[18px] ">
-              During our migration projects, we examine all your processes and structures.
-            </p>
-            <p className="text-[#A3A3A3] text-[18px] ">
-              We take the opportunity to
-            </p>
-            <p className="text-[#A3A3A3] text-[18px]  font-medium">
-              to completely digitize the entire company.
-            </p>
-            <p className="text-[#A3A3A3] text-[18px] ">
-              This makes switching to Shopify the foundation for a complete digital transformation.
+            Below are few examples of how our Google Maps Scraper can be beneficial in helping you attain your objectives.
             </p>
           </div>
         </motion.div>
@@ -609,34 +600,19 @@ export default function LeadGenerationPage() {
               {[
                 {
                   icon: "/images/info/UIUX.gif",
-                  title: "UI / UX Design",
-                  description: "Improve the shopping experience with UX/UI design optimized for high-performance Shopify stores."
+                  title: "Lead Generation",
+                  description: "Google Maps scraping is an effective tool for prospecting for new customers. Use Google Map scraping to gather contact information for potential customers in a specific area."
                 },
                 {
                   icon: "/images/info/shopifyexpert.gif",
-                  title: "Shopify (Plus) Experts",
-                  description: "Use our expertise to unlock the full potential of Shopify (Plus) and take your store to the next level."
+                  title: "Market Research",
+                  description: "Identify trends in the local market, such as popular products or services. Create targeted marketing campaigns using this information to inform your marketing and business strategies."
                 },
                 {
                   icon: "/images/info/shopifyMigration.gif",
-                  title: "Migrating to Shopify",
-                  description: "Is your online store currently running on Shopware or WooCommerce and are you struggling with slow customizations?"
+                  title: "Data Science",
+                  description: "With our high-quality data scraping service, you can gather the information you need to build cutting-edge technologies. Power your AI and machine learning models with relevant data to gain valuable insights and drive your business forward."
                 },
-                {
-                  icon: "/images/info/dataAnalytics.gif",
-                  title: "Data Analytics",
-                  description: "Through our expertise in data analytics, we gain valuable insights from your data that help improve your store effectively."
-                },
-                {
-                  icon: "/images/info/Salesoptimazation.gif",
-                  title: "Shop Analysis & Conversion Rate Optimization",
-                  description: "We ensure that customers not only discover your store, but also buy your products."
-                },
-                {
-                  icon: "/images/info/customApps.gif",
-                  title: "Custom Apps, Functions and much more",
-                  description: "We develop customized apps and software solutions that are perfectly tailored to your business!"
-                }
               ].map((service, index) => (
                 <motion.div
                   key={index}
