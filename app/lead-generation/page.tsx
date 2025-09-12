@@ -536,6 +536,151 @@ export default function LeadGenerationPage() {
       <UseCasesSection />
 
 
+{/* More than just a migration Section */}
+<section className="relative py-20 bg-black overflow-hidden">
+        {/* Glowing background effect */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gradient-radial from-blue-500/20 via-purple-500/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-1/3 left-1/3 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-radial from-cyan-400/15 via-blue-400/8 to-transparent rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-1/3 right-1/3 transform translate-x-1/2 translate-y-1/2 w-[500px] h-[300px] bg-gradient-radial from-indigo-400/20 via-purple-400/10 to-transparent rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        </div>
+
+        {/* Structured Background Box Container */}
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div
+            className="relative w-full flex flex-col items-center justify-center"
+            style={{
+              alignContent: 'center',
+              alignItems: 'center',
+              backgroundColor: '#0a0a0a',
+              display: 'flex',
+              flex: 'none',
+              flexDirection: 'column',
+              flexWrap: 'nowrap',
+              gap: '24px',
+              height: 'min-content',
+              justifyContent: 'center',
+              overflow: 'visible',
+              padding: '64px 64px',
+              pointerEvents: 'auto',
+              position: 'relative',
+              width: '100%',
+              borderRadius: '24px',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              backdropFilter: 'blur(10px)'
+            }}
+          >
+            {/* Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-20"
+            >
+
+              <TextGenerateEffectinTitleAndSubtitle
+                words="More than just a migration"
+                className="px-1 py-0.5 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+                duration={0.5}
+              />
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-light mb-5 text-white">
+                Our process is{' '}
+                <span className="italic text-blue-400" style={{ fontFamily: 'Dancing Script, cursive' }}>
+                  unique
+                </span>
+                .
+              </h2>
+              <div className="max-w-4xl mx-auto space-y-2">
+                <p className="text-[#A3A3A3] text-[18px] ">
+                  During our migration projects, we examine all your processes and structures.
+                </p>
+                <p className="text-[#A3A3A3] text-[18px] ">
+                  We take the opportunity to
+                </p>
+                <p className="text-[#A3A3A3] text-[18px]  font-medium">
+                  to completely digitize the entire company.
+                </p>
+                <p className="text-[#A3A3A3] text-[18px] ">
+                  This makes switching to Shopify the foundation for a complete digital transformation.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Services Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 w-full">
+              {[
+                {
+                  icon: "/images/info/UIUX.gif",
+                  title: "UI / UX Design",
+                  description: "Improve the shopping experience with UX/UI design optimized for high-performance Shopify stores."
+                },
+                {
+                  icon: "/images/info/shopifyexpert.gif",
+                  title: "Shopify (Plus) Experts",
+                  description: "Use our expertise to unlock the full potential of Shopify (Plus) and take your store to the next level."
+                },
+                {
+                  icon: "/images/info/shopifyMigration.gif",
+                  title: "Migrating to Shopify",
+                  description: "Is your online store currently running on Shopware or WooCommerce and are you struggling with slow customizations?"
+                },
+                {
+                  icon: "/images/info/dataAnalytics.gif",
+                  title: "Data Analytics",
+                  description: "Through our expertise in data analytics, we gain valuable insights from your data that help improve your store effectively."
+                },
+                {
+                  icon: "/images/info/Salesoptimazation.gif",
+                  title: "Shop Analysis & Conversion Rate Optimization",
+                  description: "We ensure that customers not only discover your store, but also buy your products."
+                },
+                {
+                  icon: "/images/info/customApps.gif",
+                  title: "Custom Apps, Functions and much more",
+                  description: "We develop customized apps and software solutions that are perfectly tailored to your business!"
+                }
+              ].map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group text-center pt-8"
+                >
+                  <div className="flex justify-center mb-4">
+                    <img
+                      src={service.icon}
+                      alt={service.title}
+                      className="w-24 h-24 object-contain"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-4">{service.title}</h3>
+                  <p className="text-[#A3A3A3] leading-relaxed">{service.description}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Bottom CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center w-full"
+            >
+              <Button
+                size="sm"
+                className="bg-[#4B6F93] hover:bg-[#5A87E4] text-white px-8 py-4 text-lg rounded-lg transition-colors duration-200 font-medium"
+              >
+                Request a project 👉🏻
+              </Button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+      
       {/* Split Background Lead Database Section */}
       <section className="py-20 md:py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
