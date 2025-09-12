@@ -561,6 +561,7 @@ export default function LeadGenerationPage() {
             </span>
             .
           </h2>
+          
           <div className="max-w-4xl mx-auto space-y-2">
             <p className="text-[#A3A3A3] text-[18px] ">
             Below are few examples of how our Google Maps Scraper can be beneficial in helping you attain your objectives.
