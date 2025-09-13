@@ -581,7 +581,7 @@ export default function LeadGenerationPage() {
               flex: 'none',
               flexDirection: 'column',
               flexWrap: 'nowrap',
-              // gap: '24px',
+              gap: '24px',
               height: 'min-content',
               justifyContent: 'center',
               overflow: 'visible',
