@@ -1,5 +1,4 @@
 {
-  "/services/page": "app/services/page.js",
   "/lead-generation/page": "app/lead-generation/page.js",
   "/page": "app/page.js"
 }

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import dynamic from 'next/dynamic';
+import GitHubThreeGlobe from './github-three-globe';
 
 // Dynamically import the GlobeDemo with SSR disabled
 // const GlobeDemo = dynamic(() => import('./globe-demo'), {
@@ -71,19 +72,18 @@ export function GlobeSection() {
             </button>
           </motion.div>
           
-          {/* Right side globe */
-          }
-          {/* <motion.div 
-            className="relative h-[400px] w-full lg:h-[500px]"
-            initial={{ opacity: 0, scale: 0.9 }}
+          {/* Right side globe */}
+          <motion.div 
+            className="relative h-[400px] w-full lg:h-[560px]"
+            initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
             <div className="absolute inset-0">
-              <GlobeDemo />
+              <GitHubThreeGlobe />
             </div>
-          </motion.div> */}
+          </motion.div>
         </div>
       </div>
     </section>
