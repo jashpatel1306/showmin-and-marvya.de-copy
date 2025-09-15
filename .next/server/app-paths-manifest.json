@@ -1,5 +1,8 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
+  "/career/page": "app/career/page.js",
+  "/ai-ml/page": "app/ai-ml/page.js",
+  "/management-system/page": "app/management-system/page.js",
   "/shop-migration/page": "app/shop-migration/page.js",
-  "/lead-generation/page": "app/lead-generation/page.js"
+  "/testimonials/page": "app/testimonials/page.js"
 }
