@@ -53,6 +53,7 @@ export default function GitHubThreeGlobe() {
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setClearColor(0x000000, 0); // transparent background
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     container.appendChild(renderer.domElement);
 
@@ -66,28 +67,7 @@ export default function GitHubThreeGlobe() {
     );
     camera.position.set(0, 0, 280);
 
-    // Space background via large gradient plane + fog
-    scene.fog = new THREE.FogExp2(0x0a0b1a, 0.0012);
-
-    // Stars
-    const starGeometry = new THREE.BufferGeometry();
-    const starCount = 800;
-    const starVertices = new Float32Array(starCount * 3);
-    for (let i = 0; i < starCount; i++) {
-      const r = 800 + Math.random() * 1200;
-      const theta = Math.random() * Math.PI * 2;
-      const phi = Math.acos(2 * Math.random() - 1);
-      const x = r * Math.sin(phi) * Math.cos(theta);
-      const y = r * Math.sin(phi) * Math.sin(theta);
-      const z = r * Math.cos(phi);
-      starVertices[i * 3] = x;
-      starVertices[i * 3 + 1] = y;
-      starVertices[i * 3 + 2] = z;
-    }
-    starGeometry.setAttribute("position", new THREE.BufferAttribute(starVertices, 3));
-    const starMaterial = new THREE.PointsMaterial({ color: 0x7dd3fc, size: 1.2, transparent: true, opacity: 0.6 });
-    const stars = new THREE.Points(starGeometry, starMaterial);
-    scene.add(stars);
+    // No fog or space background; keep scene transparent
 
     // Lights
     const ambient = new THREE.AmbientLight(0xffffff, 0.8);
@@ -133,10 +113,12 @@ export default function GitHubThreeGlobe() {
     controls.enableDamping = true;
     controls.dampingFactor = 0.08;
     controls.enablePan = false;
-    controls.minDistance = 160;
-    controls.maxDistance = 380;
+    controls.enableZoom = false; // disable zoom in/out
+    // Keep camera distance fixed for consistent view
+    controls.minDistance = camera.position.length();
+    controls.maxDistance = camera.position.length();
     controls.rotateSpeed = 0.6;
-    controls.zoomSpeed = 0.6;
+    controls.zoomSpeed = 0; // no zoom speed
 
     // Subtle auto-rotation
     const autoRotate = true;
@@ -189,9 +171,7 @@ export default function GitHubThreeGlobe() {
       ref={containerRef}
       className="w-full h-full rounded-2xl"
       style={{
-        background:
-          "radial-gradient(1200px 600px at 80% 20%, rgba(59, 130, 246, 0.08), transparent), radial-gradient(1000px 500px at 20% 80%, rgba(168, 85, 247, 0.08), transparent), linear-gradient(180deg, #060712 0%, #0b1020 100%)",
-        boxShadow: "inset 0 0 80px rgba(147, 197, 253, 0.08)",
+        background: "transparent",
         position: "relative",
       }}
     />

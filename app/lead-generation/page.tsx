@@ -6,7 +6,8 @@ import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Brain, Target, BarChart3, Zap, MapPin, Star, Search, Mail, Plus, ArrowRight } from "lucide-react"
-import { GitHubGlobe } from "@/components/ui/github-globe"
+import dynamic from 'next/dynamic'
+const GitHubGlobe = dynamic(() => import("@/components/ui/github-globe").then(m => m.GitHubGlobe), { ssr: false })
 import { Beams } from "@/components/ui/beams"
 import { FocusCard } from "@/components/ui/focus-card"
 import { BackgroundBeams } from "@/components/ui/background-beams";

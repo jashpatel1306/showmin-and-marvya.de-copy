@@ -2,7 +2,12 @@
 
 import { motion } from "framer-motion";
 import dynamic from 'next/dynamic';
-import GitHubThreeGlobe from './github-three-globe';
+const GitHubThreeGlobe = dynamic(() => import('./github-three-globe'), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full rounded-2xl" />
+  )
+});
 
 // Dynamically import the GlobeDemo with SSR disabled
 // const GlobeDemo = dynamic(() => import('./globe-demo'), {
