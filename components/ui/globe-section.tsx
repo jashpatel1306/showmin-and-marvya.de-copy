@@ -77,7 +77,7 @@ export function GlobeSection() {
             </button>
           </motion.div>
           
-          
+          {/* Right side globe */}
           <motion.div 
             className="relative h-[400px] w-full lg:h-[560px]"
             initial={{ opacity: 0, scale: 0.96 }}
