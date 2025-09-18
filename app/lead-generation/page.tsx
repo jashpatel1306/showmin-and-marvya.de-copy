@@ -3,6 +3,7 @@
 import React, { useState, useEffect, } from "react"
 import { motion, useAnimate } from "framer-motion"
 import { Navigation } from "@/components/navigation"
+import Script from "next/script"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Brain, Target, BarChart3, Zap, MapPin, Star, Search, Mail, Plus, ArrowRight } from "lucide-react"
@@ -214,6 +215,29 @@ export default function LeadGenerationPage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      <Script id="ld-software" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'SoftwareApplication',
+          name: 'SHOWMINE Lead Generation',
+          applicationCategory: 'BusinessApplication',
+          operatingSystem: 'Web',
+          url: 'https://www.showmine.io/lead-generation',
+          description: 'AI-powered lead generation and public data extraction (Google Maps, SERP, reviews) with automated enrichment.',
+          offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'EUR',
+            availability: 'https://schema.org/PreOrder',
+            url: 'https://www.showmine.io/lead-generation'
+          },
+          provider: {
+            '@type': 'Organization',
+            name: 'SHOWMINE',
+            url: 'https://www.showmine.io'
+          }
+        })}
+      </Script>
       <Navigation />
 
       {/* Hero Section */}

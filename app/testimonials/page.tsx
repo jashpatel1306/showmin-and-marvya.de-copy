@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Star, Quote } from "lucide-react"
 import Image from "next/image"
+import Script from "next/script"
 import { useState } from "react"
 
 const testimonials = [
@@ -58,6 +59,23 @@ export default function TestimonialsPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+      <Script id="ld-reviews" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          itemListElement: testimonials.map((t, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            item: {
+              '@type': 'Review',
+              reviewBody: t.text,
+              author: { '@type': 'Person', name: t.author },
+              itemReviewed: { '@type': 'Organization', name: 'SHOWMINE' },
+              reviewRating: { '@type': 'Rating', ratingValue: t.rating, bestRating: 5, worstRating: 1 }
+            }
+          }))
+        })}
+      </Script>
       <Navigation />
 
       <section className="pt-32 pb-20 px-6">
