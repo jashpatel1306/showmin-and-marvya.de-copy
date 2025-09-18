@@ -9,6 +9,7 @@ import { partners } from "@/data/partners"
 import { ArrowRight, CheckCircle, Clock, Users, Plus, TrendingUp, Settings, Database, Shield, BarChart3, Zap, Target } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import Image from "next/image"
+import Script from "next/script"
 
 // FAQ Accordion Component
 function FAQAccordion() {
@@ -120,6 +121,28 @@ const Partners = [
 export default function ManagementSystemPage() {
   return (
     <div className="min-h-screen bg-black text-white">
+      <Script id="ld-breadcrumb-mgmt" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.showmine.io/' },
+            { '@type': 'ListItem', position: 2, name: 'Management System', item: 'https://www.showmine.io/management-system' }
+          ]
+        })}
+      </Script>
+      <Script id="ld-service-mgmt" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'E-commerce Management Systems',
+          serviceType: 'ERP, CRM, Inventory, BI',
+          provider: { '@type': 'Organization', name: 'SHOWMINE', url: 'https://www.showmine.io' },
+          areaServed: 'Worldwide',
+          url: 'https://www.showmine.io/management-system',
+          description: 'Enterprise-grade management systems for e-commerce: ERP, CRM, inventory, order processing, financials, and business intelligence.'
+        })}
+      </Script>
       <Navigation />
 
       {/* Hero Section */}

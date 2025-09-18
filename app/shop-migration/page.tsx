@@ -9,6 +9,7 @@ import { partners } from "@/data/partners"
 import { ArrowRight, CheckCircle, Clock, Users, Plus, TrendingUp } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import Image from "next/image"
+import Script from "next/script"
 import { cn } from "@/lib/utils"
 
 
@@ -205,6 +206,28 @@ const Partners = [
 export default function ShopMigrationPage() {
   return (
     <div className="min-h-screen bg-black text-white">
+      <Script id="ld-breadcrumb-migration" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.showmine.io/' },
+            { '@type': 'ListItem', position: 2, name: 'Shop Migration', item: 'https://www.showmine.io/shop-migration' }
+          ]
+        })}
+      </Script>
+      <Script id="ld-service-migration" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Shop Migration to Shopify',
+          serviceType: 'E-commerce migration',
+          provider: { '@type': 'Organization', name: 'SHOWMINE', url: 'https://www.showmine.io' },
+          areaServed: 'Worldwide',
+          url: 'https://www.showmine.io/shop-migration',
+          description: 'Seamless migration of your online store (Shopware, Magento, WooCommerce, custom) to Shopify or Shopify Plus with zero downtime and performance improvements.'
+        })}
+      </Script>
       <Navigation />
 
       {/* Hero Section */}
