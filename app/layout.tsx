@@ -15,7 +15,47 @@ export const metadata: Metadata = {
   description:
     "We are the partner when it comes to holistic e-commerce growth. Expert team, proven processes, measurable results.",
   keywords: "e-commerce, online shop, digital marketing, shop migration, Shopify, growth",
-    generator: 'v0.dev'
+    generator: 'v0.dev',
+    metadataBase: new URL('https://www.showmine.io'),
+    alternates: {
+      canonical: '/',
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+      },
+    },
+    openGraph: {
+      type: 'website',
+      url: 'https://www.showmine.io/',
+      title: 'SHOWMINE - E-commerce Growth Partner',
+      description:
+        'We are the partner when it comes to holistic e-commerce growth. Expert team, proven processes, measurable results.',
+      siteName: 'SHOWMINE',
+      images: [
+        {
+          url: '/images/hero-background.avif',
+          width: 1200,
+          height: 630,
+          alt: 'SHOWMINE - E-commerce Growth Partner',
+        },
+      ],
+      locale: 'en_US',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'SHOWMINE - E-commerce Growth Partner',
+      description:
+        'We are the partner when it comes to holistic e-commerce growth. Expert team, proven processes, measurable results.',
+      images: ['/images/hero-background.avif'],
+      creator: '@showmine',
+    }
 }
 
 export default function RootLayout({
@@ -42,6 +82,24 @@ export default function RootLayout({
         {children}
         <Footer />
         <WhatsAppButton />
+        <Script id="org-ld" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'SHOWMINE',
+            url: 'https://www.showmine.io',
+            logo: 'https://www.showmine.io/images/showmine.png',
+            sameAs: [
+              'https://www.linkedin.com/company/showmine',
+            ],
+            contactPoint: [{
+              '@type': 'ContactPoint',
+              contactType: 'customer support',
+              email: 'info@showmine.io',
+              availableLanguage: ['English','German']
+            }]
+          })}
+        </Script>
         {/* Chatbot functionality temporarily disabled
         <SupportAgentWrapper />
         */}
