@@ -2011,56 +2011,6 @@ export default function HomePage() {
       </section>
 
       {/* Partners Section */}
-      {/* <section className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8">Our partners</h2>
-            <p className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              We work with the best in the industry and
-              <br />
-              have created the best ecosystem to ensure
-              <br />
-              your e-commerce business grows
-              <br />
-              sustainably and stays at the top.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className="flex flex-wrap items-center justify-center gap-12 md:gap-16 opacity-60"
-          >
-            {partners.map((partner, index) => {
-              const partnerName = typeof partner === 'string' ? partner : partner.name;
-              const partnerKey = typeof partner === 'string' ? partner : partner.id || partner.name;
-
-              return (
-                <motion.div
-                  key={`partner-${index}-${partnerKey}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 0.6, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-xl md:text-2xl font-light tracking-wider hover:opacity-100 transition-opacity duration-300"
-                >
-                  {partnerName}
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
-      </section> */}
-
-      {/* Partners Section */}
       <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
