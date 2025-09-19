@@ -59,6 +59,16 @@ export default function TestimonialsPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+      <Script id="ld-breadcrumb-testimonials" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.showmine.io/' },
+            { '@type': 'ListItem', position: 2, name: 'Testimonials', item: 'https://www.showmine.io/testimonials' }
+          ]
+        })}
+      </Script>
       <Script id="ld-reviews" type="application/ld+json" strategy="afterInteractive">
         {JSON.stringify({
           '@context': 'https://schema.org',

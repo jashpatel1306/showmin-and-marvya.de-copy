@@ -55,6 +55,15 @@ export const metadata: Metadata = {
         'We are the partner when it comes to holistic e-commerce growth. Expert team, proven processes, measurable results.',
       images: ['/images/hero-background.avif'],
       creator: '@showmine',
+    },
+    icons: {
+      icon: [
+        { url: '/favicon.ico' },
+        { url: '/placeholder-logo.png', sizes: '32x32', type: 'image/png' }
+      ],
+      apple: [
+        { url: '/placeholder-logo.png', sizes: '180x180', type: 'image/png' }
+      ]
     }
 }
 

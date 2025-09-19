@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge"
 import { Star, Check, X, BarChart3, Target, Clock, ArrowRight, Plus, Minus, ArrowLeft, ArrowRight as ArrowRightIcon, ChevronLeft, ChevronRight } from "lucide-react"
 import Image, { ImageProps } from "next/image"
 import { Navigation } from "@/components/navigation"
+import Script from "next/script"
 
 // Carousel Context
 const CarouselContext = createContext<{
@@ -964,6 +965,15 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-black text-white ">
+      <Script id="ld-breadcrumb-home" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.showmine.io/' }
+          ]
+        })}
+      </Script>
       <Navigation />
 
       {/* Hero Section */}
