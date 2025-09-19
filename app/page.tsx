@@ -1963,12 +1963,12 @@ export default function HomePage() {
             {[
               {
                 name: "Jainish Patel",
-                expertise: "Areas of expertise: Sales & Online Marketing",
+                expertise: "Finding and helping e-commerce businesses grow",
                 image: "/team/jainish.png?height=400&width=300",
               },
               {
                 name: "Jash Patel",
-                expertise: "Areas of expertise: business processes, online marketing, development",
+                expertise: "Building AI agents for retail and e-commerce",
                 image: "/team/jash.png?height=400&width=300",
               },
               // {
