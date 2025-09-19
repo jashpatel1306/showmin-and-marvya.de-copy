@@ -1962,14 +1962,14 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto px-4">
             {[
               {
-                name: "Jash Patel",
-                expertise: "Areas of expertise: business processes, online marketing, development",
-                image: "/placeholder.svg?height=400&width=300",
-              },
-              {
                 name: "Jainish Patel",
                 expertise: "Areas of expertise: Sales & Online Marketing",
-                image: "/placeholder.svg?height=400&width=300",
+                image: "/team/jainish.png?height=400&width=300",
+              },
+              {
+                name: "Jash Patel",
+                expertise: "Areas of expertise: business processes, online marketing, development",
+                image: "/team/jash.png?height=400&width=300",
               },
               // {
               //   name: "Vishal Patel",
