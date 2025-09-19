@@ -77,7 +77,7 @@ export function GlobeSection() {
             </button>
           </motion.div>
           
-          {/* Right side globe */}
+          {/* Right side globe (video) */}
           <motion.div 
             className="relative h-[400px] w-full lg:h-[560px]"
             initial={{ opacity: 0, scale: 0.96 }}
@@ -85,8 +85,17 @@ export function GlobeSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
-            <div className="absolute inset-0">
-              <GitHubThreeGlobe />
+            <div className="absolute inset-0 rounded-2xl overflow-hidden">
+              <video
+                className="h-full w-full object-cover"
+                src="/leadgeneration/cloude.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls={false}
+                aria-label="Animated globe video"
+              />
             </div>
           </motion.div>
         </div>
