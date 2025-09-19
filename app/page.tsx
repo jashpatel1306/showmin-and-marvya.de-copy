@@ -1971,11 +1971,11 @@ export default function HomePage() {
                 expertise: "Areas of expertise: Sales & Online Marketing",
                 image: "/placeholder.svg?height=400&width=300",
               },
-              {
-                name: "Vishal Patel",
-                expertise: "Areas of expertise: Strategy & Controlling",
-                image: "/placeholder.svg?height=400&width=300",
-              },
+              // {
+              //   name: "Vishal Patel",
+              //   expertise: "Areas of expertise: Strategy & Controlling",
+              //   image: "/placeholder.svg?height=400&width=300",
+              // },
               // {
               //   name: "Hardik Patel",
               //   expertise: "Areas of expertise: Strategy & Controlling",
