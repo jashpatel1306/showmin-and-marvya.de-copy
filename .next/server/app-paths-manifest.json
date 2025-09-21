@@ -1,4 +1,4 @@
 {
-  "/page": "app/page.js",
-  "/lead-generation/page": "app/lead-generation/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/career/page": "app/career/page.js"
 }
