@@ -1706,7 +1706,7 @@ export default function HomePage() {
               "
             >
               <a
-                href="https://calendly.com/showmineinfotech/30min"
+                href="https://cal.com/showmine"
                 target="_blank"
               >
                 Contact 👉🏻
