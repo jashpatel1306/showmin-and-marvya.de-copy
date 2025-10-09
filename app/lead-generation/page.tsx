@@ -730,7 +730,7 @@ export default function LeadGenerationPage() {
                 <Button
                   className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-medium px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
                 >
-                  <a href="https://calendly.com/showmineinfotech/30min" target="_blank" className="inline-flex items-center gap-2">
+                  <a href="https://cal.com/showmine" target="_blank" className="inline-flex items-center gap-2">
                     <span>Sign Up Now</span>
                     <ArrowRight className="w-4 h-4" />
                   </a>
