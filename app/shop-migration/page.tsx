@@ -1207,7 +1207,7 @@ export default function ShopMigrationPage() {
               "
               >
                 <a
-                  // href="https://cal.com/showmine"
+                  href="https://cal.com/showmine"
                   target="_blank"
                 >
                   Contact 👉🏻
