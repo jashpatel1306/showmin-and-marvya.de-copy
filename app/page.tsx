@@ -913,9 +913,9 @@ function FAQAccordion() {
           >
             <button
               onClick={() => toggleAccordion(index)}
-              className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 text-left flex items-center justify-between hover:bg-gray-800/30 transition-colors duration-200"
+              className="w-full px-4 sm:px-6 md:px-8 py-5 sm:py-6 md:py-7 min-h-[60px] sm:min-h-[70px] text-left flex items-center justify-between hover:bg-gray-800/30 transition-colors duration-200"
             >
-              <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-white pr-2 sm:pr-4">
+              <h3 className="text-xs sm:text-sm md:text-base font-medium text-white pr-2 sm:pr-4">
                 {faq.question}
               </h3>
               <motion.div
@@ -923,7 +923,7 @@ function FAQAccordion() {
                 transition={{ duration: 0.2 }}
                 className="flex-shrink-0"
               >
-                <Plus className="w-6 h-6 text-gray-400" />
+                <Plus className="w-5 h-5 text-gray-400" />
               </motion.div>
             </button>
             <motion.div
@@ -936,7 +936,7 @@ function FAQAccordion() {
               className="overflow-hidden"
             >
               <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6">
-                <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
+                <p className="text-gray-400 leading-relaxed text-xs sm:text-sm">
                   {faq.answer}
                 </p>
               </div>
@@ -960,9 +960,9 @@ function FAQAccordion() {
             >
               <button
                 onClick={() => toggleAccordion(actualIndex)}
-                className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 text-left flex items-center justify-between hover:bg-gray-800/30 transition-colors duration-200"
+                className="w-full px-4 sm:px-6 md:px-8 py-5 sm:py-6 md:py-7 min-h-[60px] sm:min-h-[70px] text-left flex items-center justify-between hover:bg-gray-800/30 transition-colors duration-200"
               >
-                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-white pr-2 sm:pr-4">
+                <h3 className="text-xs sm:text-sm md:text-base font-medium text-white pr-2 sm:pr-4">
                   {faq.question}
                 </h3>
                 <motion.div
@@ -970,7 +970,7 @@ function FAQAccordion() {
                   transition={{ duration: 0.2 }}
                   className="flex-shrink-0"
                 >
-                  <Plus className="w-6 h-6 text-gray-400" />
+                  <Plus className="w-5 h-5 text-gray-400" />
                 </motion.div>
               </button>
               <motion.div
@@ -983,7 +983,7 @@ function FAQAccordion() {
                 className="overflow-hidden"
               >
                 <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6">
-                  <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
+                  <p className="text-gray-400 leading-relaxed text-xs sm:text-sm">
                     {faq.answer}
                   </p>
                 </div>
