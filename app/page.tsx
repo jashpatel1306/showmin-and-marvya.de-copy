@@ -870,23 +870,23 @@ function FAQAccordion() {
     },
     {
       question: "How do you optimize Shopify stores for mobile devices?",
-      answer: ""
+      answer: "We ensure your Shopify store is fully responsive, optimizing layout and functionality for mobile users to provide a seamless and enjoyable shopping experience across all devices."
     },
     {
       question: "Can you help integrate third-party apps and tools with Shopify?",
-      answer: ""
+      answer: "Absolutely, we assist in integrating essential third-party apps and tools to extend Shopify's functionality, enhance customer experience, and streamline your business operations."
     },
     {
       question: "How do you handle Shopify payment gateway integration?",
-      answer: ""
+      answer: "We seamlessly integrate secure payment gateways like PayPal, Stripe, and others into your Shopify store, ensuring smooth and secure transactions for your customers."
     },
     {
       question: "What analytics and reporting capabilities do you provide for Shopify stores?",
-      answer: ""
+      answer: "We set up analytics tools within Shopify to track key metrics such as traffic sources, conversion rates, sales performance, and customer behaviour, providing valuable insights to optimize your store's performance."
     },
     {
       question: "Can you provide examples of successful Shopify stores you've worked with?",
-      answer: ""
+      answer: "Yes, we have successfully partnered with various businesses across different industries. Explore our client case studies to see how we've helped businesses like yours achieve their e-commerce goals on Shopify."
     }
   ]
 
@@ -894,49 +894,104 @@ function FAQAccordion() {
     setOpenIndex(openIndex === index ? null : index)
   }
 
+  // Split FAQs into two columns for better design layout
+  const firstColumn = faqs.slice(0, 5)
+  const secondColumn = faqs.slice(5, 10)
+
   return (
-    <div className="space-y-4">
-      {faqs.map((faq, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: index * 0.1 }}
-          viewport={{ once: true }}
-          className="border border-gray-800 rounded-2xl overflow-hidden bg-gray-900/30 hover:border-gray-700 transition-all duration-300"
-        >
-          <button
-            onClick={() => toggleAccordion(index)}
-            className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 text-left flex items-center justify-between hover:bg-gray-800/30 transition-colors duration-200"
-          >
-            <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-white pr-2 sm:pr-4">
-              {faq.question}
-            </h3>
-            <motion.div
-              animate={{ rotate: openIndex === index ? 45 : 0 }}
-              transition={{ duration: 0.2 }}
-              className="flex-shrink-0"
-            >
-              <Plus className="w-6 h-6 text-gray-400" />
-            </motion.div>
-          </button>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+      {/* First Column */}
+      <div className="space-y-4">
+        {firstColumn.map((faq, index) => (
           <motion.div
-            initial={false}
-            animate={{
-              height: openIndex === index ? "auto" : 0,
-              opacity: openIndex === index ? 1 : 0
-            }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden"
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            viewport={{ once: true }}
+            className="border border-gray-800 rounded-2xl overflow-hidden bg-gray-900/30 hover:border-gray-700 transition-all duration-300"
           >
-            <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6">
-              <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
-                {faq.answer}
-              </p>
-            </div>
+            <button
+              onClick={() => toggleAccordion(index)}
+              className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 text-left flex items-center justify-between hover:bg-gray-800/30 transition-colors duration-200"
+            >
+              <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-white pr-2 sm:pr-4">
+                {faq.question}
+              </h3>
+              <motion.div
+                animate={{ rotate: openIndex === index ? 45 : 0 }}
+                transition={{ duration: 0.2 }}
+                className="flex-shrink-0"
+              >
+                <Plus className="w-6 h-6 text-gray-400" />
+              </motion.div>
+            </button>
+            <motion.div
+              initial={false}
+              animate={{
+                height: openIndex === index ? "auto" : 0,
+                opacity: openIndex === index ? 1 : 0
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="overflow-hidden"
+            >
+              <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6">
+                <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
+                  {faq.answer}
+                </p>
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      ))}
+        ))}
+      </div>
+
+      {/* Second Column */}
+      <div className="space-y-4">
+        {secondColumn.map((faq, index) => {
+          const actualIndex = index + 5 // Map to original index for state management
+          return (
+            <motion.div
+              key={actualIndex}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="border border-gray-800 rounded-2xl overflow-hidden bg-gray-900/30 hover:border-gray-700 transition-all duration-300"
+            >
+              <button
+                onClick={() => toggleAccordion(actualIndex)}
+                className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 text-left flex items-center justify-between hover:bg-gray-800/30 transition-colors duration-200"
+              >
+                <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-white pr-2 sm:pr-4">
+                  {faq.question}
+                </h3>
+                <motion.div
+                  animate={{ rotate: openIndex === actualIndex ? 45 : 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex-shrink-0"
+                >
+                  <Plus className="w-6 h-6 text-gray-400" />
+                </motion.div>
+              </button>
+              <motion.div
+                initial={false}
+                animate={{
+                  height: openIndex === actualIndex ? "auto" : 0,
+                  opacity: openIndex === actualIndex ? 1 : 0
+                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="overflow-hidden"
+              >
+                <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6">
+                  <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
+                    {faq.answer}
+                  </p>
+                </div>
+              </motion.div>
+            </motion.div>
+          )
+        })}
+      </div>
     </div>
   )
 }
@@ -2087,7 +2142,7 @@ export default function HomePage() {
 
       {/* FAQ Section */}
       <section className="py-20 bg-black">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
