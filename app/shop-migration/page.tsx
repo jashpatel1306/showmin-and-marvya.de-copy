@@ -587,7 +587,14 @@ export default function ShopMigrationPage() {
                 image: "/successStory/diamondrensu.jpg",
                 logo: "/images/customers/diamondrensu.png",
                 link: "/shop-migration"
-              }
+              },
+              {
+                title: "Shopware 5 to Shopify Plus",
+                brand: "PEAK",
+                image: "/successStory/diamondrensu.jpg",
+                logo: "/images/customers/diamondrensu.png",
+                link: "/shop-migration"
+              },
             ].map((story, index) => (
               <motion.div
                 key={index}
