@@ -726,7 +726,7 @@ export default function LeadGenerationPage() {
                 Yes, Google map scraping can be legal under certain circumstances. While Google's terms of service prohibit automated data scraping from their platforms, including Google Maps, there are situations where it may be legal to scrape data. Our Google map scraper tool only collects publicly available and does not violate any data privacy laws or regulations; then, it may be legal to scrape data from Google Maps.
               </p>
 
-              <div className="mt-6">
+              {/* <div className="mt-6">
                 <Button
                   className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-medium px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
                 >
@@ -735,7 +735,7 @@ export default function LeadGenerationPage() {
                     <ArrowRight className="w-4 h-4" />
                   </a>
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
