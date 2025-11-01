@@ -849,24 +849,44 @@ function FAQAccordion() {
 
   const faqs = [
     {
-      question: "What requirements must your customers meet?",
-      answer: "We work with ambitious e-commerce businesses that have a clear vision for growth. Ideally, you should have an existing online presence, annual revenue of at least €500K, and be ready to invest in strategic growth initiatives. We look for partners who value long-term relationships and are committed to implementing our recommendations."
+      question: "Can you help migrate my existing website to Shopify?",
+      answer: "Yes, we offer website migration services to seamlessly transfer your existing site to Shopify, ensuring minimal disruption and preserving your SEO efforts."
     },
     {
-      question: "What possibilities for collaboration are there?",
-      answer: "We offer flexible collaboration models including full-service partnerships, strategic consulting, project-based work, and ongoing optimization support. Whether you need complete e-commerce management or specific expertise in areas like logistics, marketing, or international expansion, we can tailor our approach to your needs."
+      question: "Do you provide ongoing support after launching my Shopify store?",
+      answer: "Yes, we offer ongoing support and maintenance services, including troubleshooting, platform updates, security enhancements, and performance monitoring to keep your store running smoothly."
     },
     {
-      question: "I'm a dropshipper, am I in the right place with you?",
-      answer: "While we primarily focus on businesses with their own inventory and logistics, we can help dropshippers transition to more sustainable models. Our expertise in logistics and supply chain management can guide you toward building a more robust, scalable business with better margins and control."
+      question: "What customization options do you offer for Shopify themes?",
+      answer: "We provide extensive customization options, including logo integration, color scheme adjustments, layout modifications, and the integration of custom functionalities to meet your specific branding and business requirements."
     },
     {
-      question: "At what size does collaboration make sense?",
-      answer: "Collaboration typically makes sense for businesses generating at least €500K in annual revenue and looking to scale to €2M+ and beyond. However, we also work with smaller businesses that show exceptional growth potential and are ready to invest in professional e-commerce infrastructure."
+      question: "What SEO strategies do you implement for Shopify stores?",
+      answer: "We implement comprehensive SEO strategies, including keyword optimization, meta tags, URL optimization, and site speed enhancements, to improve your store's visibility and organic search rankings."
     },
     {
-      question: "Do you only specialize in Shopify stores?",
-      answer: "While we have deep expertise in Shopify and it's our preferred platform for most clients, we also work with other e-commerce platforms including WooCommerce, Magento, and custom solutions. Our focus is on finding the right technology stack for your specific business needs and growth goals."
+      question: "How long does it take to set up a Shopify store with your services?",
+      answer: "The timeline varies based on the complexity of your needs, but typically, we aim to have your Shopify store fully operational within 2-4 weeks from the start of our engagement."
+    },
+    {
+      question: "How do you optimize Shopify stores for mobile devices?",
+      answer: ""
+    },
+    {
+      question: "Can you help integrate third-party apps and tools with Shopify?",
+      answer: ""
+    },
+    {
+      question: "How do you handle Shopify payment gateway integration?",
+      answer: ""
+    },
+    {
+      question: "What analytics and reporting capabilities do you provide for Shopify stores?",
+      answer: ""
+    },
+    {
+      question: "Can you provide examples of successful Shopify stores you've worked with?",
+      answer: ""
     }
   ]
 
