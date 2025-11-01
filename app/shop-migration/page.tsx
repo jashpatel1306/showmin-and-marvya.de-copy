@@ -522,180 +522,245 @@ export default function ShopMigrationPage() {
         </div>
       </section>
 
-      {/* Infinite Scrolling Website Showcase Section */}
-      <section className="w-full bg-[#111215] py-16 px-5">
-        <div className="max-w-[1800px] mx-auto flex flex-col gap-14">
-          {[0, 1, 2].map((rowIdx) => (
-            <div
-              key={rowIdx}
-              className="overflow-hidden w-full"
+      {/* Success Stories Section */}
+      <section 
+        className="w-full px-5 md:px-10"
+        style={{ 
+          background: 'linear-gradient(180deg, #000000 0%, #0A0A0A 100%)',
+          paddingTop: '100px',
+          paddingBottom: '100px'
+        }}
+      >
+        <div className="max-w-[1280px] mx-auto">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+            style={{ marginBottom: '64px' }}
+          >
+            <h2 
+              className="text-white mb-3 success-story-title"
               style={{
-                maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
-                WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
+                fontFamily: 'Inter, Poppins, Space Grotesk, sans-serif',
+                fontWeight: '600',
+                letterSpacing: '-0.5px',
+                marginTop: '0'
               }}
             >
-              <div
-                className={`flex gap-8 min-w-max animate-scroll-row${rowIdx % 2 === 0 ? '-rtl' : '-ltr'}`}
-                style={{ willChange: 'transform' }}
+              Success Stories
+            </h2>
+            <p 
+              className="text-[#B3B3B3] mx-auto leading-relaxed"
+              style={{
+                fontSize: '16px',
+                maxWidth: '720px',
+                marginTop: '12px'
+              }}
+            >
+              Our Shopify Plus case studies show how brands have achieved higher conversion rates, better processes, and measurable growth through migration.
+            </p>
+          </motion.div>
+
+          {/* Success Story Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 success-story-grid">
+            {[
+              {
+                title: "Odoo to Shopify Plus",
+                brand: "Merz b. Schwanen",
+                image: "/successStory/srface1.jpg",
+                logo: "/images/customers/simpl.png",
+                link: "/shop-migration"
+              },
+              {
+                title: "Plenty to Shopify",
+                brand: "DAS PARFUM & BEAUTY",
+                image: "/successStory/kymee.jpg",
+                logo: "/images/customers/kymee.png",
+                link: "/shop-migration"
+              },
+              {
+                title: "Shopware 5 to Shopify Plus",
+                brand: "PEAK",
+                image: "/successStory/diamondrensu.jpg",
+                logo: "/images/customers/diamondrensu.png",
+                link: "/shop-migration"
+              }
+            ].map((story, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative bg-[#111111] rounded-2xl overflow-hidden border cursor-pointer transition-all duration-300"
+                style={{
+                  borderRadius: '16px',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  boxShadow: '0 0 20px rgba(255,255,255,0.05)',
+                  padding: '0'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.boxShadow = '0 0 24px rgba(255,255,255,0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 0 20px rgba(255,255,255,0.05)';
+                }}
               >
-                {/* Duplicate cards for seamless looping */}
-                {Array(2)
-                  .fill(0)
-                  .flatMap((_, dupIdx) =>
-                    [
-                      // E-commerce/Fashion
-                      {
-                        title: 'Fashionista',
-                        desc: 'Discover the latest trends in fashion.',
-                        nav: ['Home', 'Shop', 'Lookbook', 'Contact'],
-                        img: '/showcase/fashion.jpg',
-                        color: '#f7f7fa',
-                        logo: 'F',
-                        cta: 'Shop Now',
-                      },
-                      // Technology/SaaS
-                      {
-                        title: 'SaaSly',
-                        desc: 'Your dashboard, reimagined.',
-                        nav: ['Dashboard', 'Analytics', 'Settings'],
-                        img: '/showcase/saas.jpg',
-                        color: '#eaf6ff',
-                        logo: 'S',
-                        cta: 'Start Free Trial',
-                      },
-                      // Food/Restaurant
-                      {
-                        title: 'TastyBites',
-                        desc: 'Delicious food delivered to you.',
-                        nav: ['Menu', 'Order', 'About', 'Contact'],
-                        img: '/showcase/food.jpg',
-                        color: '#fff7f0',
-                        logo: 'T',
-                        cta: 'Order Now',
-                      },
-                      // Travel/Tourism
-                      {
-                        title: 'Wanderly',
-                        desc: 'Explore the world with us.',
-                        nav: ['Destinations', 'Tours', 'Blog'],
-                        img: '/showcase/travel.jpg',
-                        color: '#f0f7ff',
-                        logo: 'W',
-                        cta: 'Book a Trip',
-                      },
-                      // Finance/Business
-                      {
-                        title: 'FinPeak',
-                        desc: 'Grow your wealth with confidence.',
-                        nav: ['Overview', 'Invest', 'Reports'],
-                        img: '/showcase/finance.jpg',
-                        color: '#f7faff',
-                        logo: 'FP',
-                        cta: 'Get Started',
-                      },
-                      // Health/Wellness
-                      {
-                        title: 'Wellio',
-                        desc: 'Your health, our priority.',
-                        nav: ['Home', 'Services', 'Team'],
-                        img: '/showcase/health.jpg',
-                        color: '#f6fff7',
-                        logo: 'W',
-                        cta: 'Book Appointment',
-                      },
-                      // Education/Learning
-                      {
-                        title: 'Learnify',
-                        desc: 'Unlock your potential.',
-                        nav: ['Courses', 'Tutors', 'Pricing'],
-                        img: '/showcase/education.jpg',
-                        color: '#f9f7ff',
-                        logo: 'L',
-                        cta: 'Browse Courses',
-                      },
-                      // Real Estate
-                      {
-                        title: 'HomeQuest',
-                        desc: 'Find your dream home.',
-                        nav: ['Listings', 'Agents', 'Contact'],
-                        img: '/showcase/realestate.jpg',
-                        color: '#f7fcff',
-                        logo: 'HQ',
-                        cta: 'View Listings',
-                      },
-                      // Sports/Fitness
-                      {
-                        title: 'FitNation',
-                        desc: 'Achieve your fitness goals.',
-                        nav: ['Workouts', 'Trainers', 'Shop'],
-                        img: '/showcase/sports.jpg',
-                        color: '#fffef7',
-                        logo: 'FN',
-                        cta: 'Join Now',
-                      },
-                      // Creative/Agency
-                      {
-                        title: 'Creatify',
-                        desc: 'Showcasing creative talent.',
-                        nav: ['Portfolio', 'About', 'Contact'],
-                        img: '/showcase/creative.jpg',
-                        color: '#f7f7ff',
-                        logo: 'C',
-                        cta: 'See Portfolio',
-                      },
-                    ].map((site, idx) => (
-                      <div
-                        key={dupIdx + '-' + idx}
-                        className="rounded-xl bg-white shadow-lg hover:shadow-2xl transition-transform duration-300 hover:scale-105 flex flex-col w-[320px] h-[220px] mr-6 relative"
-                        style={{ minWidth: 300, maxWidth: 350 }}
-                      >
-                        {/* Browser Mockup Bar */}
-                        <div className="flex items-center px-4 py-2 bg-[#f3f4f6] rounded-t-xl border-b border-gray-200">
-                          <span className="w-3 h-3 bg-red-400 rounded-full mr-2"></span>
-                          <span className="w-3 h-3 bg-yellow-400 rounded-full mr-2"></span>
-                          <span className="w-3 h-3 bg-green-400 rounded-full"></span>
-                          <div className="ml-4 flex-1 h-4 bg-gray-200 rounded-md"></div>
-                        </div>
-                        {/* Main Content Area */}
-                        <div className="flex-1 flex flex-col justify-between p-4" style={{ background: site.color }}>
-                          <div className="flex items-center mb-2">
-                            <div className="w-8 h-8 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-lg mr-2">
-                              {site.logo}
-                            </div>
-                            <span className="font-semibold text-gray-800 text-base">{site.title}</span>
-                          </div>
-                          <div className="flex-1 text-gray-700 text-sm mb-2">{site.desc}</div>
-                          <div className="flex items-center gap-2 mb-2">
-                            {site.nav.map((item, i) => (
-                              <span key={i} className="text-xs text-gray-500 bg-gray-100 rounded px-2 py-0.5 mr-1 last:mr-0">{item}</span>
-                            ))}
-                          </div>
-                          <button className="mt-auto bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-3 py-1 rounded shadow">
-                            {site.cta}
-                          </button>
-                        </div>
-                      </div>
-                    ))
-                  )}
-              </div>
-            </div>
-          ))}
+                {/* Media Area */}
+                <div 
+                  className="relative overflow-hidden bg-[#0A0A0A] success-story-media"
+                  style={{
+                    borderRadius: '16px 16px 0 0'
+                  }}
+                >
+                  <div className="absolute inset-0 group-hover:scale-105 transition-transform duration-300 ease-in-out">
+                    <Image
+                      src={story.image}
+                      alt={story.title}
+                      fill
+                      className="object-cover"
+                      style={{
+                        borderRadius: '16px 16px 0 0'
+                      }}
+                    />
+                  </div>
+                  {/* Gradient Overlay */}
+                  <div 
+                    className="absolute inset-0 transition-all duration-300 group-hover:opacity-100"
+                    style={{
+                      background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%)',
+                      opacity: '1'
+                    }}
+                  />
+                  
+                  {/* Brand Logo Overlay - Centered */}
+                  <div 
+                    className="absolute z-10 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105"
+                    style={{
+                      top: '50%',
+                      left: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      maxWidth: '150px',
+                      width: 'auto',
+                      height: 'auto',
+                      opacity: '0.8'
+                    }}
+                  >
+                    <Image
+                      src={story.logo}
+                      alt={story.brand}
+                      width={150}
+                      height={60}
+                      className="object-contain filter brightness-0 invert"
+                      style={{ maxWidth: '150px', height: 'auto' }}
+                    />
+                  </div>
+                </div>
+
+                {/* Card Content Area */}
+                <div 
+                  className="bg-[#111111] flex justify-between items-center border-t"
+                  style={{
+                    padding: '20px 24px',
+                    borderTop: '1px solid rgba(255,255,255,0.05)'
+                  }}
+                >
+                  {/* Title */}
+                  <h3 
+                    className="text-white flex-1 mr-4 transition-all duration-300 group-hover-title"
+                    style={{
+                      fontFamily: 'Inter, Poppins, sans-serif',
+                      fontWeight: '500',
+                      fontSize: '16px',
+                      textAlign: 'left'
+                    }}
+                  >
+                    {story.title}
+                  </h3>
+
+                  {/* CTA Link */}
+                  <a
+                    href={story.link}
+                    className="inline-flex items-center gap-1 font-medium transition-all duration-300 group-hover-cta"
+                    style={{
+                      fontSize: '14px',
+                      fontWeight: '500',
+                      color: '#00FFFF',
+                      textDecoration: 'none'
+                    }}
+                  >
+                    <span>Shop migration</span>
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
-        {/* Animations */}
+        
+        {/* Custom Styles for Responsive Heights and Hover Effects */}
         <style jsx>{`
-          @keyframes scroll-row-rtl {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+          /* Responsive Title Font Size */
+          .success-story-title {
+            font-size: 28px;
           }
-          @keyframes scroll-row-ltr {
-            0% { transform: translateX(-50%); }
-            100% { transform: translateX(0); }
+          
+          @media (min-width: 768px) {
+            .success-story-title {
+              font-size: 36px;
+            }
           }
-          .animate-scroll-row-rtl {
-            animation: scroll-row-rtl 40s linear infinite;
+          
+          @media (min-width: 1024px) {
+            .success-story-title {
+              font-size: 42px;
+            }
           }
-          .animate-scroll-row-ltr {
-            animation: scroll-row-ltr 40s linear infinite;
+          
+          /* Responsive Grid Gap */
+          .success-story-grid {
+            gap: 24px;
+          }
+          
+          @media (min-width: 768px) {
+            .success-story-grid {
+              gap: 32px;
+            }
+          }
+          
+          /* Responsive Image Heights */
+          .success-story-media {
+            height: 200px;
+          }
+          
+          @media (min-width: 768px) {
+            .success-story-media {
+              height: 220px;
+            }
+          }
+          
+          @media (min-width: 1024px) {
+            .success-story-media {
+              height: 260px;
+            }
+          }
+          
+          /* Hover Effects */
+          .group:hover .group-hover-title {
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3) !important;
+          }
+          
+          .group:hover .group-hover-cta {
+            color: #66FFFF !important;
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.4) !important;
+          }
+          
+          .group:hover .success-story-media > div[style*="background: linear-gradient"] {
+            background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%) !important;
           }
         `}</style>
       </section>
