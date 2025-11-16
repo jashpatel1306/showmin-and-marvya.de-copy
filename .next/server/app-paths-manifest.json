@@ -1,3 +1,4 @@
 {
-  "/ai-consulting/page": "app/ai-consulting/page.js"
+  "/ai-consulting/page": "app/ai-consulting/page.js",
+  "/about-us/page": "app/about-us/page.js"
 }

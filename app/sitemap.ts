@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://www.showmine.io'
-  const routes = ['', '/lead-generation', '/testimonials', '/career', '/shop-migration', '/management-system', '/ai-consulting']
+  const routes = ['', '/lead-generation', '/testimonials', '/career', '/shop-migration', '/management-system', '/ai-consulting', '/about-us']
   const now = new Date().toISOString()
   return routes.map((path) => ({
     url: `${base}${path || '/'}`,
