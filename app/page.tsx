@@ -1090,9 +1090,9 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal mb-4 md:mb-6 lg:mb-8 leading-tight mt-2 md:mt-3 px-2"
           >
-            We are <span className="text-red-500 italic font-normal">Your Partner</span> for
+            Showmine powers <span className="text-red-500 italic font-normal">brands to grow</span> in the digital world
             <br />
-            Holistic E-commerce Growth.
+            The performance standard in modern commerce.
           </motion.h1>
 
           <motion.div
@@ -1102,14 +1102,10 @@ export default function HomePage() {
             className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 md:mb-8 lg:mb-10 max-w-4xl mx-auto leading-relaxed text-white/90 px-4"
           >
             <p className="mb-1">
-              We offer everything you need for e-commerce success
-              <br />
-              — all from one source.
+            All-in-one e-commerce growth
             </p>
             <p>
-              With our support, you'll grow faster, work more efficiently,
-              <br />
-              and become more profitable than ever.
+            We help you move faster, operate efficiently, and increase profits.
             </p>
           </motion.div>
 
