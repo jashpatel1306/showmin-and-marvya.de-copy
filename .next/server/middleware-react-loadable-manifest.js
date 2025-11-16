@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST="{\"app/lead-generation/page.tsx -> @/components/ui/github-globe\":{\"id\":\"app/lead-generation/page.tsx -> @/components/ui/github-globe\",\"files\":[\"static/chunks/_app-pages-browser_components_ui_github-globe_tsx.js\"]},\"components/ui/globe-section.tsx -> ./github-three-globe\":{\"id\":\"components/ui/globe-section.tsx -> ./github-three-globe\",\"files\":[\"static/chunks/_app-pages-browser_components_ui_github-three-globe_tsx.js\"]}}"

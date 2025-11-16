@@ -112,7 +112,7 @@ export default function AboutUsPage() {
                                 <p className="text-gray-600">Co-Founder, CEO</p>
                             </div>
 
-                            {/* Brijesh Agarwal */}
+                            {/* Jainish patel */}
                             <div className="text-center">
                                 <div className="w-80 h-96 bg-gray-800 rounded-3xl mx-auto mb-6 overflow-hidden">
                                     <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900"></div>
@@ -332,44 +332,7 @@ export default function AboutUsPage() {
                     </div>
                 </div>
             </section>
-            {/* Content Section */}
-            <section className="py-12 md:py-20 bg-black">
-                <div className="max-w-4xl mx-auto px-6">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="prose prose-invert max-w-none"
-                    >
-                        <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
-                            <p>
-                                Welcome to SHOWMINE, your trusted partner for holistic e-commerce growth. We are a team of dedicated professionals committed to helping businesses achieve their digital commerce goals.
-                            </p>
 
-                            <p>
-                                With years of experience in the e-commerce industry, we understand the challenges and opportunities that come with running an online business. Our mission is to provide expert guidance, proven processes, and measurable results that drive sustainable growth.
-                            </p>
-
-                            <p>
-                                We specialize in Shopify development, growth consulting, and comprehensive e-commerce solutions. Our team combines technical expertise with strategic thinking to deliver solutions that not only meet your current needs but also scale with your business.
-                            </p>
-
-                            <p>
-                                At SHOWMINE, we believe in building long-term partnerships. We work closely with our clients to understand their unique challenges and goals, ensuring that every solution we deliver is tailored to their specific needs.
-                            </p>
-
-                            <p>
-                                Our approach is data-driven and results-oriented. We measure success not just by the projects we complete, but by the growth and success of our clients' businesses. We are proud to have helped numerous e-commerce brands achieve significant growth and profitability.
-                            </p>
-
-                            <p>
-                                Whether you're looking to migrate to Shopify, optimize your existing store, or develop a comprehensive growth strategy, we're here to help you succeed. Let's work together to take your e-commerce business to the next level.
-                            </p>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
         </div>
     )
 }
