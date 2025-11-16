@@ -745,11 +745,11 @@ const TextGenerateEffectinTitleAndSubtitle = ({
 
 // Client data for tooltips
 const clients = [
-  { id: 1, name: 'Client 1', designation: 'E-commerce Store', image: '/client/client1.png' },
-  { id: 2, name: 'Client 2', designation: 'Fashion Brand', image: '/client/client2.png' },
-  { id: 3, name: 'Client 3', designation: 'Tech Startup', image: '/client/client3.png' },
-  { id: 4, name: 'Client 4', designation: 'Luxury Goods', image: '/client/client4.png' },
-  { id: 5, name: 'Client 5', designation: 'Beauty Products', image: '/client/client5.png' },
+  { id: 1, name: 'Lucas Alves', designation: 'Beauty Brand', image: '/client/client1.png' },
+  { id: 2, name: 'Paul Helder', designation: 'Media and DSTRCT GROUP', image: '/client/client2.png' },
+  { id: 3, name: 'Robbie Filipovic', designation: 'E-commerce', image: '/client/client3.png' },
+  { id: 4, name: 'Josh', designation: 'AI Tech Startup', image: '/client/client4.png' },
+  { id: 5, name: 'Tanja Telders', designation: 'fashion Products', image: '/client/client5.png' },
 
 ];
 
@@ -1088,7 +1088,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal mb-4 md:mb-6 lg:mb-8 leading-tight mt-2 md:mt-3 px-2"
+            className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-normal mb-4 md:mb-6 lg:mb-8 leading-tight mt-2 md:mt-3 px-2"
           >
             Showmine powers <span className="text-red-500 italic font-normal">brands to grow</span> in the digital world
             <br />
