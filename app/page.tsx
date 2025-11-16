@@ -1079,7 +1079,7 @@ export default function HomePage() {
                   <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <span className="text-sm text-white/90 mt-0.5">350+ successful customers</span>
+              <span className="text-sm text-white/90 mt-0.5">190+ successful customers</span>
             </div>
 
           </motion.div>
