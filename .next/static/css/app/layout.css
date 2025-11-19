@@ -2747,6 +2747,10 @@ video {
 .text-destructive {
   color: hsl(var(--destructive));
 }
+.text-fuchsia-400 {
+  --tw-text-opacity: 1;
+  color: rgb(232 121 249 / var(--tw-text-opacity, 1));
+}
 .underline-offset-4 {
   text-underline-offset: 4px;
 }

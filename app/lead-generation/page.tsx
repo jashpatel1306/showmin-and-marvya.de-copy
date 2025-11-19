@@ -387,14 +387,14 @@ export default function LeadGenerationPage() {
       </section>
 
       {/* ComparisonSection */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <div className="inline-flex items-center space-x-2 mb-4">
               <span className="text-4xl">🚀</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Why Choose Xpercent Growth?
+              Why Choose Showmine Growth?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               See the difference between outdated methods and our proven approach
@@ -425,7 +425,7 @@ export default function LeadGenerationPage() {
             <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 border-2 border-primary/20 shadow-lg">
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-foreground mb-2">
-                  What We Do at Xpercent Growth
+                  What We Do at Showmine Growth
                 </h3>
                 <p className="text-sm text-primary">Advanced, proven strategies that work</p>
               </div>
@@ -434,7 +434,7 @@ export default function LeadGenerationPage() {
                 {ourFeatures.map((feature, index) => (
                   <div key={index} className="flex items-start space-x-3">
                     <div className="flex-shrink-0 w-5 h-5 rounded-full bg-success/20 flex items-center justify-center mt-0.5">
-                      <Check className="w-3 h-3 text-success" />
+                      <Check className="w-3 h-3 text-green-500" />
                     </div>
                     <p className="text-sm text-foreground font-medium">{feature}</p>
                   </div>
