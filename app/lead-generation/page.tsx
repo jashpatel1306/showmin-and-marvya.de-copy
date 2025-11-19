@@ -15,6 +15,7 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 import { GlobeSection } from "@/components/ui/globe-section";
 import { UseCasesSection } from "@/components/ui/use-cases-section";
 import { cn } from "@/lib/utils"
+import { Check, X } from "lucide-react";
 
 // FAQ Accordion Component
 function FAQAccordion() {
@@ -189,6 +190,8 @@ const TextGenerateEffectinTitleAndSubtitle = ({
   );
 };
 
+
+
 export default function LeadGenerationPage() {
   const features = [
     {
@@ -212,6 +215,23 @@ export default function LeadGenerationPage() {
       description: "Sync directly with your sales tools and workflows."
     }
   ]
+
+  const othersFeatures = [
+    "Outdated databases with <40% accuracy",
+    "Wrong emails that land in spam",
+    "Invalid phone numbers that never reach decision-makers",
+    "Generic outreach templates that fail to convert",
+    "Lack of understanding of Indian B2B markets"
+  ];
+
+  const ourFeatures = [
+    "Updated databases refreshed every month",
+    "80%+ data accuracy, 95% email deliverability",
+    "Verified phone numbers of decision-makers",
+    "95% inbox placement rate (almost no spam)",
+    "Industry-specific targeting, not generic",
+    "Proven to generate 3x more business"
+  ];
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -366,6 +386,64 @@ export default function LeadGenerationPage() {
         </div>
       </section>
 
+      {/* ComparisonSection */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center space-x-2 mb-4">
+              <span className="text-4xl">🚀</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Why Choose Xpercent Growth?
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              See the difference between outdated methods and our proven approach
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* What Others Do */}
+            <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-foreground mb-2">What Others Do</h3>
+                <p className="text-sm text-muted-foreground">Old-fashioned, ineffective approaches</p>
+              </div>
+
+              <div className="space-y-4">
+                {othersFeatures.map((feature, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-destructive/10 flex items-center justify-center mt-0.5">
+                      <X className="w-3 h-3 text-destructive" />
+                    </div>
+                    <p className="text-sm text-foreground/80">{feature}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* What We Do */}
+            <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 border-2 border-primary/20 shadow-lg">
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-foreground mb-2">
+                  What We Do at Xpercent Growth
+                </h3>
+                <p className="text-sm text-primary">Advanced, proven strategies that work</p>
+              </div>
+
+              <div className="space-y-4">
+                {ourFeatures.map((feature, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-success/20 flex items-center justify-center mt-0.5">
+                      <Check className="w-3 h-3 text-success" />
+                    </div>
+                    <p className="text-sm text-foreground font-medium">{feature}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Best Services We Present Section */}
       <section className="relative overflow-hidden bg-white">
