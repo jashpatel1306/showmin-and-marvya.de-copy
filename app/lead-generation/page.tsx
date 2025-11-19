@@ -251,216 +251,117 @@ export default function LeadGenerationPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-24 md:pt-28 pb-14 md:pb-16 overflow-hidden bg-gradient-to-b from-black to-gray-900">
-        <div className="absolute inset-0 z-0 opacity-40">
-          <GitHubGlobe />
-        </div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Side - Text Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-              className="space-y-6 md:space-y-7 relative z-10"
-            >
-              <motion.div
-                className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-900/50 border border-gray-800 mb-3 overflow-hidden"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-              >
-                <motion.span
-                  className="w-2 h-2 bg-[#4B6F93] rounded-full mr-2"
-                  animate={{
-                    boxShadow: ['0 0 0 0 rgba(75, 111, 147, 0.7)', '0 0 0 10px rgba(75, 111, 147, 0)'],
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    ease: 'easeOut'
-                  }}
-                />
-                <span className="text-xs md:text-sm font-medium text-gray-300">AI-Powered Lead Generation</span>
-              </motion.div>
-
-              <motion.h1
-                className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight bg-clip-text text-transparent text-white"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                <motion.span
-                  className="inline-block"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                >
-                  ✨ Get Public Data Alive
-                </motion.span>
-              </motion.h1>
-
-              <motion.p
-                className="text-base sm:text-lg text-gray-300 leading-relaxed"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-              >
-                Showmine enables you to extract valuable business data from Google Maps and other reliable sources with ease. Our platform is designed to be simple, intuitive, and efficient—allowing you to log in, collect data instantly, and gain accurate insights to help grow your business.
-              </motion.p>
-
-              <motion.p
-                className="text-sm sm:text-base text-gray-400"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-              >
-                We know your time is valuable, which is why we've built Livescraper to be as straightforward and user-friendly as possible. Once you sign up, you'll have full access to all features. After extracting the data, you can quickly download it and analyze it to uncover new opportunities.
-              </motion.p>
-
-              <motion.div
-                className="flex flex-col sm:flex-row gap-3 pt-2"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-              >
-                <motion.div
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Button className="relative overflow-hidden group bg-gradient-to-r from-[#4B6F93] to-[#5A87E4] text-white px-6 py-4 text-base rounded-lg transition-all duration-300 transform">
-                    <span className="relative z-10">Get Started</span>
-                    <motion.span
-                      className="absolute inset-0 bg-gradient-to-r from-[#5A87E4] to-[#4B6F93] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      initial={{ x: '-100%' }}
-                      whileHover={{ x: '0%' }}
-                      transition={{ duration: 0.5 }}
-                    />
-                  </Button>
-                </motion.div>
-              </motion.div>
-
-              {/* Animated background elements */}
-              <motion.div
-                className="absolute -z-10 -top-20 -left-20 w-64 h-64 bg-[#4B6F93]/10 rounded-full filter blur-3xl"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.1, 0.2, 0.1],
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: 'easeInOut'
-                }}
-              />
-            </motion.div>
-
-            {/* Right Side - Image Grid */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative w-full h-[380px] sm:h-[440px] md:h-[500px]"
-            >
-              {/* Main Featured Image */}
-              <motion.div
-                className="absolute w-[68%] sm:w-[70%] h-[58%] sm:h-[60%] rounded-2xl overflow-hidden shadow-2xl z-10 right-0 top-0"
-                initial={{ y: -20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                <img
-                  src="/leadgeneration/scraper1.png"
-                  alt="Lead Generation Dashboard"
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-
-              {/* Top Left Image */}
-              <motion.div
-                className="absolute w-[42%] sm:w-[45%] h-[36%] sm:h-[40%] rounded-2xl overflow-hidden shadow-2xl left-0 top-0 z-20"
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
-                <img
-                  src="/leadgeneration/scraper2.png"
-                  alt="Data Extraction"
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-
-              {/* Bottom Left Image */}
-              <motion.div
-                className="absolute w-[38%] sm:w-[40%] h-[40%] sm:h-[45%] rounded-2xl overflow-hidden shadow-2xl left-0 bottom-0 z-10"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-              >
-                <img
-                  src="/leadgeneration/scraper3.png"
-                  alt="Lead Management"
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-
-              {/* Bottom Right Image */}
-              <motion.div
-                className="absolute w-[46%] sm:w-[50%] h-[32%] sm:h-[35%] rounded-2xl overflow-hidden shadow-2xl right-0 bottom-0 z-20"
-                initial={{ y: 20, x: 20, opacity: 0 }}
-                animate={{ y: 0, x: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 1 }}
-              >
-                <img
-                  src="/leadgeneration/scraper4.png"
-                  alt="Analytics Dashboard"
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-
-              {/* Animated Decorative Elements */}
-              <div className="absolute -z-10 w-full h-full">
-                <motion.div
-                  className="absolute w-64 h-64 bg-[#4B6F93]/20 rounded-full -top-32 -left-32 filter blur-3xl"
-                  animate={{
-                    x: [0, 10, 0],
-                    y: [0, 15, 0],
-                  }}
-                  transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                />
-                <motion.div
-                  className="absolute w-96 h-96 bg-[#4B6F93]/10 rounded-full -bottom-48 -right-48 filter blur-3xl"
-                  animate={{
-                    x: [0, -15, 0],
-                    y: [0, 10, 0],
-                  }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1
-                  }}
-                />
-                <motion.div
-                  className="absolute w-40 h-40 bg-[#5A87E4]/10 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 filter blur-2xl"
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    opacity: [0.1, 0.2, 0.1],
-                  }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 0.5
-                  }}
-                />
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="container mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+                  India's Trusted{" "}
+                  <span className="text-primary">B2B Lead Generation</span>{" "}
+                  Partner
+                </h1>
+                <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl">
+                  We help established Indian businesses get new clients using advanced,
+                  global-standard technology — not outdated databases or cookie-cutter methods.
+                </p>
               </div>
-            </motion.div>
+
+              <div className="flex flex-wrap gap-4">
+                <Button size="lg" className="text-base px-8">
+                  Work With Us
+                </Button>
+                <Button size="lg" variant="outline" className="text-base px-8">
+                  Book a Call
+                </Button>
+              </div>
+
+              {/* Key Stats */}
+              <div className="grid grid-cols-3 gap-6 pt-8">
+                <div>
+                  <div className="text-3xl font-bold text-foreground">80%+</div>
+                  <div className="text-sm text-muted-foreground">Data Accuracy</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-foreground">95%</div>
+                  <div className="text-sm text-muted-foreground">Email Deliverability</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-foreground">3x</div>
+                  <div className="text-sm text-muted-foreground">More Business</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Dashboard Preview */}
+            <div className="relative">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/20 dark:to-blue-900/20 rounded-2xl p-8 border border-border shadow-lg">
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-2">
+                    <div className="flex space-x-1">
+                      <div className="w-2 h-2 rounded-full bg-muted"></div>
+                      <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    </div>
+                    <span className="text-sm font-medium text-muted-foreground">Live Results Dashboard</span>
+                  </div>
+
+                  <div>
+                    <h3 className="text-2xl font-bold text-foreground mb-2">Real Client Success Metrics</h3>
+                    <p className="text-sm text-muted-foreground">See what our advanced B2B strategies deliver</p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-success-light dark:bg-success-light rounded-xl p-4 border border-success/20">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="w-3 h-3 rounded-full bg-success"></div>
+                      </div>
+                      <div className="text-2xl font-bold text-foreground mb-1">₹2.8Cr+</div>
+                      <div className="text-xs font-medium text-foreground/80 mb-1">Revenue Generated</div>
+                      <div className="text-xs text-muted-foreground">For our clients in 2024</div>
+                      <div className="mt-3 h-1.5 bg-success rounded-full w-4/5"></div>
+                    </div>
+
+                    <div className="bg-info-light dark:bg-info-light rounded-xl p-4 border border-info/20">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="w-3 h-3 rounded-full bg-info"></div>
+                      </div>
+                      <div className="text-2xl font-bold text-foreground mb-1">847</div>
+                      <div className="text-xs font-medium text-foreground/80 mb-1">Qualified Leads</div>
+                      <div className="text-xs text-muted-foreground">Delivered this quarter</div>
+                      <div className="mt-3 h-1.5 bg-info rounded-full w-full"></div>
+                    </div>
+
+                    <div className="bg-card rounded-xl p-4 border border-border">
+                      <div className="text-2xl font-bold text-foreground mb-1">67%</div>
+                      <div className="text-xs font-medium text-foreground/80 mb-1">Meeting Rate</div>
+                      <div className="text-xs text-muted-foreground">From cold outreach</div>
+                    </div>
+
+                    <div className="bg-card rounded-xl p-4 border border-border">
+                      <div className="text-2xl font-bold text-foreground mb-1">4.9★</div>
+                      <div className="text-xs font-medium text-foreground/80 mb-1">Client Rating</div>
+                      <div className="text-xs text-muted-foreground">Average satisfaction score</div>
+                    </div>
+                  </div>
+
+                  <div className="bg-card rounded-xl p-4 border border-border">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <div className="text-xs text-muted-foreground mb-2">Latest Success Story</div>
+                        <div className="text-sm font-semibold text-foreground mb-2">
+                          "300% increase in qualified leads within 90 days"
+                        </div>
+                        <div className="text-xs text-muted-foreground">- Manufacturing company, Mumbai</div>
+                      </div>
+                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <span className="text-primary">🚀</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -596,10 +497,10 @@ export default function LeadGenerationPage() {
             </span>
             .
           </h2>
-          
+
           <div className="max-w-4xl mx-auto space-y-2">
             <p className="text-[#A3A3A3] text-[18px] ">
-            Below are few examples of how our Google Maps Scraper can be beneficial in helping you attain your objectives.
+              Below are few examples of how our Google Maps Scraper can be beneficial in helping you attain your objectives.
             </p>
           </div>
         </motion.div>
