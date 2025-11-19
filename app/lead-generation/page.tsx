@@ -754,10 +754,11 @@ export default function LeadGenerationPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-3xl lg:text-4xl font-light text-white mb-6 leading-tight">
-              Ready to streamline your
-              <br />
-              business operations?
+            Start Your Lead Generation Today
             </h2>
+            <p>
+            "In India's fast-growing B2B market, staying ahead isn't optional — it's survival. At Xpercent Growth, we make sure you don't just compete, you win."
+            </p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
