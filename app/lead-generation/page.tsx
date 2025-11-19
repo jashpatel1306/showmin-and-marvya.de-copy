@@ -289,11 +289,8 @@ export default function LeadGenerationPage() {
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="text-base px-8">
-                  Work With Us
-                </Button>
-                <Button size="lg" variant="outline" className="text-base px-8">
-                  Book a Call
+                <Button size="lg" className="text-base px-8 bg-[#4B6F93] hover:bg-[rgb(75, 111, 147)] text-white">
+                Book a Call
                 </Button>
               </div>
 
@@ -756,8 +753,8 @@ export default function LeadGenerationPage() {
             <h2 className="text-3xl md:text-3xl lg:text-4xl font-light text-white mb-6 leading-tight">
             Start Your Lead Generation Today
             </h2>
-            <p>
-            "In India's fast-growing B2B market, staying ahead isn't optional — it's survival. At Xpercent Growth, we make sure you don't just compete, you win."
+            <p className="text-white text-lg mb-6 leading-7">
+            "In India's fast-growing B2B market, staying ahead isn't optional — it's survival. At Showmine Growth, we make sure you don't just compete, you win."
             </p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

@@ -55,24 +55,24 @@ export function GlobeSection() {
             
             <div className="grid grid-cols-2 gap-4 mt-8">
               <div className="space-y-2">
-                <h3 className="text-3xl font-bold text-blue-600">50+</h3>
+                <h3 className="text-3xl font-bold text-foreground">50+</h3>
                 <p className="text-gray-600">Countries Served</p>
               </div>
               <div className="space-y-2">
-                <h3 className="text-3xl font-bold text-blue-600">100+</h3>
+                <h3 className="text-3xl font-bold text-foreground">100+</h3>
                 <p className="text-gray-600">Happy Clients</p>
               </div>
               <div className="space-y-2">
-                <h3 className="text-3xl font-bold text-blue-600">24/7</h3>
+                <h3 className="text-3xl font-bold text-foreground">24/7</h3>
                 <p className="text-gray-600">Support</p>
               </div>
               <div className="space-y-2">
-                <h3 className="text-3xl font-bold text-blue-600">99.9%</h3>
+                <h3 className="text-3xl font-bold text-foreground">99.9%</h3>
                 <p className="text-gray-600">Uptime</p>
               </div>
             </div>
             
-            <button className="mt-8 px-8 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200">
+            <button className="mt-8 px-8 py-3 bg-[#4B6F93] hover:bg-[rgb(75, 111, 147)] text-white rounded-lg font-medium transition-colors duration-200">
               Get Started Today
             </button>
           </motion.div>

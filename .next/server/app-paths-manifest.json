@@ -1,5 +1,5 @@
 {
-  "/ai-consulting/page": "app/ai-consulting/page.js",
   "/page": "app/page.js",
+  "/ai-consulting/page": "app/ai-consulting/page.js",
   "/lead-generation/page": "app/lead-generation/page.js"
 }
