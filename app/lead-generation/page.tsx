@@ -6,7 +6,7 @@ import { Navigation } from "@/components/navigation"
 import Script from "next/script"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Brain, Target, BarChart3, Zap, MapPin, Star, Search, Mail, Plus, ArrowRight } from "lucide-react"
+import { Brain, Target, BarChart3, Zap, MapPin, Star, Search, Mail, Plus, ArrowRight, Filter, MessageCircle, CheckCircle, Quote } from "lucide-react"
 import dynamic from 'next/dynamic'
 const GitHubGlobe = dynamic(() => import("@/components/ui/github-globe").then(m => m.GitHubGlobe), { ssr: false })
 import { Beams } from "@/components/ui/beams"
@@ -233,6 +233,57 @@ export default function LeadGenerationPage() {
     "Proven to generate 3x more business"
   ];
 
+  const steps = [
+    {
+      number: "1",
+      icon: Target,
+      title: "Identify Your Target Audience",
+      description: "We analyze your business to understand their ideal customer profile and market segments."
+    },
+    {
+      number: "2",
+      icon: Search,
+      title: "Find the Right-Fit Customers",
+      description: "Using advanced tools and databases, we locate businesses that match your criteria perfectly."
+    },
+    {
+      number: "3",
+      icon: Filter,
+      title: "Filter and Validate Leads",
+      description: "Every lead is verified for accuracy, ensuring you get quality contacts, not quantity."
+    },
+    {
+      number: "4",
+      icon: MessageCircle,
+      title: "Reach Through Best Channels",
+      description: "Multi-channel outreach via email, WhatsApp, and phone for maximum engagement."
+    },
+    {
+      number: "5",
+      icon: CheckCircle,
+      title: "Direct Contacts & Booked Calls",
+      description: "You receive warm leads and scheduled calls with qualified prospects ready to discuss business."
+    }
+  ];
+
+  const testimonials = [
+    {
+      quote: "For over 42 years, Hanu Prints has been serving clients in packaging solutions. But in the last few years, finding the right kind of B2B leads had become a real challenge. With Xpercent Growth, we finally saw a breakthrough. The quality of leads was excellent, every conversation was relevant, and within the first 3 months we closed multiple deals with clients we never thought we'd reach.",
+      author: "Rachit Mittal",
+      position: "Founder, Hanu Prints"
+    },
+    {
+      quote: "I've been running my manufacturing solutions business for 10 years, and most agencies I worked with before wasted my time with outdated data and irrelevant prospects. Xpercent Growth was different. Within weeks, we started talking to actual decision-makers from industries we were targeting. The leads converted into real opportunities, and our sales pipeline grew by almost 2.5x in just one quarter.",
+      author: "Punit Kumar",
+      position: "Director, Manufacturing Solutions Company"
+    },
+    {
+      quote: "Our software for the manufacturing sector is highly niche, and most lead generation companies couldn't understand our market. Xpercent Growth not only understood it but delivered qualified prospects consistently. We saw a 95% email deliverability rate, hardly any spam issues, and our team was able to book calls with top decision-makers in large factories.",
+      author: "Sunit Kumar",
+      position: "Founder, Manufacturing Software Firm"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-black text-white">
       <Script id="ld-breadcrumb-leadgen" type="application/ld+json" strategy="afterInteractive">
@@ -290,7 +341,7 @@ export default function LeadGenerationPage() {
 
               <div className="flex flex-wrap gap-4">
                 <Button size="lg" className="text-base px-8 bg-[#4B6F93] hover:bg-[rgb(75, 111, 147)] text-white">
-                Book a Call
+                  Book a Call
                 </Button>
               </div>
 
@@ -329,9 +380,9 @@ export default function LeadGenerationPage() {
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-success-light dark:bg-success-light rounded-xl p-4 border border-success/20">
+                    <div className="bg-green-light dark:bg-success-light rounded-xl p-4 border border-success/20">
                       <div className="flex items-center justify-between mb-2">
-                        <div className="w-3 h-3 rounded-full bg-success"></div>
+                        <div className="w-3 h-3 rounded-full bg-green"></div>
                       </div>
                       <div className="text-2xl font-bold text-foreground mb-1">₹2.8Cr+</div>
                       <div className="text-xs font-medium text-foreground/80 mb-1">Revenue Generated</div>
@@ -369,7 +420,7 @@ export default function LeadGenerationPage() {
                         <div className="text-sm font-semibold text-foreground mb-2">
                           "300% increase in qualified leads within 90 days"
                         </div>
-                        <div className="text-xs text-muted-foreground">- Manufacturing company, Mumbai</div>
+                        {/* <div className="text-xs text-muted-foreground">- Manufacturing company, Mumbai</div> */}
                       </div>
                       <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <span className="text-primary">🚀</span>
@@ -544,8 +595,62 @@ export default function LeadGenerationPage() {
       <GlobeSection />
 
       {/* Use Cases & Pricing Section */}
-      <UseCasesSection />
+      {/* <UseCasesSection /> */}
 
+      {/* ProcessSection section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Our Proven Process
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              A systematic approach that delivers consistent results for your business
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto space-y-8">
+            {steps.map((step, index) => (
+              <div
+                key={index}
+                className="relative bg-card rounded-xl p-8 border border-border shadow-sm hover:shadow-md transition-all duration-300"
+              >
+                <div className="flex flex-col md:flex-row gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="relative">
+                      <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
+                        <span className="text-2xl font-bold text-primary-foreground">{step.number}</span>
+                      </div>
+                      <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <step.icon className="w-5 h-5 text-primary" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-foreground mb-3">
+                      {step.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block absolute left-8 top-full w-0.5 h-8 bg-border -translate-x-1/2"></div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" className="text-white px-8 bg-[#4B6F93] hover:bg-[rgb(75, 111, 147)]">
+              Book a Call With Us Today
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* More than just a migration Section */}
       <section className="relative py-20 bg-white overflow-hidden">
@@ -717,6 +822,50 @@ export default function LeadGenerationPage() {
         </div>
       </section>
 
+{/* TestimonialsSection  */}
+<section className="py-20 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            What Our Clients Say
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Real results from real Indian businesses who trust us with their growth
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+          {testimonials.map((testimonial, index) => (
+            <div 
+              key={index}
+              className="bg-card rounded-xl p-8 border border-border shadow-sm hover:shadow-lg transition-all duration-300 relative"
+            >
+              <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <Quote className="w-5 h-5 text-primary" />
+              </div>
+              
+              <div className="mb-6">
+                <p className="text-foreground/90 leading-relaxed italic">
+                  "{testimonial.quote}"
+                </p>
+              </div>
+              
+              <div className="border-t border-border pt-4">
+                <p className="font-bold text-foreground">{testimonial.author}</p>
+                <p className="text-sm text-muted-foreground">{testimonial.position}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div className="text-center">
+          <Button size="lg" className="text-base px-8">
+            Work With Us
+          </Button>
+        </div>
+      </div>
+    </section>
+
       {/* FAQ Section */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6 md:px-8">
@@ -751,10 +900,10 @@ export default function LeadGenerationPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-3xl lg:text-4xl font-light text-white mb-6 leading-tight">
-            Start Your Lead Generation Today
+              Start Your Lead Generation Today
             </h2>
             <p className="text-white text-lg mb-6 leading-7">
-            "In India's fast-growing B2B market, staying ahead isn't optional — it's survival. At Showmine Growth, we make sure you don't just compete, you win."
+              "In India's fast-growing B2B market, staying ahead isn't optional — it's survival. At Showmine Growth, we make sure you don't just compete, you win."
             </p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
