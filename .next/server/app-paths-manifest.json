@@ -1,5 +1,5 @@
 {
   "/bulk-email-automation/page": "app/bulk-email-automation/page.js",
-  "/page": "app/page.js",
-  "/lead-generation/page": "app/lead-generation/page.js"
+  "/lead-generation/page": "app/lead-generation/page.js",
+  "/page": "app/page.js"
 }
