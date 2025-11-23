@@ -380,24 +380,24 @@ export default function LeadGenerationPage() {
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-green-light dark:bg-success-light rounded-xl p-4 border border-success/20">
+                    <div className="bg-green-100 dark:bg-success-light rounded-xl p-4 border border-success/20">
                       <div className="flex items-center justify-between mb-2">
                         <div className="w-3 h-3 rounded-full bg-green"></div>
                       </div>
-                      <div className="text-2xl font-bold text-foreground mb-1">₹2.8Cr+</div>
+                      <div className="text-2xl font-bold text-green-600 mb-1">₹1.6Cr+</div>
                       <div className="text-xs font-medium text-foreground/80 mb-1">Revenue Generated</div>
                       <div className="text-xs text-muted-foreground">For our clients in 2024</div>
-                      <div className="mt-3 h-1.5 bg-success rounded-full w-4/5"></div>
+                      <div className="mt-3 h-1.5 bg-green-700 rounded-full w-4/5"></div>
                     </div>
 
-                    <div className="bg-info-light dark:bg-info-light rounded-xl p-4 border border-info/20">
+                    <div className="bg-gray-200 dark:bg-info-light rounded-xl p-4 border border-info/20">
                       <div className="flex items-center justify-between mb-2">
                         <div className="w-3 h-3 rounded-full bg-info"></div>
                       </div>
                       <div className="text-2xl font-bold text-foreground mb-1">847</div>
                       <div className="text-xs font-medium text-foreground/80 mb-1">Qualified Leads</div>
                       <div className="text-xs text-muted-foreground">Delivered this quarter</div>
-                      <div className="mt-3 h-1.5 bg-info rounded-full w-full"></div>
+                      <div className="mt-3 h-1.5 bg-gray-700 rounded-full w-full"></div>
                     </div>
 
                     <div className="bg-card rounded-xl p-4 border border-border">
@@ -406,7 +406,7 @@ export default function LeadGenerationPage() {
                       <div className="text-xs text-muted-foreground">From cold outreach</div>
                     </div>
 
-                    <div className="bg-card rounded-xl p-4 border border-border">
+                    <div className="bg-blue-100 rounded-xl p-4 border border-border">
                       <div className="text-2xl font-bold text-foreground mb-1">4.9★</div>
                       <div className="text-xs font-medium text-foreground/80 mb-1">Client Rating</div>
                       <div className="text-xs text-muted-foreground">Average satisfaction score</div>
