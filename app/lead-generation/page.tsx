@@ -268,17 +268,17 @@ export default function LeadGenerationPage() {
 
   const testimonials = [
     {
-      quote: "For over 42 years, Hanu Prints has been serving clients in packaging solutions. But in the last few years, finding the right kind of B2B leads had become a real challenge. With Xpercent Growth, we finally saw a breakthrough. The quality of leads was excellent, every conversation was relevant, and within the first 3 months we closed multiple deals with clients we never thought we'd reach.",
+      quote: "For over 42 years, Hanu Prints has been serving clients in packaging solutions. But in the last few years, finding the right kind of B2B leads had become a real challenge. With Showmine Growth, we finally saw a breakthrough. The quality of leads was excellent, every conversation was relevant, and within the first 3 months we closed multiple deals with clients we never thought we'd reach.",
       author: "Rachit Mittal",
       position: "Founder, Hanu Prints"
     },
     {
-      quote: "I've been running my manufacturing solutions business for 10 years, and most agencies I worked with before wasted my time with outdated data and irrelevant prospects. Xpercent Growth was different. Within weeks, we started talking to actual decision-makers from industries we were targeting. The leads converted into real opportunities, and our sales pipeline grew by almost 2.5x in just one quarter.",
+      quote: "I've been running my manufacturing solutions business for 10 years, and most agencies I worked with before wasted my time with outdated data and irrelevant prospects. Showmine Growth was different. Within weeks, we started talking to actual decision-makers from industries we were targeting. The leads converted into real opportunities, and our sales pipeline grew by almost 2.5x in just one quarter.",
       author: "Punit Kumar",
       position: "Director, Manufacturing Solutions Company"
     },
     {
-      quote: "Our software for the manufacturing sector is highly niche, and most lead generation companies couldn't understand our market. Xpercent Growth not only understood it but delivered qualified prospects consistently. We saw a 95% email deliverability rate, hardly any spam issues, and our team was able to book calls with top decision-makers in large factories.",
+      quote: "Our software for the manufacturing sector is highly niche, and most lead generation companies couldn't understand our market. Showmine Growth not only understood it but delivered qualified prospects consistently. We saw a 95% email deliverability rate, hardly any spam issues, and our team was able to book calls with top decision-makers in large factories.",
       author: "Sunit Kumar",
       position: "Founder, Manufacturing Software Firm"
     }
