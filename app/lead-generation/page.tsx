@@ -352,7 +352,7 @@ export default function LeadGenerationPage() {
                   <div className="text-sm text-muted-foreground">Data Accuracy</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-foreground">95%</div>
+                  <div className="text-3xl font-bold text-foreground">92%</div>
                   <div className="text-sm text-muted-foreground">Email Deliverability</div>
                 </div>
                 <div>
@@ -453,7 +453,7 @@ export default function LeadGenerationPage() {
             {/* What Others Do */}
             <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-foreground mb-2">What Others Do</h3>
+                <h3 className="text-2xl font-bold text-red-400 mb-2">What Others Do</h3>
                 <p className="text-sm text-muted-foreground">Old-fashioned, ineffective approaches</p>
               </div>
 
@@ -472,7 +472,7 @@ export default function LeadGenerationPage() {
             {/* What We Do */}
             <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 border-2 border-primary/20 shadow-lg">
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-foreground mb-2">
+                <h3 className="text-2xl font-bold text-green-400 mb-2">
                   What We Do at Showmine Growth
                 </h3>
                 <p className="text-sm text-primary">Advanced, proven strategies that work</p>
