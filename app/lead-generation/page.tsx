@@ -903,7 +903,7 @@ export default function LeadGenerationPage() {
               Start Your Lead Generation Today
             </h2>
             <p className="text-white text-lg mb-6 leading-7">
-              "In India's fast-growing B2B market, staying ahead isn't optional — it's survival. At Showmine Growth, we make sure you don't just compete, you win."
+              "In world's fast-growing B2B market, staying ahead isn't optional — it's survival. At Showmine Growth, we make sure you don't just compete, you win."
             </p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
