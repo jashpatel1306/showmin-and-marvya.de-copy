@@ -2,9 +2,10 @@
 
 import React from "react"
 import { Navigation } from "@/components/navigation"
-import { motion, useAnimate } from "framer-motion"
+import { motion } from "framer-motion"
 import { ArrowRight, Zap, Shield, LucideIcon, CheckCircle2, Users, Mail, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Script from "next/script"
 
 interface Feature {
     icon?: string;
@@ -88,6 +89,36 @@ const features: Feature[] = [
   ];
 
 export default function BulkEmailAutomationPage() {
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.showmine.io/' },
+      { '@type': 'ListItem', position: 2, name: 'Bulk Email Automation', item: 'https://www.showmine.io/bulk-email-automation' }
+    ]
+  };
+
+  const softwareLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'SHOWMINE Bulk Email Automation',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    url: 'https://www.showmine.io/bulk-email-automation',
+    description: 'Launch, automate, and track high-converting bulk email campaigns with SHOWMINE.',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'INR',
+      availability: 'https://schema.org/InStock',
+      url: 'https://www.showmine.io/bulk-email-automation'
+    },
+    provider: {
+      '@type': 'Organization',
+      name: 'SHOWMINE',
+      url: 'https://www.showmine.io'
+    }
+  };
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -110,6 +141,12 @@ export default function BulkEmailAutomationPage() {
   return (
     <div>
     <div className="min-h-screen bg-black text-white">
+      <Script id="ld-breadcrumb-bulk-email" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify(breadcrumbLd)}
+      </Script>
+      <Script id="ld-software-bulk-email" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify(softwareLd)}
+      </Script>
       <Navigation />
       
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 px-6 py-24 lg:py-32">
