@@ -12,6 +12,33 @@ import Image from "next/image"
 import Script from "next/script"
 import { cn } from "@/lib/utils"
 
+const integrationRows = [
+  [
+    { name: "Stripe", icon: "https://xdevsolutions.com/image/icons/stripe.png" },
+    { name: "Claude", icon: "https://xdevsolutions.com/image/icons/Claude.png" },
+    { name: "Copilot", icon: "https://xdevsolutions.com/image/icons/Copilot.png" },
+    { name: "Cursor", icon: "https://xdevsolutions.com/image/icons/cursor.png" },
+    { name: "Figma", icon: "https://xdevsolutions.com/image/icons/figma.png" },
+    { name: "Framer", icon: "https://xdevsolutions.com/image/icons/Framer.png" },
+  ],
+  [
+    { name: "Gemini", icon: "https://xdevsolutions.com/image/icons/gemini2.png" },
+    { name: "Gmail", icon: "https://xdevsolutions.com/image/icons/gmail.png" },
+    { name: "Google AI Studio", icon: "https://xdevsolutions.com/image/icons/Google_ai_studio_logo.png" },
+    { name: "Grok", icon: "https://xdevsolutions.com/image/icons/Grok.png" },
+    { name: "OpenAI", icon: "https://xdevsolutions.com/image/icons/openai3.png" },
+    { name: "Perplexity", icon: "https://xdevsolutions.com/image/icons/perpexity.png" },
+  ],
+  [
+    { name: "Slack", icon: "https://xdevsolutions.com/image/icons/slack.png" },
+    { name: "Synthesia", icon: "https://xdevsolutions.com/image/icons/Synthesia.png" },
+    { name: "TensorFlow", icon: "https://xdevsolutions.com/image/icons/Tensorflow.png" },
+    { name: "XDEV", icon: "https://xdevsolutions.com/image/icons/xdev.png" },
+    { name: "n8n", icon: "https://xdevsolutions.com/image/icons/n8n.png" },
+    { name: "XAI", icon: "https://xdevsolutions.com/image/icons/Xai.png" },
+  ],
+];
+
 
 // this funcation use in title and subtitle
 const TextGenerateEffectinTitleAndSubtitle = ({
@@ -523,9 +550,9 @@ export default function ShopMigrationPage() {
       </section>
 
       {/* Success Stories Section */}
-      <section 
+      <section
         className="w-full px-5 md:px-10"
-        style={{ 
+        style={{
           background: 'linear-gradient(180deg, #000000 0%, #0A0A0A 100%)',
           paddingTop: '100px',
           paddingBottom: '100px'
@@ -541,7 +568,7 @@ export default function ShopMigrationPage() {
             className="text-center mb-16"
             style={{ marginBottom: '64px' }}
           >
-            <h2 
+            <h2
               className="text-white mb-3 success-story-title"
               style={{
                 fontFamily: 'Inter, Poppins, Space Grotesk, sans-serif',
@@ -552,7 +579,7 @@ export default function ShopMigrationPage() {
             >
               Success Stories
             </h2>
-            <p 
+            <p
               className="text-[#B3B3B3] mx-auto leading-relaxed"
               style={{
                 fontSize: '16px',
@@ -619,7 +646,7 @@ export default function ShopMigrationPage() {
                 }}
               >
                 {/* Media Area */}
-                <div 
+                <div
                   className="relative overflow-hidden bg-[#0A0A0A] success-story-media"
                   style={{
                     borderRadius: '16px 16px 0 0'
@@ -637,16 +664,16 @@ export default function ShopMigrationPage() {
                     />
                   </div>
                   {/* Gradient Overlay */}
-                  <div 
+                  <div
                     className="absolute inset-0 transition-all duration-300 group-hover:opacity-100"
                     style={{
                       background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%)',
                       opacity: '1'
                     }}
                   />
-                  
+
                   {/* Brand Logo Overlay - Centered */}
-                  <div 
+                  <div
                     className="absolute z-10 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105"
                     style={{
                       top: '50%',
@@ -670,7 +697,7 @@ export default function ShopMigrationPage() {
                 </div>
 
                 {/* Card Content Area */}
-                <div 
+                <div
                   className="bg-[#111111] flex justify-between items-center border-t"
                   style={{
                     padding: '20px 24px',
@@ -678,7 +705,7 @@ export default function ShopMigrationPage() {
                   }}
                 >
                   {/* Title */}
-                  <h3 
+                  <h3
                     className="text-white flex-1 mr-4 transition-all duration-300 group-hover-title"
                     style={{
                       fontFamily: 'Inter, Poppins, sans-serif',
@@ -708,7 +735,7 @@ export default function ShopMigrationPage() {
             ))}
           </div>
         </div>
-        
+
         {/* Custom Styles for Responsive Heights and Hover Effects */}
         <style jsx>{`
           /* Responsive Title Font Size */
@@ -917,21 +944,24 @@ export default function ShopMigrationPage() {
         </div>
       </section>
 
-      {/* All solution from a single source Section */}
-      <section className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
+     
+
+{/* //Test  */}
+
+<section className="py-24 bg-black overflow-hidden">
+      <div className="container mx-auto px-4 mb-12">
+      <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-             <TextGenerateEffectinTitleAndSubtitle
-            words="All solution from a single source"
-            className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
-            duration={0.5}
-          />
+            <TextGenerateEffectinTitleAndSubtitle
+              words="All solution from a single source"
+              className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+              duration={0.5}
+            />
 
             <h2 className="text-5xl md:text-6xl font-light mb-8 text-white">
               We make it possible.
@@ -942,88 +972,34 @@ export default function ShopMigrationPage() {
               the best possible support and build a solid foundation for your e-commerce business.
             </p>
           </motion.div>
+      </div>
 
-          {/* Services Tags Grid - Animated Rows */}
-          <div className="mb-16 space-y-8">
-            <style jsx>{`
-              @keyframes scrollRightToLeft {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(calc(-100% - 2rem)); }
-              }
-              @keyframes scrollLeftToRight {
-                0% { transform: translateX(calc(-100% - 2rem)); }
-                100% { transform: translateX(0); }
-              }
-              .animate-scroll-rtl {
-                animation: scrollRightToLeft 30s linear infinite;
-                display: flex;
-                width: max-content;
-              }
-              .animate-scroll-ltr {
-                animation: scrollLeftToRight 30s linear infinite;
-                display: flex;
-                width: max-content;
-              }
-              .service-card {
-                @apply bg-[#111] border border-gray-800 hover:border-[#4A77D4] hover:shadow-[0_0_15px_rgba(74,119,212,0.3)] rounded-2xl px-8 py-4 flex items-center gap-3 transition-all duration-300 hover:scale-105 flex-shrink-0;
-                min-width: 200px;
-              }
-            `}</style>
-
-            {/* First Row - Right to Left Animation */}
-            <div className="overflow-hidden">
-              <div className="flex gap-8">
-                <div className="animate-scroll-rtl">
-                  {[...Array(2)].map((_, dupIdx) => (
-                    <div key={`row1-${dupIdx}`} className="flex gap-8">
-                      {[
-                        { icon: "🔄", title: "Shopify Relaunch" },
-                        { icon: "📊", title: "Data Analytics" },
-                        { icon: "🧪", title: "A/B Testing" },
-                        { icon: "🎨", title: "UI/UX Design" },
-                        { icon: "📱", title: "Mobile First" },
-                        { icon: "⚡", title: "Performance" },
-                        { icon: "🔍", title: "SEO" }
-                      ].map((item, index) => (
-                        <div key={`row1-item-${index}`} className="service-card">
-                          <span className="text-2xl">{item.icon}</span>
-                          <span className="text-sm font-medium text-white">{item.title}</span>
-                        </div>
-                      ))}
-                    </div>
-                  ))}
+      <div className="space-y-8">
+        {integrationRows.map((row, rowIndex) => (
+          <div key={rowIndex} className="relative">
+            <div 
+              className={`flex gap-12 ${rowIndex % 2 === 0 ? 'animate-marquee' : 'animate-marquee-reverse'}`}
+            >
+              {[...row, ...row, ...row].map((integration, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-16 h-16 rounded-xl bg-secondary/50 flex items-center justify-center hover:bg-secondary transition-colors"
+                >
+                  <img
+                    src={integration.icon}
+                    alt={integration.name}
+                    className="w-10 h-10 object-contain"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
                 </div>
-              </div>
-            </div>
-
-            {/* Second Row - Left to Right Animation */}
-            <div className="overflow-hidden">
-              <div className="flex gap-8">
-                <div className="animate-scroll-ltr">
-                  {[...Array(2)].map((_, dupIdx) => (
-                    <div key={`row2-${dupIdx}`} className="flex gap-8">
-                      {[
-                        { icon: "🧠", title: "Sales Psychology" },
-                        { icon: "📧", title: "Email Marketing" },
-                        { icon: "📈", title: "Analytics" },
-                        { icon: "💡", title: "Strategy" },
-                        { icon: "🛒", title: "E-commerce" },
-                        { icon: "🌐", title: "Web Development" },
-                        { icon: "📱", title: "App Integration" }
-                      ].map((item, index) => (
-                        <div key={`row2-item-${index}`} className="service-card">
-                          <span className="text-2xl">{item.icon}</span>
-                          <span className="text-sm font-medium text-white">{item.title}</span>
-                        </div>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </section>
 
       {/* We are Shopify Experts Section */}
       <section className="py-20 bg-black">
@@ -1056,8 +1032,8 @@ export default function ShopMigrationPage() {
         </div>
       </section>
 
-    {/* Partners Section */}
-    <section className="py-20 bg-black">
+      {/* Partners Section */}
+      <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1121,10 +1097,10 @@ export default function ShopMigrationPage() {
             className="text-center mb-16"
           >
             <TextGenerateEffectinTitleAndSubtitle
-            words="What are you waiting for?"
-            className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
-            duration={0.5}
-          />
+              words="What are you waiting for?"
+              className="px-1 py-0.5 mb-6 text-[6px] font-medium bg-white/10 text-white border-white/20 rounded-full border inline-block"
+              duration={0.5}
+            />
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight">
               Our customers are already
@@ -1245,8 +1221,8 @@ export default function ShopMigrationPage() {
         </section>
       </section>
 
-        {/* Final CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-[#4B6F93]/20 via-[#4B6F93]/10 to-black relative overflow-hidden">
+      {/* Final CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-[#4B6F93]/20 via-[#4B6F93]/10 to-black relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-transparent" />
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <motion.div

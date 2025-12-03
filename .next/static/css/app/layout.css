@@ -3415,6 +3415,10 @@ html {
   background-color: hsl(var(--primary) / 0.9);
 }
 
+.hover\:bg-secondary:hover {
+  background-color: hsl(var(--secondary));
+}
+
 .hover\:bg-secondary\/80:hover {
   background-color: hsl(var(--secondary) / 0.8);
 }
