@@ -2152,11 +2152,11 @@ export default function HomePage() {
               duration={0.5}
             />
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-6 md:mb-8 px-4">
-              Questions &
-              <span className="text-blue-400 italic">Answers</span>
+            Curious? &
+              <span className="text-blue-400 italic"> We've Got You Covered.</span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
-              Everything you need to know about working with Showmine
+            Find answers to the most common questions about our services, products, and solutions. Can't find what you're looking for? Feel free to reach out to us.
             </p>
 
             <Button
