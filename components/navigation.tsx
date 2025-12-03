@@ -50,7 +50,6 @@ export function Navigation() {
   }, [isSolutionsOpen])
 
   const navItems: NavItem[] = [
-    { name: "About us", href: "/about-us" },
     {
       name: "Solutions",
       href: "#",
@@ -66,6 +65,7 @@ export function Navigation() {
         ],
       },
     },
+    { name: "About us", href: "/about-us" },
     { name: "Career", href: "/career" },
   ]
 
