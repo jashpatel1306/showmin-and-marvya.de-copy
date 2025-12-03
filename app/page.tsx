@@ -1815,38 +1815,38 @@ export default function HomePage() {
                     text: "Absolute Shopify experts who did an outstanding job converting our online stores and introducing a subscription system!",
                     author: "Kai Adam",
                     company: "Black Hen Products GmbH",
-                    avatar: "/placeholder.svg?height=40&width=40",
+                    avatar: "https://i.pravatar.cc/150?img=1",
                   },
                   {
                     text: "We've been working with Showmine for three months. We'd been considering moving our online store to Shopify for a long time, but we're extremely happy and don't regret the decision at all. The Showmine team is very customer-focused, fast, and reliable...",
                     author: "Carolin Ackermann",
                     company: "SEAWATER Cubes GmbH",
-                    avatar: "/placeholder.svg?height=40&width=40",
+                    avatar: "https://i.pravatar.cc/150?img=3",
                   },
                   {
                     text: "Implemented at a very high speed and are showing extraordinary results. The personal support is customer-oriented, authentic, and sets standards in the industry. I highly recommend SHOWMINE...",
                     author: "Roman Wächter",
                     company: "",
-                    avatar: "/placeholder.svg?height=40&width=40",
+                    avatar: "https://i.pravatar.cc/150?img=5",
                   },
                 ].concat([
                   {
                     text: "Absolute Shopify experts who did an outstanding job converting our online stores and introducing a subscription system!",
                     author: "Kai Adam",
                     company: "Black Hen Products GmbH",
-                    avatar: "/placeholder.svg?height=40&width=40",
+                    avatar: "https://i.pravatar.cc/150?img=7",
                   },
                   {
                     text: "We've been working with Showmine for three months. We'd been considering moving our online store to Shopify for a long time, but we're extremely happy and don't regret the decision at all. The Showmine team is very customer-focused, fast, and reliable...",
                     author: "Carolin Ackermann",
                     company: "SEAWATER Cubes GmbH",
-                    avatar: "/placeholder.svg?height=40&width=40",
+                    avatar: "https://i.pravatar.cc/150?img=9",
                   },
                   {
                     text: "Implemented at a very high speed and are showing extraordinary results. The personal support is customer-oriented, authentic, and sets standards in the industry. I highly recommend SHOWMINE...",
                     author: "Roman Wächter",
                     company: "",
-                    avatar: "/placeholder.svg?height=40&width=40",
+                    avatar: "https://i.pravatar.cc/150?img=12",
                   },
                 ]).map((t, i) => (
                   <div key={i} className="bg-[#18191c] border border-white/10 rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 flex flex-col gap-4 md:gap-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl group" tabIndex={0} style={{ willChange: 'transform' }}>
@@ -1870,38 +1870,38 @@ export default function HomePage() {
                     text: "Thanks to the outstanding network and the great motivation of the entire Showmine team, you can achieve your e-commerce goals quickly and efficiently.",
                     author: "Wolfgang Grupp Junior",
                     company: "TRIGEMA W. Grupp KG",
-                    avatar: "/placeholder.svg?height=40&width=40",
+                    avatar: "https://i.pravatar.cc/150?img=2",
                   },
                   {
                     text: "We've been working with Showmine for three months. We'd been considering moving our online store to Shopify for a long time, but we're extremely happy and don't regret the decision at all. The Showmine team is very customer-focused, fast, and reliable...",
                     author: "Carolin Ackermann",
                     company: "SEAWATER Cubes GmbH",
-                    avatar: "/placeholder.svg?height=40&width=40",
+                    avatar: "https://i.pravatar.cc/150?img=4",
                   },
                   {
                     text: "Absolute Shopify experts who did an outstanding job converting our online stores and introducing a subscription system!",
                     author: "Kai Adam",
                     company: "Black Hen Products GmbH",
-                    avatar: "/placeholder.svg?height=40&width=40",
+                    avatar: "https://i.pravatar.cc/150?img=6",
                   },
                 ].concat([
                   {
                     text: "Thanks to the outstanding network and the great motivation of the entire Showmine team, you can achieve your e-commerce goals quickly and efficiently.",
                     author: "Wolfgang Grupp Junior",
                     company: "TRIGEMA W. Grupp KG",
-                    avatar: "/placeholder.svg?height=40&width=40",
+                    avatar: "https://i.pravatar.cc/150?img=8",
                   },
                   {
                     text: "We've been working with Showmine for three months. We'd been considering moving our online store to Shopify for a long time, but we're extremely happy and don't regret the decision at all. The Showmine team is very customer-focused, fast, and reliable...",
                     author: "Carolin Ackermann",
                     company: "SEAWATER Cubes GmbH",
-                    avatar: "/placeholder.svg?height=40&width=40",
+                    avatar: "https://i.pravatar.cc/150?img=10",
                   },
                   {
                     text: "Absolute Shopify experts who did an outstanding job converting our online stores and introducing a subscription system!",
                     author: "Kai Adam",
                     company: "Black Hen Products GmbH",
-                    avatar: "/placeholder.svg?height=40&width=40",
+                    avatar: "https://i.pravatar.cc/150?img=11",
                   },
                 ]).map((t, i) => (
                   <div key={i} className="bg-[#18191c] border border-white/10 rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 flex flex-col gap-4 md:gap-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl group" tabIndex={0} style={{ willChange: 'transform' }}>
@@ -1925,38 +1925,38 @@ export default function HomePage() {
                     text: "Implemented at a very high speed and are showing extraordinary results. The personal support is customer-oriented, authentic, and sets standards in the industry. I highly recommend SHOWMINE...",
                     author: "Roman Wächter",
                     company: "",
-                    avatar: "/placeholder.svg?height=40&width=40",
+                    avatar: "https://i.pravatar.cc/150?img=13",
                   },
                   {
                     text: "Thanks to the outstanding network and the great motivation of the entire Showmine team, you can achieve your e-commerce goals quickly and efficiently.",
                     author: "Wolfgang Grupp Junior",
                     company: "TRIGEMA W. Grupp KG",
-                    avatar: "/placeholder.svg?height=40&width=40",
+                    avatar: "https://i.pravatar.cc/150?img=14",
                   },
                   {
                     text: "Absolute Shopify experts who did an outstanding job converting our online stores and introducing a subscription system!",
                     author: "Kai Adam",
                     company: "Black Hen Products GmbH",
-                    avatar: "/placeholder.svg?height=40&width=40",
+                    avatar: "https://i.pravatar.cc/150?img=15",
                   },
                 ].concat([
                   {
                     text: "Implemented at a very high speed and are showing extraordinary results. The personal support is customer-oriented, authentic, and sets standards in the industry. I highly recommend Showmine...",
                     author: "Roman Wächter",
                     company: "",
-                    avatar: "/placeholder.svg?height=40&width=40",
+                    avatar: "/placeholder.svg?height=40&width=46",
                   },
                   {
                     text: "Thanks to the outstanding network and the great motivation of the entire Showmine team, you can achieve your e-commerce goals quickly and efficiently.",
                     author: "Wolfgang Grupp Junior",
                     company: "TRIGEMA W. Grupp KG",
-                    avatar: "/placeholder.svg?height=40&width=40",
+                    avatar: "https://i.pravatar.cc/150?img=16",
                   },
                   {
                     text: "Absolute Shopify experts who did an outstanding job converting our online stores and introducing a subscription system!",
                     author: "Kai Adam",
                     company: "Black Hen Products GmbH",
-                    avatar: "/placeholder.svg?height=40&width=40",
+                    avatar: "https://i.pravatar.cc/150?img=18",
                   },
                 ]).map((t, i) => (
                   <div key={i} className="bg-[#18191c] border border-white/10 rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 flex flex-col gap-4 md:gap-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl group" tabIndex={0} style={{ willChange: 'transform' }}>
