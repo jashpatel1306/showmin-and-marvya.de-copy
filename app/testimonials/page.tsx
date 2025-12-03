@@ -103,10 +103,10 @@ export default function TestimonialsPage() {
         </div>
       </section>
 
-      <section className="py-16 px-6">
+      <section className="py-2 px-6">
         <div className="max-w-7xl mx-auto">
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {/* <div className="flex flex-wrap justify-center gap-3 mb-12">
             {categories.map((category) => (
               <button
                 key={category}
@@ -120,7 +120,7 @@ export default function TestimonialsPage() {
                 {category}
               </button>
             ))}
-          </div>
+          </div> */}
 
           {/* Testimonials Grid */}
           <div className="grid md:grid-cols-2 gap-8">
