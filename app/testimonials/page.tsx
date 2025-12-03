@@ -16,7 +16,7 @@ const testimonials = [
     author: "Michaela & Thomas Zinser",
     company: "Histaminikus GmbH",
     rating: 5,
-    avatar: "/placeholder.svg?height=100&width=100",
+    avatar: "https://i.pravatar.cc/150?img=41",
     category: "E-commerce Strategy"
   },
   {
@@ -25,7 +25,7 @@ const testimonials = [
     author: "Marc Fassbender",
     company: "Fassbender print",
     rating: 5,
-    avatar: "/placeholder.svg?height=100&width=100",
+    avatar: "https://i.pravatar.cc/150?img=42",
     category: "Print Solutions"
   },
   {
@@ -34,7 +34,7 @@ const testimonials = [
     author: "Carolin Ackermann",
     company: "SEAWATER Cubes GmbH",
     rating: 5,
-    avatar: "/placeholder.svg?height=100&width=100",
+    avatar: "https://i.pravatar.cc/150?img=43",
     category: "Customer Support"
   },
   {
@@ -43,7 +43,7 @@ const testimonials = [
     author: "Sarah Johnson",
     company: "E-commerce Business",
     rating: 5,
-    avatar: "/placeholder.svg?height=100&width=100",
+    avatar: "https://i.pravatar.cc/150?img=44",
     category: "Business Growth"
   }
 ]
