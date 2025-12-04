@@ -1086,6 +1086,66 @@ export default function ShopMigrationPage() {
         </div>
       </section>
 
+      {/* Audience SEO Section */}
+      <section className="py-20 bg-black border-t border-white/5">
+        <div className="max-w-6xl mx-auto px-6 grid gap-12 lg:grid-cols-2 items-center">
+          <div className="space-y-6">
+            <Badge variant="outline" className="w-fit text-white border-white/20 bg-white/5">
+              Shopify Migration Agency
+            </Badge>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white">
+              Who gets the most impact from a SHOWMINE migration?
+            </h2>
+            <p className="text-gray-300 text-lg leading-relaxed">
+              We specialise in moving high-traffic, SEO-rich stores from Magento, WooCommerce, and custom stacks to Shopify Plus.
+              Our team keeps URL structure, redirects, and{" "}
+              <a href="/lead-generation" className="text-blue-400 underline-offset-2 hover:underline">
+                lead funnels
+              </a>{" "}
+              intact so you can start selling faster. Need post-launch outreach? Tap our{" "}
+              <a href="/bulk-email-automation" className="text-blue-400 underline-offset-2 hover:underline">
+                bulk email automation
+              </a>{" "}
+              to announce the new store at scale.
+            </p>
+            <ul className="space-y-3 text-gray-200">
+              {[
+                "Brands doing ₹2Cr+ annual GMV that can’t risk downtime",
+                "B2B distributors that require complex catalogs and customer-specific pricing",
+                "D2C manufacturers expanding into global markets and marketplaces",
+                "Multi-store groups needing unified inventory, OMS, and analytics"
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-400 mt-1" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="grid gap-6">
+            {[
+              {
+                title: "SEO-safe replatforming",
+                copy: "Technical audits, redirect mapping, and schema updates so rankings and paid traffic don’t drop."
+              },
+              {
+                title: "Operational upgrades",
+                copy: "Custom apps, ERP integrations, and automation that modernize finance, fulfillment, and CX teams."
+              },
+              {
+                title: "Launch enablement",
+                copy: "Playbooks for announcing the new store, segmenting existing buyers, and driving repeat revenue."
+              }
+            ].map((card) => (
+              <div key={card.title} className="p-6 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0">
+                <h3 className="text-2xl font-semibold text-white mb-2">{card.title}</h3>
+                <p className="text-gray-300">{card.copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Process Section */}
       <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-6">

@@ -597,6 +597,61 @@ export default function LeadGenerationPage() {
       {/* Use Cases & Pricing Section */}
       {/* <UseCasesSection /> */}
 
+      {/* ICP Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+        <div className="container mx-auto">
+          <div className="grid gap-12 lg:grid-cols-2 items-center">
+            <div className="space-y-6">
+              <p className="text-sm uppercase tracking-[0.3em] text-blue-300">Who we help</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white">
+                Built for Indian B2B teams that need consistent, qualified demand
+              </h2>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Whether you sell complex manufacturing services or niche SaaS, we combine Google Maps scraping,
+                research automation, and{" "}
+                <a href="/bulk-email-automation" className="text-blue-400 underline-offset-2 hover:underline">
+                  bulk email automation
+                </a>{" "}
+                to keep your sales calendar full.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {[
+                  "Manufacturing & industrial suppliers targeting tier-1 cities",
+                  "IT services, SaaS, and product companies expanding overseas",
+                  "D2C brands looking for distribution or retail partnerships",
+                  "Consulting & agencies that need accurate CXO data"
+                ].map((item) => (
+                  <div key={item} className="p-4 rounded-xl border border-white/10 bg-white/5 text-gray-200 text-sm">
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 space-y-6">
+              <h3 className="text-2xl font-semibold text-white">What you get</h3>
+              <ul className="space-y-4 text-gray-300">
+                {[
+                  "Ideal customer profiles (ICPs) mapped to real, verifiable contacts",
+                  "Multi-channel outreach sequences localized for Indian buyers",
+                  "Weekly insight reports showing booked meetings, reply rates, and geo trends",
+                  "Seamless hand-off workflows into your CRM or sales automation tool"
+                ].map((point) => (
+                  <li key={point} className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-green-400 mt-1" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="pt-4">
+                <Button className="w-full sm:w-auto bg-[#4B6F93] hover:bg-[rgb(75, 111, 147)] text-white">
+                  Explore lead programs
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ProcessSection section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="container mx-auto">

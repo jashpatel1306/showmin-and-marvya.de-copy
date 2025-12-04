@@ -2082,6 +2082,80 @@ export default function HomePage() {
         </div>
       </section> */}
 
+      {/* Solutions SEO Section */}
+      <section className="py-20 bg-black border-t border-white/5">
+        <div className="max-w-6xl mx-auto px-6 grid gap-12 lg:grid-cols-2">
+          <div className="space-y-6">
+            <p className="text-xs uppercase tracking-[0.3em] text-blue-400/70">B2B Growth Services</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white">
+              Purpose-built solutions for Indian B2B brands that need predictable growth
+            </h2>
+            <p className="text-gray-300 text-lg leading-relaxed">
+              From <a href="/lead-generation" className="text-blue-400 underline-offset-2 hover:underline">
+                data-backed lead generation
+              </a> to{" "}
+              <a href="/bulk-email-automation" className="text-blue-400 underline-offset-2 hover:underline">
+                bulk email automation
+              </a>{" "}
+              and{" "}
+              <a href="/shop-migration" className="text-blue-400 underline-offset-2 hover:underline">
+                Shopify migration
+              </a>, every service is optimized for search visibility, high-intent traffic, and sales-qualified conversations.
+            </p>
+            <ul className="space-y-3 text-gray-300">
+              {[
+                "Ideal for manufacturing, SaaS, and IT service exports targeting new markets.",
+                "Includes ICP research, Google Maps scraping, and compliance-friendly outreach.",
+                "Full-funnel analytics so you can see which campaigns convert fastest."
+              ].map((point, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <span className="mt-1 h-2 w-2 rounded-full bg-blue-400" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="grid gap-6">
+            {[
+              {
+                title: "Lead generation for India-first B2B",
+                copy:
+                  "Book more meetings with verified CXO contacts, localized messaging, and CRM-ready data.",
+                href: "/lead-generation"
+              },
+              {
+                title: "Bulk email + WhatsApp automation",
+                copy:
+                  "Send high-volume, personalized nurture emails with warmed mailboxes and deliverability controls.",
+                href: "/bulk-email-automation"
+              },
+              {
+                title: "Enterprise Shopify migration",
+                copy:
+                  "Move legacy stores to Shopify Plus without downtime and keep SEO equity intact.",
+                href: "/shop-migration"
+              }
+            ].map((item, index) => (
+              <div
+                key={item.title}
+                className="p-6 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 hover:border-blue-500/40 transition"
+              >
+                <p className="text-sm text-blue-400/80 mb-2">0{index + 1}</p>
+                <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
+                <p className="text-gray-300 mb-4">{item.copy}</p>
+                <a
+                  href={item.href}
+                  className="inline-flex items-center text-blue-400 font-medium hover:underline underline-offset-4"
+                >
+                  Explore service
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Partners Section */}
       <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-6">
