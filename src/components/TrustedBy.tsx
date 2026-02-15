@@ -12,7 +12,7 @@ import pirinhill from "@/assets/clients/pirinhill.png";
 import plumdiamonds from "@/assets/clients/plumdiamonds.png";
 import simpl from "@/assets/clients/simpl.png";
 import srface from "@/assets/clients/srface.png";
-import wheeliospin from "@/assets/clients/wheeliospin.png";
+import wheeliospin from "@/assets/clients/WheelioSpin.png";
 
 
 const clients = [

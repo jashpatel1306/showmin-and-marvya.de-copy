@@ -1,5 +1,5 @@
-import framerDevImage from "@/assets/services/framer-development.png";
-import technicalSeoImage from "@/assets/services/technical-seo.png";
+import framerDevImage from "@/assets/Services/framer-development.png";
+import technicalSeoImage from "@/assets/Services/technical-seo.png";
 import FeaturedServiceCard from "./FeaturedServiceCard";
 import PopularServiceCard from "./PopularServiceCard";
 
