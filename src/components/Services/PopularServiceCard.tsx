@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 
 type ServiceAccent = "yellow" | "blue" | "green" | "purple" | "coral";
@@ -21,8 +22,8 @@ const PopularServiceCard = ({ title, description, href, accent }: PopularService
   const accentColor = accentColorMap[accent];
 
   return (
-    <a
-      href={href}
+    <Link
+      to={href}
       className="group relative flex items-center justify-between gap-4 rounded-lg border border-border bg-card p-5 shadow-[0_3.5px_12px_0_rgba(0,0,0,0.04)] transition-shadow duration-200 hover:shadow-[0_8px_24px_0_rgba(0,0,0,0.08)]"
     >
       {/* Conic gradient border effect */}
@@ -45,7 +46,7 @@ const PopularServiceCard = ({ title, description, href, accent }: PopularService
       <div className="flex-shrink-0 text-muted-foreground transition-colors group-hover:text-foreground">
         <ArrowUpRight className="w-5 h-5" />
       </div>
-    </a>
+    </Link>
   );
 };
 

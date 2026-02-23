@@ -226,7 +226,7 @@ const Stack = () => {
           </div>
           {/* Text Content */}
           <div className="order-1 lg:order-2">
-            <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-6">
+            <h2 className="section-title text-foreground mb-6">
               Fluent with your stack
             </h2>
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
@@ -243,7 +243,7 @@ const Stack = () => {
 <div className="max-w-6xl mx-auto">
   {/* Section Heading */}
   <div className="text-center mb-12 md:mb-16">
-    <h2 className="text-3xl md:text-4xl font-semibold text-foreground">
+    <h2 className="section-title text-foreground">
       Let's make it happen
     </h2>
   </div>

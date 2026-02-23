@@ -66,46 +66,45 @@ const CTA = () => {
           ))}
         </motion.div>
       </div> */}
+      <div className="flex items-center justify-center bg-background p-6">
+        <div className="w-full max-w-[1240px]">
+          <div
+            className="relative overflow-hidden rounded-xl"
+            style={{
+              background: "var(--hero-gradient)",
+              boxShadow: "var(--hero-shadow)",
+            }}
+          >
+            {/* Video Background */}
+            <div className="absolute inset-0 z-0">
+              <video
+                src="https://framerusercontent.com/assets/k6ayhLw5j3wA2005RbCfEx1fARw.mp4"
+                loop
+                autoPlay
+                muted
+                playsInline
+                preload="auto"
+                className="h-full w-full object-cover"
+              />
+            </div>
 
-<div className="flex items-center justify-center bg-background p-6">
-      <div className="w-full max-w-[1040px]">
-        <div
-          className="relative overflow-hidden rounded-xl"
-          style={{
-            background: "var(--hero-gradient)",
-            boxShadow: "var(--hero-shadow)",
-          }}
-        >
-          {/* Video Background */}
-          <div className="absolute inset-0 z-0">
-            <video
-              src="https://framerusercontent.com/assets/k6ayhLw5j3wA2005RbCfEx1fARw.mp4"
-              loop
-              autoPlay
-              muted
-              playsInline
-              preload="auto"
-              className="h-full w-full object-cover"
-            />
-          </div>
+            {/* Content Overlay */}
+            <div className="relative z-10 flex items-center justify-between px-8 py-6 sm:px-10 sm:py-8">
+              <h3 className="text-xl font-semibold leading-tight tracking-tight text-primary-foreground sm:text-2xl md:text-3xl">
+                Leading your website to success
+              </h3>
 
-          {/* Content Overlay */}
-          <div className="relative z-10 flex items-center justify-between px-8 py-6 sm:px-10 sm:py-8">
-            <h3 className="text-xl font-semibold leading-tight tracking-tight text-primary-foreground sm:text-2xl md:text-3xl">
-              Leading your website to success
-            </h3>
-
-            <a
-              href="./get-started"
-              className="ml-6 inline-flex shrink-0 items-center justify-center rounded-lg bg-white px-6 py-3 text-sm font-medium text-foreground transition-transform hover:scale-105 active:scale-100"
-              style={{ boxShadow: "var(--cta-shadow)" }}
-            >
-              Get started
-            </a>
+              <a
+                href="./get-started"
+                className="ml-6 inline-flex shrink-0 items-center justify-center rounded-lg bg-white px-6 py-3 text-sm font-medium text-foreground transition-transform hover:scale-105 active:scale-100"
+                style={{ boxShadow: "var(--cta-shadow)" }}
+              >
+                Get started
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </section>
   );
 };

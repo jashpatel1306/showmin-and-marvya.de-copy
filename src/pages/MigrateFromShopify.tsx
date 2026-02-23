@@ -1,12 +1,9 @@
-
-import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import shopifyWebflowIcon from "@/assets/shopify-webflow-icon.svg";
 import WaveBackground from "@/components/WaveBackground";
 import dashboardImg from "@/assets/dashboard-screenshot.webp";
 import TrustedBy from "@/components/TrustedBy";
-import TrustedBrands from "@/components/TrustedBrands";
 import ShopifyGlance from "@/components/ShopifyGlance";
 import FunnelSection from "@/components/FunnelSection";
 import WhenToPeelSection from "@/components/WhenToPeelSection";
@@ -17,12 +14,11 @@ import Testimonials from "@/components/Testimonials";
 import RecentProjects from "@/components/RecentProjects";
 
 const MigrateFromShopify = () => {
-
   return (
-    <>
+    <div className="min-h-screen bg-background">
       <Header />
       <WaveBackground />
-      <section className="relative z-10 flex flex-col items-center text-center px-6 pt-32 pb-12 md:pt-44 md:pb-16">
+      <section className="relative z-10 flex flex-col items-center text-center px-4 md:px-6 py-20 md:py-24">
         <div
           className="inline-flex items-center gap-2 rounded-[7px] px-3 py-1.5 text-sm font-medium"
           style={{
@@ -51,10 +47,7 @@ const MigrateFromShopify = () => {
           className="mt-6 text-base md:text-lg leading-relaxed max-w-2xl"
           style={{ color: "rgb(0, 0, 0)" }}
         >
-          If your Shopify theme is limiting your brand and content, we can move
-          your marketing pages to Webflow while keeping Shopify for products and
-          checkout. You get a faster, more flexible site for campaigns and
-          storytelling, without rebuilding your whole store from scratch.
+          If your Shopify theme is holding back your brand or content experience, we can shift your marketing pages to Webflow while keeping Shopify for products and checkout. This gives you a faster, more flexible platform for campaigns and storytelling without the cost or disruption of rebuilding your entire store.
         </p>
 
         <a
@@ -69,10 +62,8 @@ const MigrateFromShopify = () => {
           Get started
         </a>
       </section>
-      <section className="relative z-10 flex justify-center px-6 pb-16">
-        <div className="w-full max-w-[1270px]">
-          <div
-            className=" overflow-hidden "
+      <section className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24">
+        <div className="overflow-hidden"
             style={{
               perspective: "1200px",
             }}
@@ -90,10 +81,9 @@ const MigrateFromShopify = () => {
                 style={{ aspectRatio: "1.67114 / 1" }}
               />
             </div>
-          </div>
         </div>
       </section>
-      <TrustedBrands />
+      <TrustedBy />
       <ShopifyGlance />
       <RecentProjects />
       <WhenToPeelSection />
@@ -103,7 +93,7 @@ const MigrateFromShopify = () => {
       <ShopifyFAQ />
       <FunnelSection />
       <Footer />
-    </>
+    </div>
   );
 };
 

@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import projectBgOrangeBlue from "@/assets/project-bg.jpg";
 import projectScreenshot from "@/assets/project-screenshot.webp";
-import projectBgTeal from "@/assets/project-bg-teal.jpg";
-import projectScreenshot2 from "@/assets/project-screenshot-2.jpg";
 import avatarStuart from "@/assets/avatar-stuart.webp";
 import { Star } from "lucide-react";
 
@@ -112,17 +110,13 @@ const ProjectCard = ({
   );
 };
 
-const Index = () => {
+const RecentProjects = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <section className="max-w-[1440px] mx-auto px-4 md:px-8 py-16 md:py-24">
-        {/* Section heading */}
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-12 md:mb-16">
+    <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24 bg-background">
+      <h2 className="section-title text-foreground text-center mb-12 md:mb-16">
           Recent projects
-        </h2>
-
-        {/* Project cards stacked */}
-        <div className="space-y-8 mb-14">
+      </h2>
+      <div className="space-y-8 mb-14">
           <ProjectCard
             bgImage={projectBgOrangeBlue}
             screenshot={projectScreenshot}
@@ -134,32 +128,17 @@ const Index = () => {
             clientName="Stuart Shaw"
             clientRole="Owner at Robert Rose Carpentry"
           />
-
-          {/* <ProjectCard
-            bgImage={projectBgTeal}
-            screenshot={projectScreenshot2}
-            category="Web Design"
-            flag="🇺🇸"
-            description="Modern web platform design and development for a creative agency."
-            testimonial="Working with Showmine was an absolute pleasure. They delivered a stunning website that perfectly captures our brand identity and has significantly improved our online presence."
-            avatarImage={avatarStuart}
-            clientName="Alex Morgan"
-            clientRole="Creative Director"
-          /> */}
-        </div>
-
-        {/* View portfolio button */}
-        <div className="flex justify-center">
+      </div>
+      <div className="flex justify-center">
           <Button
             size="lg"
             className="rounded-lg px-10 bg-blue-500 py-3 text-sm font-semibold shadow-[inset_0_6.75px_13.5px_0_rgba(0,0,0,0.08),inset_0_0.5625px_1.125px_0_rgba(255,255,255,0.34),0_1.125px_2.25px_0_rgba(8,8,8,0.19),0_4px_4.5px_0_rgba(8,8,8,0.05)]"
           >
             View portfolio
-          </Button>
-        </div>
-      </section>
-    </div>
+        </Button>
+      </div>
+    </section>
   );
 };
 
-export default Index;
+export default RecentProjects;

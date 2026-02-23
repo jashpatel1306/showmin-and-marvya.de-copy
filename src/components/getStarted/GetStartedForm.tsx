@@ -1,24 +1,25 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import ContactForm from "./ContactForm";
+import logo from "@/assets/Company/showmine.png";
 
 interface PartnerBadgeProps {
-    label: string;
-    icon?: React.ReactNode;
-  }
-  
-  const PartnerBadge = ({ label, icon }: PartnerBadgeProps) => (
-    <div className="inline-flex items-center gap-1.5 rounded-[7px] border border-foreground/10 bg-background/35 backdrop-blur-sm px-3 py-1.5">
-      {icon && <span className="flex-shrink-0">{icon}</span>}
-      <span className="text-sm font-medium text-foreground">{label}</span>
-    </div>
-  );
+  label: string;
+  icon?: React.ReactNode;
+}
+
+const PartnerBadge = ({ label, icon }: PartnerBadgeProps) => (
+  <div className="inline-flex items-center gap-1.5 rounded-[7px] border border-foreground/10 bg-background/35 backdrop-blur-sm px-3 py-1.5">
+    {icon && <span className="flex-shrink-0">{icon}</span>}
+    <span className="text-sm font-medium text-foreground">{label}</span>
+  </div>
+);
 
 const FramerIcon = () => (
   <svg width="10" height="14" viewBox="0 0 10 14" fill="none">
-    <path d="M0 9.333h5V14L0 9.333Z" fill="#05F"/>
-    <path d="M0 4.667h5l5 4.666H0V4.667Z" fill="#08F"/>
-    <path d="M0 0h10L5 4.667H0V0Z" fill="#0AF"/>
+    <path d="M0 9.333h5V14L0 9.333Z" fill="#05F" />
+    <path d="M0 4.667h5l5 4.666H0V4.667Z" fill="#08F" />
+    <path d="M0 0h10L5 4.667H0V0Z" fill="#0AF" />
   </svg>
 );
 
@@ -48,44 +49,49 @@ const AgencyIcon = () => (
 );
 
 const CheckBadge = () => (
-    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="checkGrad" x1="0.04" x2="0.96" y1="0" y2="1">
-          <stop offset="0" stopColor="hsl(197, 100%, 80%)" />
-          <stop offset="1" stopColor="hsl(214, 100%, 53%)" />
-        </linearGradient>
-      </defs>
-      <path
-        d="M 6.153 1.192 C 7.314 -0.397 9.686 -0.397 10.847 1.192 C 11.114 1.556 11.562 1.741 12.008 1.672 C 13.953 1.37 15.63 3.047 15.328 4.992 C 15.259 5.438 15.444 5.886 15.809 6.153 C 17.397 7.314 17.397 9.686 15.809 10.847 C 15.444 11.114 15.259 11.562 15.328 12.008 C 15.63 13.953 13.953 15.63 12.008 15.328 C 11.562 15.259 11.114 15.444 10.847 15.808 C 9.686 17.397 7.314 17.397 6.153 15.808 C 5.886 15.444 5.438 15.259 4.992 15.328 C 3.047 15.63 1.37 13.953 1.672 12.008 C 1.741 11.562 1.556 11.114 1.192 10.847 C -0.397 9.686 -0.397 7.314 1.192 6.153 C 1.556 5.886 1.741 5.438 1.672 4.992 C 1.37 3.047 3.047 1.37 4.992 1.672 C 5.438 1.741 5.886 1.556 6.153 1.192 Z M 12.321 6.73 C 12.638 6.384 12.614 5.847 12.268 5.529 C 11.922 5.212 11.385 5.236 11.067 5.582 L 7.882 8.998 L 6.956 8.184 C 6.611 7.867 6.073 7.889 5.755 8.235 C 5.438 8.581 5.461 9.119 5.807 9.436 L 7.358 10.826 C 7.525 10.979 7.745 11.059 7.97 11.049 C 8.195 11.04 8.408 10.941 8.56 10.774 Z"
-        fill="url(#checkGrad)"
-      />
-    </svg>
-  );
-  
-  const SouthLogo = () => (
-    <svg width="80" height="20" viewBox="0 0 80 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <text
-        x="0"
-        y="20"
-        fontFamily="Urbanist, sans-serif"
-        fontSize="18"
-        fontWeight="700"
-        fill="currentColor"
-      >
-        Showmine
-      </text>
-    </svg>
-  );
+  <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="checkGrad" x1="0.04" x2="0.96" y1="0" y2="1">
+        <stop offset="0" stopColor="hsl(197, 100%, 80%)" />
+        <stop offset="1" stopColor="hsl(214, 100%, 53%)" />
+      </linearGradient>
+    </defs>
+    <path
+      d="M 6.153 1.192 C 7.314 -0.397 9.686 -0.397 10.847 1.192 C 11.114 1.556 11.562 1.741 12.008 1.672 C 13.953 1.37 15.63 3.047 15.328 4.992 C 15.259 5.438 15.444 5.886 15.809 6.153 C 17.397 7.314 17.397 9.686 15.809 10.847 C 15.444 11.114 15.259 11.562 15.328 12.008 C 15.63 13.953 13.953 15.63 12.008 15.328 C 11.562 15.259 11.114 15.444 10.847 15.808 C 9.686 17.397 7.314 17.397 6.153 15.808 C 5.886 15.444 5.438 15.259 4.992 15.328 C 3.047 15.63 1.37 13.953 1.672 12.008 C 1.741 11.562 1.556 11.114 1.192 10.847 C -0.397 9.686 -0.397 7.314 1.192 6.153 C 1.556 5.886 1.741 5.438 1.672 4.992 C 1.37 3.047 3.047 1.37 4.992 1.672 C 5.438 1.741 5.886 1.556 6.153 1.192 Z M 12.321 6.73 C 12.638 6.384 12.614 5.847 12.268 5.529 C 11.922 5.212 11.385 5.236 11.067 5.582 L 7.882 8.998 L 6.956 8.184 C 6.611 7.867 6.073 7.889 5.755 8.235 C 5.438 8.581 5.461 9.119 5.807 9.436 L 7.358 10.826 C 7.525 10.979 7.745 11.059 7.97 11.049 C 8.195 11.04 8.408 10.941 8.56 10.774 Z"
+      fill="url(#checkGrad)"
+    />
+  </svg>
+);
+
+const ShowmineLogo = () => (
+  <div className="flex h-8 w-8 items-center justify-center rounded-lg">
+    <img
+      src={logo}
+      alt=""
+      className="" />
+    <span className="text-xl font-semibold text-foreground">Showmine</span>
+  </div>
+
+);
 
 const GetStarted = () => {
   return (
     <div className="min-h-screen bg-background font-urbanist">
       {/* Header */}
-      <header className="flex items-center justify-between px-6 md:px-12 py-5">
-        <a href="/" className="text-foreground">
-          <SouthLogo />
-        </a>
+
+
+      <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container flex h-16 items-center justify-between">
+          {/* Logo */}
+
+          <a href="/" className="text-foreground">
+            <ShowmineLogo />
+          </a>
+
+        </div>
+
       </header>
+
 
       {/* Main Content */}
       <main className="px-6 md:px-12 lg:px-20 py-8 md:py-16">

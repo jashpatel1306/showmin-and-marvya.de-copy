@@ -1,4 +1,3 @@
-
 interface ReasonItem {
   title: string;
   description: string;
@@ -44,9 +43,9 @@ const reasons: ReasonItem[] = [
 
 const WhyWorkWithUs = () => {
   return (
-    <section className="w-full bg-gradient-to-b from-secondary to-background py-20 md:py-28">
-      <div className="mx-auto max-w-3xl px-6">
-        <h2 className="mb-14 text-center text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl">
+    <section className="w-full bg-gradient-to-b from-secondary to-background py-16 md:py-24">
+      <div className="mx-auto max-w-3xl px-4 md:px-6">
+        <h2 className="section-title text-foreground text-center mb-12">
           Why work with Showmine on Shopify + Webflow
         </h2>
 
@@ -54,7 +53,7 @@ const WhyWorkWithUs = () => {
           {reasons.map((reason, index) => (
             <div
               key={index}
-              className="flex gap-4 border-b border-border py-8 last:border-b"
+              className="flex gap-4 border-b border-border py-6 last:border-b-0"
             >
               <CheckBadge className="mt-0.5 h-8 w-8 flex-shrink-0" />
               <div className="flex flex-col gap-2">

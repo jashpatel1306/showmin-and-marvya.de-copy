@@ -1,9 +1,10 @@
 import { Search, Menu, X, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/Company/showmine.png";
 
 const navLinks = [
   { label: "Products", href: "/Products" },
@@ -63,21 +64,6 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [stackOpen, setStackOpen] = useState(false);
-  const servicesRef = useRef<HTMLDivElement>(null);
-  const stackRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
-        setServicesOpen(false);
-      }
-      if (stackRef.current && !stackRef.current.contains(event.target as Node)) {
-        setStackOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
 
   const closeAllDropdowns = () => {
     setServicesOpen(false);
@@ -96,8 +82,11 @@ const Header = () => {
           <div className="container flex h-16 items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-                <span className="text-lg font-bold text-primary-foreground">A</span>
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg">
+                <img
+                  src={logo}
+                  alt=""
+                  className="" />
               </div>
               <span className="text-xl font-semibold text-foreground">Showmine</span>
             </Link>
@@ -105,7 +94,7 @@ const Header = () => {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-1">
               {/* Services Button */}
-              <div ref={servicesRef} className="relative">
+              <div className="relative">
                 <button
                   onClick={() => {
                     setStackOpen(false);
@@ -118,7 +107,7 @@ const Header = () => {
               </div>
 
               {/* Stack Button */}
-              <div ref={stackRef} className="relative">
+              <div className="relative">
                 <button
                   onClick={() => {
                     setServicesOpen(false);

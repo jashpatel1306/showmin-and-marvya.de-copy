@@ -1,4 +1,4 @@
-import wordpressIcon from "@/assets/wordpress-icon.png";
+import shopifyIcon from "@/assets/shopify-webflow-icon.svg";
 
 const checkIcon = (
   <svg viewBox="0 0 23 23" className="w-5 h-5 flex-shrink-0" fill="currentColor">
@@ -60,7 +60,7 @@ const cards = [
 ];
 const ShopifyGlance = () => {
   return (
-    <section className="relative z-10 w-full max-w-[1340px] mx-auto px-6 py-16 md:py-24">
+    <section className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24">
       <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
         {/* Left column */}
         <div className="flex-1 flex flex-col gap-8">
@@ -68,12 +68,12 @@ const ShopifyGlance = () => {
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
               <img
-                src={wordpressIcon}
+                src={shopifyIcon}
                 alt=""
                 className="w-full h-full object-cover"
               />
             </div>
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground text-left">
+            <h2 className="section-title text-foreground text-left">
               A glance at Shopify
             </h2>
           </div>

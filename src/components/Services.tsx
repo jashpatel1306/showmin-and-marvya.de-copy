@@ -70,7 +70,7 @@ const Services = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.h2
-          className="text-3xl md:text-4xl font-semibold text-foreground mb-8"
+          className="section-title text-foreground mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

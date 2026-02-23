@@ -11,6 +11,11 @@ import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import GetStarted from "./pages/GetStarted";
 import Services from "./pages/Services";
+import Landing from "./pages/Landing";
+import Design from "./pages/Design";
+import DesignCategory from "./pages/DesignCategory";
+import WebflowAgency from "./pages/WebflowAgency";
+import HubSpotAgency from "./pages/HubSpotAgency";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +33,11 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/get-started" element={<GetStarted />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/landing" element={<Landing />} />
+            <Route path="/design" element={<Design />} />
+            <Route path="/services/category/design" element={<DesignCategory />} />
+            <Route path="/webflow-agency" element={<WebflowAgency />} />
+            <Route path="/hubspot-agency" element={<HubSpotAgency />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

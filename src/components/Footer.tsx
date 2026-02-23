@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { MapPin, Star, Cookie, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/Company/showmine.png";
 
 interface FooterNavLinkProps {
   label: string;
@@ -70,6 +71,7 @@ const Footer = () => {
   ];
 
   const navLinks = [
+    // { label: "Landing", href: "/landing" },
     { label: "Services", href: "/services" },
     { label: "Portfolio", href: "/portfolio" },
     { label: "Contact", href: "/contact" },
@@ -77,24 +79,31 @@ const Footer = () => {
   ];
   return (
     <footer className="w-full bg-background">
-      
+
       <div className="max-w-7xl mx-auto px-6 py-12">
 
-      <div className="flex flex-wrap gap-3">
-        {services.map((service) => (
-          <ServiceTag
-            key={service.label}
-            label={service.label}
-            href={service.href}
-            variant={service.variant}
-          />
-        ))}
-      </div>
+        <div className="flex flex-wrap gap-3">
+          {services.map((service) => (
+            <ServiceTag
+              key={service.label}
+              label={service.label}
+              href={service.href}
+              variant={service.variant}
+            />
+          ))}
+        </div>
         {/* Main footer content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mt-7">
           {/* Left column - Service tags */}
           <div className="flex flex-wrap gap-3">
-            Showmine
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg">
+            <img
+              src={logo}
+              alt=""
+              className="" />
+              </div>
+              <span className="text-xl font-semibold text-foreground">Showmine</span>
+            
             <div className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-0.5" />
               <p className="text-muted-foreground text-sm leading-relaxed">

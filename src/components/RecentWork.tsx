@@ -44,7 +44,7 @@ const RecentWork = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl font-semibold text-foreground">
+          <h2 className="section-title text-foreground">
             Recent work
           </h2>
         </motion.div>

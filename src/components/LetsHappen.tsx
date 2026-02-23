@@ -123,7 +123,7 @@ const LetsHappen = () => {
             {/* Left Content */}
             <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
               <div className="space-y-6 max-w-md">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight tracking-tight">
+                <h2 className="section-title text-foreground">
                   Transform your website experience
                 </h2>
                 <p className="text-muted-foreground text-base md:text-lg leading-relaxed">

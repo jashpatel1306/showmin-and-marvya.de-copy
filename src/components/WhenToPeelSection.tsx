@@ -39,11 +39,10 @@ const FeatureCard = ({ image, title, description }: FeatureCardProps) => (
 
 const WhenToPeelSection = () => {
   return (
-    <section className="w-full py-16 md:py-24 px-4 md:px-6">
-      <div className="max-w-5xl mx-auto">
-        {/* Header Row */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-10 md:mb-14">
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold leading-tight tracking-tight text-foreground max-w-xl">
+    <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24">
+      <div>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12">
+          <h2 className="section-title text-foreground max-w-xl">
             When to peel marketing away from your Shopify theme
           </h2>
           <a
@@ -58,8 +57,6 @@ const WhenToPeelSection = () => {
             Get started
           </a>
         </div>
-
-        {/* Cards Grid - 2 columns */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
           <FeatureCard
             image={cardBrand}

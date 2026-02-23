@@ -1,23 +1,53 @@
-import { ShoppingCart, Palette, BarChart3, Globe, Layers, Code } from "lucide-react";
+import { Figma, BarChart3, Layers, Scissors, ShoppingBag, Globe, Info } from "lucide-react";
 import centralIcon from "@/assets/central-icon.png";
 import IconDot from "./IconDot";
 
 const icons = [
-  { icon: ShoppingCart, label: "E-commerce" },
-  { icon: Palette, label: "Design" },
-  { icon: BarChart3, label: "Analytics" },
-  { icon: Globe, label: "SEO" },
-  { icon: Layers, label: "CMS" },
-  { icon: Code, label: "Custom Code" },
+  {
+    icon: Figma,
+    label: "Figma",
+    description:
+      "We design and prototype your pages in Figma before we build them in Webflow, so layout and interactions are clear from the start.",
+  },
+  {
+    icon: BarChart3,
+    label: "Analytics",
+    description:
+      "We set up and connect your analytics so you can track performance across both Webflow and Shopify from day one.",
+  },
+  {
+    icon: Layers,
+    label: "CMS",
+    description:
+      "We structure your content in Webflow's CMS so your team can update pages, blogs, and resources without developer help.",
+  },
+  {
+    icon: Scissors,
+    label: "Custom Code",
+    description:
+      "We add custom code where needed to connect systems, extend functionality, or match specific design requirements.",
+  },
+  {
+    icon: ShoppingBag,
+    label: "Shopify",
+    description:
+      "Your Shopify store stays intact for products, cart, and checkout while marketing moves to Webflow.",
+  },
+  {
+    icon: Globe,
+    label: "SEO",
+    description:
+      "We handle redirects, metadata, and site structure so your search rankings are preserved during the transition.",
+  },
 ];
 
 const FunnelSection = () => {
   return (
-    <section className="w-full py-12 md:py-24 px-4 md:px-6">
+    <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24">
       <div className="max-w-4xl mx-auto">
         {/* Text Content */}
-        <div className="text-center mb-10 md:mb-16 space-y-4 md:space-y-5">
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold leading-tight tracking-tight text-foreground">
+        <div className="text-center mb-12 space-y-4 md:space-y-5">
+          <h2 className="section-title text-foreground">
             Pair a Webflow marketing site with your Shopify store
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
@@ -32,7 +62,11 @@ const FunnelSection = () => {
           {/* Icon Row */}
           <div className="flex justify-center gap-3 sm:gap-[90px] md:gap-24 lg:gap-32 xl:gap-32 z-10">
             {icons.map((item, i) => (
-              <IconDot key={i} icon={item.icon} />
+              <IconDot
+                key={i}
+                icon={item.icon}
+                label={item.label}
+                description={item.description} />
             ))}
           </div>
 

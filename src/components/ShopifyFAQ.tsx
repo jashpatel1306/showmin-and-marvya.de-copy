@@ -2,32 +2,32 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "Do we have to move everything off Shopify?",
-    answer: "No. In most projects we keep Shopify for products and checkout and move marketing pages, content, and some category pages into Webflow.",
+    question: "Do we need to migrate everything away from Shopify?",
+    answer: "No. In most cases, Shopify continues to manage products and checkout, while marketing pages, content sections, and selected category experiences are rebuilt in Webflow for greater flexibility.",
   },
   {
-    question: "Can you match our current brand and visuals?",
-    answer: "Yes. We can either translate your existing look into Webflow or use the migration as a chance to sharpen your brand and page designs.",
+    question: "Can you replicate our existing branding and visual style?",
+    answer: "Yes. We can faithfully translate your current brand identity into Webflow or use the migration as an opportunity to refine and elevate the overall design system for improved consistency.",
   },
   {
-    question: "Will this hurt our SEO or paid campaigns?",
-    answer: "Handled correctly, it should not. We plan redirects, update key URLs and tracking, and keep important content aligned so search and ads keep working.",
+    question: "Will the migration affect our SEO or advertising performance?",
+    answer: "When managed properly, performance should remain stable. We carefully handle redirects, preserve key URLs, and ensure tracking systems remain intact so search rankings and paid campaigns continue to function smoothly.",
   },
   {
-    question: "How long does a Shopify to Webflow project take?",
-    answer: "It depends on how many pages we are moving and how much redesign is involved. Smaller projects can launch in a few weeks; larger ones usually take longer.",
+    question: "How long does a typical Shopify-to-Webflow migration take?",
+    answer: "Timelines vary depending on the number of pages being migrated and the level of redesign involved. Smaller migrations can be completed within a few weeks, while more complex projects may require additional time.",
   },
   {
-    question: "What does a project like this cost?",
-    answer: "Pricing depends on scope, number of templates, and how much new design work is needed. Many sit in the mid four to low five figures in USD or GBP.",
+    question: "What is the typical investment for a project like this?",
+    answer: "Costs depend on the scope, number of templates, integrations, and the amount of new design work required. Many projects fall within the mid four-figure to low five-figure range in USD or GBP.",
   },
   {
-    question: "Can you help our team manage two platforms?",
-    answer: "Yes. We document how content and products are split between Webflow and Shopify and show your team how to handle updates day to day.",
+    question: "Can you train our team to manage both Shopify and Webflow?",
+    answer: "Yes. We provide clear documentation and walkthroughs explaining how responsibilities are divided between the two platforms, enabling your team to confidently manage products, content, and updates.",
   },
   {
-    question: "What if we later decide to leave Shopify completely?",
-    answer: "Splitting marketing into Webflow first makes any future move easier. If you later move commerce as well, you already have a strong front-end in place.",
+    question: "What happens if we later decide to move completely away from Shopify?",
+    answer: "Separating the marketing experience into Webflow first makes any future platform transition significantly easier. If you later migrate the commerce layer as well, your front-end foundation will already be established.",
   },
 ];
 
@@ -39,12 +39,11 @@ const ShopifyFAQ = () => {
   };
 
   return (
-    <section className="w-full py-20 md:py-28">
-      <div className="mx-auto max-w-[1200px] px-6">
-        <div className="flex flex-col gap-12 lg:flex-row lg:gap-20">
+    <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24">
+      <div className="flex flex-col gap-12 lg:flex-row lg:gap-24">
           {/* Left column - Title & CTA */}
-          <div className="flex flex-col items-start gap-8 lg:w-[320px] lg:flex-shrink-0 lg:pt-4">
-            <h2 className="text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
+          <div className="flex flex-col items-start gap-8 lg:w-[400px] lg:flex-shrink-0 lg:pt-4">
+            <h2 className="section-title text-foreground">
               Shopify FAQS
             </h2>
             <a
@@ -79,7 +78,6 @@ const ShopifyFAQ = () => {
             ))}
           </div>
         </div>
-      </div>
     </section>
   );
 };

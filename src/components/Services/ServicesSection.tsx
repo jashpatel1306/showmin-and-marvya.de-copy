@@ -2,6 +2,9 @@ import framerDevImage from "@/assets/Services/framer-development.png";
 import technicalSeoImage from "@/assets/Services/technical-seo.png";
 import FeaturedServiceCard from "./FeaturedServiceCard";
 import PopularServiceCard from "./PopularServiceCard";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import GuidanceCTA from "./GuidanceCTA";
+import AllServicesSection from "./AllServicesSection";
 
 const featuredServices = [
   {
@@ -24,7 +27,7 @@ const popularServices = [
   {
     title: "Landing-page design",
     description: "Turn your offer into a high converting page",
-    href: "/services/landing-page-design",
+    href: "/landing",
     accent: "yellow" as const,
   },
   {
@@ -59,6 +62,19 @@ const popularServices = [
   },
 ];
 
+const AnimatedSection = ({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) => {
+  const { ref, isVisible } = useScrollAnimation();
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} ${className}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
+};
+
 const Services = () => {
   return (
     <main className="min-h-screen bg-background">
@@ -81,7 +97,7 @@ const Services = () => {
 
         {/* Popular Services */}
         <section>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-8">
+          <h2 className="section-title text-foreground mb-8">
             Popular services
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -90,7 +106,17 @@ const Services = () => {
             ))}
           </div>
         </section>
+
+        {/* Guidance CTA */}
+      <AnimatedSection delay={100}>
+          <GuidanceCTA />
+        </AnimatedSection>
+
+        {/* All Services */}
+        <AllServicesSection />
       </div>
+
+      
     </main>
   );
 };

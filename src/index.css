@@ -35,9 +35,13 @@
     --input: 0 0% 90%;
     --ring: 0 0% 0%;
 
-    --radius: 0.5rem;
-
     /* Custom colors for Showmine */
+    --service-yellow: 45 97% 55%;
+    --service-blue: 217 91% 60%;
+    --service-green: 150 60% 45%;
+    --service-purple: 270 70% 60%;
+    --service-coral: 0 70% 65%;
+    --service-teal: 175 45% 55%;
     --brand-blue: 197 100% 58%;
     --brand-teal: 175 45% 60%;
     --brand-green: 150 60% 55%;
@@ -56,25 +60,9 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* lala */
-    
-    
-    
-    
     --radius: 0.75rem;
-
     --line-base: 240 5% 89%;
     --line-active: 198 100% 57%;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-
   }
 
   .dark {
@@ -152,6 +140,16 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', sans-serif;
@@ -181,6 +179,10 @@
 
   .section-heading {
     @apply text-4xl md:text-5xl lg:text-6xl font-serif leading-tight tracking-tight;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl leading-tight;
   }
 
   .service-card {

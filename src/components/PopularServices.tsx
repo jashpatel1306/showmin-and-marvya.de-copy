@@ -5,26 +5,32 @@ const popularServices = [
   {
     title: "Landing-page design",
     description: "Turn your offer into a high converting page",
+    href: "/landing"
   },
   {
     title: "Figma to Webflow development",
     description: "Turn your Figma project into a fast, scalable Webflow site.",
+    href: "/leading"
   },
   {
     title: "Technical SEO audit",
     description: "Clear SEO fixes for your website",
+    href: "/leading"
   },
   {
     title: "Custom AI interface",
     description: "Design and build of a custom AI interface",
+    href: "/leading"
   },
   {
     title: "Website design",
     description: "Clear, modern and consistent UI",
+    href: "/leading"
   },
   {
     title: "Plugin updates",
     description: "Plugin and theme updates for WordPress sites",
+    href: "/leading"
   },
 ];
 
@@ -39,14 +45,14 @@ const PopularServices = () => {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <h2 className="text-2xl md:text-3xl font-serif">Popular services</h2>
+          <h2 className="section-title">Popular services</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {popularServices.map((service, index) => (
             <motion.a
               key={service.title}
-              href="#"
+              href={service.href}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -73,7 +79,7 @@ const PopularServices = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-10 text-center"
         >
-          <a href="#" className="btn-secondary inline-flex items-center gap-2">
+          <a href="/services/category/design" className="btn-secondary inline-flex items-center gap-2">
             Explore all
           </a>
         </motion.div>

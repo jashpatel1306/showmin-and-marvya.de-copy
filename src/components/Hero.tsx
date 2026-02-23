@@ -181,7 +181,7 @@ const Hero = () => {
     <section className="relative min-h-screen wavy-bg pt-24 md:pt-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Badges */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -199,7 +199,7 @@ const Hero = () => {
               <span>{badge.label}</span>
             </motion.span>
           ))}
-        </motion.div>
+        </motion.div> */}
         {/* Headline */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

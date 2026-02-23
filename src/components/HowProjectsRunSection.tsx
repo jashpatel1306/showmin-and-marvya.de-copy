@@ -112,28 +112,18 @@ const HowProjectsRunSection = () => {
   };
 
   return (
-    <section className="w-full py-16 md:py-24 overflow-hidden">
-      <div className="max-w-5xl mx-auto px-4 md:px-6">
-        {/* Header */}
-        <div className="max-w-2xl space-y-4 mb-8 md:mb-12">
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold leading-tight tracking-tight text-foreground">
-            How our Shopify to Webflow projects run
-          </h2>
-          <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-            We separate your marketing site from your Shopify theme in a
-            controlled way so content, brand, and campaigns can move faster
-            without breaking the store.
-          </p>
-        </div>
-
-        {/* Wave Ticker */}
-        {/* <div className="mb-10 md:mb-14 hidden md:block">
-          <WaveTicker />
-        </div> */}
+    <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24 overflow-hidden">
+      <div className="max-w-2xl space-y-4 mb-12">
+        <h2 className="section-title text-foreground">
+          How our Shopify to Webflow projects run
+        </h2>
+        <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+          We separate your marketing site from your Shopify theme in a
+          controlled way so content, brand, and campaigns can move faster
+          without breaking the store.
+        </p>
       </div>
-
-      {/* Horizontal scroll cards */}
-      <div className="relative max-w-5xl mx-auto px-4 md:px-6">
+      <div className="relative">
         <div
           ref={scrollRef}
           className="flex gap-6 md:gap-8 overflow-x-auto pb-4 scrollbar-hide"
