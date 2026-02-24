@@ -16,6 +16,9 @@ import Design from "./pages/Design";
 import DesignCategory from "./pages/DesignCategory";
 import WebflowAgency from "./pages/WebflowAgency";
 import HubSpotAgency from "./pages/HubSpotAgency";
+import FigmaAgency from "./pages/FigmaAgency";
+import WordPressAgency from "./pages/WordPressAgency";
+import FramerAgency from "./pages/FramerAgency";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +41,9 @@ const App = () => (
             <Route path="/services/category/design" element={<DesignCategory />} />
             <Route path="/webflow-agency" element={<WebflowAgency />} />
             <Route path="/hubspot-agency" element={<HubSpotAgency />} />
+            <Route path="/figma-agency" element={<FigmaAgency />} />
+            <Route path="/wordpress-agency" element={<WordPressAgency />} />
+            <Route path="/framer-agency" element={<FramerAgency />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
