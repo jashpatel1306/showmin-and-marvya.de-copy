@@ -1,7 +1,7 @@
-import pages from "@/assets/Webflow/pages.webp";
-import seo from "@/assets/Webflow/seo.avif";
-import team from "@/assets/Webflow/team.webp";
-import update from "@/assets/Webflow/update.webp";
+import messy from "@/assets/HubSpotAgency/messy.avif";
+import lead from "@/assets/HubSpotAgency/lead.avif";
+import teams from "@/assets/HubSpotAgency/teams.avif";
+import migrations from "@/assets/HubSpotAgency/migrations.avif";
 
 interface FeatureCardProps {
   image: string;
@@ -37,12 +37,12 @@ const FeatureCard = ({ image, title, description }: FeatureCardProps) => (
   </div>
 );
 
-const WebflowMarketing = () => {
+const HubSpotMarketing = () => {
   return (
     <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-16">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12">
           <h2 className="section-title text-foreground">
-          When Webflow makes the most sense
+          When to bring in a HubSpot agency
           </h2>
           <a
             href="#get-started"
@@ -58,28 +58,28 @@ const WebflowMarketing = () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
           <FeatureCard
-            image={team}
-            title="For growing teams"
-            description="Webflow allows us to launch quickly while giving your team a reliable, easy-to-use editor. You get a fully custom website experience without the overhead of hiring a full-time developer."
+            image={messy}
+            title="For messy or underused HubSpot portals"
+            description="You already have HubSpot, but the data feels disorganized, pipelines lack clarity, or your team isn’t fully confident using it day to day. We bring structure, simplify workflows, and make the system easier to trust."
           />
           <FeatureCard
-            image={update}
-            title="For regular content updates"
-            description="Webflow CMS keeps pages, blog posts, and case studies structured and consistent, so your marketing team can publish confidently and frequently without disrupting layouts or design integrity."
+            image={lead}
+            title="For lead-driven websites and funnels"
+            description="If your growth depends on inbound leads, booked calls, or demo requests, HubSpot should clearly reflect the journey from first interaction to closed deal. We align your site and funnels so every step is properly tracked and visible."
           />
           <FeatureCard
-            image={pages}
-            title="For high-converting pages"
-            description="If you run campaigns regularly, you need landing pages that can be designed, tested, and launched quickly—while keeping your brand consistent and your layouts structured for conversion."
+            image={teams}
+            title="For teams that need one source of truth"
+            description="When sales and marketing rely on different spreadsheets or disconnected reports, decision-making becomes harder. We centralize your data so everyone works from the same clear, accurate view of performance."
           />
           <FeatureCard
-            image={seo}
-            title="For SEO and performance"
-            description="If performance and search visibility matter to you, Webflow provides a strong foundation. It makes it easier to launch fast, lightweight pages, maintain solid Core Web Vitals, and keep technical SEO and analytics properly structured from the start."
+            image={migrations}
+            title="For CRM migrations into HubSpot"
+            description="If you’re moving from another CRM, we help migrate the right data, clean and structure it properly, and connect your website, forms, and workflows so everything works smoothly from day one."
           />
       </div>
     </section>
   );
 };
 
-export default WebflowMarketing;
+export default HubSpotMarketing;

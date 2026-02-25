@@ -1,14 +1,7 @@
 import webflowIcon from "@/assets/webflow-logo.svg";
 
-
-const bulletPoints = [
-  "Fully hosted infrastructure with built-in security",
-  "Clean, high-performance front end designed to support SEO",
-  "Intuitive visual editor that allows your team to update content safely and independently",
-];
-
 const CheckBadge = () => (
-  <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg width="20" height="20" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="checkGrad" x1="0.04" x2="0.96" y1="0" y2="1">
         <stop offset="0" stopColor="hsl(197, 100%, 80%)" />
@@ -27,118 +20,131 @@ const cards = [
     title: "Typical projects",
     description:
       "Marketing website launches, full site redesigns, long-form sales pages, blogs and resource centers, lightweight membership or client portals, and multi-step lead-generation funnels.",
-    icon: (
-      <svg viewBox="0 0 35 35" className="w-[35px] h-[35px]">
-        <rect width="35" height="35" rx="8" fill="hsl(var(--primary))" />
-        <path d="M10 17.5L15 22.5L25 12.5" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-      </svg>
-    ),
+    borderClass: "border-r border-b",
   },
   {
     title: "Best suited for teams that",
     description:
       "Need a fully custom website without maintaining a dedicated development team, want faster launch timelines, and prefer marketing teams to create or update pages independently without engineering delays.",
-    icon: (
-      <svg viewBox="0 0 35 35" className="w-[35px] h-[35px]">
-        <rect width="35" height="35" rx="8" fill="hsl(var(--primary))" />
-        <circle cx="17.5" cy="14" r="4" stroke="white" strokeWidth="2" fill="none" />
-        <path d="M10 26c0-4.418 3.358-8 7.5-8s7.5 3.582 7.5 8" stroke="white" strokeWidth="2" strokeLinecap="round" fill="none" />
-      </svg>
-    ),
+    borderClass: "border-l border-b",
   },
   {
     title: "Typical results",
     description:
       "Quicker campaign launch cycles, improved organic visibility with well-structured landing pages, and a Webflow website your internal team can easily maintain and scale over time.",
-    icon: (
-      <svg viewBox="0 0 35 35" className="w-[35px] h-[35px]">
-        <rect width="35" height="35" rx="8" fill="hsl(var(--primary))" />
-        <path d="M12 24V15M17.5 24V11M23 24V18" stroke="white" strokeWidth="2.5" strokeLinecap="round" fill="none" />
-      </svg>
-    ),
+    borderClass: "border-r border-t",
   },
   {
     title: "Webflow capabilities",
     description:
       "Webflow Designer, CMS Collections, reusable components, forms, and integrations with tools such as HubSpot, Zapier, and analytics platforms—delivered within a clean, performance-focused front end optimized for speed and SEO.",
-    icon: (
-      <svg viewBox="0 0 35 35" className="w-[35px] h-[35px]">
-        <rect width="35" height="35" rx="8" fill="hsl(var(--primary))" />
-        <rect x="10" y="10" width="15" height="15" rx="3" stroke="white" strokeWidth="2" fill="none" />
-        <path d="M15 17.5h5M17.5 15v5" stroke="white" strokeWidth="2" strokeLinecap="round" fill="none" />
-      </svg>
-    ),
+    borderClass: "border-l border-t",
   },
 ];
+
+const features = [
+  "Fully hosted infrastructure with built-in security",
+  "Clean, high-performance front end designed to support SEO",
+  "Intuitive visual editor that allows your team to update content safely and independently",
+];
+
+
+const CardIcon = ({ index }: { index: number }) => {
+  const icons = [
+    // Clipboard/list icon
+    <svg key={0} viewBox="0 0 35 35" width="35" height="35" fill="none">
+      <rect x="6" y="3" width="23" height="29" rx="3" stroke="currentColor" strokeWidth="1.5" fill="none" />
+      <line x1="12" y1="12" x2="23" y2="12" stroke="currentColor" strokeWidth="1.5" />
+      <line x1="12" y1="17" x2="23" y2="17" stroke="currentColor" strokeWidth="1.5" />
+      <line x1="12" y1="22" x2="20" y2="22" stroke="currentColor" strokeWidth="1.5" />
+      <rect x="13" y="5" width="9" height="4" rx="1" stroke="currentColor" strokeWidth="1.2" fill="hsl(var(--background))" />
+    </svg>,
+    // People icon
+    <svg key={1} viewBox="0 0 35 35" width="35" height="35" fill="none">
+      <circle cx="14" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M6 28c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" strokeWidth="1.5" fill="none" />
+      <circle cx="23" cy="11" r="3" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M24 20c3.3 0 6 2.7 6 6" stroke="currentColor" strokeWidth="1.5" fill="none" />
+    </svg>,
+    // Chart/results icon
+    <svg key={2} viewBox="0 0 35 35" width="35" height="35" fill="none">
+      <rect x="5" y="20" width="5" height="10" rx="1" stroke="currentColor" strokeWidth="1.5" />
+      <rect x="15" y="13" width="5" height="17" rx="1" stroke="currentColor" strokeWidth="1.5" />
+      <rect x="25" y="6" width="5" height="24" rx="1" stroke="currentColor" strokeWidth="1.5" />
+    </svg>,
+    // Settings/gear icon
+    <svg key={3} viewBox="0 0 35 35" width="35" height="35" fill="none">
+      <circle cx="17.5" cy="17.5" r="5" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M17.5 4v4M17.5 27v4M4 17.5h4M27 17.5h4M8.1 8.1l2.8 2.8M24.1 24.1l2.8 2.8M8.1 26.9l2.8-2.8M24.1 10.9l2.8-2.8" stroke="currentColor" strokeWidth="1.5" />
+    </svg>,
+  ];
+  return icons[index];
+};
+
 const WebflowGlance = () => {
   return (
-    <section className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24">
-      <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
-        {/* Left column */}
-        <div className="flex-1 flex flex-col gap-8 mt-24">
-          {/* Header with icon */}
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+    <section className="w-full px-4 py-16 sm:py-24">
+      <div className="mx-auto max-w-6xl">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
+          {/* Left Column */}
+          <div className="flex flex-col gap-6 lg:w-[45%] shrink-0">
+            {/* Image + Heading */}
+            <div className="flex items-center gap-4">
               <img
                 src={webflowIcon}
-                alt=""
-                className="w-full h-full object-cover"
+                alt="A glance at HubSpot"
+                className="w-14 h-14 rounded-lg object-cover"
               />
+              <h2 className="text-2xl sm:text-3xl font-semibold text-foreground">
+                A glance at Webflow
+              </h2>
             </div>
-            <h2 className="section-title text-foreground text-left">
-              A glance at Webflow
-            </h2>
-          </div>
-          {/* Description with left border */}
-          <div
-            className="border-l-2 pl-6"
-            style={{ borderColor: "hsl(var(--border))" }}
-          >
-            <p className="text-muted-foreground text-base leading-relaxed">
-              We use Webflow when you need a custom marketing website that delivers a premium feel, launches quickly, and remains easy to manage without relying on a full-time developer. It blends visual editing flexibility with production-quality code, giving teams both speed and control.
-            </p>
-          </div>
-          {/* Bullet points */}
-          <div className="flex flex-col gap-4">
-            {bulletPoints.map((point, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <CheckBadge />
-                <p className="text-foreground/80 text-sm md:text-base">
-                  {point}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-        {/* Right column — 2×2 card grid */}
-        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 rounded-xl overflow-hidden">
-          {cards.map((card, i) => {
-            const isTop = i < 2;
-            const isLeft = i % 2 === 0;
-            return (
-              <div
-                key={i}
-                className="p-6 flex flex-col gap-4"
-                style={{
-                  backgroundColor: "hsl(var(--muted))",
-                  borderRight: isLeft ? "0.5px solid hsl(var(--border))" : "none",
-                  borderBottom: isTop ? "0.5px solid hsl(var(--border))" : "none",
-                  borderLeft: !isLeft ? "0.5px solid hsl(var(--border))" : "none",
-                  borderTop: !isTop ? "0.5px solid hsl(var(--border))" : "none",
-                }}
-              >
-                <div className="flex items-center gap-3">
-                  {card.icon}
-                  <h3 className="text-sm font-semibold text-foreground">
-                    {card.title}
-                  </h3>
+
+            {/* Description with left border */}
+            <div className="border-l-2 border-border pl-5">
+              <p className="text-muted-foreground leading-relaxed">
+                We use Webflow when you need a custom marketing website that delivers a premium feel, launches quickly, and remains easy to manage without relying on a full-time developer. It blends visual editing flexibility with production-quality code, giving teams both speed and control.
+              </p>
+            </div>
+
+            {/* Feature list */}
+            <div className="flex flex-col gap-3 mt-2">
+              {features.map((feature, i) => (
+                <div key={i} className="flex items-center gap-3 opacity-80">
+                  <CheckBadge />
+                  <span className="text-foreground text-sm sm:text-base">{feature}</span>
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {card.description}
-                </p>
-              </div>
-            );
-          })}
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column - 2x2 Card Grid */}
+          <div className="lg:w-[55%]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 rounded-xl overflow-hidden">
+              {cards.map((card, i) => (
+                <div
+                  key={i}
+                  className="bg-secondary/60 p-6 sm:p-7 border-border/50"
+                  style={{
+                    borderRight: i % 2 === 0 ? "0.5px solid hsl(var(--border))" : "none",
+                    borderBottom: i < 2 ? "0.5px solid hsl(var(--border))" : "none",
+                    borderLeft: i % 2 === 1 ? "0.5px solid hsl(var(--border))" : "none",
+                    borderTop: i >= 2 ? "0.5px solid hsl(var(--border))" : "none",
+                  }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="text-foreground">
+                      <CardIcon index={i} />
+                    </div>
+                    <h3 className="text-base font-semibold text-foreground">{card.title}</h3>
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {card.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

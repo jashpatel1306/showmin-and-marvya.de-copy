@@ -37,10 +37,10 @@ const trendingServices = [
 ];
 
 const buildWithTools = [
-  { label: "Figma", href: "/", logo: "https://framerusercontent.com/images/QJeOyFsAINyEooCkrGJZocdpyws.svg" },
-  { label: "Webflow", href: "/", logo: "https://framerusercontent.com/images/EN8DKbXvlTDjkkycAxucWV0MGu0.svg" },
-  { label: "Shopify", href: "/", logo: "https://framerusercontent.com/images/WawXoAkLznIt1qE3lnbA4P0rT4E.svg" },
-  { label: "Framer", href: "/", logo: "https://framerusercontent.com/images/erQVobGVFVG48u0pk5nhWEk.svg" },
+  { label: "Figma", href: "/figma-agency", logo: "https://framerusercontent.com/images/QJeOyFsAINyEooCkrGJZocdpyws.svg" },
+  { label: "Webflow", href: "/webflow-agency", logo: "https://framerusercontent.com/images/EN8DKbXvlTDjkkycAxucWV0MGu0.svg" },
+  { label: "Shopify", href: "/migrate-from-shopify", logo: "https://framerusercontent.com/images/WawXoAkLznIt1qE3lnbA4P0rT4E.svg" },
+  { label: "Framer", href: "/framer-agency", logo: "https://framerusercontent.com/images/erQVobGVFVG48u0pk5nhWEk.svg" },
 ];
 
 const migrateFromPlatforms = [

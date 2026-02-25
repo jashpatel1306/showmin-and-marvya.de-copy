@@ -18,8 +18,12 @@ import WebflowAgency from "./pages/WebflowAgency";
 import HubSpotAgency from "./pages/HubSpotAgency";
 import FigmaAgency from "./pages/FigmaAgency";
 import WordPressAgency from "./pages/WordPressAgency";
-import FramerAgency from "./pages/FramerAgency";
-
+import AiAutomation from "./pages/AiAutomation";
+import MigrateFromElementor from "./pages/MigrateFromElementor";
+import MigrateFromWix from "./pages/MigrateFromWix";
+import MigrateFromSquarespace from "./pages/MigrateFromSquarespace";
+import MigrateFromGoDaddy from "./pages/MigrateFromGoDaddy";
+import FramerAgency from "./FramerAgency";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -44,6 +48,12 @@ const App = () => (
             <Route path="/figma-agency" element={<FigmaAgency />} />
             <Route path="/wordpress-agency" element={<WordPressAgency />} />
             <Route path="/framer-agency" element={<FramerAgency />} />
+            <Route path="/ai-automation" element={<AiAutomation />} />
+            <Route path="/migrate-from-elementor" element={<MigrateFromElementor />} />
+            <Route path="/migrate-from-wix" element={<MigrateFromWix />} />
+            <Route path="/migrate-from-squarespace" element={<MigrateFromSquarespace />} />
+            <Route path="/migrate-from-godaddy" element={<MigrateFromGoDaddy />} />
+
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

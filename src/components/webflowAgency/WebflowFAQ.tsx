@@ -39,7 +39,7 @@ const WebflowFAQ = () => {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24">
+    <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-16">
       <div className="flex flex-col gap-12 lg:flex-row lg:gap-24">
         <div className="flex flex-col items-start gap-8 lg:w-[400px] lg:flex-shrink-0 lg:pt-4">
             <h2 className="section-title text-foreground">

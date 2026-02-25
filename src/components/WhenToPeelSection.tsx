@@ -42,7 +42,7 @@ const WhenToPeelSection = () => {
     <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24">
       <div>
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12">
-          <h2 className="section-title text-foreground max-w-xl">
+          <h2 className="section-title text-foreground max-w-5xl">
             When to peel marketing away from your Shopify theme
           </h2>
           <a
