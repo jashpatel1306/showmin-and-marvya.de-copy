@@ -23,7 +23,12 @@ import MigrateFromElementor from "./pages/MigrateFromElementor";
 import MigrateFromWix from "./pages/MigrateFromWix";
 import MigrateFromSquarespace from "./pages/MigrateFromSquarespace";
 import MigrateFromGoDaddy from "./pages/MigrateFromGoDaddy";
-import FramerAgency from "./FramerAgency";
+// import FramerAgency from "./pages/FramerAgency";
+import Ga4 from "./pages/Ga4";
+import Make from "./pages/Make";
+import GoHighLevel from "./pages/GoHighLevel";
+import OpenAi from "./pages/OpenAi";
+import FramerAgency from "./pages/FramerAgency";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -44,7 +49,7 @@ const App = () => (
             <Route path="/design" element={<Design />} />
             <Route path="/services/category/design" element={<DesignCategory />} />
             <Route path="/webflow-agency" element={<WebflowAgency />} />
-            <Route path="/hubspot-agency" element={<HubSpotAgency />} />
+            <Route path="/hubspot" element={<HubSpotAgency />} />
             <Route path="/figma-agency" element={<FigmaAgency />} />
             <Route path="/wordpress-agency" element={<WordPressAgency />} />
             <Route path="/framer-agency" element={<FramerAgency />} />
@@ -53,6 +58,10 @@ const App = () => (
             <Route path="/migrate-from-wix" element={<MigrateFromWix />} />
             <Route path="/migrate-from-squarespace" element={<MigrateFromSquarespace />} />
             <Route path="/migrate-from-godaddy" element={<MigrateFromGoDaddy />} />
+            <Route path="/ga4" element={<Ga4 />} />
+            <Route path="/make" element={<Make />} />
+            <Route path="/gohighlevel" element={<GoHighLevel />} />
+            <Route path="/openai" element={<OpenAi />} />
 
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

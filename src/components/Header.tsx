@@ -52,11 +52,11 @@ const migrateFromPlatforms = [
 ];
 
 const measureAutomateTools = [
-  { label: "Google Analytics", href: "/ga4-agency", logo: "https://framerusercontent.com/images/2YP1tgbRkcWQuT2CFeOQY9aSPw.svg" },
-  { label: "Make", href: "/make-agency", logo: "https://framerusercontent.com/images/iHzAl2ihHbNJD720rjMN64DR2M.png" },
-  { label: "GoHighLevel", href: "/gohighlevel-agency", logo: "https://framerusercontent.com/images/6fATZT1GEyTNZnlbQkBTrVNEqhU.png" },
-  { label: "OpenAI", href: "/openai-agency", logo: "https://framerusercontent.com/images/329cv9LAcRfZMJLpHqFVgKOEg.png" },
-  { label: "HubSpot", href: "/hubspot-agency", logo: "https://framerusercontent.com/images/HZPn0onTTSg8Bu8wNEdWv8Hqs1o.png" },
+  { label: "Google Analytics", href: "/ga4", logo: "https://framerusercontent.com/images/2YP1tgbRkcWQuT2CFeOQY9aSPw.svg" },
+  { label: "Make", href: "/make", logo: "https://framerusercontent.com/images/iHzAl2ihHbNJD720rjMN64DR2M.png" },
+  { label: "GoHighLevel", href: "/gohighlevel", logo: "https://framerusercontent.com/images/6fATZT1GEyTNZnlbQkBTrVNEqhU.png" },
+  { label: "OpenAI", href: "/openai", logo: "https://framerusercontent.com/images/329cv9LAcRfZMJLpHqFVgKOEg.png" },
+  { label: "HubSpot", href: "/hubspot", logo: "https://framerusercontent.com/images/HZPn0onTTSg8Bu8wNEdWv8Hqs1o.png" },
 ];
 
 
