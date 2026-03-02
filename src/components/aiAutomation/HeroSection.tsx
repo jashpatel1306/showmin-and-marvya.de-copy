@@ -17,12 +17,12 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <section className="relative overflow-visible">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-16 py-16 lg:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+    // <div className="min-h-screen bg-background">
+    <section className="relative overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-16 pt-16 lg:pt-24">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-8 items-center justify-between">
             {/* Left content */}
-            <div className="flex flex-col gap-8 max-w-xl">
+            <div className="flex flex-col gap-8 w-full lg:w-[45%] max-w-xl mx-auto lg:mx-0">
               {/* Badge Dropdown */}
               <div className="relative self-start" ref={ref}>
                 <button
@@ -71,15 +71,20 @@ const Index = () => {
             </div>
 
             {/* Right workflow diagram */}
-            <div className="relative flex justify-center lg:justify-end overflow-visible">
-              <div className="w-full max-w-[560px] aspect-[560/500] origin-top scale-[0.55] sm:scale-[0.75] md:scale-[0.85] lg:scale-100">
-                <WorkflowDiagram />
+            <div className="w-full lg:w-[55%] flex justify-center lg:justify-end">
+              <div className="relative flex items-center justify-center" style={{ width: "min(560px, 100%)", height: "min(500px, 90vw)" }}>
+                <div
+                  className="absolute scale-[0.52] sm:scale-[0.70] md:scale-[0.82] lg:scale-100 origin-center"
+                  style={{ width: "560px", height: "500px" }}
+                >
+                  <WorkflowDiagram />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-    </div>
+  // </div>
   );
 };
 

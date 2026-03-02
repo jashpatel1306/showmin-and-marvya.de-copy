@@ -14,6 +14,10 @@ import Services from "./pages/Services";
 import Landing from "./pages/Landing";
 import Design from "./pages/Design";
 import DesignCategory from "./pages/DesignCategory";
+import Development from "./pages/Development";
+import SEO from "./pages/SEO";
+import Maintenance from "./pages/Maintenance";
+import Copywriting from "./pages/Copywriting";
 import WebflowAgency from "./pages/WebflowAgency";
 import HubSpotAgency from "./pages/HubSpotAgency";
 import FigmaAgency from "./pages/FigmaAgency";
@@ -47,6 +51,10 @@ const App = () => (
             <Route path="/services" element={<Services />} />
             <Route path="/landing" element={<Landing />} />
             <Route path="/design" element={<Design />} />
+            <Route path="/development" element={<Development />} />
+            <Route path="/seo" element={<SEO />} />
+            <Route path="/maintenance" element={<Maintenance />} />
+            <Route path="/copywriting" element={<Copywriting />} />
             <Route path="/services/category/design" element={<DesignCategory />} />
             <Route path="/webflow-agency" element={<WebflowAgency />} />
             <Route path="/hubspot" element={<HubSpotAgency />} />
