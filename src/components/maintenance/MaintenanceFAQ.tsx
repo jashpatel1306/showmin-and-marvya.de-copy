@@ -36,10 +36,10 @@ const MaintenanceFAQ = () => {
   };
 
   return (
-    <section className="w-full py-20 md:py-28">
+    <section className="w-full pt-20 md:pt-28">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="flex flex-col gap-12 lg:flex-row lg:gap-20">
-          <div className="flex flex-col items-start gap-8 lg:w-[320px] lg:flex-shrink-0 lg:pt-4">
+          <div className="flex flex-col items-start gap-8 lg:w-[500px] lg:flex-shrink-0 lg:pt-4">
             <h2 className="section-title text-foreground">Maintenance FAQs</h2>
             <a
               href="/get-started"

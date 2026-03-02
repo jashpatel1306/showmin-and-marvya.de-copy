@@ -2,24 +2,34 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "What does an SEO audit include?",
-    answer: "We analyze technical SEO (crawlability, site speed, mobile-friendliness), on-page SEO (titles, meta descriptions, headings, content structure), and off-page factors. You receive a prioritized action plan with clear next steps.",
+    question: "How do you begin an SEO engagement?",
+    answer:
+      "We start with a focused discovery call to understand your goals, current traffic, and known issues. From there, we run a light technical and content audit and provide clear, prioritized recommendations with transparent pricing.",
   },
   {
-    question: "How long until I see results?",
-    answer: "SEO is a long-term investment. Technical fixes often show impact within 4–8 weeks. Content and ranking improvements typically take 3–6 months depending on competition and your starting point.",
+    question: "Do you only optimize sites you’ve built?",
+    answer:
+      "No. We regularly work on existing Webflow, Framer, and WordPress sites built by other teams. We review the current setup first and provide honest guidance on what’s achievable.",
   },
   {
-    question: "Do you offer ongoing SEO support?",
-    answer: "Yes. Many clients work with us on ongoing technical SEO, content optimization, and monitoring. We offer monthly retainers tailored to your goals and budget.",
+    question: "How long does it take to see SEO results?",
+    answer:
+      "SEO is a medium- to long-term channel. Some technical improvements can show impact relatively quickly, but consistent and meaningful growth typically takes several months. We set realistic expectations from the outset.",
   },
   {
-    question: "How much does an SEO audit cost?",
-    answer: "Pricing depends on site size and depth of analysis. A standard audit for most marketing sites starts from $800. We provide a clear quote after reviewing your site.",
+    question: "Will you create content for us?",
+    answer:
+      "Yes. We can support topic planning, keyword research, outlines, and full-page or article writing—ensuring content is structured for both users and search engines.",
   },
   {
-    question: "Can you work with our existing content?",
-    answer: "Yes. We optimize existing pages for better rankings, improve meta tags and structure, and suggest content updates. We can also create new content when needed.",
+    question: "Do you provide link building services?",
+    answer:
+      "Our priority is strong technical foundations and valuable content. When link building is appropriate, we take a careful, ethical approach focused on relevant, high-quality backlinks and can advise on safe strategies.",
+  },
+  {
+    question: "Can you collaborate with our internal marketing team?",
+    answer:
+      "Absolutely. We often work alongside in-house marketing and content teams, acting as an SEO partner to provide strategy, technical checks, and ongoing guidance.",
   },
 ];
 
@@ -34,7 +44,7 @@ const SEOFAQ = () => {
     <section className="w-full py-20 md:py-28">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="flex flex-col gap-12 lg:flex-row lg:gap-20">
-          <div className="flex flex-col items-start gap-8 lg:w-[320px] lg:flex-shrink-0 lg:pt-4">
+          <div className="flex flex-col items-start gap-8 lg:w-[400px] lg:flex-shrink-0 lg:pt-4">
             <h2 className="section-title text-foreground">SEO FAQs</h2>
             <a
               href="/get-started"
