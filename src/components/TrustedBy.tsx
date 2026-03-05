@@ -5,7 +5,7 @@ import britishjewel from "@/assets/clients/britishjewel.png";
 import diamondrensu from "@/assets/clients/diamondrensu.png";
 import gosharpei from "@/assets/clients/gosharpei.png";
 import indoera from "@/assets/clients/indoera.png";
-import kymee from "@/assets/clients/kymee.png";
+import kymee from "@/assets/clients/kymee.svg";
 import lemaris from "@/assets/clients/lemaris.png";
 
 import pinktownusa from "@/assets/clients/pinktownusa.png";
