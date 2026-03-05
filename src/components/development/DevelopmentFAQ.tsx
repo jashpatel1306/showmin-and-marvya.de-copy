@@ -2,24 +2,34 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "How do development projects usually start?",
-    answer: "We begin with a discovery call to understand your technical requirements, timeline, and budget. From there we provide a detailed scope and proposal. Once agreed, we set up the project structure and start building.",
+    question: "Which platforms and technologies do you typically work with?",
+    answer:
+      "For marketing websites we mainly build in Webflow, Framer, and WordPress, adding custom code where it genuinely improves functionality. We can also collaborate with your internal engineering team for more complex integrations or custom systems.",
   },
   {
-    question: "What tech stack do you work with?",
-    answer: "We work with modern frameworks like React, Next.js, Framer, Webflow, WordPress, and more. We choose the right tools based on your project needs, scalability, and maintenance requirements.",
+    question: "Can you take over an existing website or codebase?",
+    answer:
+      "Yes. We frequently step into existing projects to improve structure, optimize performance, or add new features. We begin with a short technical review and provide honest advice on whether it makes more sense to improve the current setup or rebuild.",
   },
   {
-    question: "Do you provide ongoing development support?",
-    answer: "Yes. Many clients retain us for feature additions, bug fixes, and technical updates. We offer flexible retainer arrangements or per-project support depending on your needs.",
+    question: "How do you handle testing and quality assurance?",
+    answer:
+      "Each project goes through responsive testing across devices, browser compatibility checks, and basic accessibility reviews. For larger or more complex builds, we can also align with your internal QA processes.",
   },
   {
-    question: "How much does a typical development project cost?",
-    answer: "Pricing depends on scope, complexity, and timeline. A landing page build typically starts from $1500, while a full website or web app will be more. We provide clear quotes after our discovery call.",
+    question: "Will our team be able to edit the site after launch?",
+    answer:
+      "Yes. We structure sites so non-technical team members can safely update text, images, and CMS content without affecting the underlying layout or functionality.",
   },
   {
-    question: "Can you work with existing codebases?",
-    answer: "Yes. We regularly take over and enhance existing projects. We can refactor, add features, fix bugs, or migrate to a new stack when needed.",
+    question: "What is the typical timeline for a development project?",
+    answer:
+      "Timelines vary depending on scope, design readiness, and integrations. A focused marketing site may take a few weeks, while larger builds take longer. After an initial discussion, we provide a clear timeline with key milestones.",
+  },
+  {
+    question: "Do you provide support after the site launches?",
+    answer:
+      "Yes. We offer ongoing support for bug fixes, technical maintenance, and continuous improvements—either through a monthly plan or on a pay-as-you-go basis.",
   },
 ];
 
@@ -31,10 +41,10 @@ const DevelopmentFAQ = () => {
   };
 
   return (
-    <section className="w-full py-20 md:py-28">
+    <section className="w-full pt-20 md:pt-28">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="flex flex-col gap-12 lg:flex-row lg:gap-20">
-          <div className="flex flex-col items-start gap-8 lg:w-[320px] lg:flex-shrink-0 lg:pt-4">
+          <div className="flex flex-col items-start gap-8 lg:w-[500px] lg:flex-shrink-0 lg:pt-4">
             <h2 className="section-title text-foreground">Development FAQs</h2>
             <a
               href="/get-started"
