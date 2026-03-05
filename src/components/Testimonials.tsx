@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const testimonials = [
   {
@@ -61,15 +62,9 @@ const Testimonials = () => {
   return (
     <section className="py-16 md:py-24 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
+        <ScrollReveal className="text-center mb-12">
           <h2 className="section-title">What our clients say</h2>
-        </motion.div>
+        </ScrollReveal>
       </div>
 
       {/* First Row - Scrolling Left */}
@@ -92,6 +87,7 @@ const Testimonials = () => {
                   src={testimonial.author.image}
                   alt={testimonial.author.name}
                   className="w-10 h-10 rounded-full object-cover"
+                  loading="lazy"
                 />
                 <div>
                   <p className="font-medium text-sm">{testimonial.author.name}</p>
