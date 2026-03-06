@@ -29,33 +29,33 @@ const StepCard = ({ step, title, description }: StepCardProps) => {
 const steps = [
     {
       step: 1,
-      title: "Discovery and objectives",
+      title: "Review and define goals",
       description:
-        "We define your offer, audience, and key actions so each Framer page is built with a clear purpose.",
+        "We assess your current design files, clarify objectives, and decide what the Figma workspace should support—marketing, product design, or both.",
     },
     {
       step: 2,
-      title: "Page structure and design",
+      title: "Create structure and foundations",
       description:
-        "We outline sections, content flow, and layout, then design core pages and reusable components with conversion and motion in mind.",
+        "We set up page structures, grid systems, design styles, and base components to establish a reusable and scalable foundation.",
     },
     {
       step: 3,
-      title: "Development in Framer",
+      title: "Design key screens",
       description:
-        "We build responsive pages, interactions, and components in Framer, sharing preview links so you can review progress and provide feedback.",
+        "We design the main pages or flows while building components and variants so the system stays consistent as it grows.",
     },
     {
       step: 4,
-      title: "Content, QA, and optimization",
+      title: "Prototype and gather feedback",
       description:
-        "We refine copy, connect forms and analytics, and test across devices to ensure the site feels fast, smooth, and reliable.",
+        "Interactive prototypes are created so your team can review flows, test interactions, and provide feedback before development begins.",
     },
     {
       step: 5,
-      title: "Launch and team handover",
+      title: "Developer handoff and documentation",
       description:
-        "We support the launch, help run initial experiments, and provide short training so your team can confidently update and create new pages in Framer.",
+        "We organize dev-ready files, provide simple documentation, and structure the project so your team can build and extend confidently.",
     },
   ];
 
@@ -68,10 +68,10 @@ const FigmaProccessSection = () => {
                 {/* Header */}
                 <div className="max-w-lg mb-12">
                     <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-[1.1] text-foreground mb-4">
-                        How our Framer projects run
+                        How our Figma projects run
                     </h2>
                     <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-                    A clear process from brief to launch so your Framer pages are ready to ship and ready to perform.
+                        A structured process from audit or brief to a tidy Figma file your team can keep using.
                     </p>
                 </div>
 
