@@ -104,12 +104,12 @@ export const FeatureCard = ({ title, description, icon, gradientColor }: Feature
     <div className="flex flex-col gap-4">
       {/* Icon Container */}
       <div
-        className="w-20 h-20 rounded-xl border border-border flex items-center justify-center"
+        className="w-60 h-60 rounded-xl border border-border flex items-center justify-center"
         style={{
           background: `linear-gradient(180deg, hsl(var(--muted)) 0%, ${gradientColor} 100%)`,
         }}
       >
-        <div className="w-12 h-12 flex items-center justify-center">
+        <div className="w-30 h-30 flex items-center justify-center">
           {icon}
         </div>
       </div>
