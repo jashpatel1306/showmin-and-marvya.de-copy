@@ -9,7 +9,9 @@ import logo from "@/assets/Company/showmine.png";
 const navLinks = [
   { label: "Products", href: "/Products" },
   { label: "Portfolio", href: "/portfolio" },
+  { label: "Careers", href: "/Careers" },
   { label: "Contact", href: "/contact" },
+
 ];
 
 const categories = [

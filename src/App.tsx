@@ -33,6 +33,7 @@ import Make from "./pages/Make";
 import GoHighLevel from "./pages/GoHighLevel";
 import OpenAi from "./pages/OpenAi";
 import FramerAgency from "./pages/FramerAgency";
+import Careers from "./pages/Careers";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -70,6 +71,7 @@ const App = () => (
             <Route path="/make" element={<Make />} />
             <Route path="/gohighlevel" element={<GoHighLevel />} />
             <Route path="/openai" element={<OpenAi />} />
+            <Route path="/careers" element={<Careers />} />
 
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

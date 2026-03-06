@@ -27,7 +27,6 @@ const clients = [
   { name: "Pink Townusa", logo: pinktownusa },
   { name: "Pirin Hill", logo: pirinhill },
   { name: "Plum Diamonds", logo: plumdiamonds },
-  
 ];
 
 const TrustedBy = () => {
