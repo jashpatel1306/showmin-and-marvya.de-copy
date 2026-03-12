@@ -34,6 +34,11 @@ import GoHighLevel from "./pages/GoHighLevel";
 import OpenAi from "./pages/OpenAi";
 import FramerAgency from "./pages/FramerAgency";
 import Careers from "./pages/Careers";
+import FigmaToWebflowDevelopment from "./pages/FigmaToWebflowDevelopment";
+import TechnicalSeoAudit from "./pages/TechnicalSeoAudit";
+import CustomAiInterface from "./pages/CustomAiInterface";
+import WebsiteDesign from "./pages/WebsiteDesign";
+import PluginUpdates from "./pages/PluginUpdates";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -71,6 +76,11 @@ const App = () => (
             <Route path="/make" element={<Make />} />
             <Route path="/gohighlevel" element={<GoHighLevel />} />
             <Route path="/openai" element={<OpenAi />} />
+            <Route path="/services/figma-to-webflow-development" element={<FigmaToWebflowDevelopment />} />
+            <Route path="/services/technical-seo-audit" element={<TechnicalSeoAudit />} />
+            <Route path="/services/custom-ai-interface" element={<CustomAiInterface />} />
+            <Route path="/services/website-design" element={<WebsiteDesign />} />
+            <Route path="/services/plugin-updates" element={<PluginUpdates />} />
             <Route path="/careers" element={<Careers />} />
 
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

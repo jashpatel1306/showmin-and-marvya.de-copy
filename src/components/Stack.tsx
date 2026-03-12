@@ -113,7 +113,7 @@ export const FeatureCard = ({ title, description, icon, gradientColor }: Feature
           {icon}
         </div>
       </div>
-      
+
       {/* Text Content */}
       <div className="space-y-2">
         <h3 className="text-lg font-semibold text-foreground">{title}</h3>
@@ -202,67 +202,67 @@ const Stack = () => {
       gradientColor: "hsla(202, 64%, 59%, 0.18)",
     },
   ];
-  
+
 
   return (
     <div>
-    <section className="py-16 md:py-24 px-6 md:px-8 lg:px-12">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Tech Cards Grid */}
-          <div className="order-2 lg:order-1">
-            <div className="grid grid-cols-2 gap-4">
-              {/* Column 1 - slight upward offset on desktop */}
-              <div className="space-y-4 lg:translate-y-8">
-                <TechStackCard {...techStack[0]} />
-                <TechStackCard {...techStack[1]} />
-              </div>
-              {/* Column 2 - slight downward offset on desktop */}
-              <div className="space-y-4 lg:-translate-y-8">
-                <TechStackCard {...techStack[2]} />
-                <TechStackCard {...techStack[3]} />
+      <section className="py-16 md:py-24 px-6 md:px-8 lg:px-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Tech Cards Grid */}
+            <div className="order-2 lg:order-1">
+              <div className="grid grid-cols-2 gap-4">
+                {/* Column 1 - slight upward offset on desktop */}
+                <div className="space-y-4 lg:translate-y-8">
+                  <TechStackCard {...techStack[0]} />
+                  <TechStackCard {...techStack[1]} />
+                </div>
+                {/* Column 2 - slight downward offset on desktop */}
+                <div className="space-y-4 lg:-translate-y-8">
+                  <TechStackCard {...techStack[2]} />
+                  <TechStackCard {...techStack[3]} />
+                </div>
               </div>
             </div>
-          </div>
-          {/* Text Content */}
-          <div className="order-1 lg:order-2">
-            <h2 className="section-title text-foreground mb-6">
-              Fluent with your stack
-            </h2>
-            <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-              We use industry-leading platforms including Webflow, Figma, Framer, and WordPress to design, build, and improve websites with confidence. These are tools we work with every day, and we are proud of the high-quality sites and experiences we create with them.
-            </p>
+            {/* Text Content */}
+            <div className="order-1 lg:order-2">
+              <h2 className="section-title text-foreground mb-6">
+                Fluent with your stack
+              </h2>
+              <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+                We use industry-leading platforms including Webflow, Figma, Framer, and WordPress to design, build, and improve websites with confidence. These are tools we work with every day, and we are proud of the high-quality sites and experiences we create with them.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-     
-    </section>
 
-<section className="py-16 md:py-24 px-6 md:px-8 lg:px-12">
-<div className="max-w-6xl mx-auto">
-  {/* Section Heading */}
-  <div className="text-center mb-12 md:mb-16">
-    <h2 className="section-title text-foreground">
-      Let's make it happen
-    </h2>
-  </div>
-  {/* Features Grid */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6">
-    {features.map((feature, index) => (
-      <FeatureCard
-        key={index}
-        title={feature.title}
-        description={feature.description}
-        icon={feature.icon}
-        gradientColor={feature.gradientColor}
-      />
-    ))}
-  </div>
-</div>
-</section>
+      </section>
 
-</div>
+      <section className="py-16 md:py-24 px-6 md:px-8 lg:px-12">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Heading */}
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="section-title text-foreground">
+              Let's make it happen
+            </h2>
+          </div>
+          {/* Features Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6">
+            {features.map((feature, index) => (
+              <FeatureCard
+                key={index}
+                title={feature.title}
+                description={feature.description}
+                icon={feature.icon}
+                gradientColor={feature.gradientColor}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+    </div>
   );
 };
 

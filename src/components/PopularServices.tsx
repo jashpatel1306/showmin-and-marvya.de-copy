@@ -10,27 +10,27 @@ const popularServices = [
   {
     title: "Figma to Webflow development",
     description: "Turn your Figma project into a fast, scalable Webflow site.",
-    href: "/leading"
+    href: "/services/figma-to-webflow-development"
   },
   {
     title: "Technical SEO audit",
     description: "Clear SEO fixes for your website",
-    href: "/leading"
+    href: "/services/technical-seo-audit"
   },
   {
     title: "Custom AI interface",
     description: "Design and build of a custom AI interface",
-    href: "/leading"
+    href: "/services/custom-ai-interface"
   },
   {
     title: "Website design",
     description: "Clear, modern and consistent UI",
-    href: "/leading"
+    href: "/services/website-design"
   },
   {
     title: "Plugin updates",
     description: "Plugin and theme updates for WordPress sites",
-    href: "/leading"
+    href: "/services/plugin-updates"
   },
 ];
 

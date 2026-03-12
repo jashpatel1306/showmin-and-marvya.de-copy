@@ -45,6 +45,7 @@
     --brand-blue: 197 100% 58%;
     --brand-teal: 175 45% 60%;
     --brand-green: 150 60% 55%;
+    --brand-border: var(--border);
     --text-dark: 0 0% 5%;
     --text-muted: 220 10% 40%;
     --bg-light: 200 30% 98%;
@@ -340,4 +341,13 @@
 
 .animate-dash-flow {
   animation: dash-flow 3s linear infinite;
+}
+
+/* Outer glow wrapper — subtle animated border using box-shadow */
+.spinning-border {
+  @apply relative rounded-[18px] border overflow-hidden;
+  box-shadow:
+    0 0 0 1px hsl(var(--brand-border)),
+    0 1px 3px 0 rgba(0,0,0,0.06),
+    0 4px 12px 0 rgba(0,0,0,0.04);
 }
