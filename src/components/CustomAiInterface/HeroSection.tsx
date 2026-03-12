@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronUp, Check } from "lucide-react";
 
 const features = [
-    "Crawl and index checks for key pages",
-    "Site structure and internal link review",
-    "Performance and Core Web Vitals signals",
-];
+    "Custom AI assistants trained on your content",
+    "On-brand UX people actually want to use",
+    "Built-in guardrails, permissions, and controls",
+  ];
 
 const CheckBadge = () => (
     <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -160,7 +160,7 @@ const BadgeDropdown = () => {
                 onClick={() => setOpen((v) => !v)}
                 className="inline-flex items-center gap-1.5 px-3 py-3 rounded-lg border border-border bg-card text-sm font-medium text-foreground hover:bg-muted transition-colors"
             >
-                Development
+                AI & Automation
                 <ChevronUp
                     className={`w-3.5 h-3.5 transition-transform duration-200 ${open ? "" : "rotate-180"}`}
                 />
@@ -272,7 +272,7 @@ const HeroSection = () => {
 
                         {/* Full-width heading */}
                         <h3 className="text-4xl sm:text-[2.8rem] md:text-[3.4rem] lg:text-5xl xl:text-[4.2rem] lg:text-[56px] lg:leading-[1.30] font-bold leading-[1.2] tracking-tight text-foreground">
-                            <SplitText text="Technical SEO audit" delay={70} duration={700} />
+                            <SplitText text="Custom AI interface" delay={70} duration={700} />
                         </h3>
 
                         {/* Bottom row: bullets left, CTA right */}
