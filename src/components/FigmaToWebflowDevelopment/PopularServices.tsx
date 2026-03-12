@@ -46,37 +46,37 @@ const popularServices = [
   {
     title: "Landing-page design",
     description: "Turn your offer into a high converting page",
-    href: "/landing",
+    href: "/",
     accent: "yellow" as const,
   },
   {
     title: "Website design",
     description: "Clear, modern and consistent UI",
-    href: "/services/figma-to-webflow-development",
+    href: "/",
     accent: "blue" as const,
   },
   {
     title: "Wireframe architecture",
     description: "Site maps, user flows and wireframes",
-    href: "/services/technical-seo-audit",
+    href: "/",
     accent: "green" as const,
   },
   {
     title: "Framer development",
     description: "Smooth, interactive and easy to maintain",
-    href: "/services/custom-ai-interface",
+    href: "/",
     accent: "purple" as const,
   },
   {
     title: "CMS development",
     description: "Map your content & design a clear structure",
-    href: "/services/web-design",
+    href: "/",
     accent: "yellow" as const,
   },
   {
     title: "Custom API integration",
     description: "Connects to CRMs, platforms and internal systems",
-    href: "/services/plugin-updates",
+    href: "/",
     accent: "coral" as const,
   },
 ];
