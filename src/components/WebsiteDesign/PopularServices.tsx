@@ -44,14 +44,14 @@ interface PopularServiceCardProps {
 
 const popularServices = [
   {
-    title: "Landing-page design",
-    description: "Turn your offer into a high converting page",
+    title: "Figma to Webflow development",
+    description: "Turn your Figma project into a fast, scalable Webflow site.",
     href: "/",
     accent: "yellow" as const,
   },
   {
-    title: "Website design",
-    description: "Clear, modern and consistent UI",
+    title: "Website copywriting",
+    description: "Complete website copy or focused key pages, written to match your offers...",
     href: "/",
     accent: "blue" as const,
   },
@@ -68,14 +68,14 @@ const popularServices = [
     accent: "purple" as const,
   },
   {
-    title: "CMS development",
-    description: "Map your content & design a clear structure",
+    title: "Wordpress development",
+    description: "Clean, secure & bloat-free development",
     href: "/",
     accent: "yellow" as const,
   },
   {
-    title: "Custom API integration",
-    description: "Connects to CRMs, platforms and internal systems",
+    title: "CMS development",
+    description: "Map your content & design a clear structure",
     href: "/",
     accent: "coral" as const,
   },
