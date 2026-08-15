@@ -1,186 +1,398 @@
-import { motion } from "framer-motion";
-import { MapPin, Star, Cookie, ArrowUpRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import { cn } from "@/lib/utils";
-import logo from "@/assets/Company/showmine.png";
+import { useEffect, useState, useRef } from "react";
 
-interface FooterNavLinkProps {
-  label: string;
-  href: string;
-}
-
-export const FooterNavLink = ({ label, href }: FooterNavLinkProps) => {
+export function Footer() {
   return (
-    <Link
-      to={href}
-      className="flex items-center justify-between px-4 py-3 rounded-lg border border-border 
-        text-sm text-foreground transition-all duration-200 
-        hover:bg-secondary/50 hover:border-border/80 group"
-    >
-      <span>{label}</span>
-      <ArrowUpRight
-        className="w-4 h-4 text-muted-foreground transition-transform duration-200 
-          group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-      />
-    </Link>
-  );
-};
-
-type ServiceVariant = "design" | "development" | "seo" | "maintenance" | "copywriting" | "ai";
-
-interface ServiceTagProps {
-  label: string;
-  href: string;
-  variant: ServiceVariant;
-}
-
-const variantStyles: Record<ServiceVariant, string> = {
-  design: "text-pink-500",
-  development: "text-sky-500",
-  seo: "text-emerald-500",
-  maintenance: "text-amber-500",
-  copywriting: "text-violet-500",
-  ai: "text-cyan-500",
-};
-
-export const ServiceTag = ({ label, href, variant }: ServiceTagProps) => {
-  return (
-    <div className="flex-1 min-w-[150px]">
-      <Link
-        to={href}
-        className={cn(
-          "w-full h-11 flex items-center justify-center rounded-lg border border-border text-sm font-medium text-center",
-          "transition-all duration-200 hover:bg-secondary/50 hover:border-border/80",
-          variantStyles[variant]
-        )}
-      >
-        {label}
-      </Link>
-    </div>
-  );
-};
-
-const Footer = () => {
-  const services = [
-    { label: "Design", href: "/design", variant: "design" as const },
-    { label: "Development", href: "/development", variant: "development" as const },
-    { label: "SEO", href: "/seo", variant: "seo" as const },
-    { label: "Maintenance", href: "/maintenance", variant: "maintenance" as const },
-    { label: "Copywriting", href: "/copywriting", variant: "copywriting" as const },
-    { label: "AI & Automation", href: "/ai-automation", variant: "ai" as const },
-  ];
-
-  const navLinks = [
-    // { label: "Landing", href: "/landing" },
-    { label: "Services", href: "/services" },
-    { label: "Portfolio", href: "/portfolio" },
-    { label: "Contact", href: "/contact" },
-    { label: "Get Started", href: "/get-started" },
-  ];
-  return (
-    <footer className="w-full bg-background">
-
-      <div className="max-w-7xl mx-auto px-6 py-12">
-
-        <div className="flex flex-wrap gap-3">
-          {services.map((service) => (
-            <ServiceTag
-              key={service.label}
-              label={service.label}
-              href={service.href}
-              variant={service.variant}
-            />
-          ))}
-        </div>
-        {/* Main footer content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mt-7">
-          {/* Left column - Service tags */}
-          <div className="flex flex-wrap gap-3">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg">
-            <img
-              src={logo}
-              alt=""
-              className="" />
+    <div data-nav-theme="light" className="footer-wrapper">
+      <footer className="flex flex-col items-center relative overflow-hidden w-full border-t border-neutral-200">
+        {/* Central Content Column */}
+        <div className="footer-upper-layer w-[calc(100%-19px)] mx-[9.5px] md:w-[calc(100%-32px)] md:mx-4 xl:w-full xl:max-w-[1118px] xl:mx-auto border-l border-r border-neutral-200 z-10 relative bg-white pb-[4.5cm] sm:pb-[5.5cm]">
+          <div className="relative z-20">
+            <div className="overflow-clip px-[16px] md:px-[var(--l)] pt-[40px] md:pt-[var(--xl)] pb-[var(--l)] flex flex-col gap-[20px] md:gap-[var(--l)]">
+              <div
+                className="flex flex-col gap-[16px] md:gap-0 md:flex-row md:items-center md:justify-between pr-0 md:pr-[var(--m)]"
+                style={{
+                  opacity: 1,
+                  transform: "translateY(0px)",
+                  transition:
+                    "opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1), transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)",
+                }}
+              >
+                <div className="flex flex-col gap-[20px] md:gap-[var(--m)] flex-1">
+                  {/* Native Showmine Brand Logo */}
+                  <a
+                    href="/"
+                    className="flex items-center gap-2 shrink-0 w-fit"
+                  >
+                    <span className="flex h-6 w-6 items-center justify-center">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        className="h-5 w-5 text-primary"
+                        style={{ color: "rgb(39, 181, 120)" }}
+                      >
+                        <path
+                          d="M1 13l4 4L13 9"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M9 13l4 4L23 7"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    <span className="text-lg font-bold tracking-tight text-neutral-950 md:text-2xl font-sans">
+                      Showmine
+                    </span>
+                  </a>
+                  <div className="flex flex-col md:flex-row gap-[4px] md:gap-[var(--xs)] md:items-center typo-body">
+                    <a
+                      href="mailto:showmineinfotech@gmail.com"
+                      className="text-neutral-950 hover:text-primary transition-colors"
+                    >
+                      showmineinfotech@gmail.com
+                    </a>
+                  </div>
+                </div>
+                {/* <div className="flex gap-[20px] md:gap-[var(--l)] items-center">
+                  <img
+                    alt="ISO 27001"
+                    loading="lazy"
+                    width="31"
+                    height="31"
+                    className="w-[31px] h-[31px] md:w-[62px] md:h-[63px]"
+                    style={{ color: "transparent" }}
+                    src="/images/footer/iso-27001.svg"
+                  />
+                  <img
+                    alt="EU GDPR Compliant"
+                    loading="lazy"
+                    width="70"
+                    height="23"
+                    className="w-[70px] h-[23px] md:w-[140px] md:h-[47px]"
+                    style={{ color: "transparent" }}
+                    src="/images/footer/gdpr-compliant.svg"
+                  />
+                </div> */}
               </div>
-              <span className="text-xl font-semibold text-foreground">Showmine</span>
-            
-            <div className="flex items-start gap-3">
-              <MapPin className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-0.5" />
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                Showmine is a web design and development agency based in the Canada,
-                partnering with teams across the India, US, UK, and beyond.
-              </p>
+
+              <div className="flex flex-col gap-[32px] md:gap-[var(--l)]">
+                {/* Mobile App Section */}
+                {/* <div className="border border-neutral-200 p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white relative z-20">
+                  <div className="flex flex-col gap-1">
+                    <span className="typo-label text-neutral-500">
+                      MOBILE APP
+                    </span>
+                    <p className="typo-body text-neutral-950">
+                      Download the app on your mobile to get the power of DoubleTick on the go
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-3 shrink-0">
+                    <a
+                      href="#"
+                      className="inline-block transition-transform duration-200 hover:scale-105"
+                    >
+                      <img
+                        src="/images/footer/app-store.svg"
+                        alt="Download on App Store"
+                        className="h-[38px] md:h-[40px] w-auto"
+                      />
+                    </a>
+                    <a
+                      href="#"
+                      className="inline-block transition-transform duration-200 hover:scale-105"
+                    >
+                      <img
+                        src="/images/footer/google-play.svg"
+                        alt="Get it on Google Play"
+                        className="h-[38px] md:h-[40px] w-auto"
+                      />
+                    </a>
+                  </div>
+                </div> */}
+
+                <div className="flex flex-wrap gap-y-[32px] justify-between md:flex-nowrap md:gap-[20px]">
+                  <div
+                    className="flex flex-col gap-[16px] md:gap-[var(--m)] w-[calc(50%-16px)] md:w-auto md:flex-1"
+                    style={{
+                      opacity: 1,
+                      transform: "translateY(0px)",
+                      transition:
+                        "opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1), transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)",
+                    }}
+                  >
+                    <span className="typo-label text-neutral-500">PRODUCT</span>
+                    <div className="flex flex-col gap-[8px] md:gap-[var(--s)]">
+                      <a
+                        href="#"
+                        className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
+                      >
+                        Lead Generation
+                      </a>
+                      <a
+                        href="#"
+                        className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
+                      >
+                        Email Automation
+                      </a>
+                      <a
+                        href="#"
+                        className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
+                      >
+                        B2B Jewellery Management System
+                      </a>
+                      <a
+                        href="#"
+                        className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
+                      >
+                        Healthcare Solutions
+                      </a>
+                    </div>
+                  </div>
+
+                  <div
+                    className="flex flex-col gap-[16px] md:gap-[var(--m)] w-[calc(50%-16px)] md:w-auto md:flex-1"
+                    style={{
+                      opacity: 1,
+                      transform: "translateY(0px)",
+                      transition:
+                        "opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1) 80ms, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1) 80ms",
+                    }}
+                  >
+                    <span className="typo-label text-neutral-500">
+                      SERVICES
+                    </span>
+                    <div className="flex flex-col gap-[8px] md:gap-[var(--s)]">
+                      <a
+                        href="#"
+                        className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
+                      >
+                        Shopify E-Commerce
+                      </a>
+                      <a
+                        href="#"
+                        className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
+                      >
+                        Shopify Theme Development
+                      </a>
+                      <a
+                        href="#"
+                        className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
+                      >
+                        Shopify Plus Development
+                      </a>
+                      <a
+                        href="#"
+                        className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
+                      >
+                        AI & Automation
+                      </a>
+                      <a
+                        href="/our-work"
+                        className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
+                      >
+                        Our Work
+                      </a>
+                    </div>
+                  </div>
+
+                  <div
+                    className="flex flex-col gap-[16px] md:gap-[var(--m)] w-[calc(50%-16px)] md:w-auto md:flex-1"
+                    style={{
+                      opacity: 1,
+                      transform: "translateY(0px)",
+                      transition:
+                        "opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1) 160ms, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1) 160ms",
+                    }}
+                  >
+                    <span className="typo-label text-neutral-500">COMPANY</span>
+                    <div className="flex flex-col gap-[8px] md:gap-[var(--s)]">
+                      <a
+                        href="/about"
+                        className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
+                      >
+                        About Us
+                      </a>
+                      <a
+                        href="/careers"
+                        className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
+                      >
+                        Careers
+                      </a>
+                      <a
+                        href="/news"
+                        className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
+                      >
+                        News
+                      </a>
+                      <a
+                        href="/terms-and-condition"
+                        className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
+                      >
+                        Terms and Conditions
+                      </a>
+                      <a
+                        href="/privacy-policy"
+                        className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
+                      >
+                        Privacy Policy
+                      </a>
+                      <a
+                        href="/refund-and-cancellations"
+                        className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
+                      >
+                        Refund and Cancellations
+                      </a>
+                      <button className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left cursor-pointer">
+                        Book a demo
+                      </button>
+                    </div>
+                  </div>
+
+                  <div
+                    className="flex flex-col gap-[16px] md:gap-[var(--m)] w-full md:w-auto md:max-w-[280px]"
+                    style={{
+                      opacity: 1,
+                      transform: "translateY(0px)",
+                      transition:
+                        "opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1) 240ms, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1) 240ms",
+                    }}
+                  >
+                    <div className="flex flex-col gap-[8px] md:gap-[var(--s)]">
+                      <span className="typo-label text-neutral-500">
+                        CORPORATE OFFICE ADDRESS
+                      </span>
+                      <p className="typo-body text-neutral-950 text-left">
+                        8-9 Mahavir shooping center, Near Gajera cricle, Katargam, Surat.
+                      </p>
+                    </div>
+                    <div className="flex flex-col gap-[8px] md:gap-[var(--s)]">
+                      <span className="typo-label text-neutral-500">
+                        REGISTERED OFFICE ADDRESS
+                      </span>
+                      <p className="typo-body text-neutral-950 text-left">
+                        16 Seabrook drive, Kitchener, ON V2R 1Y2
+                      </p>
+                    </div>
+                    <div className="flex flex-col gap-[8px] md:gap-[var(--s)]">
+                      <span className="typo-label text-neutral-500">CIN</span>
+                      <p className="typo-body text-neutral-950 font-semibold">
+                        U72900MH2021PTC354389
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* Right column - Description and nav links */}
-          <div className="space-y-6">
-            {/* Company description */}
-
-
-            {/* Navigation links grid */}
-            <div className="grid grid-cols-2 gap-3">
-              {navLinks.map((link) => (
-                <FooterNavLink
-                  key={link.label}
-                  label={link.label}
-                  href={link.href}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-border">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            {/* Copyright */}
-            <p className="text-xs text-muted-foreground">
-              © 2026 Showmine Ltd
-            </p>
-
-            {/* Reviews */}
-            {/* <div className="flex items-center gap-2">
-              <Star className="w-3.5 h-3.5 fill-foreground text-foreground" />
-              <span className="text-xs text-muted-foreground">
-                Rated 5.0 / 5.0 from 31 Google Reviews -{" "}
+            <div className="px-[16px] md:px-[var(--l)] py-[var(--l)] pb-[32px] md:pb-[var(--l)] flex flex-col md:flex-row gap-[20px] md:gap-0 items-start md:items-center md:justify-between mt-8 relative z-30">
+              <div className="flex flex-col gap-[4px] md:gap-[var(--xs)] font-[family-name:var(--font-geist-mono)] font-normal text-[14px] md:text-[15px] leading-[20px] md:leading-[24px] text-neutral-500 text-left">
+                <span>© 2026 Showmine. All rights reserved.</span>
+                <span>Proudly made in 🇮🇳 India</span>
+              </div>
+              <div className="flex gap-[20px] md:gap-[var(--m)] items-center justify-start md:justify-center w-full md:w-auto mt-2 md:mt-0">
                 <a
-                  href="https://share.google/ljyG3vkBcHEDb77gC"
+                  href="https://www.linkedin.com/company/showmine/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-foreground underline hover:no-underline transition-all"
+                  aria-label="LinkedIn"
+                  className="group block transition-transform duration-200 hover:scale-110"
                 >
-                  See reviews
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="transition-colors duration-200 text-[#373737] hover:text-neutral-950"
+                  >
+                    <path
+                      d="M19.04 19.04H16.08V14.4c0-1.1-.02-2.53-1.54-2.53-1.55 0-1.78 1.2-1.78 2.45v4.72H9.79V9.5h2.85v1.3h.04c.4-.75 1.36-1.54 2.81-1.54 3 0 3.56 1.97 3.56 4.55l-.01 5.23ZM6.45 8.19a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44ZM7.93 19.04H4.96V9.5h2.97v9.54ZM20.52 2H3.48C2.66 2 2 2.65 2 3.44v17.12C2 21.36 2.66 22 3.48 22h17.04c.82 0 1.48-.64 1.48-1.44V3.44C22 2.65 21.33 2 20.52 2Z"
+                      fill="currentColor"
+                    />
+                  </svg>
                 </a>
-              </span>
-            </div> */}
-
-            {/* Legal links */}
-            <div className="flex items-center gap-4">
-              <a
-                href="/legal/privacy"
-                className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Privacy
-              </a>
-              <a
-                href="/legal"
-                className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Legal
-              </a>
-              <button
-                className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="Cookie settings"
-              >
-                <Cookie className="w-3.5 h-3.5" />
-              </button>
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="group block transition-transform duration-200 hover:scale-110"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="transition-colors duration-200 text-[#373737] hover:text-neutral-950"
+                  >
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="group block transition-transform duration-200 hover:scale-110"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="transition-colors duration-200 text-[#373737] hover:text-neutral-950"
+                  >
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  className="group block transition-transform duration-200 hover:scale-110"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="transition-colors duration-200 text-[#373737] hover:text-neutral-950"
+                  >
+                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </footer>
-  );
-};
 
-export default Footer;
+          {/* SHOWMINE text rendered by turning dots black within letter shapes */}
+          <div className="showmine-dot-text-container">
+            <span className="showmine-dot-text">SHOWMINE</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

@@ -1,7 +1,0 @@
-/* Intentionally minimal.
-   The app uses Tailwind for layout & typography. */
-
-#root {
-  min-height: 100vh;
-}
-  

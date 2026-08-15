@@ -1,293 +1,297 @@
-import { motion } from "framer-motion";
-import GalleryColumn from "./GalleryColumn";
+import { useState, useEffect } from "react";
+import { BookDemoButton } from "./BookDemoButton";
+import imgInbox from "@/assets/HerosectionAi/inbox.avif";
+import imgAgents from "@/assets/HerosectionAi/ai-agents.avif";
+import imgAutomation from "@/assets/HerosectionAi/automation.avif";
+import imgBroadcasting from "@/assets/HerosectionAi/broadcasting.avif";
+import imgGovernance from "@/assets/HerosectionAi/cx-governance.avif";
+import imgAnalytics from "@/assets/HerosectionAi/ai-anlaytics.avif";
 
-const badges = [
-  { icon: "🎨", label: "Creatives" },
-  { icon: "⭐", label: "Pro Expert" },
-  { icon: "🏆", label: "Certified Partner" },
-  { icon: "🏢", label: "Agency" },
-];
-const portfolioImages = [
-  {
-    src: "https://framerusercontent.com/images/Rv4TMOeWmFGdEGRuJ3Vz6o7bRw.jpg?width=1000&height=699",
-    alt: "Portfolio 1",
-    gridArea: "1 / 1 / 4 / 3",
-  },
-  {
-    src: "https://framerusercontent.com/images/ZNLK0FforeBXuRq6UoBnpPIU9eY.png?width=1690&height=1278",
-    alt: "Portfolio 2",
-    gridArea: "1 / 3 / 3 / 5",
-  },
-  {
-    src: "https://framerusercontent.com/images/MpbrjX5owGxoVDwJglxMFE06Hm4.png?width=744&height=1618",
-    alt: "Green Oak Therapies",
-    gridArea: "1 / 5 / 5 / 7",
-  },
-  {
-    src: "https://framerusercontent.com/images/uKw3C8NT4zav4B8uO8NO6Sp6dkQ.jpeg?width=2920&height=2042",
-    alt: "PM Properties",
-    gridArea: "4 / 1 / 7 / 3",
-  },
-  {
-    src: "https://framerusercontent.com/images/WISPNRMsYwXBCaCX7k8zO8g4.png?width=1592&height=1326",
-    alt: "ETS",
-    gridArea: "3 / 3 / 6 / 5",
-  },
-  {
-    src: "https://framerusercontent.com/images/f2DTMSWLzSDzS7z0IbDBW0p3ois.png?width=2880&height=2000",
-    alt: "Consensus",
-    gridArea: "5 / 5 / 8 / 7",
-  },
-  {
-    src: "https://framerusercontent.com/images/NGFUmJ2LyY9ql1QGdJLplKzca8.png?width=2880&height=2000",
-    alt: "Adpros",
-    gridArea: "7 / 1 / 10 / 3",
-  },
-  {
-    src: "https://framerusercontent.com/images/HiPWByMHZ8kCjthRFeEths1xob4.png?width=1554&height=1246",
-    alt: "Client Home",
-    gridArea: "6 / 3 / 9 / 5",
-  },
-];
+import imgFacebookLeft from "@/assets/HerosectionAi/facebook/left.avif";
+import imgFacebookRight from "@/assets/HerosectionAi/facebook/right.avif";
 
-const galleryData = {
-  column1: [
-    {
-      type: "image" as const,
-      src: "https://framerusercontent.com/images/Rv4TMOeWmFGdEGRuJ3Vz6o7bRw.jpg",
-      aspectRatio: "1.43",
-    },
-    {
-      type: "video" as const,
-      src: "https://framerusercontent.com/assets/NI6txO74xP5bNsEkPvsdAyh0HMI.mp4",
-      aspectRatio: "1.5",
-    },
-    {
-      type: "image" as const,
-      src: "https://framerusercontent.com/images/ZNLK0FforeBXuRq6UoBnpPIU9eY.png",
-      aspectRatio: "1.32",
-    },
-  ],
-  column2: [
-    {
-      type: "video" as const,
-      src: "https://framerusercontent.com/assets/fAFnF4aU66tyklT20c6Ro26Aw.mp4",
-      aspectRatio: "1.5",
-    },
-    {
-      type: "image" as const,
-      src: "https://framerusercontent.com/images/MpbrjX5owGxoVDwJglxMFE06Hm4.png",
-      alt: "Green Oak Therapies client home page",
-      aspectRatio: "0.46",
-    },
-    {
-      type: "image" as const,
-      src: "https://framerusercontent.com/images/RQC65QKeAvX19koq89AfBfvPIaI.png",
-      aspectRatio: "0.46",
-    },
-  ],
-  column3: [
-    {
-      type: "video" as const,
-      src: "https://framerusercontent.com/assets/njPHl1FkYIA3QPATOSRiX36dQ.mp4",
-      aspectRatio: "1.5",
-    },
-    {
-      type: "image" as const,
-      src: "https://framerusercontent.com/images/uKw3C8NT4zav4B8uO8NO6Sp6dkQ.jpeg",
-      alt: "PM Properties client home page",
-      aspectRatio: "1.43",
-    },
-    {
-      type: "video" as const,
-      src: "https://framerusercontent.com/assets/p79LxP5X1XjLjo4BI51YOEd7bA.mp4",
-      aspectRatio: "1.5",
-    },
-    {
-      type: "image" as const,
-      src: "https://framerusercontent.com/images/WISPNRMsYwXBCaCX7k8zO8g4.png",
-      alt: "ETS client home page",
-      aspectRatio: "1.2",
-    },
-  ],
-  column4: [
-    {
-      type: "video" as const,
-      src: "https://framerusercontent.com/assets/x299ObADfs04u2HWJ5wwQJoGrg.mp4",
-      aspectRatio: "1.5",
-    },
-    {
-      type: "image" as const,
-      src: "https://framerusercontent.com/images/f2DTMSWLzSDzS7z0IbDBW0p3ois.png",
-      alt: "Consensus client home page",
-      aspectRatio: "1.44",
-    },
-    {
-      type: "image" as const,
-      src: "https://framerusercontent.com/images/NGFUmJ2LyY9ql1QGdJLplKzca8.png",
-      alt: "AdPros client home page",
-      aspectRatio: "1.44",
-    },
-    {
-      type: "image" as const,
-      src: "https://framerusercontent.com/images/HiPWByMHZ8kCjthRFeEths1xob4.png",
-      alt: "Client home page",
-      aspectRatio: "1.25",
-    },
-  ],
-  column5: [
-    {
-      type: "video" as const,
-      src: "https://framerusercontent.com/assets/ltrOB20wmAQXJUXHkEbdmyRowg.mp4",
-      aspectRatio: "1.5",
-    },
-    {
-      type: "video" as const,
-      src: "https://framerusercontent.com/assets/ndqfhaVd3GSux1iKCvoHRprzA8.mp4",
-      aspectRatio: "1.5",
-    },
-    {
-      type: "image" as const,
-      src: "https://framerusercontent.com/images/4wJpWQj7qMLLAU3Dd1roKUYc20.png",
-      aspectRatio: "0.46",
-    },
-  ],
-  column6: [
-    {
-      type: "image" as const,
-      src: "https://framerusercontent.com/images/kzeGFPxX363ee7xstmScKIORuY.png",
-      aspectRatio: "1.4",
-    },
-    {
-      type: "video" as const,
-      src: "https://framerusercontent.com/assets/l1EXLSmd09fHZm2LvOQrf1iRR38.mp4",
-      aspectRatio: "1.5",
-    },
-    {
-      type: "image" as const,
-      src: "https://framerusercontent.com/images/mPsQXQ0arun7VTSiFchAfSlUGlE.jpeg",
-      aspectRatio: "1.43",
-    },
-    {
-      type: "image" as const,
-      src: "https://framerusercontent.com/images/TkxqVBKtNQGAc4zccvPQO8Jikgw.jpg",
-      aspectRatio: "1.43",
-    },
-  ],
-};
+// Decorative animated circuit SVGs
+import leftTop from "@/components/hero-svgs/left-top.html?raw";
+import rightTop from "@/components/hero-svgs/right-top.html?raw";
+import leftMid from "@/components/hero-svgs/left-mid.html?raw";
+import rightMid from "@/components/hero-svgs/right-mid.html?raw";
+import leftBot from "@/components/hero-svgs/left-bot.html?raw";
+import rightBot from "@/components/hero-svgs/right-bot.html?raw";
+import mobileLeft from "@/components/hero-svgs/mobile-left.html?raw";
+import mobileRight from "@/components/hero-svgs/mobile-right.html?raw";
 
-const Hero = () => {
+import iconInbox from "@/components/hero-svgs/tab-inbox.html?raw";
+import iconAgents from "@/components/hero-svgs/tab-agents.html?raw";
+import iconAutomation from "@/components/hero-svgs/tab-automation.html?raw";
+import iconBroadcasting from "@/components/hero-svgs/tab-broadcasting.html?raw";
+import iconGovernance from "@/components/hero-svgs/tab-governance.html?raw";
+import iconAnalytics from "@/components/hero-svgs/tab-analytics.html?raw";
+
+const TAB_IMAGES = {
+  inbox: imgInbox,
+  agents: imgAgents,
+  automation: imgAutomation,
+  broadcasting: imgBroadcasting,
+  governance: imgGovernance,
+  analytics: imgAnalytics,
+} as const;
+
+const TABS = [
+  { id: "inbox", label: "Unified Inbox", svg: iconInbox },
+  { id: "agents", label: "AI Agents", svg: iconAgents },
+  { id: "automation", label: "Automation", svg: iconAutomation },
+  { id: "broadcasting", label: "Broadcasting", svg: iconBroadcasting },
+  { id: "governance", label: "AI Governance", svg: iconGovernance },
+  { id: "analytics", label: "AI Analytics", svg: iconAnalytics },
+] as const;
+
+const TAB_DURATION = 6000; // Auto-rotate interval (6 seconds)
+
+export function Hero() {
+  const [active, setActive] = useState<(typeof TABS)[number]["id"]>("inbox");
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setActive((prev) => {
+        const currentIndex = TABS.findIndex((t) => t.id === prev);
+        const nextIndex = (currentIndex + 1) % TABS.length;
+        return TABS[nextIndex].id;
+      });
+    }, TAB_DURATION);
+
+    return () => clearTimeout(timer);
+  }, [active]);
+
   return (
-    <section className="relative min-h-screen wavy-bg pt-24 md:pt-32 overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        {/* Badges */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 mb-8 md:mb-12"
-        >
-          {badges.map((badge, index) => (
-            <motion.span
-              key={badge.label}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-              className="badge-pill"
-            >
-              <span>{badge.icon}</span>
-              <span>{badge.label}</span>
-            </motion.span>
-          ))}
-        </motion.div> */}
-        {/* Headline */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-center max-w-4xl mx-auto mb-8"
-        >
-          <h1 className="section-heading mb-6">
-          Build, Launch, and Grow Your Website
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          Showmine partners with ambitious teams to design, develop, and optimize high-performance websites that load faster, look exceptional, and convert visitors into qualified leads and customers.
-          </p>
-        </motion.div>
-        {/* CTA Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="flex justify-center mb-12 md:mb-20"
-        >
-          <a href="#contact" className="btn-primary text-base px-8 py-4">
-            Book a call
-          </a>
-        </motion.div>
-
-
-       
-        {/* <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-40 gallery-gradient" /> */}
-
-        {/* Bottom gradient overlay */}
-        {/* <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-40 gallery-gradient rotate-180" /> */}
-
- {/* Portfolio Grid */}
+    <section
+      className="relative overflow-hidden"
+      style={{
+        background:
+          "radial-gradient(ellipse at center, #004421 0%, #042717 100%)",
+      }}
+    >
+      {/* Global SVG Definitions for Circuit Animations */}
+      <svg className="absolute w-0 h-0 pointer-events-none" aria-hidden="true">
+        <defs>
+          <linearGradient id="circuit-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#27B578" stopOpacity="0.4" />
+            <stop offset="50%" stopColor="#78ffbe" stopOpacity="1" />
+            <stop offset="100%" stopColor="#27B578" stopOpacity="0.4" />
+          </linearGradient>
+        </defs>
+      </svg>
+      {/* Top green light line with travelling glow */}
+      <div className="pointer-events-none absolute top-0 left-0 right-0 h-px z-20 overflow-hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(39,181,120,0) 0%, rgba(39,181,120,0.55) 20%, rgba(39,181,120,0.55) 80%, rgba(39,181,120,0) 100%)",
+          }}
+        />
+        <div
+          className="absolute top-0 left-0 h-px w-[40%]"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(39,181,120,0) 0%, rgba(120,255,190,0.95) 50%, rgba(39,181,120,0) 100%)",
+            boxShadow:
+              "0 0 12px 2px rgba(39,181,120,0.85), 0 0 24px 4px rgba(39,181,120,0.45)",
+            animation:
+              "hero-beam-sweep 4.5s cubic-bezier(0.45, 0, 0.55, 1) infinite",
+          }}
+        />
       </div>
-      {/* Portfolio Grid */}
-      <div className="relative z-10 mt-6 w-full">
-        <motion.div
-          className="flex gap-3 px-2 sm:px-4 md:px-6 lg:px-10 justify-start md:justify-center overflow-x-auto md:overflow-visible"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-        >
-          {/* Column 1 */}
-          <GalleryColumn
-            items={galleryData.column1}
-            speed={0.5}
-            className="w-[60%] xs:w-[55%] sm:w-[220px] lg:w-[280px] hidden sm:flex"
-          />
 
-          {/* Column 2 - Slower/reverse parallax */}
-          <GalleryColumn
-            items={galleryData.column2}
-            speed={-1}
-            className="w-[40%] xs:w-[45%] sm:w-[140px] lg:w-[160px] hidden md:flex"
-          />
+      {/* Mobile / tablet circuits */}
+      <div
+        className="pointer-events-none absolute inset-0 lg:hidden overflow-hidden"
+        dangerouslySetInnerHTML={{ __html: mobileLeft + mobileRight }}
+      />
 
-          {/* Column 3 */}
-          <GalleryColumn
-            items={galleryData.column3}
-            speed={0.5}
-            className="w-[70%] xs:w-[60%] sm:w-[220px] lg:w-[280px]"
+      {/* Desktop 3-part layout (W: 1440px) */}
+      <div className="relative mx-auto max-w-[1440px] w-full flex">
+        {/* Left Column (Designs) */}
+        <div className="hidden xl:block w-[161px] shrink-0 h-[1200px] relative overflow-hidden z-[1]">
+          <div
+            className="absolute inset-0"
+            dangerouslySetInnerHTML={{ __html: leftTop + leftMid + leftBot }}
           />
+        </div>
 
-          {/* Column 4 - Slower/reverse parallax */}
-          <GalleryColumn
-            items={galleryData.column4}
-            speed={-1}
-            className="w-[70%] xs:w-[60%] sm:w-[220px] lg:w-[280px]"
-          />
+        {/* Center Column (Content) */}
+        <div className="relative z-10 w-[calc(100%-19px)] mx-[9.5px] md:w-[calc(100%-32px)] md:mx-4 xl:w-full xl:max-w-[1118px] xl:mx-auto shrink-0 border-l border-r border-white/16 lg:h-[1200px] flex flex-col items-center px-4 lg:px-0">
+          {/* Animated left pillar glow on top of left border */}
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-px overflow-hidden hidden lg:block">
+            <div
+              className="absolute left-0 w-px h-[30%]"
+              style={{
+                background:
+                  "linear-gradient(to bottom, rgba(39,181,120,0) 0%, rgba(120,255,190,0.95) 50%, rgba(39,181,120,0) 100%)",
+                boxShadow:
+                  "0 0 12px 2px rgba(39,181,120,0.85), 0 0 24px 4px rgba(39,181,120,0.4)",
+                animation:
+                  "hero-beam-sweep-v 5s cubic-bezier(0.45,0,0.55,1) infinite",
+              }}
+            />
+          </div>
+          {/* Animated right pillar glow on top of right border */}
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-px overflow-hidden hidden lg:block">
+            <div
+              className="absolute left-0 w-px h-[30%]"
+              style={{
+                background:
+                  "linear-gradient(to bottom, rgba(39,181,120,0) 0%, rgba(120,255,190,0.95) 50%, rgba(39,181,120,0) 100%)",
+                boxShadow:
+                  "0 0 12px 2px rgba(39,181,120,0.85), 0 0 24px 4px rgba(39,181,120,0.4)",
+                animation:
+                  "hero-beam-sweep-v 5s cubic-bezier(0.45,0,0.55,1) infinite 1.5s",
+              }}
+            />
+          </div>
 
-          {/* Column 5 */}
-          <GalleryColumn
-            items={galleryData.column5}
-            speed={0.5}
-            className="w-[40%] xs:w-[45%] sm:w-[140px] lg:w-[160px] hidden md:flex"
-          />
+          {/* Meta badge - Y: 80px */}
+          <div className="pt-20 lg:py-0 lg:mt-[80px] flex items-center justify-center">
+            <div className="flex items-center gap-2">
+              <img
+                src={imgFacebookLeft}
+                alt=""
+                className="shrink-0 w-[27px] lg:w-[36px] h-auto"
+              />
+              <div className="flex flex-col items-center gap-2 pb-3">
+                <MetaLogo />
+                <span className="text-white text-center text-[13px] leading-tight font-medium">
+                  Emerging Technology
+                  <br />
+                  Partner of the Year
+                </span>
+              </div>
+              <img
+                src={imgFacebookRight}
+                alt=""
+                className="shrink-0 w-[27px] lg:w-[36px] h-auto"
+              />
+            </div>
+          </div>
 
-          {/* Column 6 - Slower/reverse parallax */}
-          <GalleryColumn
-            items={galleryData.column6}
-            speed={-1}
-            className="w-[60%] xs:w-[55%] sm:w-[220px] lg:w-[280px] hidden sm:flex"
+          {/* Headline - Y: 181px */}
+          <h1
+            className="text-white text-center max-w-[820px] lg:max-w-[789px] lg:h-[167.41px] text-[34px] sm:text-[48px] lg:text-[61px] leading-[1.1] lg:leading-[85.4px] tracking-tight lg:tracking-[-0.01em] font-normal mt-[28px] lg:mt-[31px]"
+            style={{ fontFamily: '"Hedvig Letters Serif", "Cormorant Garamond", "Times New Roman", serif' }}
+          >
+            Agentic AI
+            <br className="lg:hidden" /> Operating System
+            <br />
+            for WhatsApp at Scale
+          </h1>
+
+          {/* Subhead - Y: 362.81px */}
+          <p className="text-center max-w-[700px] lg:h-[65.82px] text-[15px] lg:text-[16px] leading-relaxed lg:leading-[22.4px] lg:tracking-[-0.01em] text-white/50 mt-4 lg:mt-[14.4px] px-4 lg:px-0">
+            Centralize every number, department, and conversation into one
+            secure command center. Gain the governance to secure your data, the
+            AI to automate chats, and the outreach tools to engage and convert
+            your audience at scale.
+          </p>
+
+          {/* CTAs - Y: 462.03px */}
+          <div className="flex items-center justify-center gap-5 lg:gap-[14.14px] w-full lg:w-auto px-4 lg:px-0 mt-6 lg:mt-[33.4px] lg:h-[40px]">
+            <BookDemoButton className="w-full lg:w-[130.86px] flex-1 lg:flex-none" />
+            <a
+              href="/pricing"
+              className="shrink-0 lg:flex-none w-full lg:w-auto flex-1 lg:flex-none"
+            >
+              <button className="inline-flex items-center justify-center rounded-[2px] cursor-pointer whitespace-nowrap transition-colors h-[40px] w-full lg:w-[130.86px] text-sm font-medium text-white border border-white/70 hover:bg-white/[0.06] active:bg-white/[0.1]">
+                <span className="relative z-10">View plans</span>
+              </button>
+            </a>
+          </div>
+
+          {/* Tabs - Y: 546.03px */}
+          <div className="mt-8 lg:mt-[44px] flex border-y border-dashed border-white/12 w-full max-w-[1116px] h-[56px] md:h-[72px] lg:h-[73.33px]">
+            {TABS.map((t) => {
+              const isActive = active === t.id;
+              return (
+                <button
+                  key={t.id}
+                  onClick={() => setActive(t.id)}
+                  aria-label={t.label}
+                  className={`relative flex items-center justify-center gap-2 h-full border-r border-dashed last:border-r-0 border-white/12 transition-all duration-300 ease-out cursor-pointer md:pt-3 md:pb-2 ${
+                    isActive
+                      ? "flex-[1.5] md:flex-1 flex-row md:flex-col bg-[#05502D] px-3 md:px-0"
+                      : "flex-1 flex-row md:flex-col hover:bg-[rgba(255,255,255,0.04)]"
+                  }`}
+                >
+                  <div
+                    className={`w-5 h-5 ${isActive ? "text-[#27B578]" : "text-white/65"}`}
+                    dangerouslySetInnerHTML={{ __html: t.svg }}
+                  />
+                  <span
+                    className={`text-[11px] font-semibold tracking-[0.05em] uppercase transition-all duration-200 ${
+                      isActive
+                        ? "block text-white"
+                        : "hidden md:block text-white/65"
+                    }`}
+                  >
+                    {t.label}
+                  </span>
+                  {isActive && (
+                    <span
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#27B578]"
+                      style={{
+                        animation: `tab-progress ${TAB_DURATION}ms linear forwards`,
+                      }}
+                    />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Screenshot - Y: 620.03px */}
+          <div className="relative w-full max-w-[1118px] overflow-hidden bg-[#021a0e] border border-white/10 rounded-sm shadow-2xl mt-8 lg:mt-0">
+            {/* Corner brackets */}
+            <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#27B578] z-10" />
+            <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#27B578] z-10" />
+            <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#27B578] z-10" />
+            <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#27B578] z-10" />
+            <img
+              src={TAB_IMAGES[active]}
+              alt={`Showmine ${active} dashboard`}
+              className="w-full block"
+              width={1600}
+              height={960}
+            />
+          </div>
+        </div>
+
+        {/* Right Column (Designs) */}
+        <div className="hidden xl:block w-[161px] shrink-0 h-[1200px] relative overflow-hidden z-[1]">
+          <div
+            className="absolute inset-0"
+            dangerouslySetInnerHTML={{
+              __html: rightTop + rightMid + rightBot,
+            }}
           />
-        </motion.div>
+        </div>
       </div>
     </section>
   );
-};
-export default Hero;
+}
+
+function MetaLogo() {
+  return (
+    <svg viewBox="0 0 287 191" className="h-4" aria-label="Meta">
+      <path
+        fill="#0081FB"
+        d="M31.06 126c0 11 2.41 19.41 5.56 24.51A19 19 0 0 0 53.19 160c8.1 0 15.51-2 29.79-21.76 11.44-15.83 24.92-38 34-51.92l15.36-23.59c10.67-16.39 23-34.61 37.18-46.96C181.07 5.6 193.54 0 206.09 0c21.07 0 41.14 12.21 56.5 35.11C279.41 60.18 287.5 91.77 287.5 124.36c0 19.38-3.82 33.62-10.32 44.87-6.28 10.88-18.52 21.77-39.11 21.77v-31c17.63 0 22.03-16.2 22.03-34.74 0-26.42-6.16-55.74-19.73-76.69-9.63-14.86-22.11-23.94-35.84-23.94-14.85 0-26.8 11.2-40.23 31.17-7.14 10.61-14.47 23.54-22.7 38.13l-9.06 16.05c-18.2 32.27-22.81 39.62-31.91 51.75C84.74 184 73.49 191 53.19 191c-21.27 0-34.72-9.21-43.05-23.09C3.34 156.6 0 141.76 0 124.85l31.06 1.15Z"
+      />
+      <path
+        fill="#0064E1"
+        d="M24.49 37.3C38.73 15.35 59.28 0 82.85 0c13.65 0 27.22 4.04 41.39 15.61 15.5 12.65 32 33.48 52.63 67.81l7.39 12.32c17.84 29.78 28 45.13 33.95 52.36 7.66 9.29 13.02 12 19.5 12 17.63 0 22.03-16.2 22.03-34.74l27.4-.86c0 19.38-3.82 33.62-10.32 44.87-6.28 10.88-18.52 21.77-39.11 21.77-12.8 0-24.14-2.78-36.68-14.61-9.64-9.08-20.91-25.21-29.58-39.71L172.4 99.7c-12.99-21.73-24.91-37.91-31.81-45.24-7.41-7.88-16.92-17.4-32.16-17.4-12.34 0-22.81 8.66-31.57 21.9L24.49 37.3Z"
+      />
+      <path
+        fill="#0064E1"
+        d="M82.35 37.07c-12.34 0-22.81 8.66-31.57 21.9-12.39 18.7-19.97 46.57-19.97 73.32 0 11 2.41 19.41 5.56 24.51L10.14 167.91C3.34 156.6 0 141.76 0 124.85 0 93.94 8.48 61.72 24.49 37.3 38.73 15.35 59.28 0 82.85 0l-.5 37.07Z"
+      />
+    </svg>
+  );
+}
