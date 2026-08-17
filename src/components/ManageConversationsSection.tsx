@@ -39,6 +39,12 @@ export function ManageConversationsSection() {
   const connectIndexRef = useRef(0);
   const connectStartTimeRef = useRef<number | null>(null);
 
+  const [scaleSelectedFeature, setScaleSelectedFeature] = useState(0);
+  const [scaleProgress, setScaleProgress] = useState(0);
+
+  const scaleIndexRef = useRef(0);
+  const scaleStartTimeRef = useRef<number | null>(null);
+
   // Scroll listener to toggle sticky bar & update active tab on scroll
   useEffect(() => {
     const tabs = ["build", "transform", "automate", "connect", "scale"];
@@ -236,6 +242,43 @@ export function ManageConversationsSection() {
     connectIndexRef.current = idx;
     setConnectProgress(0);
     connectStartTimeRef.current = performance.now();
+  };
+
+  // Strict Sequential WhatsApp Status Loop for SCALE (6.0s per tab)
+  useEffect(() => {
+    const DURATION = 6000; // Exact 6 seconds per tab
+    let animId: number;
+
+    const animate = (now: number) => {
+      if (scaleStartTimeRef.current === null) {
+        scaleStartTimeRef.current = now;
+      }
+
+      const elapsed = now - scaleStartTimeRef.current;
+      const currentProgress = Math.min((elapsed / DURATION) * 100, 100);
+
+      if (elapsed >= DURATION) {
+        const nextIdx = (scaleIndexRef.current + 1) % 5;
+        setScaleSelectedFeature(nextIdx);
+        scaleIndexRef.current = nextIdx;
+        setScaleProgress(0);
+        scaleStartTimeRef.current = now;
+      } else {
+        setScaleProgress(currentProgress);
+      }
+
+      animId = requestAnimationFrame(animate);
+    };
+
+    animId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animId);
+  }, []);
+
+  const handleScaleFeatureSelect = (idx: number) => {
+    setScaleSelectedFeature(idx);
+    scaleIndexRef.current = idx;
+    setScaleProgress(0);
+    scaleStartTimeRef.current = performance.now();
   };
 
   // Smooth scroll handler when a tab is clicked
@@ -521,6 +564,74 @@ export function ManageConversationsSection() {
       icon: (
         <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        </svg>
+      ),
+    },
+  ];
+
+  const scaleFeatures = [
+    {
+      id: "shopify-plus",
+      title: "Shopify Plus",
+      desc: "Enterprise commerce infrastructure for ambitious businesses.",
+      image: step1Img,
+      badge: "Shopify Plus",
+      tag: "Enterprise Scale",
+      icon: (
+        <svg className="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+    },
+    {
+      id: "b2b-commerce",
+      title: "B2B & Wholesale",
+      desc: "Commerce experiences designed around complex B2B purchasing workflows.",
+      image: step2Img,
+      badge: "B2B Commerce",
+      tag: "Wholesale Engine",
+      icon: (
+        <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m3 0h10M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+      ),
+    },
+    {
+      id: "custom-saas",
+      title: "Jewellery Technology",
+      desc: "Purpose-built technology for jewellery manufacturers, wholesalers, suppliers, and retailers.",
+      image: step3Img,
+      badge: "Jewellery Tech",
+      tag: "Specialized Stack",
+      icon: (
+        <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      ),
+    },
+    {
+      id: "multi-store",
+      title: "Healthcare Technology",
+      desc: "Digital systems designed around modern healthcare operations.",
+      image: step4Img,
+      badge: "Healthcare Tech",
+      tag: "Digital Health",
+      icon: (
+        <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h1.5a2.5 2.5 0 002.5-2.5V11a2 2 0 00-2-2h-1a2 2 0 01-2-2V4.055M12 2a10 10 0 100 20 10 10 0 000-20z" />
+        </svg>
+      ),
+    },
+    {
+      id: "performance-audit",
+      title: "Growth & Marketing",
+      desc: "Turn your digital infrastructure into a measurable growth engine.",
+      image: step5Img,
+      badge: "Growth Engine",
+      tag: "Scale & Marketing",
+      icon: (
+        <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
         </svg>
       ),
     },
@@ -1456,29 +1567,155 @@ export function ManageConversationsSection() {
                 <span className="w-4 h-px bg-emerald-600/60" />
               </div>
               <h2 className="font-serif text-[#131316] text-[28px] sm:text-[36px] md:text-[40px] lg:text-[42px] leading-[1.2] tracking-tight font-semibold mb-3 md:mb-4">
-                Technology that grows with your business
+                Build technology that grows with your business
               </h2>
               <p className="text-neutral-500 text-xs sm:text-sm md:text-[15px] leading-relaxed max-w-[660px]">
-                From Shopify Plus and B2B commerce to custom business software, build digital infrastructure that can support your next stage of growth.
+                From Shopify Plus and B2B commerce to industry-specific software and growth systems, we help businesses build the infrastructure needed for their next stage.
               </p>
             </div>
 
-            <div className="w-full px-4 md:px-8">
-              <div className="bg-[#B2C8DC] p-4 sm:p-6 rounded-xl md:rounded-2xl border border-[#9BB4CC] shadow-xs">
-                <div className="bg-white rounded-lg border border-neutral-300 p-4 md:p-6 space-y-4 text-xs">
-                  <span className="text-xs font-bold text-neutral-800 uppercase font-mono tracking-wider block">ENTERPRISE GOVERNANCE MATRIX</span>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="bg-[#FAF9F5] p-4 rounded-lg border border-neutral-200 space-y-2">
-                      <span className="font-bold text-neutral-900 block">🔒 Masked Customer Numbers</span>
-                      <p className="text-neutral-500 text-[11px]">Agents communicate with leads without seeing raw phone numbers.</p>
+            {/* WDS Horizontal Dotted Section above SCALE vertical tab showcase */}
+            <WDS className="m-0 relative z-20" />
+
+            {/* Feature Interactive List & Card Showcase for SCALE */}
+            <div className="w-full px-4 md:px-8 pb-0 pt-0">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+                {/* Left 5 Features List */}
+                <div className="md:col-span-5 flex flex-col gap-2">
+                  {scaleFeatures.map((feat, idx) => {
+                    const isActive = scaleSelectedFeature === idx;
+                    return (
+                      <button
+                        key={feat.id}
+                        onClick={() => handleScaleFeatureSelect(idx)}
+                        className={`p-4 rounded-xl text-left transition-all flex flex-col gap-2 border cursor-pointer relative overflow-hidden ${isActive
+                            ? "bg-white border-neutral-300 shadow-sm"
+                            : "bg-transparent border-transparent hover:bg-neutral-100/60"
+                          }`}
+                      >
+                        <div className="flex gap-3.5 items-start w-full">
+                          <div className={`p-2 rounded-lg shrink-0 mt-0.5 ${isActive ? "bg-emerald-50" : "bg-neutral-100"}`}>
+                            {feat.icon}
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center justify-between gap-1 mb-0.5">
+                              <h4 className={`text-sm font-semibold truncate ${isActive ? "text-neutral-900" : "text-neutral-700"}`}>
+                                {feat.title}
+                              </h4>
+                              {isActive && (
+                                <span className="text-[9.5px] font-mono font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded shrink-0">
+                                  {idx + 1}/5
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-xs text-neutral-500 leading-relaxed">
+                              {feat.desc}
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Edge-to-Edge Status Progress Line at Bottom of Active Tab Card */}
+                        {isActive && (
+                          <div className="absolute bottom-0 left-0 right-0 h-1 bg-neutral-100 overflow-hidden">
+                            <div
+                              className="h-full bg-emerald-600"
+                              style={{ width: `${scaleProgress}%` }}
+                            />
+                          </div>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Right Interactive Preview Card with WhatsApp Status Effect */}
+                <div className="md:col-span-7 bg-[#FAF9F6] border border-[#D1D1D6] rounded-xl p-4 md:p-6 relative overflow-hidden shadow-xs flex flex-col justify-between">
+                  {/* Corner Accent Boxes */}
+                  <span className="absolute top-2 left-2 w-2 h-2 border-t border-l border-neutral-400" />
+                  <span className="absolute top-2 right-2 w-2 h-2 border-t border-r border-neutral-400" />
+                  <span className="absolute bottom-2 left-2 w-2 h-2 border-b border-l border-neutral-400" />
+                  <span className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-neutral-400" />
+
+                  {/* Top WhatsApp Status Bar (5 Segment Progress Bars) */}
+                  <div className="flex gap-1.5 mb-4">
+                    {scaleFeatures.map((_, idx) => {
+                      let barWidth = "0%";
+                      if (idx < scaleSelectedFeature) {
+                        barWidth = "100%";
+                      } else if (idx === scaleSelectedFeature) {
+                        barWidth = `${scaleProgress}%`;
+                      } else {
+                        barWidth = "0%";
+                      }
+                      return (
+                        <div key={idx} className="flex-1 h-1.5 bg-neutral-200/90 rounded-full overflow-hidden">
+                          <div
+                            className="h-full bg-emerald-600"
+                            style={{ width: barWidth }}
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Card Title & Header Status Info */}
+                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-neutral-200">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                        {scaleSelectedFeature + 1}
+                      </div>
+                      <div>
+                        <span className="font-semibold text-neutral-900 text-xs block">
+                          {scaleFeatures[scaleSelectedFeature].title}
+                        </span>
+                        <span className="text-[10px] text-neutral-500 font-mono">
+                          {scaleFeatures[scaleSelectedFeature].tag} • Status {scaleSelectedFeature + 1} of 5 (6s)
+                        </span>
+                      </div>
                     </div>
-                    <div className="bg-[#FAF9F5] p-4 rounded-lg border border-neutral-200 space-y-2">
-                      <span className="font-bold text-neutral-900 block">👥 Role Hierarchy Tiers</span>
-                      <p className="text-neutral-500 text-[11px]">Set admin, supervisor, and agent privileges with department scoping.</p>
+                    <div className="flex items-center gap-2">
+                      <span className="bg-emerald-50 text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-full text-[10px] font-medium font-mono">
+                        {scaleFeatures[scaleSelectedFeature].badge}
+                      </span>
                     </div>
-                    <div className="bg-[#FAF9F5] p-4 rounded-lg border border-neutral-200 space-y-2">
-                      <span className="font-bold text-neutral-900 block">📋 Real-Time Audit Logs</span>
-                      <p className="text-neutral-500 text-[11px]">Complete event logging for data exports, logins, and message actions.</p>
+                  </div>
+
+                  {/* Dynamic Image & Preview Frame */}
+                  <div className="space-y-4 mb-4 text-xs">
+                    <div className="relative rounded-lg overflow-hidden border border-neutral-200 shadow-sm bg-white group">
+                      <img
+                        src={scaleFeatures[scaleSelectedFeature].image}
+                        alt={scaleFeatures[scaleSelectedFeature].title}
+                        className="w-full h-auto object-cover max-h-[300px] transition-all duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-90 flex flex-col justify-end p-4 text-white">
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold mb-1">
+                          {scaleFeatures[scaleSelectedFeature].badge}
+                        </span>
+                        <p className="text-xs sm:text-sm font-semibold leading-snug">
+                          {scaleFeatures[scaleSelectedFeature].desc}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Interactive Status Navigation & Indicator Bar */}
+                  <div className="pt-3 border-t border-neutral-200 flex items-center justify-between text-xs">
+                    <div className="flex items-center gap-1.5 text-neutral-500 font-mono text-[11px]">
+                      <span>▶️ Auto-advancing (6s per tab)</span>
+                    </div>
+                    <div className="flex gap-1.5">
+                      {scaleFeatures.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => handleScaleFeatureSelect(idx)}
+                          className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${scaleSelectedFeature === idx
+                              ? "bg-emerald-600 w-6"
+                              : "bg-neutral-300 hover:bg-neutral-400"
+                            }`}
+                          title={`Switch to Tab ${idx + 1}`}
+                        />
+                      ))}
                     </div>
                   </div>
                 </div>
