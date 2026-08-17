@@ -15,7 +15,7 @@ export function BookDemoButton({
   return (
     <button
       className={cn(
-        "group/btn relative inline-flex items-center justify-center overflow-hidden rounded-[2px] h-[40px] px-4 py-3 text-sm text-white bg-primary cursor-pointer transition-colors shadow-[0px_0px_0px_1px_#3a8363,0px_1px_2px_0px_rgba(0,0,0,0.64)]",
+        "group/btn relative inline-flex items-center justify-center overflow-hidden rounded-[2px] h-[40px] px-4 py-3 text-sm text-white bg-[#007A5A] cursor-pointer transition-colors shadow-[0px_0px_0px_1px_#3a8363,0px_1px_2px_0px_rgba(0,0,0,0.64)]",
         className
       )}
       {...props}

@@ -7,29 +7,35 @@ export function ProblemsSection() {
           <div className="flex items-center gap-2 justify-center mb-3 md:mb-4">
             <span className="w-4 h-px bg-emerald-600/60" />
             <span className="text-[10px] md:text-[11px] font-bold font-mono text-emerald-600 tracking-[0.2em] uppercase">
-              WHY SHOWMINE
+              WHY WORK WITH US
             </span>
             <span className="w-4 h-px bg-emerald-600/60" />
           </div>
-          <h2 className="font-serif text-[#131316] text-[28px] sm:text-[34px] md:text-[40px] lg:text-[44px] leading-[1.15] tracking-tight font-semibold mb-3 md:mb-4">
-            WhatsApp is a black box
+          <h2 className="font-serif text-[#131316] text-[20px] sm:text-[28px] md:text-[28px] lg:text-[32px] leading-[1.15] tracking-tight font-semibold mb-3 md:mb-4">
+            Your technology should solve problems, not create more of them.
           </h2>
           <p className="text-neutral-600 text-xs sm:text-sm md:text-[15px] leading-relaxed max-w-[620px]">
-            WhatsApp conversations today are a complete black-box leading to poor customer understanding and poor customer experience
+            Growing businesses often struggle with disconnected systems, manual processes, limited ecommerce platforms, and technology that doesn't scale with their needs.
           </p>
         </div>
 
         {/* 4 Problem Cards Grid - Responsive for 1440w, 1024w, 768w, 390w */}
         <div className="w-full border-y border-[#D1D1D6] grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#D1D1D6] bg-[#f4f3ec]">
           {/* Card 1 */}
-          <div className="p-4 sm:p-5 lg:p-7 flex flex-col justify-between min-h-[340px] md:h-[360px] bg-[#f4f3ec] hover:bg-[#ebeadF]/70 transition-colors duration-200 relative group overflow-hidden">
+          <div className="p-4 sm:p-5 lg:p-7 flex flex-col text-center justify-between min-h-[480px] md:h-[500px] bg-[#f4f3ec] hover:bg-[#ebeadF]/70 transition-colors duration-200 relative group overflow-hidden">
             <div className="flex flex-col gap-1.5 md:gap-2 mb-4">
               <span className="text-[#E25252] text-[10px] md:text-[11px] font-bold font-mono tracking-[0.15em] uppercase">
-                PROBLEM 1
+                PROBLEM 01
+              </span>
+              <span className="text-neutral-500 font-mono text-[10px] md:text-[11px] uppercase tracking-wider font-semibold">
+                Ecommerce limitations
               </span>
               <h3 className="text-[#131316] font-medium text-[13.5px] md:text-[14px] lg:text-[15px] leading-snug">
-                No visibility across your entire team of agents
+                Your store isn't built for your business
               </h3>
+              <p className="text-neutral-600 text-[11px] md:text-[12px] leading-relaxed mt-0.5">
+                Generic themes and limited functionality can make it difficult to deliver the experience your customers expect.
+              </p>
             </div>
 
             {/* Mockup Frame 1 */}
@@ -56,17 +62,30 @@ export function ProblemsSection() {
                 </div>
               </div>
             </div>
+
+            <div className="mt-4 pt-3 border-t border-[#D8D7CE] flex items-center justify-between">
+              <span className="text-[9px] font-mono uppercase tracking-wider text-neutral-400">Solution</span>
+              <span className="text-[10px] md:text-[11px] font-mono font-bold text-emerald-700 bg-emerald-100/60 px-2 py-0.5 rounded border border-emerald-200/50">
+                Shopify Solution
+              </span>
+            </div>
           </div>
 
           {/* Card 2 */}
-          <div className="p-4 sm:p-5 lg:p-7 flex flex-col justify-between min-h-[340px] md:h-[360px] bg-[#f4f3ec] hover:bg-[#ebeadF]/70 transition-colors duration-200 relative group overflow-hidden">
+          <div className="p-4 sm:p-5 lg:p-7 flex flex-col text-center justify-between min-h-[480px] md:h-[500px] bg-[#f4f3ec] hover:bg-[#ebeadF]/70 transition-colors duration-200 relative group overflow-hidden">
             <div className="flex flex-col gap-1.5 md:gap-2 mb-4">
               <span className="text-[#E25252] text-[10px] md:text-[11px] font-bold font-mono tracking-[0.15em] uppercase">
-                PROBLEM 2
+                PROBLEM 02
+              </span>
+              <span className="text-neutral-500 font-mono text-[10px] md:text-[11px] uppercase tracking-wider font-semibold">
+                Manual processes
               </span>
               <h3 className="text-[#131316] font-medium text-[13.5px] md:text-[14px] lg:text-[15px] leading-snug">
-                Agents are forced to follow up manually
+                Too much work is still manual
               </h3>
+              <p className="text-neutral-600 text-[11px] md:text-[12px] leading-relaxed mt-0.5">
+                Copying data, following up with customers, managing leads, sending emails, and repeating the same tasks wastes time and creates room for mistakes.
+              </p>
             </div>
 
             {/* Mockup Frame 2 */}
@@ -96,17 +115,30 @@ export function ProblemsSection() {
                 </div>
               </div>
             </div>
+
+            <div className="mt-4 pt-3 border-t border-[#D8D7CE] flex items-center justify-between">
+              <span className="text-[9px] font-mono uppercase tracking-wider text-neutral-400">Solution</span>
+              <span className="text-[10px] md:text-[11px] font-mono font-bold text-emerald-700 bg-emerald-100/60 px-2 py-0.5 rounded border border-emerald-200/50">
+                Automation Solution
+              </span>
+            </div>
           </div>
 
           {/* Card 3 */}
-          <div className="p-4 sm:p-5 lg:p-7 flex flex-col justify-between min-h-[340px] md:h-[360px] bg-[#f4f3ec] hover:bg-[#ebeadF]/70 transition-colors duration-200 relative group overflow-hidden">
+          <div className="p-4 sm:p-5 lg:p-7 flex flex-col text-center justify-between min-h-[480px] md:h-[500px] bg-[#f4f3ec] hover:bg-[#ebeadF]/70 transition-colors duration-200 relative group overflow-hidden">
             <div className="flex flex-col gap-1.5 md:gap-2 mb-4">
               <span className="text-[#E25252] text-[10px] md:text-[11px] font-bold font-mono tracking-[0.15em] uppercase">
-                PROBLEM 3
+                PROBLEM 03
+              </span>
+              <span className="text-neutral-500 font-mono text-[10px] md:text-[11px] uppercase tracking-wider font-semibold">
+                Disconnected systems
               </span>
               <h3 className="text-[#131316] font-medium text-[13.5px] md:text-[14px] lg:text-[15px] leading-snug">
-                Conversation data never makes it to your CRM
+                Your tools don't talk to each other
               </h3>
+              <p className="text-neutral-600 text-[11px] md:text-[12px] leading-relaxed mt-0.5">
+                Your Shopify store, CRM, ERP, marketing tools, inventory, and internal systems shouldn't operate as separate islands.
+              </p>
             </div>
 
             {/* Mockup Frame 3 (Illustration: WhatsApp & CRM Disconnected Wire) */}
@@ -144,17 +176,30 @@ export function ProblemsSection() {
                 </div>
               </div>
             </div>
+
+            <div className="mt-4 pt-3 border-t border-[#D8D7CE] flex items-center justify-between">
+              <span className="text-[9px] font-mono uppercase tracking-wider text-neutral-400">Solution</span>
+              <span className="text-[10px] md:text-[11px] font-mono font-bold text-emerald-700 bg-emerald-100/60 px-2 py-0.5 rounded border border-emerald-200/50">
+                Integration Solution
+              </span>
+            </div>
           </div>
 
           {/* Card 4 */}
-          <div className="p-4 sm:p-5 lg:p-7 flex flex-col justify-between min-h-[340px] md:h-[360px] bg-[#f4f3ec] hover:bg-[#ebeadF]/70 transition-colors duration-200 relative group overflow-hidden">
+          <div className="p-4 sm:p-5 lg:p-7 flex flex-col text-center justify-between min-h-[480px] md:h-[500px] bg-[#f4f3ec] hover:bg-[#ebeadF]/70 transition-colors duration-200 relative group overflow-hidden">
             <div className="flex flex-col gap-1.5 md:gap-2 mb-4">
               <span className="text-[#E25252] text-[10px] md:text-[11px] font-bold font-mono tracking-[0.15em] uppercase">
-                PROBLEM 4
+                PROBLEM 04
+              </span>
+              <span className="text-neutral-500 font-mono text-[10px] md:text-[11px] uppercase tracking-wider font-semibold">
+                Generic software
               </span>
               <h3 className="text-[#131316] font-medium text-[13.5px] md:text-[14px] lg:text-[15px] leading-snug">
-                Missed chats, Late replies - Lack of control on CX
+                Off-the-shelf software doesn't fit your workflow
               </h3>
+              <p className="text-neutral-600 text-[11px] md:text-[12px] leading-relaxed mt-0.5">
+                Every industry has different workflows, customers, operations, and challenges. Sometimes an off-the-shelf tool simply isn't enough.
+              </p>
             </div>
 
             {/* Mockup Frame 4 */}
@@ -182,6 +227,13 @@ export function ProblemsSection() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            <div className="mt-4 pt-3 border-t border-[#D8D7CE] flex items-center justify-between">
+              <span className="text-[9px] font-mono uppercase tracking-wider text-neutral-400">Solution</span>
+              <span className="text-[10px] md:text-[11px] font-mono font-bold text-emerald-700 bg-emerald-100/60 px-2 py-0.5 rounded border border-emerald-200/50">
+                Custom Software
+              </span>
             </div>
           </div>
         </div>

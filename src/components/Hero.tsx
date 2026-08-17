@@ -37,12 +37,12 @@ const TAB_IMAGES = {
 } as const;
 
 const TABS = [
-  { id: "inbox", label: "Unified Inbox", svg: iconInbox },
-  { id: "agents", label: "AI Agents", svg: iconAgents },
-  { id: "automation", label: "Automation", svg: iconAutomation },
-  { id: "broadcasting", label: "Broadcasting", svg: iconBroadcasting },
-  { id: "governance", label: "AI Governance", svg: iconGovernance },
-  { id: "analytics", label: "AI Analytics", svg: iconAnalytics },
+  { id: "inbox", label: "SHOPIFY", svg: iconInbox },
+  { id: "agents", label: "SHOPIFY PLUS", svg: iconAgents },
+  { id: "automation", label: "B2B COMMERCE", svg: iconAutomation },
+  { id: "broadcasting", label: "AUTOMATION", svg: iconBroadcasting },
+  { id: "governance", label: "SOFTWARE", svg: iconGovernance },
+  { id: "analytics", label: "AI SOLUTIONS", svg: iconAnalytics },
 ] as const;
 
 const TAB_DURATION = 6000; // Auto-rotate interval (6 seconds)
@@ -160,9 +160,9 @@ export function Hero() {
               <div className="flex flex-col items-center gap-2 pb-3">
                 <MetaLogo />
                 <span className="text-white text-center text-[13px] leading-tight font-medium">
-                  Emerging Technology
+                  COMMERCE · SOFTWARE ·
                   <br />
-                  Partner of the Year
+                  AUTOMATION
                 </span>
               </div>
               <img
@@ -178,18 +178,15 @@ export function Hero() {
             className="text-white text-center max-w-[820px] lg:max-w-[789px] lg:h-[167.41px] text-[34px] sm:text-[48px] lg:text-[61px] leading-[1.1] lg:leading-[85.4px] tracking-tight lg:tracking-[-0.01em] font-normal mt-[28px] lg:mt-[31px]"
             style={{ fontFamily: '"Hedvig Letters Serif", "Cormorant Garamond", "Times New Roman", serif' }}
           >
-            Agentic AI
-            <br className="lg:hidden" /> Operating System
-            <br />
-            for WhatsApp at Scale
+            We build digital systems
+            <br className="lg:hidden" /> that move businesses forward
+            {/* <br /> */}
+
           </h1>
 
           {/* Subhead - Y: 362.81px */}
           <p className="text-center max-w-[700px] lg:h-[65.82px] text-[15px] lg:text-[16px] leading-relaxed lg:leading-[22.4px] lg:tracking-[-0.01em] text-white/50 mt-4 lg:mt-[14.4px] px-4 lg:px-0">
-            Centralize every number, department, and conversation into one
-            secure command center. Gain the governance to secure your data, the
-            AI to automate chats, and the outreach tools to engage and convert
-            your audience at scale.
+            We design and develop high-performance Shopify experiences, business software, and automation solutions built around the way your business actually works.
           </p>
 
           {/* CTAs - Y: 462.03px */}
@@ -214,22 +211,20 @@ export function Hero() {
                   key={t.id}
                   onClick={() => setActive(t.id)}
                   aria-label={t.label}
-                  className={`relative flex items-center justify-center gap-2 h-full border-r border-dashed last:border-r-0 border-white/12 transition-all duration-300 ease-out cursor-pointer md:pt-3 md:pb-2 ${
-                    isActive
-                      ? "flex-[1.5] md:flex-1 flex-row md:flex-col bg-[#05502D] px-3 md:px-0"
-                      : "flex-1 flex-row md:flex-col hover:bg-[rgba(255,255,255,0.04)]"
-                  }`}
+                  className={`relative flex items-center justify-center gap-2 h-full border-r border-dashed last:border-r-0 border-white/12 transition-all duration-300 ease-out cursor-pointer md:pt-3 md:pb-2 ${isActive
+                    ? "flex-[1.5] md:flex-1 flex-row md:flex-col bg-[#05502D] px-3 md:px-0"
+                    : "flex-1 flex-row md:flex-col hover:bg-[rgba(255,255,255,0.04)]"
+                    }`}
                 >
                   <div
                     className={`w-5 h-5 ${isActive ? "text-[#27B578]" : "text-white/65"}`}
                     dangerouslySetInnerHTML={{ __html: t.svg }}
                   />
                   <span
-                    className={`text-[11px] font-semibold tracking-[0.05em] uppercase transition-all duration-200 ${
-                      isActive
-                        ? "block text-white"
-                        : "hidden md:block text-white/65"
-                    }`}
+                    className={`text-[11px] font-semibold tracking-[0.05em] uppercase transition-all duration-200 ${isActive
+                      ? "block text-white"
+                      : "hidden md:block text-white/65"
+                      }`}
                   >
                     {t.label}
                   </span>
