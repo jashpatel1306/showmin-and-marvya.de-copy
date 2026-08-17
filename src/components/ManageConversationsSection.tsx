@@ -1,11 +1,43 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { DottedSection } from "@/components/DottedSection";
 import { WDS } from "@/components/wds";
+import step1Img from "@/assets/how-it-works/imgi_146_step_01.webp";
+import step2Img from "@/assets/how-it-works/imgi_147_step_02.webp";
+import step3Img from "@/assets/how-it-works/imgi_148_step_03.webp";
+import step4Img from "@/assets/how-it-works/imgi_149_step_04.webp";
+import step5Img from "@/assets/how-it-works/imgi_150_step_05.webp";
+import transformImg1 from "@/assets/HerosectionAi/broadcasting.avif";
+import transformImg2 from "@/assets/HerosectionAi/automation.avif";
+import transformImg3 from "@/assets/HerosectionAi/ai-anlaytics.avif";
+import transformImg4 from "@/assets/HerosectionAi/cx-governance.avif";
+import transformImg5 from "@/assets/HerosectionAi/ai-agents.avif";
 
 export function ManageConversationsSection() {
   const [activeTab, setActiveTab] = useState("BUILD");
   const [isSticky, setIsSticky] = useState(false);
   const [selectedFeature, setSelectedFeature] = useState(0);
+  const [progress, setProgress] = useState(0);
+
+  const featureIndexRef = useRef(0);
+  const startTimeRef = useRef<number | null>(null);
+
+  const [transformSelectedFeature, setTransformSelectedFeature] = useState(0);
+  const [transformProgress, setTransformProgress] = useState(0);
+
+  const transformIndexRef = useRef(0);
+  const transformStartTimeRef = useRef<number | null>(null);
+
+  const [automateSelectedFeature, setAutomateSelectedFeature] = useState(0);
+  const [automateProgress, setAutomateProgress] = useState(0);
+
+  const automateIndexRef = useRef(0);
+  const automateStartTimeRef = useRef<number | null>(null);
+
+  const [connectSelectedFeature, setConnectSelectedFeature] = useState(0);
+  const [connectProgress, setConnectProgress] = useState(0);
+
+  const connectIndexRef = useRef(0);
+  const connectStartTimeRef = useRef<number | null>(null);
 
   // Scroll listener to toggle sticky bar & update active tab on scroll
   useEffect(() => {
@@ -57,6 +89,155 @@ export function ManageConversationsSection() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Strict Sequential WhatsApp Status Loop: 6.0 seconds per tab (0 -> 1 -> 2 -> 3 -> 4 -> 0...)
+  useEffect(() => {
+    const DURATION = 6000; // Exact 6 seconds per tab
+    let animId: number;
+
+    const animate = (now: number) => {
+      if (startTimeRef.current === null) {
+        startTimeRef.current = now;
+      }
+
+      const elapsed = now - startTimeRef.current;
+      const currentProgress = Math.min((elapsed / DURATION) * 100, 100);
+
+      if (elapsed >= DURATION) {
+        // Strictly move to next tab in order: (0 -> 1 -> 2 -> 3 -> 4 -> 0)
+        const nextIdx = (featureIndexRef.current + 1) % 5;
+        setSelectedFeature(nextIdx);
+        featureIndexRef.current = nextIdx;
+        setProgress(0);
+        startTimeRef.current = now;
+      } else {
+        setProgress(currentProgress);
+      }
+
+      animId = requestAnimationFrame(animate);
+    };
+
+    animId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animId);
+  }, []);
+
+  const handleFeatureSelect = (idx: number) => {
+    setSelectedFeature(idx);
+    featureIndexRef.current = idx;
+    setProgress(0);
+    startTimeRef.current = performance.now();
+  };
+
+  // Strict Sequential WhatsApp Status Loop for TRANSFORM (6.0s per tab)
+  useEffect(() => {
+    const DURATION = 6000; // Exact 6 seconds per tab
+    let animId: number;
+
+    const animate = (now: number) => {
+      if (transformStartTimeRef.current === null) {
+        transformStartTimeRef.current = now;
+      }
+
+      const elapsed = now - transformStartTimeRef.current;
+      const currentProgress = Math.min((elapsed / DURATION) * 100, 100);
+
+      if (elapsed >= DURATION) {
+        const nextIdx = (transformIndexRef.current + 1) % 5;
+        setTransformSelectedFeature(nextIdx);
+        transformIndexRef.current = nextIdx;
+        setTransformProgress(0);
+        transformStartTimeRef.current = now;
+      } else {
+        setTransformProgress(currentProgress);
+      }
+
+      animId = requestAnimationFrame(animate);
+    };
+
+    animId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animId);
+  }, []);
+
+  const handleTransformFeatureSelect = (idx: number) => {
+    setTransformSelectedFeature(idx);
+    transformIndexRef.current = idx;
+    setTransformProgress(0);
+    transformStartTimeRef.current = performance.now();
+  };
+
+  // Strict Sequential WhatsApp Status Loop for AUTOMATE (6.0s per tab)
+  useEffect(() => {
+    const DURATION = 6000; // Exact 6 seconds per tab
+    let animId: number;
+
+    const animate = (now: number) => {
+      if (automateStartTimeRef.current === null) {
+        automateStartTimeRef.current = now;
+      }
+
+      const elapsed = now - automateStartTimeRef.current;
+      const currentProgress = Math.min((elapsed / DURATION) * 100, 100);
+
+      if (elapsed >= DURATION) {
+        const nextIdx = (automateIndexRef.current + 1) % 5;
+        setAutomateSelectedFeature(nextIdx);
+        automateIndexRef.current = nextIdx;
+        setAutomateProgress(0);
+        automateStartTimeRef.current = now;
+      } else {
+        setAutomateProgress(currentProgress);
+      }
+
+      animId = requestAnimationFrame(animate);
+    };
+
+    animId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animId);
+  }, []);
+
+  const handleAutomateFeatureSelect = (idx: number) => {
+    setAutomateSelectedFeature(idx);
+    automateIndexRef.current = idx;
+    setAutomateProgress(0);
+    automateStartTimeRef.current = performance.now();
+  };
+
+  // Strict Sequential WhatsApp Status Loop for CONNECT (6.0s per tab)
+  useEffect(() => {
+    const DURATION = 6000; // Exact 6 seconds per tab
+    let animId: number;
+
+    const animate = (now: number) => {
+      if (connectStartTimeRef.current === null) {
+        connectStartTimeRef.current = now;
+      }
+
+      const elapsed = now - connectStartTimeRef.current;
+      const currentProgress = Math.min((elapsed / DURATION) * 100, 100);
+
+      if (elapsed >= DURATION) {
+        const nextIdx = (connectIndexRef.current + 1) % 5;
+        setConnectSelectedFeature(nextIdx);
+        connectIndexRef.current = nextIdx;
+        setConnectProgress(0);
+        connectStartTimeRef.current = now;
+      } else {
+        setConnectProgress(currentProgress);
+      }
+
+      animId = requestAnimationFrame(animate);
+    };
+
+    animId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animId);
+  }, []);
+
+  const handleConnectFeatureSelect = (idx: number) => {
+    setConnectSelectedFeature(idx);
+    connectIndexRef.current = idx;
+    setConnectProgress(0);
+    connectStartTimeRef.current = performance.now();
+  };
+
   // Smooth scroll handler when a tab is clicked
   const scrollToSection = (tabName: string) => {
     setActiveTab(tabName);
@@ -76,7 +257,10 @@ export function ManageConversationsSection() {
     {
       id: "ai-agents",
       title: "Shopify Store Design & Development",
-      desc: "Handle queries 24/7 using your business knowledge base",
+      desc: "Build a Shopify store that looks like your brand and works like your business.",
+      image: step1Img,
+      badge: "Shopify Plus Partner",
+      tag: "Storefront Design",
       icon: (
         <svg className="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -85,8 +269,11 @@ export function ManageConversationsSection() {
     },
     {
       id: "reminders",
-      title: "Reminders and Notes",
-      desc: "Set internal follow-up alerts and pin notes to customer profiles",
+      title: "Headless Commerce",
+      desc: "Build flexible, high-performance commerce experiences without being limited by a traditional storefront.",
+      image: step2Img,
+      badge: "Headless Architecture",
+      tag: "API First",
       icon: (
         <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
@@ -95,8 +282,11 @@ export function ManageConversationsSection() {
     },
     {
       id: "filters",
-      title: "Advanced filters & Custom views",
-      desc: "Segment chats instantly by status, lead type, tag, or team member",
+      title: "Custom Software",
+      desc: "Turn complex business requirements into software built specifically for your workflow.",
+      image: step3Img,
+      badge: "Workflow Engine",
+      tag: "Custom Apps",
       icon: (
         <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
@@ -105,8 +295,11 @@ export function ManageConversationsSection() {
     },
     {
       id: "summaries",
-      title: "Chat & Call Summaries",
-      desc: "Get instant AI-generated call and conversation synopses for quick handovers",
+      title: "Websites & Digital Experiences",
+      desc: "Create digital experiences that communicate your brand and convert visitors into customers.",
+      image: step4Img,
+      badge: "Digital Storefront",
+      tag: "High Conversion",
       icon: (
         <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -115,11 +308,219 @@ export function ManageConversationsSection() {
     },
     {
       id: "hierarchy",
-      title: "Hierarchical Team Management",
-      desc: "Organize agents into roles, departments, and granular permission tiers",
+      title: "Marketing Foundations",
+      desc: "Build the digital foundation your marketing needs to perform.",
+      image: step5Img,
+      badge: "Growth Infrastructure",
+      tag: "Tracking & SEO",
       icon: (
         <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      ),
+    },
+  ];
+
+  const transformFeatures = [
+    {
+      id: "migration",
+      title: "Migrate to Shopify",
+      desc: "Move your ecommerce business to Shopify with a structured migration strategy.",
+      image: transformImg1,
+      badge: "Platform Migration",
+      tag: "Seamless Transition",
+      icon: (
+        <svg className="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+        </svg>
+      ),
+    },
+    {
+      id: "speed-optimization",
+      title: "Shopify Store Customization",
+      desc: "Your existing Shopify store doesn't need to be rebuilt from scratch. We improve what already works and fix what doesn't.",
+      image: transformImg2,
+      badge: "Store Customization",
+      tag: "Performance Boost",
+      icon: (
+        <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+    },
+    {
+      id: "ux-redesign",
+      title: "Replatform & Modernization",
+      desc: "Replace outdated technology with a modern digital foundation built for your next stage.",
+      image: transformImg3,
+      badge: "Modern Architecture",
+      tag: "Conversion Rate",
+      icon: (
+        <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+        </svg>
+      ),
+    },
+    {
+      id: "code-refactoring",
+      title: "Shopify Audit",
+      desc: "Understand what's stopping your store from performing better.",
+      image: transformImg4,
+      badge: "Store Audit",
+      tag: "Optimization Insights",
+      icon: (
+        <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        </svg>
+      ),
+    },
+    {
+      id: "data-sync",
+      title: "Marketing & CRO Transformation",
+      desc: "Transform traffic into measurable business growth.",
+      image: transformImg5,
+      badge: "CRO Growth",
+      tag: "Growth Engine",
+      icon: (
+        <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+        </svg>
+      ),
+    },
+  ];
+
+  const automateFeatures = [
+    {
+      id: "lead-qualification",
+      title: "Lead Generation",
+      desc: "Find and organize potential customers faster.",
+      image: step1Img,
+      badge: "AI Qualification",
+      tag: "Lead Routing",
+      icon: (
+        <svg className="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+    },
+    {
+      id: "communication-bot",
+      title: "Email Automation",
+      desc: "Turn manual customer communication into automated journeys.",
+      image: step2Img,
+      badge: "Email Journeys",
+      tag: "Automated Messaging",
+      icon: (
+        <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+        </svg>
+      ),
+    },
+    {
+      id: "marketing-workflows",
+      title: "Marketing Automation",
+      desc: "Connect your marketing activities into automated customer journeys.",
+      image: step3Img,
+      badge: "Lifecycle Marketing",
+      tag: "Behavior Triggers",
+      icon: (
+        <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+        </svg>
+      ),
+    },
+    {
+      id: "internal-ops",
+      title: "Business Workflow Automation",
+      desc: "Automate the repetitive operations that slow your team down.",
+      image: step4Img,
+      badge: "Process Automation",
+      tag: "Internal Workflows",
+      icon: (
+        <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      ),
+    },
+    {
+      id: "crm-sync",
+      title: "Ecommerce Automation",
+      desc: "Automate the everyday operations behind your online store.",
+      image: step5Img,
+      badge: "Ecommerce Sync",
+      tag: "Store Automation",
+      icon: (
+        <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+        </svg>
+      ),
+    },
+  ];
+
+  const connectFeatures = [
+    {
+      id: "shopify-integration",
+      title: "Shopify Integrations",
+      desc: "Connect Shopify with the tools your business already relies on.",
+      image: transformImg1,
+      badge: "Shopify Connect",
+      tag: "App Integrations",
+      icon: (
+        <svg className="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+    },
+    {
+      id: "crm-sync",
+      title: "CRM & ERP Integrations",
+      desc: "Connect customer and operational data across your business.",
+      image: transformImg5,
+      badge: "CRM & ERP",
+      tag: "Operational Data",
+      icon: (
+        <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+    },
+    {
+      id: "erp-inventory",
+      title: "Payment & Checkout",
+      desc: "Build reliable payment and checkout experiences across your commerce ecosystem.",
+      image: transformImg4,
+      badge: "Payment Engine",
+      tag: "Checkout Flow",
+      icon: (
+        <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        </svg>
+      ),
+    },
+    {
+      id: "payment-workflows",
+      title: "Marketing Integrations",
+      desc: "Connect marketing platforms to the data your business already owns.",
+      image: transformImg2,
+      badge: "Marketing Sync",
+      tag: "Data Flow",
+      icon: (
+        <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+      ),
+    },
+    {
+      id: "custom-api",
+      title: "Custom API & Data Integration",
+      desc: "If your systems don't have a ready-made connection, we build one.",
+      image: transformImg3,
+      badge: "Custom Connections",
+      tag: "Bespoke API",
+      icon: (
+        <svg className="w-4 h-4 text-neutral-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>
       ),
     },
@@ -393,100 +794,138 @@ export function ManageConversationsSection() {
                     return (
                       <button
                         key={feat.id}
-                        onClick={() => setSelectedFeature(idx)}
-                        className={`p-4 rounded-xl text-left transition-all flex gap-3.5 items-start border cursor-pointer ${isActive
-                          ? "bg-white border-neutral-300 shadow-sm"
-                          : "bg-transparent border-transparent hover:bg-neutral-100/60"
+                        onClick={() => handleFeatureSelect(idx)}
+                        className={`p-4 rounded-xl text-left transition-all flex flex-col gap-2 border cursor-pointer relative overflow-hidden ${isActive
+                            ? "bg-white border-neutral-300 shadow-sm"
+                            : "bg-transparent border-transparent hover:bg-neutral-100/60"
                           }`}
                       >
-                        <div className={`p-2 rounded-lg shrink-0 mt-0.5 ${isActive ? "bg-emerald-50" : "bg-neutral-100"}`}>
-                          {feat.icon}
+                        <div className="flex gap-3.5 items-start w-full">
+                          <div className={`p-2 rounded-lg shrink-0 mt-0.5 ${isActive ? "bg-emerald-50" : "bg-neutral-100"}`}>
+                            {feat.icon}
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center justify-between gap-1 mb-0.5">
+                              <h4 className={`text-sm font-semibold truncate ${isActive ? "text-neutral-900" : "text-neutral-700"}`}>
+                                {feat.title}
+                              </h4>
+                              {isActive && (
+                                <span className="text-[9.5px] font-mono font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded shrink-0">
+                                  {idx + 1}/5
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-xs text-neutral-500 leading-relaxed">
+                              {feat.desc}
+                            </p>
+                          </div>
                         </div>
-                        <div>
-                          <h4 className={`text-sm font-semibold mb-0.5 ${isActive ? "text-neutral-900" : "text-neutral-700"}`}>
-                            {feat.title}
-                          </h4>
-                          <p className="text-xs text-neutral-500 leading-relaxed">
-                            {feat.desc}
-                          </p>
-                        </div>
+
+                        {/* Edge-to-Edge Status Progress Line at Bottom of Active Tab Card */}
+                        {isActive && (
+                          <div className="absolute bottom-0 left-0 right-0 h-1 bg-neutral-100 overflow-hidden">
+                            <div
+                              className="h-full bg-emerald-600"
+                              style={{ width: `${progress}%` }}
+                            />
+                          </div>
+                        )}
                       </button>
                     );
                   })}
                 </div>
 
-                {/* Right Interactive Preview Card */}
-                <div className="md:col-span-7 bg-[#FAF9F6] border border-[#D1D1D6] rounded-xl p-4 md:p-6 relative overflow-hidden shadow-xs">
+                {/* Right Interactive Preview Card with WhatsApp Status Effect */}
+                <div
+                  className="md:col-span-7 bg-[#FAF9F6] border border-[#D1D1D6] rounded-xl p-4 md:p-6 relative overflow-hidden shadow-xs flex flex-col justify-between"
+                >
+                  {/* Corner Accent Boxes */}
                   <span className="absolute top-2 left-2 w-2 h-2 border-t border-l border-neutral-400" />
                   <span className="absolute top-2 right-2 w-2 h-2 border-t border-r border-neutral-400" />
                   <span className="absolute bottom-2 left-2 w-2 h-2 border-b border-l border-neutral-400" />
                   <span className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-neutral-400" />
 
+                  {/* Top WhatsApp Status Bar (5 Segment Progress Bars) */}
+                  <div className="flex gap-1.5 mb-4">
+                    {features.map((_, idx) => {
+                      let barWidth = "0%";
+                      if (idx < selectedFeature) {
+                        barWidth = "100%";
+                      } else if (idx === selectedFeature) {
+                        barWidth = `${progress}%`;
+                      } else {
+                        barWidth = "0%";
+                      }
+                      return (
+                        <div key={idx} className="flex-1 h-1.5 bg-neutral-200/90 rounded-full overflow-hidden">
+                          <div
+                            className="h-full bg-emerald-600"
+                            style={{ width: barWidth }}
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Card Title & Header Status Info */}
                   <div className="flex items-center justify-between pb-3 mb-4 border-b border-neutral-200">
                     <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-full bg-neutral-300 flex items-center justify-center font-bold text-neutral-700 text-xs">
-                        N
+                      <div className="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                        {selectedFeature + 1}
                       </div>
                       <div>
-                        <span className="font-semibold text-neutral-900 text-xs block">Neil</span>
-                        <span className="text-[9.5px] text-neutral-400">Interested Customer</span>
+                        <span className="font-semibold text-neutral-900 text-xs block">
+                          {features[selectedFeature].title}
+                        </span>
+                        <span className="text-[10px] text-neutral-500 font-mono">
+                          {features[selectedFeature].tag} • Status {selectedFeature + 1} of 5 (6s)
+                        </span>
                       </div>
                     </div>
-                    <div className="bg-white border border-neutral-300 px-3 py-1 rounded text-xs text-neutral-700 font-medium flex items-center gap-1.5 shadow-2xs">
-                      <span>Sales AI Agent</span>
-                      <span className="text-[10px]">▼</span>
-                    </div>
-                  </div>
-
-                  <div className="space-y-3 mb-4 text-xs">
-                    <div className="flex flex-col items-start gap-1">
-                      <div className="bg-white p-3 rounded-lg rounded-tl-none border border-neutral-200 shadow-2xs max-w-[80%] text-neutral-800">
-                        <p>Hi! I am interested in travelling to Goa</p>
-                        <span className="text-[8px] text-neutral-400 block text-right mt-1">05:39 pm</span>
-                      </div>
-                    </div>
-
-                    <div className="text-center">
-                      <span className="text-[9.5px] bg-neutral-200/70 text-neutral-600 px-3 py-0.5 rounded-full font-mono">
-                        Chat assigned to Sales AI Agent
+                    <div className="flex items-center gap-2">
+                      <span className="bg-emerald-50 text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-full text-[10px] font-medium font-mono">
+                        {features[selectedFeature].badge}
                       </span>
                     </div>
+                  </div>
 
-                    <div className="flex flex-col items-end gap-1">
-                      <div className="bg-[#DCF8C6] p-3 rounded-lg rounded-tr-none border border-[#c5e8ab] shadow-2xs max-w-[90%] text-left relative">
-                        <span className="text-[9.5px] font-bold text-emerald-800 block mb-1">Sales AI Agent</span>
-                        <p className="text-neutral-900">
-                          Hi Chirag! Great choice on Goa. 😊
+                  {/* Dynamic Image & Preview Frame */}
+                  <div className="space-y-4 mb-4 text-xs">
+                    <div className="relative rounded-lg overflow-hidden border border-neutral-200 shadow-sm bg-white group">
+                      <img
+                        src={features[selectedFeature].image}
+                        alt={features[selectedFeature].title}
+                        className="w-full h-auto object-cover max-h-[300px] transition-all duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-90 flex flex-col justify-end p-4 text-white">
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold mb-1">
+                          {features[selectedFeature].badge}
+                        </span>
+                        <p className="text-xs sm:text-sm font-semibold leading-snug">
+                          {features[selectedFeature].desc}
                         </p>
-                        <p className="text-neutral-900 mt-1">
-                          To send the best package options, share your travel dates, group size, departure city, and vibe (nightlife or relaxed)?
-                        </p>
-                        <p className="text-neutral-900 mt-1">
-                          Let me know your details and preferences!
-                        </p>
-
-                        <div className="absolute -bottom-10 right-2 bg-white border border-neutral-300 shadow-md rounded-lg p-1.5 flex flex-col gap-1 z-20 text-[10.5px]">
-                          <button className="flex items-center gap-1.5 px-2 py-1 hover:bg-neutral-100 rounded text-neutral-700 font-medium cursor-pointer">
-                            <span>🪄</span> Re-Generate Reply
-                          </button>
-                          <button className="flex items-center gap-1.5 px-2 py-1 hover:bg-neutral-100 rounded text-neutral-700 font-medium cursor-pointer">
-                            <span>✍️</span> Improve Writing
-                          </button>
-                        </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-12 pt-3 border-t border-neutral-200 flex items-center gap-2">
-                    <input
-                      type="text"
-                      value="We also have special discounts for family packages"
-                      readOnly
-                      className="flex-1 bg-white border border-neutral-300 rounded-lg px-3 py-2 text-xs text-neutral-800 focus:outline-none"
-                    />
-                    <button className="w-8 h-8 bg-emerald-600 text-white rounded-lg flex items-center justify-center font-bold text-sm shrink-0 cursor-pointer">
-                      ➢
-                    </button>
+                  {/* Interactive Status Navigation & Indicator Bar */}
+                  <div className="pt-3 border-t border-neutral-200 flex items-center justify-between text-xs">
+                    <div className="flex items-center gap-1.5 text-neutral-500 font-mono text-[11px]">
+                      <span>▶️ Auto-advancing (6s per tab)</span>
+                    </div>
+                    <div className="flex gap-1.5">
+                      {features.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => handleFeatureSelect(idx)}
+                          className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${selectedFeature === idx
+                              ? "bg-emerald-600 w-6"
+                              : "bg-neutral-300 hover:bg-neutral-400"
+                            }`}
+                          title={`Switch to Tab ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -507,68 +946,155 @@ export function ManageConversationsSection() {
                 <span className="w-4 h-px bg-emerald-600/60" />
               </div>
               <h2 className="font-serif text-[#131316] text-[28px] sm:text-[36px] md:text-[40px] lg:text-[42px] leading-[1.2] tracking-tight font-semibold mb-3 md:mb-4">
-                Migrate, modernize, and improve your existing commerce experience
+                Turn existing digital experiences into better-performing ones
               </h2>
               <p className="text-neutral-500 text-xs sm:text-sm md:text-[15px] leading-relaxed max-w-[660px]">
-                Move your ecommerce business to Shopify or transform an existing store into a faster, more flexible, and conversion-focused digital experience.              </p>
+                Migrate, redesign, optimize, and modernize your existing technology without losing the data, customers, or business value you've already built.
+              </p>
             </div>
 
-            <div className="w-full px-4 md:px-8">
-              <div className="bg-[#B2C8DC] p-4 sm:p-6 rounded-xl md:rounded-2xl border border-[#9BB4CC] shadow-xs">
-                <div className="bg-white rounded-lg border border-neutral-300 p-4 md:p-6 space-y-6">
-                  {/* Campaign KPI Metrics Bar */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="bg-[#FAF9F5] p-3.5 rounded-lg border border-neutral-200">
-                      <span className="text-[10px] font-mono text-neutral-400 uppercase block">TOTAL SENT</span>
-                      <span className="text-lg font-bold text-neutral-900 font-mono">142,500</span>
+            {/* WDS Horizontal Dotted Section above TRANSFORM vertical tab showcase */}
+            <WDS className="m-0 relative z-20" />
+
+            {/* Feature Interactive List & Card Showcase for TRANSFORM */}
+            <div className="w-full px-4 md:px-8 pb-0 pt-0">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+                {/* Left 5 Features List */}
+                <div className="md:col-span-5 flex flex-col gap-2">
+                  {transformFeatures.map((feat, idx) => {
+                    const isActive = transformSelectedFeature === idx;
+                    return (
+                      <button
+                        key={feat.id}
+                        onClick={() => handleTransformFeatureSelect(idx)}
+                        className={`p-4 rounded-xl text-left transition-all flex flex-col gap-2 border cursor-pointer relative overflow-hidden ${isActive
+                            ? "bg-white border-neutral-300 shadow-sm"
+                            : "bg-transparent border-transparent hover:bg-neutral-100/60"
+                          }`}
+                      >
+                        <div className="flex gap-3.5 items-start w-full">
+                          <div className={`p-2 rounded-lg shrink-0 mt-0.5 ${isActive ? "bg-emerald-50" : "bg-neutral-100"}`}>
+                            {feat.icon}
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center justify-between gap-1 mb-0.5">
+                              <h4 className={`text-sm font-semibold truncate ${isActive ? "text-neutral-900" : "text-neutral-700"}`}>
+                                {feat.title}
+                              </h4>
+                              {isActive && (
+                                <span className="text-[9.5px] font-mono font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded shrink-0">
+                                  {idx + 1}/5
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-xs text-neutral-500 leading-relaxed">
+                              {feat.desc}
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Edge-to-Edge Status Progress Line at Bottom of Active Tab Card */}
+                        {isActive && (
+                          <div className="absolute bottom-0 left-0 right-0 h-1 bg-neutral-100 overflow-hidden">
+                            <div
+                              className="h-full bg-emerald-600"
+                              style={{ width: `${transformProgress}%` }}
+                            />
+                          </div>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Right Interactive Preview Card with WhatsApp Status Effect */}
+                <div className="md:col-span-7 bg-[#FAF9F6] border border-[#D1D1D6] rounded-xl p-4 md:p-6 relative overflow-hidden shadow-xs flex flex-col justify-between">
+                  {/* Corner Accent Boxes */}
+                  <span className="absolute top-2 left-2 w-2 h-2 border-t border-l border-neutral-400" />
+                  <span className="absolute top-2 right-2 w-2 h-2 border-t border-r border-neutral-400" />
+                  <span className="absolute bottom-2 left-2 w-2 h-2 border-b border-l border-neutral-400" />
+                  <span className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-neutral-400" />
+
+                  {/* Top WhatsApp Status Bar (5 Segment Progress Bars) */}
+                  <div className="flex gap-1.5 mb-4">
+                    {transformFeatures.map((_, idx) => {
+                      let barWidth = "0%";
+                      if (idx < transformSelectedFeature) {
+                        barWidth = "100%";
+                      } else if (idx === transformSelectedFeature) {
+                        barWidth = `${transformProgress}%`;
+                      } else {
+                        barWidth = "0%";
+                      }
+                      return (
+                        <div key={idx} className="flex-1 h-1.5 bg-neutral-200/90 rounded-full overflow-hidden">
+                          <div
+                            className="h-full bg-emerald-600"
+                            style={{ width: barWidth }}
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Card Title & Header Status Info */}
+                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-neutral-200">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                        {transformSelectedFeature + 1}
+                      </div>
+                      <div>
+                        <span className="font-semibold text-neutral-900 text-xs block">
+                          {transformFeatures[transformSelectedFeature].title}
+                        </span>
+                        <span className="text-[10px] text-neutral-500 font-mono">
+                          {transformFeatures[transformSelectedFeature].tag} • Status {transformSelectedFeature + 1} of 5 (6s)
+                        </span>
+                      </div>
                     </div>
-                    <div className="bg-[#FAF9F5] p-3.5 rounded-lg border border-neutral-200">
-                      <span className="text-[10px] font-mono text-neutral-400 uppercase block">DELIVERY RATE</span>
-                      <span className="text-lg font-bold text-emerald-600 font-mono">99.6%</span>
-                    </div>
-                    <div className="bg-[#FAF9F5] p-3.5 rounded-lg border border-neutral-200">
-                      <span className="text-[10px] font-mono text-neutral-400 uppercase block">OPEN RATE</span>
-                      <span className="text-lg font-bold text-emerald-600 font-mono">86.4%</span>
-                    </div>
-                    <div className="bg-[#FAF9F5] p-3.5 rounded-lg border border-neutral-200">
-                      <span className="text-[10px] font-mono text-neutral-400 uppercase block">CLICK-THROUGH</span>
-                      <span className="text-lg font-bold text-emerald-600 font-mono">31.2%</span>
+                    <div className="flex items-center gap-2">
+                      <span className="bg-emerald-50 text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-full text-[10px] font-medium font-mono">
+                        {transformFeatures[transformSelectedFeature].badge}
+                      </span>
                     </div>
                   </div>
 
-                  {/* Broadcast Composer Card */}
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-                    <div className="md:col-span-6 space-y-3">
-                      <span className="text-xs font-bold text-neutral-800 uppercase font-mono tracking-wider block">CAMPAIGN PREVIEW</span>
-                      <div className="bg-[#DCF8C6] p-4 rounded-xl border border-[#c5e8ab] text-xs space-y-2 text-neutral-900">
-                        <p className="font-bold text-emerald-900">🎉 Festive Flash Sale - Special Offer!</p>
-                        <p>Hi {"{{first_name}}"}, we have an exclusive 25% discount reserved for you on our new product catalog!</p>
-                        <p className="text-[10px] text-neutral-600">Use code: <strong className="font-mono">FESTIVE25</strong> at checkout.</p>
-                        <div className="pt-2 border-t border-emerald-300/50 flex gap-2">
-                          <button className="flex-1 bg-white text-emerald-800 font-semibold py-1.5 rounded border border-emerald-300 text-center text-[11px]">
-                            🛍️ Shop Now
-                          </button>
-                          <button className="flex-1 bg-white text-emerald-800 font-semibold py-1.5 rounded border border-emerald-300 text-center text-[11px]">
-                            💬 Chat Support
-                          </button>
-                        </div>
+                  {/* Dynamic Image & Preview Frame */}
+                  <div className="space-y-4 mb-4 text-xs">
+                    <div className="relative rounded-lg overflow-hidden border border-neutral-200 shadow-sm bg-white group">
+                      <img
+                        src={transformFeatures[transformSelectedFeature].image}
+                        alt={transformFeatures[transformSelectedFeature].title}
+                        className="w-full h-auto object-cover max-h-[300px] transition-all duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-90 flex flex-col justify-end p-4 text-white">
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold mb-1">
+                          {transformFeatures[transformSelectedFeature].badge}
+                        </span>
+                        <p className="text-xs sm:text-sm font-semibold leading-snug">
+                          {transformFeatures[transformSelectedFeature].desc}
+                        </p>
                       </div>
                     </div>
-                    <div className="md:col-span-6 space-y-3">
-                      <div className="bg-[#FAF9F6] p-4 rounded-xl border border-neutral-200 space-y-2.5 text-xs">
-                        <div className="flex justify-between items-center">
-                          <span className="font-medium text-neutral-700">Target Segment</span>
-                          <span className="bg-emerald-100 text-emerald-800 text-[10px] font-semibold px-2 py-0.5 rounded font-mono">VIP Customers (12,450)</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="font-medium text-neutral-700">Schedule</span>
-                          <span className="text-neutral-500 font-mono">Send Immediately</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="font-medium text-neutral-700">Variable Mapping</span>
-                          <span className="text-emerald-700 font-mono text-[11px]">Auto-Synced ✓</span>
-                        </div>
-                      </div>
+                  </div>
+
+                  {/* Interactive Status Navigation & Indicator Bar */}
+                  <div className="pt-3 border-t border-neutral-200 flex items-center justify-between text-xs">
+                    <div className="flex items-center gap-1.5 text-neutral-500 font-mono text-[11px]">
+                      <span>▶️ Auto-advancing (6s per tab)</span>
+                    </div>
+                    <div className="flex gap-1.5">
+                      {transformFeatures.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => handleTransformFeatureSelect(idx)}
+                          className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${transformSelectedFeature === idx
+                              ? "bg-emerald-600 w-6"
+                              : "bg-neutral-300 hover:bg-neutral-400"
+                            }`}
+                          title={`Switch to Tab ${idx + 1}`}
+                        />
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -590,37 +1116,155 @@ export function ManageConversationsSection() {
                 <span className="w-4 h-px bg-emerald-600/60" />
               </div>
               <h2 className="font-serif text-[#131316] text-[28px] sm:text-[36px] md:text-[40px] lg:text-[42px] leading-[1.2] tracking-tight font-semibold mb-3 md:mb-4">
-                Turn repetitive work into intelligent workflows
+                Replace repetitive work with intelligent automation
               </h2>
               <p className="text-neutral-500 text-xs sm:text-sm md:text-[15px] leading-relaxed max-w-[660px]">
-                Automate customer communication, lead generation, follow-ups, internal processes, and repetitive business operations.
+                Automate lead generation, customer communication, marketing workflows, internal operations, and repetitive business processes.
               </p>
             </div>
 
-            <div className="w-full px-4 md:px-8">
-              <div className="bg-[#B2C8DC] p-4 sm:p-6 rounded-xl md:rounded-2xl border border-[#9BB4CC] shadow-xs">
-                <div className="bg-white rounded-lg border border-neutral-300 p-4 md:p-6 space-y-4 text-xs">
-                  <span className="text-xs font-bold text-neutral-800 uppercase font-mono tracking-wider block">VISUAL AUTOMATION FLOW CANVAS</span>
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-3 text-center">
-                    <div className="bg-[#FAF9F5] p-3 rounded-lg border border-emerald-300 shadow-2xs">
-                      <span className="text-[10px] text-emerald-700 font-mono font-bold block mb-1">STEP 1: TRIGGER</span>
-                      <span className="font-semibold text-neutral-800 block">Incoming Message</span>
-                      <span className="text-[10px] text-neutral-500 block">Keyword: "Pricing / Quote"</span>
+            {/* WDS Horizontal Dotted Section above AUTOMATE vertical tab showcase */}
+            <WDS className="m-0 relative z-20" />
+
+            {/* Feature Interactive List & Card Showcase for AUTOMATE */}
+            <div className="w-full px-4 md:px-8 pb-0 pt-0">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+                {/* Left 5 Features List */}
+                <div className="md:col-span-5 flex flex-col gap-2">
+                  {automateFeatures.map((feat, idx) => {
+                    const isActive = automateSelectedFeature === idx;
+                    return (
+                      <button
+                        key={feat.id}
+                        onClick={() => handleAutomateFeatureSelect(idx)}
+                        className={`p-4 rounded-xl text-left transition-all flex flex-col gap-2 border cursor-pointer relative overflow-hidden ${isActive
+                            ? "bg-white border-neutral-300 shadow-sm"
+                            : "bg-transparent border-transparent hover:bg-neutral-100/60"
+                          }`}
+                      >
+                        <div className="flex gap-3.5 items-start w-full">
+                          <div className={`p-2 rounded-lg shrink-0 mt-0.5 ${isActive ? "bg-emerald-50" : "bg-neutral-100"}`}>
+                            {feat.icon}
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center justify-between gap-1 mb-0.5">
+                              <h4 className={`text-sm font-semibold truncate ${isActive ? "text-neutral-900" : "text-neutral-700"}`}>
+                                {feat.title}
+                              </h4>
+                              {isActive && (
+                                <span className="text-[9.5px] font-mono font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded shrink-0">
+                                  {idx + 1}/5
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-xs text-neutral-500 leading-relaxed">
+                              {feat.desc}
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Edge-to-Edge Status Progress Line at Bottom of Active Tab Card */}
+                        {isActive && (
+                          <div className="absolute bottom-0 left-0 right-0 h-1 bg-neutral-100 overflow-hidden">
+                            <div
+                              className="h-full bg-emerald-600"
+                              style={{ width: `${automateProgress}%` }}
+                            />
+                          </div>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Right Interactive Preview Card with WhatsApp Status Effect */}
+                <div className="md:col-span-7 bg-[#FAF9F6] border border-[#D1D1D6] rounded-xl p-4 md:p-6 relative overflow-hidden shadow-xs flex flex-col justify-between">
+                  {/* Corner Accent Boxes */}
+                  <span className="absolute top-2 left-2 w-2 h-2 border-t border-l border-neutral-400" />
+                  <span className="absolute top-2 right-2 w-2 h-2 border-t border-r border-neutral-400" />
+                  <span className="absolute bottom-2 left-2 w-2 h-2 border-b border-l border-neutral-400" />
+                  <span className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-neutral-400" />
+
+                  {/* Top WhatsApp Status Bar (5 Segment Progress Bars) */}
+                  <div className="flex gap-1.5 mb-4">
+                    {automateFeatures.map((_, idx) => {
+                      let barWidth = "0%";
+                      if (idx < automateSelectedFeature) {
+                        barWidth = "100%";
+                      } else if (idx === automateSelectedFeature) {
+                        barWidth = `${automateProgress}%`;
+                      } else {
+                        barWidth = "0%";
+                      }
+                      return (
+                        <div key={idx} className="flex-1 h-1.5 bg-neutral-200/90 rounded-full overflow-hidden">
+                          <div
+                            className="h-full bg-emerald-600"
+                            style={{ width: barWidth }}
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Card Title & Header Status Info */}
+                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-neutral-200">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                        {automateSelectedFeature + 1}
+                      </div>
+                      <div>
+                        <span className="font-semibold text-neutral-900 text-xs block">
+                          {automateFeatures[automateSelectedFeature].title}
+                        </span>
+                        <span className="text-[10px] text-neutral-500 font-mono">
+                          {automateFeatures[automateSelectedFeature].tag} • Status {automateSelectedFeature + 1} of 5 (6s)
+                        </span>
+                      </div>
                     </div>
-                    <div className="bg-[#FAF9F5] p-3 rounded-lg border border-emerald-300 shadow-2xs">
-                      <span className="text-[10px] text-emerald-700 font-mono font-bold block mb-1">STEP 2: AI AGENT</span>
-                      <span className="font-semibold text-neutral-800 block">Knowledge Lookup</span>
-                      <span className="text-[10px] text-neutral-500 block">Searches product catalog</span>
+                    <div className="flex items-center gap-2">
+                      <span className="bg-emerald-50 text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-full text-[10px] font-medium font-mono">
+                        {automateFeatures[automateSelectedFeature].badge}
+                      </span>
                     </div>
-                    <div className="bg-[#FAF9F5] p-3 rounded-lg border border-emerald-300 shadow-2xs">
-                      <span className="text-[10px] text-emerald-700 font-mono font-bold block mb-1">STEP 3: QUALIFY</span>
-                      <span className="font-semibold text-neutral-800 block">Collect Budget & Date</span>
-                      <span className="text-[10px] text-neutral-500 block">Extracts customer intent</span>
+                  </div>
+
+                  {/* Dynamic Image & Preview Frame */}
+                  <div className="space-y-4 mb-4 text-xs">
+                    <div className="relative rounded-lg overflow-hidden border border-neutral-200 shadow-sm bg-white group">
+                      <img
+                        src={automateFeatures[automateSelectedFeature].image}
+                        alt={automateFeatures[automateSelectedFeature].title}
+                        className="w-full h-auto object-cover max-h-[300px] transition-all duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-90 flex flex-col justify-end p-4 text-white">
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold mb-1">
+                          {automateFeatures[automateSelectedFeature].badge}
+                        </span>
+                        <p className="text-xs sm:text-sm font-semibold leading-snug">
+                          {automateFeatures[automateSelectedFeature].desc}
+                        </p>
+                      </div>
                     </div>
-                    <div className="bg-[#FAF9F5] p-3 rounded-lg border border-emerald-300 shadow-2xs">
-                      <span className="text-[10px] text-emerald-700 font-mono font-bold block mb-1">STEP 4: HANDOVER</span>
-                      <span className="font-semibold text-neutral-800 block">Assign to Sales Team</span>
-                      <span className="text-[10px] text-neutral-500 block">Syncs with CRM & notifies agent</span>
+                  </div>
+
+                  {/* Interactive Status Navigation & Indicator Bar */}
+                  <div className="pt-3 border-t border-neutral-200 flex items-center justify-between text-xs">
+                    <div className="flex items-center gap-1.5 text-neutral-500 font-mono text-[11px]">
+                      <span>▶️ Auto-advancing (6s per tab)</span>
+                    </div>
+                    <div className="flex gap-1.5">
+                      {automateFeatures.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => handleAutomateFeatureSelect(idx)}
+                          className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${automateSelectedFeature === idx
+                              ? "bg-emerald-600 w-6"
+                              : "bg-neutral-300 hover:bg-neutral-400"
+                            }`}
+                          title={`Switch to Tab ${idx + 1}`}
+                        />
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -642,32 +1286,155 @@ export function ManageConversationsSection() {
                 <span className="w-4 h-px bg-emerald-600/60" />
               </div>
               <h2 className="font-serif text-[#131316] text-[28px] sm:text-[36px] md:text-[40px] lg:text-[42px] leading-[1.2] tracking-tight font-semibold mb-3 md:mb-4">
-                Connect the systems that power your business
+                Connect every system that powers your business
               </h2>
               <p className="text-neutral-500 text-xs sm:text-sm md:text-[15px] leading-relaxed max-w-[660px]">
-                Bring your ecommerce platform, CRM, ERP, inventory, marketing tools, and internal systems together through reliable integrations.
+                Bring your ecommerce, CRM, ERP, marketing, inventory, payment, and internal systems together so your data flows where it needs to go.
               </p>
             </div>
 
-            <div className="w-full px-4 md:px-8">
-              <div className="bg-[#B2C8DC] p-4 sm:p-6 rounded-xl md:rounded-2xl border border-[#9BB4CC] shadow-xs">
-                <div className="bg-white rounded-lg border border-neutral-300 p-4 md:p-6 space-y-4">
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="bg-[#FAF9F5] p-3.5 rounded-lg border border-neutral-200 text-left">
-                      <span className="text-[10px] font-mono text-neutral-400 uppercase block">AVG FIRST RESPONSE</span>
-                      <span className="text-lg font-bold text-neutral-900 font-mono">38 seconds</span>
+            {/* WDS Horizontal Dotted Section above CONNECT vertical tab showcase */}
+            <WDS className="m-0 relative z-20" />
+
+            {/* Feature Interactive List & Card Showcase for CONNECT */}
+            <div className="w-full px-4 md:px-8 pb-0 pt-0">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+                {/* Left 5 Features List */}
+                <div className="md:col-span-5 flex flex-col gap-2">
+                  {connectFeatures.map((feat, idx) => {
+                    const isActive = connectSelectedFeature === idx;
+                    return (
+                      <button
+                        key={feat.id}
+                        onClick={() => handleConnectFeatureSelect(idx)}
+                        className={`p-4 rounded-xl text-left transition-all flex flex-col gap-2 border cursor-pointer relative overflow-hidden ${isActive
+                            ? "bg-white border-neutral-300 shadow-sm"
+                            : "bg-transparent border-transparent hover:bg-neutral-100/60"
+                          }`}
+                      >
+                        <div className="flex gap-3.5 items-start w-full">
+                          <div className={`p-2 rounded-lg shrink-0 mt-0.5 ${isActive ? "bg-emerald-50" : "bg-neutral-100"}`}>
+                            {feat.icon}
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center justify-between gap-1 mb-0.5">
+                              <h4 className={`text-sm font-semibold truncate ${isActive ? "text-neutral-900" : "text-neutral-700"}`}>
+                                {feat.title}
+                              </h4>
+                              {isActive && (
+                                <span className="text-[9.5px] font-mono font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded shrink-0">
+                                  {idx + 1}/5
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-xs text-neutral-500 leading-relaxed">
+                              {feat.desc}
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Edge-to-Edge Status Progress Line at Bottom of Active Tab Card */}
+                        {isActive && (
+                          <div className="absolute bottom-0 left-0 right-0 h-1 bg-neutral-100 overflow-hidden">
+                            <div
+                              className="h-full bg-emerald-600"
+                              style={{ width: `${connectProgress}%` }}
+                            />
+                          </div>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Right Interactive Preview Card with WhatsApp Status Effect */}
+                <div className="md:col-span-7 bg-[#FAF9F6] border border-[#D1D1D6] rounded-xl p-4 md:p-6 relative overflow-hidden shadow-xs flex flex-col justify-between">
+                  {/* Corner Accent Boxes */}
+                  <span className="absolute top-2 left-2 w-2 h-2 border-t border-l border-neutral-400" />
+                  <span className="absolute top-2 right-2 w-2 h-2 border-t border-r border-neutral-400" />
+                  <span className="absolute bottom-2 left-2 w-2 h-2 border-b border-l border-neutral-400" />
+                  <span className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-neutral-400" />
+
+                  {/* Top WhatsApp Status Bar (5 Segment Progress Bars) */}
+                  <div className="flex gap-1.5 mb-4">
+                    {connectFeatures.map((_, idx) => {
+                      let barWidth = "0%";
+                      if (idx < connectSelectedFeature) {
+                        barWidth = "100%";
+                      } else if (idx === connectSelectedFeature) {
+                        barWidth = `${connectProgress}%`;
+                      } else {
+                        barWidth = "0%";
+                      }
+                      return (
+                        <div key={idx} className="flex-1 h-1.5 bg-neutral-200/90 rounded-full overflow-hidden">
+                          <div
+                            className="h-full bg-emerald-600"
+                            style={{ width: barWidth }}
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Card Title & Header Status Info */}
+                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-neutral-200">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                        {connectSelectedFeature + 1}
+                      </div>
+                      <div>
+                        <span className="font-semibold text-neutral-900 text-xs block">
+                          {connectFeatures[connectSelectedFeature].title}
+                        </span>
+                        <span className="text-[10px] text-neutral-500 font-mono">
+                          {connectFeatures[connectSelectedFeature].tag} • Status {connectSelectedFeature + 1} of 5 (6s)
+                        </span>
+                      </div>
                     </div>
-                    <div className="bg-[#FAF9F5] p-3.5 rounded-lg border border-neutral-200 text-left">
-                      <span className="text-[10px] font-mono text-neutral-400 uppercase block">RESOLUTION RATE</span>
-                      <span className="text-lg font-bold text-emerald-600 font-mono">94.8%</span>
+                    <div className="flex items-center gap-2">
+                      <span className="bg-emerald-50 text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-full text-[10px] font-medium font-mono">
+                        {connectFeatures[connectSelectedFeature].badge}
+                      </span>
                     </div>
-                    <div className="bg-[#FAF9F5] p-3.5 rounded-lg border border-neutral-200 text-left">
-                      <span className="text-[10px] font-mono text-neutral-400 uppercase block">ACTIVE CHATS</span>
-                      <span className="text-lg font-bold text-neutral-900 font-mono">1,420</span>
+                  </div>
+
+                  {/* Dynamic Image & Preview Frame */}
+                  <div className="space-y-4 mb-4 text-xs">
+                    <div className="relative rounded-lg overflow-hidden border border-neutral-200 shadow-sm bg-white group">
+                      <img
+                        src={connectFeatures[connectSelectedFeature].image}
+                        alt={connectFeatures[connectSelectedFeature].title}
+                        className="w-full h-auto object-cover max-h-[300px] transition-all duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-90 flex flex-col justify-end p-4 text-white">
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold mb-1">
+                          {connectFeatures[connectSelectedFeature].badge}
+                        </span>
+                        <p className="text-xs sm:text-sm font-semibold leading-snug">
+                          {connectFeatures[connectSelectedFeature].desc}
+                        </p>
+                      </div>
                     </div>
-                    <div className="bg-[#FAF9F5] p-3.5 rounded-lg border border-neutral-200 text-left">
-                      <span className="text-[10px] font-mono text-neutral-400 uppercase block">CUSTOMER CSAT</span>
-                      <span className="text-lg font-bold text-emerald-600 font-mono">4.9 / 5.0 ⭐</span>
+                  </div>
+
+                  {/* Interactive Status Navigation & Indicator Bar */}
+                  <div className="pt-3 border-t border-neutral-200 flex items-center justify-between text-xs">
+                    <div className="flex items-center gap-1.5 text-neutral-500 font-mono text-[11px]">
+                      <span>▶️ Auto-advancing (6s per tab)</span>
+                    </div>
+                    <div className="flex gap-1.5">
+                      {connectFeatures.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => handleConnectFeatureSelect(idx)}
+                          className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${connectSelectedFeature === idx
+                              ? "bg-emerald-600 w-6"
+                              : "bg-neutral-300 hover:bg-neutral-400"
+                            }`}
+                          title={`Switch to Tab ${idx + 1}`}
+                        />
+                      ))}
                     </div>
                   </div>
                 </div>
