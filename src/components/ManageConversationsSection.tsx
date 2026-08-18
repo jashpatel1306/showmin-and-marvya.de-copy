@@ -568,7 +568,7 @@ export function ManageConversationsSection() {
       ),
     },
   ];
-
+  // test
   const scaleFeatures = [
     {
       id: "shopify-plus",
@@ -907,8 +907,8 @@ export function ManageConversationsSection() {
                         key={feat.id}
                         onClick={() => handleFeatureSelect(idx)}
                         className={`p-4 rounded-xl text-left transition-all flex flex-col gap-2 border cursor-pointer relative overflow-hidden ${isActive
-                            ? "bg-white border-neutral-300 shadow-sm"
-                            : "bg-transparent border-transparent hover:bg-neutral-100/60"
+                          ? "bg-white border-neutral-300 shadow-sm"
+                          : "bg-transparent border-transparent hover:bg-neutral-100/60"
                           }`}
                       >
                         <div className="flex gap-3.5 items-start w-full">
@@ -1030,8 +1030,8 @@ export function ManageConversationsSection() {
                           key={idx}
                           onClick={() => handleFeatureSelect(idx)}
                           className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${selectedFeature === idx
-                              ? "bg-emerald-600 w-6"
-                              : "bg-neutral-300 hover:bg-neutral-400"
+                            ? "bg-emerald-600 w-6"
+                            : "bg-neutral-300 hover:bg-neutral-400"
                             }`}
                           title={`Switch to Tab ${idx + 1}`}
                         />
@@ -1079,8 +1079,8 @@ export function ManageConversationsSection() {
                         key={feat.id}
                         onClick={() => handleTransformFeatureSelect(idx)}
                         className={`p-4 rounded-xl text-left transition-all flex flex-col gap-2 border cursor-pointer relative overflow-hidden ${isActive
-                            ? "bg-white border-neutral-300 shadow-sm"
-                            : "bg-transparent border-transparent hover:bg-neutral-100/60"
+                          ? "bg-white border-neutral-300 shadow-sm"
+                          : "bg-transparent border-transparent hover:bg-neutral-100/60"
                           }`}
                       >
                         <div className="flex gap-3.5 items-start w-full">
@@ -1200,8 +1200,8 @@ export function ManageConversationsSection() {
                           key={idx}
                           onClick={() => handleTransformFeatureSelect(idx)}
                           className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${transformSelectedFeature === idx
-                              ? "bg-emerald-600 w-6"
-                              : "bg-neutral-300 hover:bg-neutral-400"
+                            ? "bg-emerald-600 w-6"
+                            : "bg-neutral-300 hover:bg-neutral-400"
                             }`}
                           title={`Switch to Tab ${idx + 1}`}
                         />
@@ -1249,8 +1249,8 @@ export function ManageConversationsSection() {
                         key={feat.id}
                         onClick={() => handleAutomateFeatureSelect(idx)}
                         className={`p-4 rounded-xl text-left transition-all flex flex-col gap-2 border cursor-pointer relative overflow-hidden ${isActive
-                            ? "bg-white border-neutral-300 shadow-sm"
-                            : "bg-transparent border-transparent hover:bg-neutral-100/60"
+                          ? "bg-white border-neutral-300 shadow-sm"
+                          : "bg-transparent border-transparent hover:bg-neutral-100/60"
                           }`}
                       >
                         <div className="flex gap-3.5 items-start w-full">
@@ -1370,8 +1370,8 @@ export function ManageConversationsSection() {
                           key={idx}
                           onClick={() => handleAutomateFeatureSelect(idx)}
                           className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${automateSelectedFeature === idx
-                              ? "bg-emerald-600 w-6"
-                              : "bg-neutral-300 hover:bg-neutral-400"
+                            ? "bg-emerald-600 w-6"
+                            : "bg-neutral-300 hover:bg-neutral-400"
                             }`}
                           title={`Switch to Tab ${idx + 1}`}
                         />
@@ -1419,8 +1419,8 @@ export function ManageConversationsSection() {
                         key={feat.id}
                         onClick={() => handleConnectFeatureSelect(idx)}
                         className={`p-4 rounded-xl text-left transition-all flex flex-col gap-2 border cursor-pointer relative overflow-hidden ${isActive
-                            ? "bg-white border-neutral-300 shadow-sm"
-                            : "bg-transparent border-transparent hover:bg-neutral-100/60"
+                          ? "bg-white border-neutral-300 shadow-sm"
+                          : "bg-transparent border-transparent hover:bg-neutral-100/60"
                           }`}
                       >
                         <div className="flex gap-3.5 items-start w-full">
@@ -1540,8 +1540,8 @@ export function ManageConversationsSection() {
                           key={idx}
                           onClick={() => handleConnectFeatureSelect(idx)}
                           className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${connectSelectedFeature === idx
-                              ? "bg-emerald-600 w-6"
-                              : "bg-neutral-300 hover:bg-neutral-400"
+                            ? "bg-emerald-600 w-6"
+                            : "bg-neutral-300 hover:bg-neutral-400"
                             }`}
                           title={`Switch to Tab ${idx + 1}`}
                         />
@@ -1589,8 +1589,8 @@ export function ManageConversationsSection() {
                         key={feat.id}
                         onClick={() => handleScaleFeatureSelect(idx)}
                         className={`p-4 rounded-xl text-left transition-all flex flex-col gap-2 border cursor-pointer relative overflow-hidden ${isActive
-                            ? "bg-white border-neutral-300 shadow-sm"
-                            : "bg-transparent border-transparent hover:bg-neutral-100/60"
+                          ? "bg-white border-neutral-300 shadow-sm"
+                          : "bg-transparent border-transparent hover:bg-neutral-100/60"
                           }`}
                       >
                         <div className="flex gap-3.5 items-start w-full">
@@ -1710,8 +1710,8 @@ export function ManageConversationsSection() {
                           key={idx}
                           onClick={() => handleScaleFeatureSelect(idx)}
                           className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${scaleSelectedFeature === idx
-                              ? "bg-emerald-600 w-6"
-                              : "bg-neutral-300 hover:bg-neutral-400"
+                            ? "bg-emerald-600 w-6"
+                            : "bg-neutral-300 hover:bg-neutral-400"
                             }`}
                           title={`Switch to Tab ${idx + 1}`}
                         />
