@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 261 32" fill="none">
+  <path d="M6 18l4.5 4.5L19 13" stroke="#27B578" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15 18l4.5 4.5L28 11" stroke="#27B578" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="36" y="24" fill="#09090b" font-family="system-ui, -apple-system, Inter, sans-serif" font-size="23" font-weight="800" letter-spacing="-0.04em">DoubleTick</text>
+</svg>
