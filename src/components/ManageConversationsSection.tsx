@@ -568,7 +568,7 @@ export function ManageConversationsSection() {
       ),
     },
   ];
-  // test
+
   const scaleFeatures = [
     {
       id: "shopify-plus",
