@@ -1,7 +1,56 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { GreenFrame } from "@/components/GreenFrame";
+import frame1Img from "@/assets/news/frame-1.jpg";
+
+const FRAME_ITEMS = [
+  {
+    slug: "shopify-headless-commerce",
+    image: frame1Img,
+    title: "Shopify Headless Commerce: Everything you need to know",
+  },
+  {
+    slug: "building-a-strong-brand",
+    image: null,
+    title: "Frame 02",
+  },
+  {
+    slug: "shopify-b2b-transactions",
+    image: null,
+    title: "Frame 03",
+  },
+  {
+    slug: "shopify-summer-editions",
+    image: null,
+    title: "Frame 04",
+  },
+  {
+    slug: "b2b-and-pos-integration",
+    image: null,
+    title: "Frame 05",
+  },
+  {
+    slug: "email-marketing-providers",
+    image: null,
+    title: "Frame 06",
+  },
+  {
+    slug: "total-cost-of-ownership",
+    image: null,
+    title: "Frame 07",
+  },
+  {
+    slug: "omnichannel-retail-strategies",
+    image: null,
+    title: "Frame 08",
+  },
+  {
+    slug: "enterprise-ecommerce-scalability",
+    image: null,
+    title: "Frame 09",
+  },
+];
 
 export const Route = createFileRoute("/news")({
   head: () => ({
@@ -19,85 +68,81 @@ const hexagonAngles = Array.from({ length: 72 }, (_, i) => i * 5);
 
 function NewsPage() {
   return (
-    <div className="min-h-screen w-full bg-black text-white flex flex-col justify-between relative overflow-hidden font-sans">
-      <Header forceDark />
+    <div className="min-h-screen w-full bg-white text-black flex flex-col justify-between relative overflow-hidden font-sans">
+      <Header forceLight />
       <div className="h-[60px]" />
 
-      {/* Main Black Section containing Steady 360-Degree 5-Degree Interval Hexagon Grid */}
-      <main className="flex-1 min-h-[85vh] md:min-h-[750px] bg-black relative flex flex-col items-center justify-center py-8 md:py-12">
-        {/* Central Content Area following Header side margins (no side border lines) */}
-        <div className="w-[calc(100%-19px)] mx-[9.5px] md:w-[calc(100%-32px)] md:mx-4 xl:w-full xl:max-w-[1118px] xl:mx-auto relative h-full min-h-[70vh] md:min-h-[650px] flex items-center justify-center px-2">
-          {/* Rotated Regular Hexagons Spinning Steadily in Clockwise Direction */}
-          <svg
-            className="absolute inset-0 w-full h-full pointer-events-none z-10 overflow-visible"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-            shapeRendering="geometricPrecision"
-          >
-            <defs>
-              <style>{`
-                @keyframes spinHexagonsClockwise {
-                  from {
-                    transform: rotate(0deg);
-                  }
-                  to {
-                    transform: rotate(360deg);
-                  }
-                }
-                .clockwise-hexagon-spin {
-                  transform-origin: 50px 50px;
-                  animation: spinHexagonsClockwise 90s linear infinite;
-                  will-change: transform;
-                }
-              `}</style>
-            </defs>
-
-            {/* 72 Rotated Hexagons with steady, controlled light green stroke */}
-            <g className="clockwise-hexagon-spin" shapeRendering="geometricPrecision">
-              {hexagonAngles.map((angle) => (
-                <polygon
-                  key={angle}
-                  points="50 2, 91.57 26, 91.57 74, 50 98, 8.43 74, 8.43 26"
-                  fill="none"
-                  stroke="rgba(39, 181, 120, 0.6)"
-                  strokeWidth="1.2"
-                  vectorEffect="non-scaling-stroke"
-                  transform={`rotate(${angle} 50 50)`}
-                />
-              ))}
-            </g>
-          </svg>
-
-          {/* Text: "Latest Insights" & Subtitle Inside the Central Intersection Oval Shape */}
+      {/* Hero Section with Clean White Background & Statement Text */}
+      <main className="flex-1 bg-white relative flex flex-col items-center justify-center py-10 md:py-16 overflow-hidden">
+        {/* Central Content Area following Header side margins */}
+        <div className="w-[calc(100%-19px)] mx-[9.5px] md:w-[calc(100%-32px)] md:mx-4 xl:w-full xl:max-w-[1118px] xl:mx-auto relative z-10 py-12 md:py-16 flex items-center justify-center px-4 bg-white border-l border-r border-[#D1D1D6]">
+          {/* Main Statement Text */}
           <div className="relative z-20 flex flex-col items-center justify-center text-center p-4 max-w-3xl mx-auto">
             <h1
-              className="font-serif font-semibold text-3xl sm:text-5xl md:text-6xl text-white tracking-tight drop-shadow-2xl text-center select-none"
+              className="font-mono font-medium text-xl sm:text-2xl md:text-3xl lg:text-[32px] text-neutral-900 leading-snug sm:leading-relaxed md:leading-[1.4] tracking-tight text-center select-none max-w-2xl"
               style={{
                 fontFamily: '"Geist Mono", monospace',
-                letterSpacing: "-0.01em",
               }}
             >
-              Latest Insights
+              Our thoughts on e-commerce, technology, Shopify and design. Actionable advice to grow your business.
             </h1>
-
-            <p
-              className="font-serif font-semibold text-sm sm:text-base md:text-lg text-white/85 tracking-normal drop-shadow-lg text-center mt-3 sm:mt-4 max-w-xl leading-relaxed select-none"
-              style={{
-                fontFamily: '"Geist Mono", monospace',
-              }}
-            >
-              Discover practical insights, fresh perspectives, and useful ideas designed to help you learn, grow, and stay ahead.
-            </p>
           </div>
         </div>
       </main>
 
       {/* Pure White Section containing Reusable GreenFrame Component */}
-      <section className="relative z-10 w-full bg-white text-black border-t border-neutral-200 overflow-hidden py-16 md:py-24">
+      <section className="relative z-10 w-full bg-white text-black border-t border-neutral-200 overflow-hidden py-[1cm]">
         {/* Central Container matching Header side margins */}
         <div className="w-[calc(100%-19px)] mx-[9.5px] md:w-[calc(100%-32px)] md:mx-4 xl:w-full xl:max-w-[1118px] xl:mx-auto relative z-10 flex flex-col items-center justify-center">
-          {/* Reusable GreenFrame Component */}
-          <GreenFrame className="max-w-[1118px]" />
+          {/* Reusable GreenFrame Component with 9 Frames Grid (3 per row, 0.5cm gap & padding) */}
+          <GreenFrame className="max-w-[1118px] p-[0.5cm]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[0.5cm] w-full">
+              {FRAME_ITEMS.map((item, idx) => (
+                <Link
+                  key={idx}
+                  to="/news/$id"
+                  params={{ id: item.slug }}
+                  className="group relative w-full h-full overflow-hidden rounded-xl bg-white border border-neutral-300 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 flex flex-col cursor-pointer"
+                >
+                  {/* Corner Accent Brackets */}
+                  <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#27B578] z-20" />
+                  <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#27B578] z-20" />
+                  <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#27B578] z-20" />
+                  <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#27B578] z-20" />
+
+                  {/* Frame Image / Media Container (Height matching lower 6 frames) */}
+                  <div className="relative w-full h-[260px] sm:h-[320px] md:h-[380px] overflow-hidden bg-neutral-900 shrink-0 flex items-center justify-center">
+                    {item.image ? (
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-fill transition-transform duration-500 group-hover:scale-[1.02]"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <span className="font-mono text-xs font-semibold tracking-widest text-white/50 group-hover:text-white uppercase select-none transition-colors">
+                        FRAME 0{idx + 1}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Bottom Content Area beneath frame */}
+                  <div className="relative w-full flex-1 p-3.5 sm:p-4 bg-white border-t border-neutral-200 text-left flex items-center justify-between min-h-[64px] gap-2">
+                    <h3
+                      className="text-base sm:text-lg md:text-xl text-neutral-900 font-normal tracking-tight select-none truncate flex-1"
+                      style={{
+                        fontFamily:
+                          '"Hedvig Letters Serif", "Cormorant Garamond", "Times New Roman", serif',
+                      }}
+                      title={item.title}
+                    >
+                      {item.title}
+                    </h3>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </GreenFrame>
         </div>
       </section>
 

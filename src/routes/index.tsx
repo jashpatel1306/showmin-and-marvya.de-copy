@@ -8,6 +8,8 @@ import { DividerGrid } from "@/components/ui/DividerGrid";
 import { PageVerticalLines } from "@/components/ui/PageVerticalLines";
 
 import { ManageConversationsSection } from "@/components/ManageConversationsSection";
+import { AiProfitsSection } from "@/components/AiProfitsSection";
+import { FitCheckSection } from "@/components/FitCheckSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { DarkGreenDottedSection } from "@/components/DarkGreenDottedSection";
 import { DottedSection } from "@/components/DottedSection";
@@ -54,6 +56,10 @@ function Index() {
         <DividerGrid />
         <ProblemsSection />
         <ManageConversationsSection />
+        <DottedSection />
+        <AiProfitsSection />
+        <DottedSection />
+        <FitCheckSection />
         <DarkGreenDottedSection />
         <HowItWorksSection />
         <DarkGreenDottedSection />

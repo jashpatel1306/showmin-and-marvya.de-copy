@@ -466,3 +466,51 @@
 .animate-marquee {
   animation: marquee 35s linear infinite;
 }
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 35s linear infinite;
+}
+
+/* Vertical Gallery Showcase Marquee Animations */
+@keyframes vertical-gallery-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes vertical-gallery-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.animate-vertical-gallery-up {
+  animation: vertical-gallery-up 32s linear infinite;
+}
+
+.animate-vertical-gallery-down {
+  animation: vertical-gallery-down 36s linear infinite;
+}
+
+.animate-vertical-gallery-up-fast {
+  animation: vertical-gallery-up 24s linear infinite;
+}
+
+.animate-vertical-gallery-down-fast {
+  animation: vertical-gallery-down 27s linear infinite;
+}

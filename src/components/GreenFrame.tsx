@@ -18,7 +18,7 @@ export function GreenFrame({
   className = "",
   style = {},
   children,
-  aspectRatio = "3/2",
+  aspectRatio,
   onClick,
 }: GreenFrameProps) {
   return (
@@ -29,7 +29,7 @@ export function GreenFrame({
         backgroundImage: `url(${greenFrameBg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        aspectRatio: aspectRatio,
+        ...(aspectRatio ? { aspectRatio } : {}),
         ...style,
       }}
     >

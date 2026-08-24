@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { BookDemoButton } from "./BookDemoButton";
+import showmineLogo from "@/assets/Showmine-transparent.png";
 
 interface HeaderProps {
   forceLight?: boolean;
@@ -72,29 +73,13 @@ export function Header({ forceLight, forceDark }: HeaderProps = {}) {
             style={{ borderColor: isLight ? "#D1D1D6" : "rgba(39,181,120,0.55)" }}
           >
             <a href="/" className="flex items-center gap-2 shrink-0">
-              <span className="flex h-6 w-6 items-center justify-center">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="h-5 w-5 text-primary"
-                  style={{ color: "rgb(39, 181, 120)" }}
-                >
-                  <path
-                    d="M1 13l4 4L13 9"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M9 13l4 4L23 7"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
+              <img
+                src={showmineLogo}
+                alt="Showmine"
+                className={`h-8 sm:h-9 w-auto object-contain transition-all duration-300 ${
+                  isLight ? "" : "brightness-0 invert"
+                }`}
+              />
               <span className={`text-base font-semibold tracking-tight transition-colors duration-300 ${isLight ? "text-black" : "text-white"}`}>
                 Showmine
               </span>
@@ -175,27 +160,13 @@ export function Header({ forceLight, forceDark }: HeaderProps = {}) {
               style={{ borderColor: isLight ? "#D1D1D6" : "rgba(39,181,120,0.55)" }}
             >
               <a href="/" className="flex items-center gap-2 shrink-0">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="h-5 w-5 text-primary"
-                  style={{ color: "rgb(39, 181, 120)" }}
-                >
-                  <path
-                    d="M1 13l4 4L13 9"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M9 13l4 4L23 7"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <img
+                  src={showmineLogo}
+                  alt="Showmine"
+                  className={`h-7 sm:h-8 w-auto object-contain transition-all duration-300 ${
+                    isLight ? "" : "brightness-0 invert"
+                  }`}
+                />
                 <span className={`text-base font-semibold tracking-tight transition-colors duration-300 ${isLight ? "text-black" : "text-white"}`}>
                   Showmine
                 </span>
@@ -245,30 +216,12 @@ export function Header({ forceLight, forceDark }: HeaderProps = {}) {
           {/* Drawer Header */}
           <div className="flex items-center justify-between shrink-0 h-[60px]">
             <a href="/" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-2 shrink-0">
-              <span className="flex h-6 w-6 items-center justify-center">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="h-5 w-5 text-primary"
-                  style={{ color: "rgb(39, 181, 120)" }}
-                >
-                  <path
-                    d="M1 13l4 4L13 9"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M9 13l4 4L23 7"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-              <span className="text-lg font-bold tracking-tight text-white">
+              <img
+                src={showmineLogo}
+                alt="Showmine"
+                className="h-8 w-auto object-contain brightness-0 invert"
+              />
+              <span className="text-lg font-bold tracking-tight text-white font-sans">
                 Showmine
               </span>
             </a>

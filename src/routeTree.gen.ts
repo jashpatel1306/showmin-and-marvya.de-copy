@@ -9,12 +9,47 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UrbanArrowShowmineRouteImport } from './routes/urban-arrow-showmine'
+import { Route as SrfaceShowmineRouteImport } from './routes/srface-showmine'
+import { Route as ShopifyPlusDevelopmentRouteImport } from './routes/shopify-plus-development'
+import { Route as ShopifyHeadlessRouteImport } from './routes/shopify-headless'
+import { Route as PlumDiamondsShowmineRouteImport } from './routes/plum-diamonds-showmine'
 import { Route as OurWorkRouteImport } from './routes/our-work'
 import { Route as NewsRouteImport } from './routes/news'
+import { Route as ManucuristShowmineRouteImport } from './routes/manucurist-showmine'
+import { Route as KymeeShowmineRouteImport } from './routes/kymee-showmine'
+import { Route as FashionPhotographerPortfolioRouteImport } from './routes/fashion-photographer-portfolio'
+import { Route as DiamondJewelryShowmineRouteImport } from './routes/diamond-jewelry-showmine'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as NewsIdRouteImport } from './routes/news_.$id'
 
+const UrbanArrowShowmineRoute = UrbanArrowShowmineRouteImport.update({
+  id: '/urban-arrow-showmine',
+  path: '/urban-arrow-showmine',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SrfaceShowmineRoute = SrfaceShowmineRouteImport.update({
+  id: '/srface-showmine',
+  path: '/srface-showmine',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopifyPlusDevelopmentRoute = ShopifyPlusDevelopmentRouteImport.update({
+  id: '/shopify-plus-development',
+  path: '/shopify-plus-development',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopifyHeadlessRoute = ShopifyHeadlessRouteImport.update({
+  id: '/shopify-headless',
+  path: '/shopify-headless',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlumDiamondsShowmineRoute = PlumDiamondsShowmineRouteImport.update({
+  id: '/plum-diamonds-showmine',
+  path: '/plum-diamonds-showmine',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OurWorkRoute = OurWorkRouteImport.update({
   id: '/our-work',
   path: '/our-work',
@@ -23,6 +58,27 @@ const OurWorkRoute = OurWorkRouteImport.update({
 const NewsRoute = NewsRouteImport.update({
   id: '/news',
   path: '/news',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ManucuristShowmineRoute = ManucuristShowmineRouteImport.update({
+  id: '/manucurist-showmine',
+  path: '/manucurist-showmine',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KymeeShowmineRoute = KymeeShowmineRouteImport.update({
+  id: '/kymee-showmine',
+  path: '/kymee-showmine',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FashionPhotographerPortfolioRoute =
+  FashionPhotographerPortfolioRouteImport.update({
+    id: '/fashion-photographer-portfolio',
+    path: '/fashion-photographer-portfolio',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DiamondJewelryShowmineRoute = DiamondJewelryShowmineRouteImport.update({
+  id: '/diamond-jewelry-showmine',
+  path: '/diamond-jewelry-showmine',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CareersRoute = CareersRouteImport.update({
@@ -40,47 +96,173 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NewsIdRoute = NewsIdRouteImport.update({
+  id: '/news_/$id',
+  path: '/news/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
+  '/diamond-jewelry-showmine': typeof DiamondJewelryShowmineRoute
+  '/fashion-photographer-portfolio': typeof FashionPhotographerPortfolioRoute
+  '/kymee-showmine': typeof KymeeShowmineRoute
+  '/manucurist-showmine': typeof ManucuristShowmineRoute
   '/news': typeof NewsRoute
   '/our-work': typeof OurWorkRoute
+  '/plum-diamonds-showmine': typeof PlumDiamondsShowmineRoute
+  '/shopify-headless': typeof ShopifyHeadlessRoute
+  '/shopify-plus-development': typeof ShopifyPlusDevelopmentRoute
+  '/srface-showmine': typeof SrfaceShowmineRoute
+  '/urban-arrow-showmine': typeof UrbanArrowShowmineRoute
+  '/news/$id': typeof NewsIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
+  '/diamond-jewelry-showmine': typeof DiamondJewelryShowmineRoute
+  '/fashion-photographer-portfolio': typeof FashionPhotographerPortfolioRoute
+  '/kymee-showmine': typeof KymeeShowmineRoute
+  '/manucurist-showmine': typeof ManucuristShowmineRoute
   '/news': typeof NewsRoute
   '/our-work': typeof OurWorkRoute
+  '/plum-diamonds-showmine': typeof PlumDiamondsShowmineRoute
+  '/shopify-headless': typeof ShopifyHeadlessRoute
+  '/shopify-plus-development': typeof ShopifyPlusDevelopmentRoute
+  '/srface-showmine': typeof SrfaceShowmineRoute
+  '/urban-arrow-showmine': typeof UrbanArrowShowmineRoute
+  '/news/$id': typeof NewsIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
+  '/diamond-jewelry-showmine': typeof DiamondJewelryShowmineRoute
+  '/fashion-photographer-portfolio': typeof FashionPhotographerPortfolioRoute
+  '/kymee-showmine': typeof KymeeShowmineRoute
+  '/manucurist-showmine': typeof ManucuristShowmineRoute
   '/news': typeof NewsRoute
   '/our-work': typeof OurWorkRoute
+  '/plum-diamonds-showmine': typeof PlumDiamondsShowmineRoute
+  '/shopify-headless': typeof ShopifyHeadlessRoute
+  '/shopify-plus-development': typeof ShopifyPlusDevelopmentRoute
+  '/srface-showmine': typeof SrfaceShowmineRoute
+  '/urban-arrow-showmine': typeof UrbanArrowShowmineRoute
+  '/news_/$id': typeof NewsIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/careers' | '/news' | '/our-work'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/careers'
+    | '/diamond-jewelry-showmine'
+    | '/fashion-photographer-portfolio'
+    | '/kymee-showmine'
+    | '/manucurist-showmine'
+    | '/news'
+    | '/our-work'
+    | '/plum-diamonds-showmine'
+    | '/shopify-headless'
+    | '/shopify-plus-development'
+    | '/srface-showmine'
+    | '/urban-arrow-showmine'
+    | '/news/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/careers' | '/news' | '/our-work'
-  id: '__root__' | '/' | '/about' | '/careers' | '/news' | '/our-work'
+  to:
+    | '/'
+    | '/about'
+    | '/careers'
+    | '/diamond-jewelry-showmine'
+    | '/fashion-photographer-portfolio'
+    | '/kymee-showmine'
+    | '/manucurist-showmine'
+    | '/news'
+    | '/our-work'
+    | '/plum-diamonds-showmine'
+    | '/shopify-headless'
+    | '/shopify-plus-development'
+    | '/srface-showmine'
+    | '/urban-arrow-showmine'
+    | '/news/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/careers'
+    | '/diamond-jewelry-showmine'
+    | '/fashion-photographer-portfolio'
+    | '/kymee-showmine'
+    | '/manucurist-showmine'
+    | '/news'
+    | '/our-work'
+    | '/plum-diamonds-showmine'
+    | '/shopify-headless'
+    | '/shopify-plus-development'
+    | '/srface-showmine'
+    | '/urban-arrow-showmine'
+    | '/news_/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   CareersRoute: typeof CareersRoute
+  DiamondJewelryShowmineRoute: typeof DiamondJewelryShowmineRoute
+  FashionPhotographerPortfolioRoute: typeof FashionPhotographerPortfolioRoute
+  KymeeShowmineRoute: typeof KymeeShowmineRoute
+  ManucuristShowmineRoute: typeof ManucuristShowmineRoute
   NewsRoute: typeof NewsRoute
   OurWorkRoute: typeof OurWorkRoute
+  PlumDiamondsShowmineRoute: typeof PlumDiamondsShowmineRoute
+  ShopifyHeadlessRoute: typeof ShopifyHeadlessRoute
+  ShopifyPlusDevelopmentRoute: typeof ShopifyPlusDevelopmentRoute
+  SrfaceShowmineRoute: typeof SrfaceShowmineRoute
+  UrbanArrowShowmineRoute: typeof UrbanArrowShowmineRoute
+  NewsIdRoute: typeof NewsIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/urban-arrow-showmine': {
+      id: '/urban-arrow-showmine'
+      path: '/urban-arrow-showmine'
+      fullPath: '/urban-arrow-showmine'
+      preLoaderRoute: typeof UrbanArrowShowmineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/srface-showmine': {
+      id: '/srface-showmine'
+      path: '/srface-showmine'
+      fullPath: '/srface-showmine'
+      preLoaderRoute: typeof SrfaceShowmineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shopify-plus-development': {
+      id: '/shopify-plus-development'
+      path: '/shopify-plus-development'
+      fullPath: '/shopify-plus-development'
+      preLoaderRoute: typeof ShopifyPlusDevelopmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shopify-headless': {
+      id: '/shopify-headless'
+      path: '/shopify-headless'
+      fullPath: '/shopify-headless'
+      preLoaderRoute: typeof ShopifyHeadlessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plum-diamonds-showmine': {
+      id: '/plum-diamonds-showmine'
+      path: '/plum-diamonds-showmine'
+      fullPath: '/plum-diamonds-showmine'
+      preLoaderRoute: typeof PlumDiamondsShowmineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/our-work': {
       id: '/our-work'
       path: '/our-work'
@@ -93,6 +275,34 @@ declare module '@tanstack/react-router' {
       path: '/news'
       fullPath: '/news'
       preLoaderRoute: typeof NewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/manucurist-showmine': {
+      id: '/manucurist-showmine'
+      path: '/manucurist-showmine'
+      fullPath: '/manucurist-showmine'
+      preLoaderRoute: typeof ManucuristShowmineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kymee-showmine': {
+      id: '/kymee-showmine'
+      path: '/kymee-showmine'
+      fullPath: '/kymee-showmine'
+      preLoaderRoute: typeof KymeeShowmineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fashion-photographer-portfolio': {
+      id: '/fashion-photographer-portfolio'
+      path: '/fashion-photographer-portfolio'
+      fullPath: '/fashion-photographer-portfolio'
+      preLoaderRoute: typeof FashionPhotographerPortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diamond-jewelry-showmine': {
+      id: '/diamond-jewelry-showmine'
+      path: '/diamond-jewelry-showmine'
+      fullPath: '/diamond-jewelry-showmine'
+      preLoaderRoute: typeof DiamondJewelryShowmineRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/careers': {
@@ -116,6 +326,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/news_/$id': {
+      id: '/news_/$id'
+      path: '/news/$id'
+      fullPath: '/news/$id'
+      preLoaderRoute: typeof NewsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -123,8 +340,18 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   CareersRoute: CareersRoute,
+  DiamondJewelryShowmineRoute: DiamondJewelryShowmineRoute,
+  FashionPhotographerPortfolioRoute: FashionPhotographerPortfolioRoute,
+  KymeeShowmineRoute: KymeeShowmineRoute,
+  ManucuristShowmineRoute: ManucuristShowmineRoute,
   NewsRoute: NewsRoute,
   OurWorkRoute: OurWorkRoute,
+  PlumDiamondsShowmineRoute: PlumDiamondsShowmineRoute,
+  ShopifyHeadlessRoute: ShopifyHeadlessRoute,
+  ShopifyPlusDevelopmentRoute: ShopifyPlusDevelopmentRoute,
+  SrfaceShowmineRoute: SrfaceShowmineRoute,
+  UrbanArrowShowmineRoute: UrbanArrowShowmineRoute,
+  NewsIdRoute: NewsIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

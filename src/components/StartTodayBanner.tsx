@@ -1,4 +1,5 @@
 import { CtaBottomCircuit } from "./ui/CtaBottomCircuit";
+import { BookDemoButton } from "./BookDemoButton";
 
 export function StartTodayBanner() {
   return (
@@ -15,7 +16,7 @@ export function StartTodayBanner() {
         <div className="w-[calc(100%-19px)] mx-[9.5px] md:w-[calc(100%-32px)] md:mx-4 xl:w-[1118px] xl:mx-0 border-l border-r border-[#144A30] flex flex-col items-center bg-[#072F1D] shrink-0">
           {/* Banner Container Frame (W: 1118px, H: 519px) */}
           <div
-            className="w-full h-[519px] relative overflow-hidden flex flex-col items-center justify-center"
+            className="w-full h-[340px] sm:h-[519px] relative overflow-hidden flex flex-col items-center justify-center"
             style={{
               background:
                 "radial-gradient(ellipse 60% 60% at 50% 35%, #0F5A38 0%, #072F1D 50%, #041F13 100%)",
@@ -199,14 +200,13 @@ export function StartTodayBanner() {
             </div>
 
             {/* Title Heading */}
-            <h2 className="absolute left-1/2 -translate-x-1/2 top-[62px] sm:top-[72.66px] max-w-[290px] sm:max-w-[343.64px] w-full font-serif text-white text-[28px] sm:text-[34px] md:text-[39px] leading-[38px] sm:leading-[48px] md:leading-[54.6px] tracking-[-0.01em] font-semibold text-center z-20 px-2">
-              Turn conversations into conversions
+            <h2 className="absolute left-1/2 -translate-x-1/2 top-[62px] sm:top-[72.66px] max-w-full sm:max-w-none whitespace-nowrap font-serif text-white text-[24px] sm:text-[34px] md:text-[39px] leading-[38px] sm:leading-[48px] md:leading-[54.6px] tracking-[-0.01em] font-semibold text-center z-20 px-2">
+              Let's work together.
             </h2>
 
             {/* Button & Surrounding Circuit SVG Container */}
             <div
-              className="absolute left-1/2 -translate-x-1/2 top-[242.71px] -translate-y-1/2 w-[450px] h-[275px] flex items-center justify-center z-20 pointer-events-none"
-              style={{ marginTop: "63.2px" }}
+              className="absolute left-1/2 -translate-x-1/2 top-[185px] sm:top-[242.71px] -translate-y-1/2 w-[450px] h-[275px] flex items-center justify-center z-20 pointer-events-none mt-5 sm:mt-[63.2px]"
             >
               {/* Button Circuit SVG Pattern Across & Around Button */}
               <svg
@@ -239,7 +239,7 @@ export function StartTodayBanner() {
                 <path d="M72.591 143.941H36.2281C35.8251 142.804 34.7491 141.984 33.4736 141.984C31.8537 141.984 30.5391 143.297 30.5391 144.919C30.5391 146.541 31.8537 147.853 33.4736 147.853C34.7491 147.853 35.8251 147.034 36.2281 145.897H71.781L96.2355 170.352H145.238V168.395H97.0454L72.591 143.941Z" fill="white" fillOpacity="0.2" />
                 <path d="M69.3493 151.767H36.2281C35.8251 150.63 34.7491 149.811 33.4736 149.811C31.8537 149.811 30.5391 151.123 30.5391 152.745C30.5391 154.367 31.8537 155.68 33.4736 155.68C34.7491 155.68 35.8251 154.86 36.2281 153.723H68.5394L92.9939 178.178H145.238V176.221H93.8038L69.3493 151.767Z" fill="white" fillOpacity="0.2" />
                 <path d="M75.4159 101.758H36.2281C35.8251 100.622 34.7491 99.8018 33.4736 99.8018C31.8537 99.8018 30.5391 101.117 30.5391 102.736C30.5391 104.358 31.8537 105.671 33.4736 105.671C34.7491 105.671 35.8251 104.853 36.2281 103.715H76.2259L102.459 77.4817H145.238V75.5254H101.651L75.4159 101.758Z" fill="white" fillOpacity="0.2" />
-                <path d="M78.6581 109.583H11.7369V74.6891C12.8736 74.2841 13.6933 73.2101 13.6933 71.9345C13.6933 70.3127 12.3786 69 10.7588 69C9.13889 69 7.82422 70.3127 7.82422 71.9345C7.82422 73.2101 8.64393 74.2861 9.78058 74.6891V111.539H79.468L105.701 85.3063H145.239V83.3499H104.891L78.6581 109.583Z" fill="white" fillOpacity="0.2" />
+                <path d="M78.6581 109.583H11.7369V111.539H79.468L105.701 85.3063H145.239V83.3499H104.891L78.6581 109.583Z" fill="white" fillOpacity="0.2" />
                 <path d="M81.899 117.411H5.68907C5.2841 116.274 4.21008 115.454 2.93454 115.454C1.31467 115.454 0 116.767 0 118.389C0 120.011 1.31467 121.323 2.93454 121.323C4.21008 121.323 5.2841 120.504 5.68907 119.367H82.7089L108.944 93.1341H145.24V91.1777H108.134L81.899 117.411Z" fill="white" fillOpacity="0.2" />
                 <path d="M85.139 125.235H36.2281C35.8251 124.098 34.7491 123.278 33.4736 123.278C31.8537 123.278 30.5391 124.591 30.5391 126.213C30.5391 127.835 31.8537 129.147 33.4736 129.147C34.7491 129.147 35.8251 128.328 36.2281 127.191H85.949L112.182 100.958H145.238V99.002H111.372L85.139 125.235Z" fill="white" fillOpacity="0.2" />
                 <path d="M124.696 113.676C123.076 113.676 121.762 114.988 121.762 116.61C121.762 118.232 123.076 119.545 124.696 119.545C125.972 119.545 127.046 118.725 127.451 117.588H145.238V115.632H127.451C127.046 114.495 125.972 113.676 124.696 113.676Z" fill="white" fillOpacity="0.2" />
@@ -251,7 +251,7 @@ export function StartTodayBanner() {
                 <path d="M377.647 141.941H414.01C414.413 140.804 415.489 139.984 416.765 139.984C418.385 139.984 419.699 141.297 419.699 142.919C419.699 144.541 418.385 145.853 416.765 145.853C415.489 145.853 414.413 145.034 414.01 143.897H378.457L354.003 168.352H305V166.395H353.193L377.647 141.941Z" fill="white" fillOpacity="0.2" />
                 <path d="M380.889 149.767H414.01C414.413 148.63 415.489 147.811 416.765 147.811C418.385 147.811 419.699 149.123 419.699 150.745C419.699 152.367 418.385 153.68 416.765 153.68C415.489 153.68 414.413 152.86 414.01 151.723H381.699L357.244 176.178H305V174.221H356.434L380.889 149.767Z" fill="white" fillOpacity="0.2" />
                 <path d="M374.822 99.7582H414.01C414.413 98.6215 415.489 97.8018 416.765 97.8018C418.385 97.8018 419.699 99.1165 419.699 100.736C419.699 102.358 418.385 103.671 416.765 103.671C415.489 103.671 414.413 102.853 414.01 101.715H374.012L347.78 75.4817H305V73.5254H348.588L374.822 99.7582Z" fill="white" fillOpacity="0.2" />
-                <path d="M371.58 107.583H438.501V72.6891C437.365 72.2841 436.545 71.2101 436.545 69.9345C436.545 68.3127 437.86 67 439.48 67C441.099 67 442.414 68.3127 442.414 69.9345C442.414 71.2101 441.594 72.2861 440.458 72.6891V109.539H370.77L344.537 83.3063H304.999V81.3499H345.347L371.58 107.583Z" fill="white" fillOpacity="0.2" />
+                <path d="M371.58 107.583H438.501V109.539H370.77L344.537 83.3063H304.999V81.3499H345.347L371.58 107.583Z" fill="white" fillOpacity="0.2" />
                 <path d="M368.339 115.411H444.549C444.954 114.274 446.028 113.454 447.304 113.454C448.924 113.454 450.238 114.767 450.238 116.389C450.238 118.011 448.924 119.323 447.304 119.323C446.028 119.323 444.954 118.504 444.549 117.367H367.529L341.295 91.1341H304.998V89.1777H342.105L368.339 115.411Z" fill="white" fillOpacity="0.2" />
                 <path d="M365.099 123.235H414.01C414.413 122.098 415.489 121.278 416.765 121.278C418.385 121.278 419.699 122.591 419.699 124.213C419.699 125.835 418.385 127.147 416.765 127.147C415.489 127.147 414.413 126.328 414.01 125.191H364.289L338.057 98.9583H305V97.002H338.866L365.099 123.235Z" fill="white" fillOpacity="0.2" />
                 <path d="M325.542 111.676C327.162 111.676 328.477 112.988 328.477 114.61C328.477 116.232 327.162 117.545 325.542 117.545C324.266 117.545 323.192 116.725 322.787 115.588H305V113.632H322.787C323.192 112.495 324.266 111.676 325.542 111.676Z" fill="white" fillOpacity="0.2" />
@@ -287,7 +287,7 @@ export function StartTodayBanner() {
                 <path d="M33.5 144.9 H71.8 L96.2 169.4 H145.2" stroke="url(#btn-circuit-grad)" strokeWidth="2" fill="none" pathLength={1} strokeDasharray="0.1 0.9" style={{ strokeDashoffset: 1, willChange: "stroke-dashoffset", animation: "5s linear 0s infinite normal none running circuit-pulse" }} />
                 <path d="M33.5 152.7 H68.5 L93 177.2 H145.2" stroke="url(#btn-circuit-grad)" strokeWidth="2" fill="none" pathLength={1} strokeDasharray="0.1 0.9" style={{ strokeDashoffset: 1, willChange: "stroke-dashoffset", animation: "5s linear 0s infinite normal none running circuit-pulse" }} />
                 <path d="M33.5 102.7 H76.2 L102.5 76.5 H145.2" stroke="url(#btn-circuit-grad)" strokeWidth="2" fill="none" pathLength={1} strokeDasharray="0.1 0.9" style={{ strokeDashoffset: 1, willChange: "stroke-dashoffset", animation: "5s linear 0s infinite normal none running circuit-pulse" }} />
-                <path d="M10.8 71.9 V111.5 H79.5 L105.7 84.3 H145.2" stroke="url(#btn-circuit-grad)" strokeWidth="2" fill="none" pathLength={1} strokeDasharray="0.1 0.9" style={{ strokeDashoffset: 1, willChange: "stroke-dashoffset", animation: "5s linear 0s infinite normal none running circuit-pulse" }} />
+                <path d="M10.8 111.5 H79.5 L105.7 84.3 H145.2" stroke="url(#btn-circuit-grad)" strokeWidth="2" fill="none" pathLength={1} strokeDasharray="0.1 0.9" style={{ strokeDashoffset: 1, willChange: "stroke-dashoffset", animation: "5s linear 0s infinite normal none running circuit-pulse" }} />
                 <path d="M2.9 118.4 H82.7 L108.9 92.2 H145.2" stroke="url(#btn-circuit-grad)" strokeWidth="2" fill="none" pathLength={1} strokeDasharray="0.1 0.9" style={{ strokeDashoffset: 1, willChange: "stroke-dashoffset", animation: "5s linear 0s infinite normal none running circuit-pulse" }} />
                 <path d="M33.5 126.2 H85.9 L112.2 100 H145.2" stroke="url(#btn-circuit-grad)" strokeWidth="2" fill="none" pathLength={1} strokeDasharray="0.1 0.9" style={{ strokeDashoffset: 1, willChange: "stroke-dashoffset", animation: "5s linear 0s infinite normal none running circuit-pulse" }} />
                 <path d="M124.7 116.6 H145.2" stroke="url(#btn-circuit-grad)" strokeWidth="2" fill="none" pathLength={1} strokeDasharray="0.1 0.9" style={{ strokeDashoffset: 1, willChange: "stroke-dashoffset", animation: "5s linear 0s infinite normal none running circuit-pulse" }} />
@@ -299,7 +299,7 @@ export function StartTodayBanner() {
                 <path d="M416.8 142.9 H378.5 L354 167.4 H305" stroke="url(#btn-circuit-grad)" strokeWidth="2" fill="none" pathLength={1} strokeDasharray="0.1 0.9" style={{ strokeDashoffset: 1, willChange: "stroke-dashoffset", animation: "5s linear 0s infinite normal none running circuit-pulse" }} />
                 <path d="M416.8 150.7 H381.7 L357.2 175.2 H305" stroke="url(#btn-circuit-grad)" strokeWidth="2" fill="none" pathLength={1} strokeDasharray="0.1 0.9" style={{ strokeDashoffset: 1, willChange: "stroke-dashoffset", animation: "5s linear 0s infinite normal none running circuit-pulse" }} />
                 <path d="M416.8 100.7 H374 L347.8 74.5 H305" stroke="url(#btn-circuit-grad)" strokeWidth="2" fill="none" pathLength={1} strokeDasharray="0.1 0.9" style={{ strokeDashoffset: 1, willChange: "stroke-dashoffset", animation: "5s linear 0s infinite normal none running circuit-pulse" }} />
-                <path d="M439.5 69.9 V109.5 H370.8 L344.5 82.3 H305" stroke="url(#btn-circuit-grad)" strokeWidth="2" fill="none" pathLength={1} strokeDasharray="0.1 0.9" style={{ strokeDashoffset: 1, willChange: "stroke-dashoffset", animation: "5s linear 0s infinite normal none running circuit-pulse" }} />
+                <path d="M439.5 109.5 H370.8 L344.5 82.3 H305" stroke="url(#btn-circuit-grad)" strokeWidth="2" fill="none" pathLength={1} strokeDasharray="0.1 0.9" style={{ strokeDashoffset: 1, willChange: "stroke-dashoffset", animation: "5s linear 0s infinite normal none running circuit-pulse" }} />
                 <path d="M447.3 116.4 H367.5 L341.3 90.2 H305" stroke="url(#btn-circuit-grad)" strokeWidth="2" fill="none" pathLength={1} strokeDasharray="0.1 0.9" style={{ strokeDashoffset: 1, willChange: "stroke-dashoffset", animation: "5s linear 0s infinite normal none running circuit-pulse" }} />
                 <path d="M416.8 124.2 H364.3 L338.1 98 H305" stroke="url(#btn-circuit-grad)" strokeWidth="2" fill="none" pathLength={1} strokeDasharray="0.1 0.9" style={{ strokeDashoffset: 1, willChange: "stroke-dashoffset", animation: "5s linear 0s infinite normal none running circuit-pulse" }} />
                 <path d="M325.5 114.6 H305" stroke="url(#btn-circuit-grad)" strokeWidth="2" fill="none" pathLength={1} strokeDasharray="0.1 0.9" style={{ strokeDashoffset: 1, willChange: "stroke-dashoffset", animation: "5s linear 0s infinite normal none running circuit-pulse" }} />
@@ -323,15 +323,31 @@ export function StartTodayBanner() {
                 <path d="M191 199 V245.1" stroke="url(#btn-circuit-grad)" strokeWidth="2" fill="none" pathLength={1} strokeDasharray="0.1 0.9" style={{ strokeDashoffset: 1, willChange: "stroke-dashoffset", animation: "5s linear 0s infinite normal none running circuit-pulse" }} />
               </svg>
 
-              {/* Book a demo Button - Centered inside shared 450x275 container */}
+              {/* Chip Processor Button - Centered inside shared 450x275 container */}
               <button
-                className="pointer-events-auto relative w-[160px] h-[160px] rounded-[6px] border border-[#27B578]/20 flex items-center justify-center text-white font-sans text-[14px] sm:text-[15px] font-medium transition-all duration-200 hover:scale-[1.02] cursor-pointer shadow-md z-20 scale-[0.78] sm:scale-100 origin-center"
+                className="pointer-events-auto relative w-[160px] h-[160px] rounded-[6px] border border-[#27B578]/30 hover:border-[#27B578] flex items-center justify-center text-white font-sans transition-all duration-300 transform hover:scale-[1.06] active:scale-95 cursor-pointer shadow-lg hover:shadow-[0_0_25px_rgba(39,181,120,0.4)] z-20 scale-[0.78] sm:scale-100 origin-center group overflow-hidden"
                 style={{
                   background:
                     "linear-gradient(135deg, rgba(12, 40, 24, 0.95) 0%, rgba(8, 28, 16, 0.98) 50%, rgba(12, 40, 24, 0.95) 100%)",
                 }}
               >
-                Book a demo
+                {/* Microchip Grid Pattern */}
+                <div
+                  className="absolute inset-0 opacity-20 group-hover:opacity-35 transition-opacity duration-300 pointer-events-none"
+                  style={{
+                    backgroundImage:
+                      "radial-gradient(rgba(39, 181, 120, 0.8) 1px, transparent 1px)",
+                    backgroundSize: "8px 8px",
+                  }}
+                />
+
+                {/* Glowing Radial Background Accent on Hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_center,rgba(39,181,120,0.25)_0%,transparent_70%)] pointer-events-none" />
+
+                {/* Button Text */}
+                <span className="relative z-10 text-white font-semibold text-[18px] sm:text-[20px] tracking-wide group-hover:text-emerald-300 transition-colors duration-300">
+                  Let's Talk
+                </span>
               </button>
             </div>
           </div>

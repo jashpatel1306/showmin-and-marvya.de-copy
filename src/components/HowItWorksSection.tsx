@@ -4,36 +4,42 @@ import step3Img from "@/assets/how-it-works/imgi_148_step_03.webp";
 import step4Img from "@/assets/how-it-works/imgi_149_step_04.webp";
 import step5Img from "@/assets/how-it-works/imgi_150_step_05.webp";
 import { HowItWorksCircuitOverlay } from "./ui/HowItWorksCircuitOverlay";
+import { BookDemoButton } from "./BookDemoButton";
 
 const stepsData = [
     {
         num: 1,
-        text: "Schedule an onboarding call with us",
-        maxWidth: "174.03px",
+        label: "Discover",
+        text: "Understand your business, customers, and goals",
+        maxWidth: "180px",
         img: step1Img,
     },
     {
         num: 2,
-        text: "Our team will help connect all numbers and get agents onboard",
-        maxWidth: "176.06px",
+        label: "Strategize",
+        text: "Turn requirements into a clear digital roadmap",
+        maxWidth: "180px",
         img: step2Img,
     },
     {
         num: 3,
-        text: "Set team hierarchy, roles and permissions for each agent",
-        maxWidth: "179.98px",
+        label: "Design & Build",
+        text: "Turn the strategy into a real digital experience",
+        maxWidth: "180px",
         img: step3Img,
     },
     {
         num: 4,
-        text: "Embed into your CRM with 2-way sync",
-        maxWidth: "156.79px",
+        label: "Connect & Launch",
+        text: "Make everything work together and go live with confidence",
+        maxWidth: "180px",
         img: step4Img,
     },
     {
         num: 5,
-        text: "Setup automated journeys using our bots studio as required and go-live!",
-        maxWidth: "167.05px",
+        label: "Optimize & Grow",
+        text: "Launch isn't the finish line. It's where growth starts.",
+        maxWidth: "180px",
         img: step5Img,
     },
 ];
@@ -107,7 +113,7 @@ export function HowItWorksSection() {
                                     />
                                 </svg>
                                 <span className="h-[16.8px] flex items-center whitespace-nowrap shrink-0">
-                                    HOW IT WORKS
+                                    HOW WE WORK
                                 </span>
                                 <svg
                                     width="24"
@@ -145,16 +151,14 @@ export function HowItWorksSection() {
 
                             {/* Main Title Heading */}
                             <h2 className="font-serif text-white text-[24px] sm:text-[34px] md:text-[39px] leading-[1.25] md:leading-[54.6px] tracking-[-1px] font-semibold max-w-[728.57px] text-left">
-                                From onboarding to full automation in 24 hours
+                                A clear path from strategy to scalable growth.
                             </h2>
                         </div>
 
-                        {/* Book a demo Button (Position: X: 941.14px, Y: 178.2px, Dimension: W: 132.2px x H: 40px) */}
-                        <button
-                            className="hidden md:flex absolute right-[44.67px] top-[178.2px] w-[132.2px] h-[40px] items-center justify-center bg-[#0F5A38]/90 hover:bg-[#0F5A38] text-white font-sans text-[14px] font-medium rounded-md border border-[#27B578]/30 shadow-xs cursor-pointer transition-all duration-200 z-20"
-                        >
-                            Book a demo
-                        </button>
+                        {/* Book a demo / Let's Talk Button */}
+                        <div className="hidden md:flex absolute right-[44.67px] top-[178.2px] z-20">
+                            <BookDemoButton className="w-[132.2px]" />
+                        </div>
 
                         {/* Desktop Bottom Box (Position Y: 262.2px, Dimension: W: 1116.67px x H: 320.67px divided into 5 equal parts) */}
                         <div className="hidden lg:grid absolute bottom-0 left-0 right-0 h-[320.67px] border-t border-[#18553A] grid-cols-5 divide-x divide-[#18553A]">
@@ -162,8 +166,15 @@ export function HowItWorksSection() {
                                 <div key={step.num} className="h-full w-full relative p-4 md:p-5 lg:p-6 flex flex-col items-start justify-between overflow-hidden group">
                                     {/* Text Content */}
                                     <div className="flex flex-col items-start gap-3 relative z-10">
-                                        <div className="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center border border-dashed border-white/40 bg-white/5 text-white font-mono text-[13px] md:text-[14px] font-bold rounded-[2px] shadow-2xs shrink-0">
-                                            {step.num}
+                                        <div className="flex items-center gap-2">
+                                            <div className="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center border border-dashed border-white/40 bg-white/5 text-white font-mono text-[13px] md:text-[14px] font-bold rounded-[2px] shadow-2xs shrink-0">
+                                                {step.num}
+                                            </div>
+                                            {step.label && (
+                                                <div className="h-7 md:h-8 px-2.5 flex items-center justify-center border border-dashed border-[#27B578]/50 bg-[#27B578]/10 text-[#27B578] font-mono text-[11px] md:text-[12px] font-bold uppercase tracking-wider rounded-[2px] shadow-2xs shrink-0">
+                                                    {step.label}
+                                                </div>
+                                            )}
                                         </div>
                                         <p
                                             className="font-sans text-white text-[14px] sm:text-[15px] md:text-[16px] leading-[22.4px] tracking-[-0.01em] text-left font-normal"
@@ -191,8 +202,15 @@ export function HowItWorksSection() {
                             {stepsData.map((step) => (
                                 <div key={step.num} className="p-4 sm:p-5 flex items-center justify-between min-h-[115px] relative overflow-hidden bg-[#072F1D]">
                                     <div className="flex flex-col items-start gap-2.5 z-10 pr-2">
-                                        <div className="w-7 h-7 flex items-center justify-center border border-dashed border-white/40 bg-white/5 text-white font-mono text-[13px] font-bold rounded-[2px] shrink-0">
-                                            {step.num}
+                                        <div className="flex items-center gap-2">
+                                            <div className="w-7 h-7 flex items-center justify-center border border-dashed border-white/40 bg-white/5 text-white font-mono text-[13px] font-bold rounded-[2px] shrink-0">
+                                                {step.num}
+                                            </div>
+                                            {step.label && (
+                                                <div className="h-7 px-2 flex items-center justify-center border border-dashed border-[#27B578]/50 bg-[#27B578]/10 text-[#27B578] font-mono text-[11px] font-bold uppercase tracking-wider rounded-[2px] shrink-0">
+                                                    {step.label}
+                                                </div>
+                                            )}
                                         </div>
                                         <p className="font-sans text-white text-[14px] sm:text-[15px] leading-snug text-left font-normal max-w-[210px]">
                                             {step.text}

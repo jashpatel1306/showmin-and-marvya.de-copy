@@ -1,4 +1,6 @@
 import { useEffect, useState, useRef } from "react";
+import { Link } from "@tanstack/react-router";
+import showmineLogo from "@/assets/Showmine-transparent.png";
 
 export function Footer() {
   return (
@@ -23,29 +25,11 @@ export function Footer() {
                     href="/"
                     className="flex items-center gap-2 shrink-0 w-fit"
                   >
-                    <span className="flex h-6 w-6 items-center justify-center">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        className="h-5 w-5 text-primary"
-                        style={{ color: "rgb(39, 181, 120)" }}
-                      >
-                        <path
-                          d="M1 13l4 4L13 9"
-                          stroke="currentColor"
-                          strokeWidth="2.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M9 13l4 4L23 7"
-                          stroke="currentColor"
-                          strokeWidth="2.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
+                    <img
+                      src={showmineLogo}
+                      alt="Showmine"
+                      className="h-8 md:h-10 w-auto object-contain"
+                    />
                     <span className="text-lg font-bold tracking-tight text-neutral-950 md:text-2xl font-sans">
                       Showmine
                     </span>
@@ -174,18 +158,24 @@ export function Footer() {
                       >
                         Shopify E-Commerce
                       </a>
+                      <Link
+                        to="/shopify-headless"
+                        className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
+                      >
+                        Shopify Headless
+                      </Link>
                       <a
                         href="#"
                         className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
                       >
                         Shopify Theme Development
                       </a>
-                      <a
-                        href="#"
+                      <Link
+                        to="/shopify-plus-development"
                         className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
                       >
                         Shopify Plus Development
-                      </a>
+                      </Link>
                       <a
                         href="#"
                         className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
@@ -249,7 +239,7 @@ export function Footer() {
                         Refund and Cancellations
                       </a>
                       <button className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left cursor-pointer">
-                        Book a demo
+                        Let's Talk
                       </button>
                     </div>
                   </div>
