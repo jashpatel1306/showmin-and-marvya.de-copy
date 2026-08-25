@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "@tanstack/react-router";
 import showmineLogo from "@/assets/Showmine-transparent.png";
+import { AskAiFooterWidget } from "./AskAiFooterWidget";
 
 export function Footer() {
   return (
@@ -43,62 +44,11 @@ export function Footer() {
                     </a>
                   </div>
                 </div>
-                {/* <div className="flex gap-[20px] md:gap-[var(--l)] items-center">
-                  <img
-                    alt="ISO 27001"
-                    loading="lazy"
-                    width="31"
-                    height="31"
-                    className="w-[31px] h-[31px] md:w-[62px] md:h-[63px]"
-                    style={{ color: "transparent" }}
-                    src="/images/footer/iso-27001.svg"
-                  />
-                  <img
-                    alt="EU GDPR Compliant"
-                    loading="lazy"
-                    width="70"
-                    height="23"
-                    className="w-[70px] h-[23px] md:w-[140px] md:h-[47px]"
-                    style={{ color: "transparent" }}
-                    src="/images/footer/gdpr-compliant.svg"
-                  />
-                </div> */}
               </div>
 
-              <div className="flex flex-col gap-[32px] md:gap-[var(--l)]">
-                {/* Mobile App Section */}
-                {/* <div className="border border-neutral-200 p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white relative z-20">
-                  <div className="flex flex-col gap-1">
-                    <span className="typo-label text-neutral-500">
-                      MOBILE APP
-                    </span>
-                    <p className="typo-body text-neutral-950">
-                      Download the app on your mobile to get the power of DoubleTick on the go
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3 shrink-0">
-                    <a
-                      href="#"
-                      className="inline-block transition-transform duration-200 hover:scale-105"
-                    >
-                      <img
-                        src="/images/footer/app-store.svg"
-                        alt="Download on App Store"
-                        className="h-[38px] md:h-[40px] w-auto"
-                      />
-                    </a>
-                    <a
-                      href="#"
-                      className="inline-block transition-transform duration-200 hover:scale-105"
-                    >
-                      <img
-                        src="/images/footer/google-play.svg"
-                        alt="Get it on Google Play"
-                        className="h-[38px] md:h-[40px] w-auto"
-                      />
-                    </a>
-                  </div>
-                </div> */}
+              <div className="flex flex-col gap-[24px] md:gap-[var(--l)]">
+                {/* Ask AI about Showmine Widget */}
+                <AskAiFooterWidget />
 
                 <div className="flex flex-wrap gap-y-[32px] justify-between md:flex-nowrap md:gap-[20px]">
                   <div
@@ -220,27 +170,27 @@ export function Footer() {
                       >
                         News
                       </a>
-                      <a
+                      {/* <a
                         href="/terms-and-condition"
                         className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
                       >
                         Terms and Conditions
-                      </a>
-                      <a
+                      </a> */}
+                      {/* <a
                         href="/privacy-policy"
                         className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
                       >
                         Privacy Policy
-                      </a>
-                      <a
+                      </a> */}
+                      {/* <a
                         href="/refund-and-cancellations"
                         className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left"
                       >
                         Refund and Cancellations
-                      </a>
-                      <button className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left cursor-pointer">
+                      </a> */}
+                      {/* <button className="group relative typo-body text-neutral-950 hover:text-primary transition-colors w-fit text-left cursor-pointer">
                         Let's Talk
-                      </button>
+                      </button> */}
                     </div>
                   </div>
 
@@ -255,14 +205,6 @@ export function Footer() {
                   >
                     <div className="flex flex-col gap-[8px] md:gap-[var(--s)]">
                       <span className="typo-label text-neutral-500">
-                        CORPORATE OFFICE ADDRESS
-                      </span>
-                      <p className="typo-body text-neutral-950 text-left">
-                        8-9 Mahavir shooping center, Near Gajera cricle, Katargam, Surat.
-                      </p>
-                    </div>
-                    <div className="flex flex-col gap-[8px] md:gap-[var(--s)]">
-                      <span className="typo-label text-neutral-500">
                         REGISTERED OFFICE ADDRESS
                       </span>
                       <p className="typo-body text-neutral-950 text-left">
@@ -270,11 +212,19 @@ export function Footer() {
                       </p>
                     </div>
                     <div className="flex flex-col gap-[8px] md:gap-[var(--s)]">
+                      <span className="typo-label text-neutral-500">
+                        CORPORATE OFFICE ADDRESS
+                      </span>
+                      <p className="typo-body text-neutral-950 text-left">
+                        8-9 Mahavir shooping center, Near Gajera cricle, Katargam, Surat.
+                      </p>
+                    </div>
+                    {/* <div className="flex flex-col gap-[8px] md:gap-[var(--s)]">
                       <span className="typo-label text-neutral-500">CIN</span>
                       <p className="typo-body text-neutral-950 font-semibold">
                         U72900MH2021PTC354389
                       </p>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -287,7 +237,7 @@ export function Footer() {
               </div>
               <div className="flex gap-[20px] md:gap-[var(--m)] items-center justify-start md:justify-center w-full md:w-auto mt-2 md:mt-0">
                 <a
-                  href="https://www.linkedin.com/company/showmine/"
+                  href="https://www.linkedin.com/company/showmine-infotech"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
@@ -330,7 +280,7 @@ export function Footer() {
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                   </svg>
                 </a>
-                <a
+                {/* <a
                   href="https://www.facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -350,8 +300,8 @@ export function Footer() {
                   >
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                   </svg>
-                </a>
-                <a
+                </a> */}
+                {/* <a
                   href="https://www.youtube.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -372,7 +322,7 @@ export function Footer() {
                     <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
                     <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
                   </svg>
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
