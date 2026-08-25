@@ -1,4 +1,22 @@
-# Logs
+# Build & Output Directories
+dist
+dist-ssr
+build
+out
+.output
+
+# Cache & Framework Temp Directories
+.tanstack
+.vite
+.cache
+.parcel-cache
+.turbo
+.next
+
+# Dependencies
+node_modules
+
+# Logs & Debugging
 logs
 *.log
 npm-debug.log*
@@ -7,16 +25,22 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Environment & Local Secrets
 *.local
+.env.local
+.env.*.local
 
-# Editor directories and files
+# OS & Editor Files
+.DS_Store
+*.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE & Editor Settings
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj

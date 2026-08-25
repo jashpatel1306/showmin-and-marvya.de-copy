@@ -47,8 +47,6 @@ export function Footer() {
               </div>
 
               <div className="flex flex-col gap-[24px] md:gap-[var(--l)]">
-                {/* Ask AI about Showmine Widget */}
-                <AskAiFooterWidget />
 
                 <div className="flex flex-wrap gap-y-[32px] justify-between md:flex-nowrap md:gap-[20px]">
                   <div
@@ -219,12 +217,9 @@ export function Footer() {
                         8-9 Mahavir shooping center, Near Gajera cricle, Katargam, Surat.
                       </p>
                     </div>
-                    {/* <div className="flex flex-col gap-[8px] md:gap-[var(--s)]">
-                      <span className="typo-label text-neutral-500">CIN</span>
-                      <p className="typo-body text-neutral-950 font-semibold">
-                        U72900MH2021PTC354389
-                      </p>
-                    </div> */}
+
+                    {/* Ask AI about Showmine Widget below address */}
+                    <AskAiFooterWidget />
                   </div>
                 </div>
               </div>
